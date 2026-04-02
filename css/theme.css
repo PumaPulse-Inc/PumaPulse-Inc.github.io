@@ -204,11 +204,11 @@ footer { background: #080c18 !important; }
 .sfeat h4 { color: var(--text); }
 .sfeat p { color: var(--muted2); }
 
-/* Live cards on hero */
-.live-card { background: rgba(255,255,255,0.92) !important; border-color: rgba(0,0,0,0.08) !important; }
-.live-card-label { color: rgba(15,23,42,0.55) !important; }
-.live-card-val { color: #0f172a !important; }
-.live-card-sub { color: rgba(15,23,42,0.45) !important; }
+/* Live cards on hero — keep dark glass style */
+.live-card { background: rgba(8,12,24,0.75) !important; border-color: rgba(255,255,255,0.1) !important; }
+.live-card-label { color: rgba(240,244,255,0.5) !important; }
+.live-card-val { color: #fff !important; }
+.live-card-sub { color: rgba(240,244,255,0.45) !important; }
 
 /* Hero badge */
 .hero-badge { background: rgba(16,185,129,0.10); border-color: rgba(16,185,129,0.25); color: #047857; }
