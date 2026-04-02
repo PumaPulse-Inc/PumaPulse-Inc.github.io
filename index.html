@@ -68,6 +68,7 @@
     @media(max-width:1024px){.hero-split{grid-template-columns:1fr}.hero-right{display:none}.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.values-icon-grid{grid-template-columns:repeat(2,1fr)}.tech-grid{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:768px){.trusted-row{flex-direction:column;align-items:flex-start;gap:16px}.values-icon-grid{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(2,1fr)}}
   </style>
+<style>@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}</style>
 </head>
 <body>
 
@@ -214,23 +215,23 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero" style="min-height:100vh;padding-top:0">
-  <div class="hero-video-wrap">
-    <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=90" alt="bg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0">
-  </div>
-  <div class="container" style="position:relative;z-index:3;width:100%;padding-top:68px;padding-left:0">
-    <div style="max-width:720px;padding-left:0">
-      <div class="hero-badge anim-float">
+<section class="hero" style="min-height:100vh;padding-top:0;background:#000;overflow:hidden;position:relative">
+  <!-- Shooting stars canvas -->
+  <canvas id="starsCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></canvas>
+  <div class="container" style="position:relative;z-index:3;width:100%;padding-top:68px;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:100vh;gap:40px">
+    <!-- Left text -->
+    <div style="padding-left:0">
+      <div class="hero-badge anim-float" style="margin-bottom:24px">
         <span class="hero-badge-dot"></span>
-        Trusted Digital Transformation Company
+        Welcome To PumaPulse
       </div>
-      <h1 style="color:#fff">Your Business Deserves<br><span class="shimmer-text">More Revenue,</span><br>Not More Work</h1>
-      <p class="hero-desc">What's stopping your business from growing faster? We remove the friction, automate what slows you down, and help you scale at 10X speed — effortlessly. From crypto exchanges to AI-powered trading bots, we engineer high-performance fintech products that last.</p>
-      <div class="hero-actions">
+      <h1 style="color:#fff;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.1;margin-bottom:20px">Your Business Deserves<br><span class="shimmer-text">More Revenue,</span><br>Not More Work</h1>
+      <p style="color:rgba(255,255,255,0.6);font-size:1rem;max-width:480px;margin-bottom:36px;line-height:1.75">We remove the friction, automate what slows you down, and help you scale at 10X speed. From crypto exchanges to AI-powered trading bots, we engineer high-performance fintech products that last.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px">
         <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Start Your Project</a>
         <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
       </div>
-      <div class="trusted-row">
+      <div class="trusted-row" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:32px;margin-top:0">
         <span class="trusted-label">Trusted by</span>
         <div class="trusted-logos">
           <span class="trusted-logo">Dreamster</span>
@@ -238,6 +239,55 @@
           <span class="trusted-logo">Apzor</span>
           <span class="trusted-logo">MetaStation</span>
           <span class="trusted-logo">MarginFX</span>
+        </div>
+      </div>
+    </div>
+    <!-- Right 3D illustration -->
+    <div style="display:flex;align-items:center;justify-content:center;position:relative">
+      <div id="floatIllustration" style="position:relative;width:100%;max-width:520px;animation:heroFloat 4s ease-in-out infinite">
+        <!-- Main monitor -->
+        <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(16,185,129,0.15)">
+          <!-- Screen -->
+          <div style="background:#0d1117;border-radius:12px;padding:16px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.06)">
+            <div style="display:flex;gap:6px;margin-bottom:12px">
+              <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div>
+              <div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div>
+              <div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div>
+            </div>
+            <!-- Code lines -->
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#10b981,rgba(16,185,129,0.3));width:70%"></div>
+              <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#3b82f6,rgba(59,130,246,0.3));width:90%"></div>
+              <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#a78bfa,rgba(167,139,250,0.3));width:55%"></div>
+              <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#f59e0b,rgba(245,158,11,0.3));width:80%"></div>
+              <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#10b981,rgba(16,185,129,0.3));width:65%"></div>
+              <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#3b82f6,rgba(59,130,246,0.3));width:45%"></div>
+            </div>
+          </div>
+          <!-- Stats row -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+            <div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:1.1rem;font-weight:800;color:#10b981">$2.4M</div>
+              <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:2px">Volume</div>
+            </div>
+            <div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:1.1rem;font-weight:800;color:#3b82f6">+18.4%</div>
+              <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:2px">ROI</div>
+            </div>
+            <div style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:1.1rem;font-weight:800;color:#a78bfa">247</div>
+              <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:2px">Bots</div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div style="position:absolute;top:-20px;right:-20px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.4);border-radius:12px;padding:10px 16px;backdrop-filter:blur(10px);animation:heroFloat 3s ease-in-out infinite 0.5s">
+          <div style="font-size:0.75rem;font-weight:700;color:#10b981">&#9650; Live</div>
+          <div style="font-size:0.65rem;color:rgba(255,255,255,0.5)">All systems go</div>
+        </div>
+        <div style="position:absolute;bottom:-16px;left:-16px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:12px;padding:10px 16px;backdrop-filter:blur(10px);animation:heroFloat 3.5s ease-in-out infinite 1s">
+          <div style="font-size:0.75rem;font-weight:700;color:#3b82f6">120+ Projects</div>
+          <div style="font-size:0.65rem;color:rgba(255,255,255,0.5)">Delivered</div>
         </div>
       </div>
     </div>
@@ -644,6 +694,51 @@ document.querySelectorAll('.ripple-btn').forEach(btn => {
     trail.style.cssText = '--a:' + (i*18) + 'deg;--r2:' + (40+Math.random()*120) + 'px;background:' + colors[i%5] + ';animation-duration:' + (3+Math.random()*4) + 's;animation-delay:-' + (Math.random()*5) + 's;';
     el.appendChild(trail);
   }
+})();
+</script>
+<script>
+// Shooting stars
+(function(){
+  var c = document.getElementById('starsCanvas');
+  if(!c) return;
+  var ctx = c.getContext('2d');
+  function resize(){ c.width = window.innerWidth; c.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+
+  // Static stars
+  var stars = [];
+  for(var i=0;i<200;i++) stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.2+0.2,o:Math.random()*0.6+0.2});
+
+  // Shooting stars
+  var shoots = [];
+  function addShoot(){
+    shoots.push({x:Math.random()*c.width,y:Math.random()*c.height*0.5,len:Math.random()*120+60,speed:Math.random()*8+6,angle:Math.PI/4+Math.random()*0.3,alpha:1,width:Math.random()*1.5+0.5});
+  }
+  setInterval(addShoot, 800);
+
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    // Stars
+    stars.forEach(function(s){
+      ctx.beginPath(); ctx.arc(s.x*c.width,s.y*c.height,s.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,'+s.o+')'; ctx.fill();
+    });
+    // Shooting stars
+    shoots = shoots.filter(function(s){ return s.alpha > 0; });
+    shoots.forEach(function(s){
+      var grad = ctx.createLinearGradient(s.x,s.y,s.x-Math.cos(s.angle)*s.len,s.y-Math.sin(s.angle)*s.len);
+      grad.addColorStop(0,'rgba(255,255,255,'+s.alpha+')');
+      grad.addColorStop(1,'rgba(255,255,255,0)');
+      ctx.beginPath(); ctx.moveTo(s.x,s.y);
+      ctx.lineTo(s.x-Math.cos(s.angle)*s.len, s.y-Math.sin(s.angle)*s.len);
+      ctx.strokeStyle=grad; ctx.lineWidth=s.width; ctx.stroke();
+      s.x += Math.cos(s.angle)*s.speed;
+      s.y += Math.sin(s.angle)*s.speed;
+      s.alpha -= 0.018;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
 })();
 </script>
 </body>
