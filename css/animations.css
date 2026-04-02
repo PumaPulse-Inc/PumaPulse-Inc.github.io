@@ -1,0 +1,367 @@
+/* =====================================================
+   PumaPulse — Advanced Animation Styles
+   ===================================================== */
+
+/* ── Keyframes ── */
+@keyframes fadeUp      { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeLeft    { from{opacity:0;transform:translateX(-32px)} to{opacity:1;transform:translateX(0)} }
+@keyframes fadeRight   { from{opacity:0;transform:translateX(32px)} to{opacity:1;transform:translateX(0)} }
+@keyframes scaleIn     { from{opacity:0;transform:scale(0.88)} to{opacity:1;transform:scale(1)} }
+@keyframes floatY      { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes floatX      { 0%,100%{transform:translateX(0)} 50%{transform:translateX(8px)} }
+@keyframes glowPulse   { 0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,0)} 50%{box-shadow:0 0 32px 8px rgba(16,185,129,0.18)} }
+@keyframes shimmer     { 0%{background-position:-200% center} 100%{background-position:200% center} }
+@keyframes spin        { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes borderGlow  { 0%,100%{border-color:rgba(16,185,129,0.2)} 50%{border-color:rgba(16,185,129,0.6)} }
+@keyframes slideDown   { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes countUp     { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+@keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+@keyframes ripple      { 0%{transform:scale(0);opacity:0.6} 100%{transform:scale(4);opacity:0} }
+@keyframes typewriter  { from{width:0} to{width:100%} }
+@keyframes blink-cursor{ 0%,100%{border-color:transparent} 50%{border-color:var(--accent)} }
+@keyframes orbit       { from{transform:rotate(0deg) translateX(60px) rotate(0deg)} to{transform:rotate(360deg) translateX(60px) rotate(-360deg)} }
+@keyframes morphBg     { 0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%} 50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%} }
+
+/* ── Utility animation classes ── */
+.anim-float    { animation: floatY 4s ease-in-out infinite; }
+.anim-float-x  { animation: floatX 5s ease-in-out infinite; }
+.anim-glow     { animation: glowPulse 3s ease-in-out infinite; }
+.anim-spin     { animation: spin 8s linear infinite; }
+.anim-border   { animation: borderGlow 2.5s ease-in-out infinite; }
+.anim-gradient { background-size: 200% 200%; animation: gradientShift 4s ease infinite; }
+.anim-morph    { animation: morphBg 8s ease-in-out infinite; }
+
+/* ── Shimmer text ── */
+.shimmer-text {
+  background: linear-gradient(90deg, #10b981 0%, #a78bfa 40%, #3b82f6 60%, #10b981 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Typewriter cursor ── */
+.typewriter-cursor {
+  border-right: 2px solid var(--accent);
+  animation: blink-cursor 0.8s step-end infinite;
+  padding-right: 2px;
+}
+
+/* ── Tilt card ── */
+.tilt-card { transform-style: preserve-3d; will-change: transform; }
+.tilt-card .tilt-inner { transform: translateZ(20px); }
+
+/* ── Magnetic button ── */
+.btn-magnetic { transition: transform 0.3s cubic-bezier(0.23,1,0.32,1); }
+
+/* ── Scroll reveal ── */
+.reveal, .reveal-left, .reveal-right, .reveal-stagger > * {
+  will-change: opacity, transform;
+}
+
+/* ── Gradient border card ── */
+.grad-border {
+  position: relative;
+  border-radius: var(--r, 16px);
+  background: var(--card);
+}
+.grad-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--grad);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.grad-border:hover::before { opacity: 1; }
+
+/* ── Glow card ── */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+.glow-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(16,185,129,0.08) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.glow-card:hover::after { opacity: 1; }
+
+/* ── Number counter ── */
+.counter-num {
+  font-variant-numeric: tabular-nums;
+  animation: countUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+/* ── Ripple effect ── */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+.ripple-btn .ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* ── Particle canvas ── */
+#particleCanvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Animated gradient background ── */
+.animated-bg {
+  background: linear-gradient(-45deg, #080c18, #0a0f1e, #0d1428, #080c18);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* ── Orbit decoration ── */
+.orbit-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.orbit-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: orbit 4s linear infinite;
+}
+.orbit-dot:nth-child(2) { animation-delay: -2s; background: var(--primary); }
+
+/* ── Hover underline ── */
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--grad);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.hover-underline:hover::after { width: 100%; }
+
+/* ── Tag pill ── */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid;
+  transition: all 0.2s;
+}
+.tag-green  { background: var(--ad); color: var(--accent); border-color: rgba(16,185,129,0.25); }
+.tag-blue   { background: var(--pd); color: var(--primary); border-color: rgba(59,130,246,0.25); }
+.tag-purple { background: var(--vd); color: var(--purple); border-color: rgba(167,139,250,0.25); }
+
+/* ── Section divider ── */
+.section-divider {
+  width: 60px; height: 3px;
+  background: var(--grad);
+  border-radius: 3px;
+  margin: 16px auto 0;
+}
+
+/* ── Glassmorphism card ── */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--rl, 24px);
+}
+[data-theme="light"] .glass-card {
+  background: rgba(255,255,255,0.7);
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* ── Highlight box ── */
+.highlight-box {
+  position: relative;
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: inline;
+}
+.highlight-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ad);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* ── Progress bar ── */
+.skill-bar { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 8px; }
+.skill-fill { height: 100%; background: var(--grad); border-radius: 4px; width: 0; transition: width 1.2s cubic-bezier(0.22,1,0.36,1); }
+.skill-fill.animated { width: var(--pct); }
+
+/* ── Scroll indicator ── */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  opacity: 0.6;
+  animation: fadeUp 1s 2s both;
+}
+.scroll-indicator span { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,244,255,0.5); }
+.scroll-mouse {
+  width: 22px; height: 36px;
+  border: 2px solid rgba(240,244,255,0.3);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+.scroll-wheel {
+  width: 3px; height: 6px;
+  background: rgba(240,244,255,0.5);
+  border-radius: 3px;
+  animation: floatY 1.5s ease-in-out infinite;
+}
+
+/* ── Portfolio card ── */
+.portfolio-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  cursor: pointer;
+}
+.portfolio-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-8px);
+  box-shadow: 0 32px 64px rgba(0,0,0,0.4);
+}
+.portfolio-img {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+.portfolio-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.portfolio-card:hover .portfolio-img img { transform: scale(1.08); }
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(8,12,24,0.9) 100%);
+}
+.portfolio-body { padding: 28px; }
+.portfolio-body h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--text); }
+.portfolio-body p { font-size: 0.87rem; margin-bottom: 16px; }
+.portfolio-quote {
+  background: var(--bg2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 16px;
+  margin-top: 16px;
+  font-size: 0.84rem;
+  font-style: italic;
+  color: var(--muted2);
+  line-height: 1.65;
+}
+.portfolio-client {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.portfolio-client img {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border2);
+}
+.portfolio-client-name { font-size: 0.83rem; font-weight: 600; color: var(--text); }
+.portfolio-client-loc  { font-size: 0.75rem; color: var(--muted); }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+/* ── Value card with icon ── */
+.value-icon-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 36px 32px;
+  transition: all 0.35s;
+  position: relative;
+  overflow: hidden;
+}
+.value-icon-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 70%);
+  transition: all 0.4s;
+}
+.value-icon-card:hover { border-color: var(--border2); transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.3); }
+.value-icon-card:hover::before { transform: scale(1.5); }
+.value-icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: var(--ad);
+  border: 1px solid rgba(16,185,129,0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+.value-icon-card:hover .value-icon-wrap { background: var(--accent); transform: scale(1.1) rotate(5deg); }
+.value-icon-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+.value-icon-card p { font-size: 0.88rem; line-height: 1.7; }
+
+/* ── Testimonial slider ── */
+.testi-slider { position: relative; overflow: hidden; }
+.testi-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.testi-slide { min-width: 100%; padding: 0 4px; }
+.testi-dots { display: flex; gap: 8px; justify-content: center; margin-top: 28px; }
+.testi-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border2); cursor: pointer; transition: all 0.3s; border: none; }
+.testi-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+
+/* ── Responsive ── */
+@media(max-width:768px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  #particleCanvas { display: none; }
+}
+@media(max-width:1024px) {
+  .portfolio-grid { grid-template-columns: repeat(2,1fr); }
+}
