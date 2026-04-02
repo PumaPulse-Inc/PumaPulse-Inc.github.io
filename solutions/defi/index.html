@@ -1,238 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DeFi Platform Development —  PumaPulse</title>
-  <meta name="description" content="Build DeFi protocols —  AMMs, lending markets, yield aggregators, cross-chain bridges, DAO governance, and liquid staking by PumaPulse.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .service-feature-list{display:flex;flex-direction:column;gap:16px}
-    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
-    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
-    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .sfeat-icon svg{width:20px;height:20px}
-    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
-    .sfeat p{font-size:0.86rem}
-    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
-    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .use-case h4{font-size:0.95rem;margin-bottom:8px}
-    .use-case p{font-size:0.84rem}
-    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="DeFi Platform Development"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>DeFi</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">DeFi Solutions</span>
-      <h1>DeFi Platforms Built for <span class="grad-text">Real Liquidity</span></h1>
-      <p>PumaPulse engineers production-ready DeFi protocols —  from AMMs and lending markets to cross-chain bridges and DAO governance systems —  with security-first architecture and multi-firm audits before any TVL is at risk.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Protocol</a>
-        <a href="#defi-products" class="btn btn-ghost btn-lg">Explore Products</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="500" data-suffix="M+">$500M+</div><p>TVL Secured</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Protocols Deployed</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="8" data-suffix="+">8+</div><p>Chains Supported</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="0" data-suffix=" Hacks">0</div><p>Security Incidents</p></div>
-</div>
-
-<section class="section" id="defi-products">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">DeFi Products</span>
-      <h2>The Full DeFi <span class="grad-text">Protocol Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We build every layer of the DeFi ecosystem —  from core AMM logic to governance frameworks and cross-chain interoperability. Every protocol is audited, formally verified where applicable, and monitored 24/7.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=700" alt="AMM DEX" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>AMM / DEX</h3>
-          <p>Automated market maker and decentralized exchange protocols with concentrated liquidity (Uniswap v3 style), multi-hop routing for optimal swap execution, and MEV-resistant order flow via commit-reveal schemes. We build custom fee tiers, dynamic fee adjustment based on volatility, and liquidity mining programs with vesting schedules.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Concentrated Liquidity</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Multi-Hop</span><span class="tag-pill tag-purple" style="font-size:0.68rem">MEV Resistant</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lending Protocol" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Lending Protocol</h3>
-          <p>Overcollateralized and undercollateralized lending markets with dynamic interest rate models (kinked rate curves), liquidation engines with Dutch auction mechanisms, flash loan support, and oracle aggregation for manipulation-resistant price feeds. Includes risk parameter governance, insurance fund management, and bad debt socialization mechanisms.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Dynamic Rates</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Flash Loans</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Oracle Aggregation</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Yield Aggregators" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Yield Aggregators</h3>
-          <p>Auto-compounding vaults that route capital across lending protocols, liquidity pools, and staking positions to maximize risk-adjusted yield. Features strategy whitelisting, emergency withdrawal mechanisms, performance fee distribution, and keeper bot integration for automated harvesting. Supports ERC-4626 vault standard for composability.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Auto-Compound</span><span class="tag-pill tag-blue" style="font-size:0.68rem">ERC-4626</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Keeper Bots</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cross-Chain Bridges" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Cross-Chain Bridges</h3>
-          <p>Secure token and message bridges with optimistic verification (fraud-proof challenge periods), ZK-proof verification for trustless security, and multi-sig validator sets with slashing conditions. Includes bridge monitoring dashboards, automated circuit breakers that pause on anomalies, and liquidity rebalancing across chains.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">ZK Proofs</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Optimistic</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Circuit Breakers</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DAO Governance" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>DAO / Governance</h3>
-          <p>On-chain governance frameworks with token-weighted voting, quadratic voting, and conviction voting mechanisms. Features time-lock controllers for security, multi-sig execution for critical operations, Snapshot off-chain signaling integration, and treasury management with diversification strategies. Includes delegate voting and vote delegation UI.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Token Voting</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Time-Lock</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Treasury Mgmt</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/14832157/pexels-photo-14832157.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Liquid Staking" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Liquid Staking</h3>
-          <p>Liquid staking derivatives that let users earn staking rewards while keeping capital liquid for DeFi participation. Features validator management with slashing protection insurance, rebasing or reward-bearing token models, withdrawal queue management, and integration with major DeFi protocols for LST composability.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">LST Tokens</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Slash Protection</span><span class="tag-pill tag-purple" style="font-size:0.68rem">DeFi Composable</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Security -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Security</span>
-        <h2>DeFi Security You Can <span class="grad-text2">Rely On</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">DeFi protocols are high-value targets —  the average DeFi hack costs $50M+. Every protocol we build goes through multiple layers of security review before a single dollar of user funds is at risk.</p>
-        <div class="service-feature-list">
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>Multi-Firm Smart Contract Audits</h4><p>We engage two independent audit firms for every protocol —  because one set of eyes is never enough. All reports are public.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><h4>Formal Verification</h4><p>Mathematical proofs of contract correctness for critical invariants —  especially AMM pricing curves and liquidation logic.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><h4>Bug Bounty Programs</h4><p>We help set up and fund Immunefi bug bounty programs to keep white-hat researchers engaged post-launch.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>On-Chain Monitoring</h4><p>Real-time anomaly detection with automated circuit breakers that pause contracts if suspicious activity is detected.</p></div></div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="split-img">
-          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=900" alt="DeFi Security">
-          <div class="split-badge"><div class="num">$500M+</div><p>TVL secured</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Supported Chains -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Supported Networks</span>
-      <h2>Deploy on <span class="grad-text3">Any Chain</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="chains-grid reveal-stagger">
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(98,126,234,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div><h4>Ethereum</h4><p>The home of DeFi. Deepest liquidity, most composable ecosystem, and highest security guarantees.</p></div>
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(40,160,240,0.12)"><img src="https://cdn.simpleicons.org/arbitrum/28A0F0" alt="Arbitrum"></div><h4>Arbitrum</h4><p>Optimistic rollup with the deepest DeFi TVL on L2. Low fees, fast finality, and full EVM compatibility.</p></div>
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(255,4,32,0.12)"><img src="https://cdn.simpleicons.org/optimism/FF0420" alt="Optimism"></div><h4>Optimism</h4><p>OP Stack rollup powering the Superchain. Growing DeFi ecosystem with low transaction costs.</p></div>
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(130,71,229,0.12)"><img src="https://cdn.simpleicons.org/polygon/8247E5" alt="Polygon"></div><h4>Polygon</h4><p>zkEVM for ZK-secured DeFi and PoS for high-throughput consumer applications.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text">DeFi Tech Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">The same tools used by the world's leading DeFi protocols —  from Uniswap to Aave —  to build secure, capital-efficient on-chain systems.</p>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Smart Contract Development</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/solidity/363636" alt="Solidity">
-          <div><span class="tname">Solidity</span><span class="tdesc">Primary EVM language for AMMs, lending protocols, governance contracts, and yield vaults</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/rust/CE422B" alt="Rust">
-          <div><span class="tname">Rust (Anchor)</span><span class="tdesc">Solana DeFi programs —  SPL token vaults, liquidity pools, and staking protocols via Anchor framework</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/openzeppelin/4E5EE4" alt="OpenZeppelin"><span class="tname">OpenZeppelin</span><span class="tdesc">Audited base contracts</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Hardhat"><span class="tname">Hardhat + Foundry</span><span class="tdesc">Dev & testing frameworks</span></div>
-      </div>
-      <div class="tech-category-label">Oracles, Indexing & Storage</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/chainlink/375BD2" alt="Chainlink">
-          <div><span class="tname">Chainlink</span><span class="tdesc">Decentralized price feeds, VRF randomness, CCIP cross-chain messaging, and proof of reserve</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/thegraph/6747ED" alt="The Graph">
-          <div><span class="tname">The Graph</span><span class="tdesc">Subgraph indexing for real-time DeFi analytics —  TVL, volume, liquidity depth, and user positions</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ipfs/65C2CB" alt="IPFS"><span class="tname">IPFS / Arweave</span><span class="tdesc">Decentralized storage</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Tenderly"><span class="tname">Tenderly</span><span class="tdesc">Monitoring & simulation</span></div>
-      </div>
-      <div class="tech-category-label">Frontend & Security Auditing</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React"><span class="tname">React + wagmi</span><span class="tdesc">DeFi frontend & hooks</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ethers.js"><span class="tname">ethers.js / viem</span><span class="tdesc">Contract interaction</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Slither"><span class="tname">Slither</span><span class="tdesc">Static analysis</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Echidna"><span class="tname">Echidna</span><span class="tdesc">Fuzz testing</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Certora"><span class="tname">Certora</span><span class="tdesc">Formal verification</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Immunefi"><span class="tname">Immunefi</span><span class="tdesc">Bug bounty platform</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Launch Your <span class="grad-text">DeFi Protocol?</span></h2>
-        <p>Our DeFi architects will design a secure, capital-efficient protocol that attracts liquidity and stands up to adversarial conditions.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/theme.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeFi Platform Development —  PumaPulse</title>
+  <meta name="description" content="Build DeFi protocols —  AMMs, lending markets, yield aggregators, cross-chain bridges, DAO governance, and liquid staking by PumaPulse.">
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <style>
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .sfeat-icon svg{width:20px;height:20px}
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+    .sfeat p{font-size:0.86rem}
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+    .use-case p{font-size:0.84rem}
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="DeFi Platform Development"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>DeFi</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">DeFi Solutions</span>
+      <h1>DeFi Platforms Built for <span class="grad-text">Real Liquidity</span></h1>
+      <p>PumaPulse engineers production-ready DeFi protocols —  from AMMs and lending markets to cross-chain bridges and DAO governance systems —  with security-first architecture and multi-firm audits before any TVL is at risk.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Protocol</a>
+        <a href="#defi-products" class="btn btn-ghost btn-lg">Explore Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="500" data-suffix="M+">$500M+</div><p>TVL Secured</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Protocols Deployed</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="8" data-suffix="+">8+</div><p>Chains Supported</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="0" data-suffix=" Hacks">0</div><p>Security Incidents</p></div>
+</div>
+
+<section class="section" id="defi-products">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">DeFi Products</span>
+      <h2>The Full DeFi <span class="grad-text">Protocol Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We build every layer of the DeFi ecosystem —  from core AMM logic to governance frameworks and cross-chain interoperability. Every protocol is audited, formally verified where applicable, and monitored 24/7.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=700" alt="AMM DEX" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>AMM / DEX</h3>
+          <p>Automated market maker and decentralized exchange protocols with concentrated liquidity (Uniswap v3 style), multi-hop routing for optimal swap execution, and MEV-resistant order flow via commit-reveal schemes. We build custom fee tiers, dynamic fee adjustment based on volatility, and liquidity mining programs with vesting schedules.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Concentrated Liquidity</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Multi-Hop</span><span class="tag-pill tag-purple" style="font-size:0.68rem">MEV Resistant</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lending Protocol" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Lending Protocol</h3>
+          <p>Overcollateralized and undercollateralized lending markets with dynamic interest rate models (kinked rate curves), liquidation engines with Dutch auction mechanisms, flash loan support, and oracle aggregation for manipulation-resistant price feeds. Includes risk parameter governance, insurance fund management, and bad debt socialization mechanisms.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Dynamic Rates</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Flash Loans</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Oracle Aggregation</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Yield Aggregators" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Yield Aggregators</h3>
+          <p>Auto-compounding vaults that route capital across lending protocols, liquidity pools, and staking positions to maximize risk-adjusted yield. Features strategy whitelisting, emergency withdrawal mechanisms, performance fee distribution, and keeper bot integration for automated harvesting. Supports ERC-4626 vault standard for composability.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Auto-Compound</span><span class="tag-pill tag-blue" style="font-size:0.68rem">ERC-4626</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Keeper Bots</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cross-Chain Bridges" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Cross-Chain Bridges</h3>
+          <p>Secure token and message bridges with optimistic verification (fraud-proof challenge periods), ZK-proof verification for trustless security, and multi-sig validator sets with slashing conditions. Includes bridge monitoring dashboards, automated circuit breakers that pause on anomalies, and liquidity rebalancing across chains.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">ZK Proofs</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Optimistic</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Circuit Breakers</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DAO Governance" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>DAO / Governance</h3>
+          <p>On-chain governance frameworks with token-weighted voting, quadratic voting, and conviction voting mechanisms. Features time-lock controllers for security, multi-sig execution for critical operations, Snapshot off-chain signaling integration, and treasury management with diversification strategies. Includes delegate voting and vote delegation UI.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Token Voting</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Time-Lock</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Treasury Mgmt</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/14832157/pexels-photo-14832157.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Liquid Staking" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Liquid Staking</h3>
+          <p>Liquid staking derivatives that let users earn staking rewards while keeping capital liquid for DeFi participation. Features validator management with slashing protection insurance, rebasing or reward-bearing token models, withdrawal queue management, and integration with major DeFi protocols for LST composability.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">LST Tokens</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Slash Protection</span><span class="tag-pill tag-purple" style="font-size:0.68rem">DeFi Composable</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Security -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Security</span>
+        <h2>DeFi Security You Can <span class="grad-text2">Rely On</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">DeFi protocols are high-value targets —  the average DeFi hack costs $50M+. Every protocol we build goes through multiple layers of security review before a single dollar of user funds is at risk.</p>
+        <div class="service-feature-list">
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>Multi-Firm Smart Contract Audits</h4><p>We engage two independent audit firms for every protocol —  because one set of eyes is never enough. All reports are public.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><h4>Formal Verification</h4><p>Mathematical proofs of contract correctness for critical invariants —  especially AMM pricing curves and liquidation logic.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><h4>Bug Bounty Programs</h4><p>We help set up and fund Immunefi bug bounty programs to keep white-hat researchers engaged post-launch.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>On-Chain Monitoring</h4><p>Real-time anomaly detection with automated circuit breakers that pause contracts if suspicious activity is detected.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="split-img">
+          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=900" alt="DeFi Security">
+          <div class="split-badge"><div class="num">$500M+</div><p>TVL secured</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Supported Chains -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Supported Networks</span>
+      <h2>Deploy on <span class="grad-text3">Any Chain</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="chains-grid reveal-stagger">
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(98,126,234,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div><h4>Ethereum</h4><p>The home of DeFi. Deepest liquidity, most composable ecosystem, and highest security guarantees.</p></div>
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(40,160,240,0.12)"><svg viewBox="0 0 24 24" fill="none" style="width:32px;height:32px"><circle cx="12" cy="12" r="10" fill="#28A0F0"/><path d="M8 16l2.5-4.5L13 16M11 13.5l1.5-2.5 1.5 2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Arbitrum</h4><p>Optimistic rollup with the deepest DeFi TVL on L2. Low fees, fast finality, and full EVM compatibility.</p></div>
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(255,4,32,0.12)"><svg viewBox="0 0 24 24" style="width:32px;height:32px"><circle cx="12" cy="12" r="10" fill="#FF0420"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">OP</text></svg></div><h4>Optimism</h4><p>OP Stack rollup powering the Superchain. Growing DeFi ecosystem with low transaction costs.</p></div>
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(130,71,229,0.12)"><img src="https://cdn.simpleicons.org/polygon/8247E5" alt="Polygon"></div><h4>Polygon</h4><p>zkEVM for ZK-secured DeFi and PoS for high-throughput consumer applications.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Our <span class="grad-text">DeFi Tech Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">The same tools used by the world's leading DeFi protocols —  from Uniswap to Aave —  to build secure, capital-efficient on-chain systems.</p>
+    </div>
+    <div class="tech-showcase reveal-stagger">
+      <div class="tech-category-label">Smart Contract Development</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/solidity/363636" alt="Solidity">
+          <div><span class="tname">Solidity</span><span class="tdesc">Primary EVM language for AMMs, lending protocols, governance contracts, and yield vaults</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/rust/CE422B" alt="Rust">
+          <div><span class="tname">Rust (Anchor)</span><span class="tdesc">Solana DeFi programs —  SPL token vaults, liquidity pools, and staking protocols via Anchor framework</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/openzeppelin/4E5EE4" alt="OpenZeppelin"><span class="tname">OpenZeppelin</span><span class="tdesc">Audited base contracts</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Hardhat"><span class="tname">Hardhat + Foundry</span><span class="tdesc">Dev & testing frameworks</span></div>
+      </div>
+      <div class="tech-category-label">Oracles, Indexing & Storage</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/chainlink/375BD2" alt="Chainlink">
+          <div><span class="tname">Chainlink</span><span class="tdesc">Decentralized price feeds, VRF randomness, CCIP cross-chain messaging, and proof of reserve</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/thegraph/6747ED" alt="The Graph">
+          <div><span class="tname">The Graph</span><span class="tdesc">Subgraph indexing for real-time DeFi analytics —  TVL, volume, liquidity depth, and user positions</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ipfs/65C2CB" alt="IPFS"><span class="tname">IPFS / Arweave</span><span class="tdesc">Decentralized storage</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Tenderly"><span class="tname">Tenderly</span><span class="tdesc">Monitoring & simulation</span></div>
+      </div>
+      <div class="tech-category-label">Frontend & Security Auditing</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React"><span class="tname">React + wagmi</span><span class="tdesc">DeFi frontend & hooks</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ethers.js"><span class="tname">ethers.js / viem</span><span class="tdesc">Contract interaction</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Slither"><span class="tname">Slither</span><span class="tdesc">Static analysis</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Echidna"><span class="tname">Echidna</span><span class="tdesc">Fuzz testing</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Certora"><span class="tname">Certora</span><span class="tdesc">Formal verification</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Immunefi"><span class="tname">Immunefi</span><span class="tdesc">Bug bounty platform</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Launch Your <span class="grad-text">DeFi Protocol?</span></h2>
+        <p>Our DeFi architects will design a secure, capital-efficient protocol that attracts liquidity and stands up to adversarial conditions.</p>
+        <div class="cta-btns">
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/nav.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/animations.js"></script>
+</body>
+</html>
+

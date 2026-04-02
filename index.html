@@ -1,741 +1,740 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PumaPulse —  Trusted Digital Transformation Company</title>
-  <meta name="description" content="PumaPulse helps businesses grow revenue with smart digital solutions. Blockchain, crypto exchange, fintech, trading bots, and neobank development.">
-  <link rel="icon" href="img/icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <style>
-    /* -- Hero extras -- */
-    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:100vh;padding-top:68px}
-    .hero-right{position:relative;z-index:3;display:flex;flex-direction:column;gap:16px}
-    .live-card{background:rgba(8,12,24,0.75);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 22px;display:flex;align-items:center;gap:14px;animation:slideDown 0.6s both}
-    .live-card:nth-child(2){animation-delay:0.15s}.live-card:nth-child(3){animation-delay:0.3s}.live-card:nth-child(4){animation-delay:0.45s}
-    .live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;animation:glowPulse 2s infinite}
-    .live-card-label{font-size:0.78rem;color:rgba(240,244,255,0.5);margin-bottom:2px}
-    .live-card-val{font-size:1rem;font-weight:700;color:#fff}
-    .live-card-sub{font-size:0.75rem;color:rgba(240,244,255,0.45);margin-top:1px}
-    .live-card-icon{width:44px;height:44px;border-radius:12px;overflow:hidden;flex-shrink:0}
-    .live-card-icon img{width:100%;height:100%;object-fit:cover}
-    /* -- Trusted by logos -- */
-    .trusted-row{display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08)}
-    .trusted-label{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,244,255,0.3);white-space:nowrap}
-    .trusted-logos{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
-    .trusted-logo{font-size:0.82rem;font-weight:700;color:rgba(240,244,255,0.25);letter-spacing:0.05em;transition:color 0.2s}
-    .trusted-logo:hover{color:rgba(240,244,255,0.6)}
-    /* -- About strip -- */
-    .about-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .about-img-stack{position:relative;height:520px}
-    .about-img-main{width:75%;height:420px;object-fit:cover;border-radius:20px;position:absolute;top:0;left:0;box-shadow:0 32px 64px rgba(0,0,0,0.4)}
-    .about-img-accent{width:55%;height:260px;object-fit:cover;border-radius:16px;position:absolute;bottom:0;right:0;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
-    .about-badge{position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);background:rgba(8,12,24,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px 22px;text-align:center;z-index:2}
-    .about-badge .big{font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-    .about-badge p{font-size:0.75rem;color:rgba(240,244,255,0.5);margin:4px 0 0}
-    /* -- Values -- */
-    .values-icon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    /* -- Portfolio -- */
-    .portfolio-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
-    /* -- FAQ -- */
-    .faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
-    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.25s}
-    .faq-item.open{border-color:var(--border2)}
-    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:600;font-size:0.97rem;color:var(--text);gap:16px;user-select:none}
-    .faq-icon{width:24px;height:24px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s}
-    .faq-item.open .faq-icon{background:var(--accent);transform:rotate(45deg)}
-    .faq-icon svg{width:12px;height:12px;stroke:var(--accent);transition:stroke 0.3s}
-    .faq-item.open .faq-icon svg{stroke:#fff}
-    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1),padding 0.3s}
-    .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
-    .faq-a p{padding:0 24px;font-size:0.9rem;line-height:1.75}
-    /* -- Tech stack -- */
-    .tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-    .tech-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;transition:all 0.3s;cursor:default}
-    .tech-item:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .tech-item img{width:36px;height:36px;margin:0 auto 10px;object-fit:contain;filter:grayscale(0.3);transition:filter 0.3s}
-    .tech-item:hover img{filter:grayscale(0)}
-    .tech-item span{font-size:0.78rem;font-weight:600;color:var(--muted2)}
-    /* -- Responsive -- */
-    @media(max-width:1024px){.hero-split{grid-template-columns:1fr}.hero-right{display:none}.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.values-icon-grid{grid-template-columns:repeat(2,1fr)}.tech-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:768px){.trusted-row{flex-direction:column;align-items:flex-start;gap:16px}.values-icon-grid{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(2,1fr)}}
-  </style>
-</head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="navbar-inner">
-    <a href="index/" class="nav-logo"><img src="img/logo.png" alt="PumaPulse"></a>
-    <ul class="nav-links" id="navLinks">
-
-      <!-- Services Mega Menu -->
-      <li class="dropdown">
-        <a href="#">Services</a>
-        <div class="mega-menu" style="width:760px">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-            <a href="services/blockchain/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(98,126,234,0.12)">
-                <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Blockchain">
-              </div>
-              <div>
-                <span class="mega-text-label">Blockchain Development</span>
-                <span class="mega-text-desc">Smart contracts, DeFi protocols, NFT platforms &amp; enterprise blockchain</span>
-              </div>
-            </a>
-            <a href="services/crypto-exchange/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(247,147,26,0.12)">
-                <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Exchange">
-              </div>
-              <div>
-                <span class="mega-text-label">Crypto Exchange</span>
-                <span class="mega-text-desc">CEX, DEX, P2P, hybrid &amp; white-label exchange platforms</span>
-              </div>
-            </a>
-            <a href="services/trading-bots/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(16,185,129,0.12)">
-                <img src="https://cdn.simpleicons.org/python/3776AB" alt="Trading Bots">
-              </div>
-              <div>
-                <span class="mega-text-label">Trading Bots</span>
-                <span class="mega-text-desc">Arbitrage, DCA, grid, sniper, signal &amp; AI/ML trading bots</span>
-              </div>
-            </a>
-            <a href="services/fintech/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(99,91,255,0.12)">
-                <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Fintech">
-              </div>
-              <div>
-                <span class="mega-text-label">Fintech Solutions</span>
-                <span class="mega-text-desc">Neobank apps, digital banking, KYC/AML &amp; lending platforms</span>
-              </div>
-            </a>
-            <a href="services/wallets/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(20,241,149,0.12)">
-                <img src="https://cdn.simpleicons.org/solana/9945FF" alt="Wallets">
-              </div>
-              <div>
-                <span class="mega-text-label">Wallet Development</span>
-                <span class="mega-text-desc">MPC, DeFi, custodial, non-custodial &amp; multi-currency wallets</span>
-              </div>
-            </a>
-            <a href="services/forex/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(0,174,239,0.12)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#00AEEF" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-              <div>
-                <span class="mega-text-label">Forex Solutions</span>
-                <span class="mega-text-desc">Forex CRM, back office, MT4/MT5 integration &amp; traders room</span>
-              </div>
-            </a>
-          </div>
-          <div class="mega-menu-footer">
-            <a href="portfolio/">View all case studies ?</a>
-            <a href="contact/" class="mega-cta">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-              Free Consultation
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Solutions Mega Menu -->
-      <li class="dropdown">
-        <a href="#">Solutions</a>
-        <div class="mega-menu" style="width:680px">
-          <div class="mega-menu-header">Financial Technology Solutions</div>
-          <div class="mega-menu-grid">
-            <a href="solutions/defi/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(99,102,241,0.12)">
-                <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="DeFi">
-              </div>
-              <div>
-                <span class="mega-text-label">DeFi Platforms</span>
-                <span class="mega-text-desc">AMMs, lending protocols, yield aggregators &amp; cross-chain bridges</span>
-              </div>
-            </a>
-            <a href="solutions/neobank/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(16,185,129,0.12)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-              </div>
-              <div>
-                <span class="mega-text-label">Neobank</span>
-                <span class="mega-text-desc">Full-stack digital banking with cards, lending &amp; investments</span>
-              </div>
-            </a>
-            <a href="solutions/payment-gateway/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(59,130,246,0.12)">
-                <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Payments">
-              </div>
-              <div>
-                <span class="mega-text-label">Payment Gateway</span>
-                <span class="mega-text-desc">Accept 100+ cryptocurrencies with instant settlement</span>
-              </div>
-            </a>
-            <a href="solutions/ai-trading/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(167,139,250,0.12)">
-                <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="AI Trading">
-              </div>
-              <div>
-                <span class="mega-text-label">AI Trading</span>
-                <span class="mega-text-desc">ML price prediction, sentiment analysis &amp; smart order routing</span>
-              </div>
-            </a>
-          </div>
-          <div class="mega-menu-footer">
-            <a href="portfolio/">View all case studies ?</a>
-            <a href="contact/" class="mega-cta">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-              Free Consultation
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <li><a href="about/">About</a></li>
-      <li><a href="portfolio/">Portfolio</a></li>
-      <li><a href="blog/">Blog</a></li>
-      <li><a href="careers/">Careers</a></li>
-      <li><a href="contact/">Contact</a></li>
-    </ul>
-    <div class="nav-cta" id="navCta">
-      <a href="contact/" class="btn btn-accent btn-sm ripple-btn">Get a Free Quote</a>
-    </div>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="hero" style="min-height:100vh;padding-top:0">
-  <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=1600">
-      <source src="https://cdn.coverr.co/videos/coverr-a-digital-globe-with-network-connections-1584/1080p.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-grid-line"></div>
-  <canvas id="particleCanvas"></canvas>
-  <div class="container" style="position:relative;z-index:3;width:100%">
-    <div class="hero-split">
-      <div class="hero-content" style="padding:120px 0 80px">
-        <div class="hero-badge anim-border">
-          <span class="hero-badge-dot"></span>
-          Trusted Digital Transformation Company
-        </div>
-        <h1 style="color:#fff">Your Business Deserves<br><span class="shimmer-text">More Revenue,</span><br>Not More Work</h1>
-        <p class="hero-desc">What's stopping your business from growing faster? We remove the friction, automate what slows you down, and help you scale at 10X speed —  effortlessly. From crypto exchanges to AI-powered trading bots, we engineer high-performance fintech products that last.</p>
-        <div class="hero-actions">
-          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Start Your Project</a>
-          <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
-        </div>
-        <div class="trusted-row">
-          <span class="trusted-label">Trusted by</span>
-          <div class="trusted-logos">
-            <span class="trusted-logo">Dreamster</span>
-            <span class="trusted-logo">Cryptinum</span>
-            <span class="trusted-logo">Apzor</span>
-            <span class="trusted-logo">MetaStation</span>
-            <span class="trusted-logo">MarginFX</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-right" style="padding:120px 0 80px">
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Exchange"></div>
-          <div><div class="live-card-label">Exchange Live</div><div class="live-card-val">$2.4M Volume</div><div class="live-card-sub">24h trading volume</div></div>
-          <div class="live-dot" style="margin-left:auto"></div>
-        </div>
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Bot"></div>
-          <div><div class="live-card-label">Trading Bot Active</div><div class="live-card-val">+18.4% ROI</div><div class="live-card-sub">This month's return</div></div>
-          <div class="live-dot" style="margin-left:auto;background:#3b82f6"></div>
-        </div>
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Neobank"></div>
-          <div><div class="live-card-label">Neobank Launched</div><div class="live-card-val">12,000 Users</div><div class="live-card-sub">Onboarded in 30 days</div></div>
-          <div class="live-dot" style="margin-left:auto;background:#a78bfa"></div>
-        </div>
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Payment"></div>
-          <div><div class="live-card-label">Payment Gateway</div><div class="live-card-val">$890K Processed</div><div class="live-card-sub">Today's transactions</div></div>
-          <div class="live-dot" style="margin-left:auto;background:#f59e0b"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- Ticker -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item">Crypto Exchange Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">DeFi Platforms<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Trading Bot Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Blockchain Solutions<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Neobank Apps<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Forex CRM<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Crypto Wallets<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Payment Gateways<span class="ticker-dot"></span></span>
-    <span class="ticker-item">AI Trading Systems<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Smart Contracts<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Crypto Exchange Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">DeFi Platforms<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Trading Bot Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Blockchain Solutions<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Neobank Apps<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Forex CRM<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Crypto Wallets<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Payment Gateways<span class="ticker-dot"></span></span>
-    <span class="ticker-item">AI Trading Systems<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Smart Contracts<span class="ticker-dot"></span></span>
-  </div>
-</div>
-
-<!-- Stats -->
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="36" data-suffix="+">36+</div><p>Businesses Scaled Successfully</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="95" data-suffix="%">95%</div><p>Project Success Rate</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="20" data-suffix="+">20+</div><p>Growth-Focused Experts</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="25" data-suffix="+">25+</div><p>Countries Served</p></div>
-</div>
-
-<!-- About Strip -->
-<section class="section">
-  <div class="container">
-    <div class="about-strip">
-      <div class="about-img-stack reveal-left">
-        <img class="about-img-main" src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team">
-        <img class="about-img-accent" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PumaPulse Office">
-        <div class="about-badge anim-float">
-          <div class="big">98%</div>
-          <p>Client Retention Rate</p>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <span class="eyebrow">Who We Are</span>
-        <h2>We Specialize in Creating Digital Experiences for a <span class="grad-text">Better Tomorrow</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:18px">PumaPulse is a team of dedicated technology enthusiasts, problem solvers, and inventors. We are faithful to building digital experiences that not only suit today's demands but also lay the groundwork for a brighter tomorrow.</p>
-        <p style="margin-bottom:18px">Our mission is to assist organizations of all sizes to innovate, evolve, and embrace the digital era. We prepare our clients for whatever the future brings by concentrating on smart, sustainable solutions.</p>
-        <p style="margin-bottom:32px">From crypto exchanges and trading bots to neobanks and DeFi protocols —  we turn complex ideas into powerful digital platforms that scale.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px">
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Smarter Tech Solutions</span>
-          </div>
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Stronger Business Growth</span>
-          </div>
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Lasting Success Stories</span>
-          </div>
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Global Compliance Ready</span>
-          </div>
-        </div>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="about/" class="btn btn-accent btn-magnetic">Learn About Us</a>
-          <a href="portfolio/" class="btn btn-outline">View Portfolio</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Services -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">What We Build</span>
-      <h2>End-to-End <span class="grad-text">Fintech Engineering</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We cover the full spectrum of blockchain and financial technology —  from ideation to deployment and beyond. Every solution is built with precision, security, and scale in mind.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Blockchain Development" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Blockchain Development</h3><p>Custom blockchain networks, smart contracts, DeFi protocols, and Web3 integrations. We build secure, audited, and production-ready blockchain infrastructure for enterprises and startups.</p><a href="services/blockchain/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Crypto Exchange" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Crypto Exchange Platforms</h3><p>Building scalable, secure, and user-friendly crypto exchange platforms —  CEX, DEX, P2P, hybrid, and white-label —  that enable businesses and traders to participate in the digital economy.</p><a href="services/crypto-exchange/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Trading Bots" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Trading Bot Development</h3><p>Creating intelligent, automated trading systems —  arbitrage, DCA, grid, sniper, and AI/ML bots —  to help businesses and individual traders optimize tactics, reduce risk, and increase earnings.</p><a href="services/trading-bots/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Fintech Banking" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Digital Banking &amp; Neobanking</h3><p>Making financial management simple, secure, and accessible with cutting-edge digital banking solutions. Full-stack neobank apps with accounts, cards, lending, savings, and investment features.</p><a href="services/fintech/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/5698696/pexels-photo-5698696.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Crypto Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Payment Solutions &amp; Wallets</h3><p>Developing seamless worldwide payment networks and secure digital wallets —  custodial, non-custodial, MPC, and DeFi —  that facilitate quick, efficient, and safe transactions globally.</p><a href="services/wallets/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Forex Trading" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Forex CRM &amp; Trading Solutions</h3><p>Comprehensive solutions for forex brokerages —  CRM, back-office, traders room, MT4/MT5 integration, and MAM/PAMM systems. Everything a modern broker needs to compete and grow.</p><a href="services/forex/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Core Values -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Core Values</span>
-      <h2>What Drives <span class="grad-text2">Everything We Do</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We don't just build software —  we build trust, relationships, and lasting success for every client we work with.</p>
-    </div>
-    <div class="values-icon-grid reveal-stagger">
-      <div class="value-icon-card">
-        <div class="value-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Trust First, Trust Always</h3>
-        <p>We believe trust isn't something you get —  it's something you earn. That's why we focus on honesty, reliability, and delivering real results. No hidden terms, no false promises —  just a strong partnership built for the long run.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3>Think Fresh, Build Smart</h3>
-        <p>We question, explore, and see things with fresh eyes. But when it's time to take action, we bring expert skills to the table. Real innovation comes from curiosity, not just following the usual way.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Take Responsibility. Make It Happen.</h3>
-        <p>We don't wait for things to change —  we make them happen. Taking responsibility isn't just what we do; it's our mindset. Every challenge is a chance to grow, and every action pushes us forward.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Empowering Global Change</h3>
-        <p>PumaPulse is dedicated to bringing about significant change in the financial industry. We lead responsibly, developing solutions that enable businesses, support entrepreneurs, and inspire economic growth worldwide.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>Sustainability in Innovation</h3>
-        <p>Every project at PumaPulse incorporates sustainability. Whether we're creating hybrid crypto exchanges or clever trading bots, we help clients align their goals with environmental and social responsibility.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3>Transparency with Trust Built In</h3>
-        <p>We value transparency and accountability. By constantly refining our procedures and giving clear, transparent progress reports, we develop long-term trust with clients, entrepreneurs, and businesses.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Solutions Tabs -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Solutions</span>
-      <h2>Tailored for Every <span class="grad-text3">Vertical</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Deep expertise across every segment of the financial technology landscape —  from consumer fintech to institutional trading infrastructure.</p>
-    </div>
-    <div class="sol-tabs reveal">
-      <button class="sol-tab active" onclick="switchSol('exchange',this)">Exchange</button>
-      <button class="sol-tab" onclick="switchSol('trading',this)">Trading</button>
-      <button class="sol-tab" onclick="switchSol('payments',this)">Payments</button>
-      <button class="sol-tab" onclick="switchSol('banking',this)">Banking</button>
-      <button class="sol-tab" onclick="switchSol('forex',this)">Forex</button>
-    </div>
-    <div id="sol-exchange" class="sol-panel active">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=500" alt="CEX" loading="lazy"></div><div class="sol-card-body"><h4>Centralized Exchange (CEX)</h4><p>High-performance order matching, KYC/AML, admin panel, and institutional-grade liquidity management.</p><a href="services/crypto-exchange/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=500" alt="DEX" loading="lazy"></div><div class="sol-card-body"><h4>Decentralized Exchange (DEX)</h4><p>AMM-based DEX with smart contract liquidity pools, yield farming, and governance token integration.</p><a href="services/crypto-exchange/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=500" alt="P2P" loading="lazy"></div><div class="sol-card-body"><h4>P2P Exchange</h4><p>Peer-to-peer trading with escrow, dispute resolution, reputation system, and 100+ payment methods.</p><a href="services/crypto-exchange/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770520/pexels-photo-6770520.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Hybrid" loading="lazy"></div><div class="sol-card-body"><h4>Hybrid Exchange</h4><p>Best of CEX and DEX —  centralized speed with decentralized custody and full transparency.</p><a href="services/crypto-exchange/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=500" alt="White Label" loading="lazy"></div><div class="sol-card-body"><h4>White-Label Exchange</h4><p>Launch your branded exchange in weeks with our fully customizable, battle-tested white-label platform.</p><a href="services/crypto-exchange/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Derivatives" loading="lazy"></div><div class="sol-card-body"><h4>Derivatives Exchange</h4><p>Futures, options, and perpetual contracts with advanced risk management engines and liquidation systems.</p><a href="services/crypto-exchange/">Learn more ?</a></div></div>
-    </div>
-    <div id="sol-trading" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Algo" loading="lazy"></div><div class="sol-card-body"><h4>Algo Trading Software</h4><p>Rule-based and AI-driven algorithmic trading systems for crypto, forex, and equity markets.</p><a href="services/trading-bots/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/8185624/pexels-photo-8185624.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Arbitrage" loading="lazy"></div><div class="sol-card-body"><h4>Arbitrage Bots</h4><p>Cross-exchange and triangular arbitrage bots that capture price inefficiencies in milliseconds.</p><a href="services/trading-bots/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6777571/pexels-photo-6777571.jpeg?auto=compress&cs=tinysrgb&w=500" alt="DCA" loading="lazy"></div><div class="sol-card-body"><h4>DCA &amp; Grid Bots</h4><p>Dollar-cost averaging and grid trading bots with smart entry/exit logic and portfolio rebalancing.</p><a href="services/trading-bots/">Learn more ?</a></div></div>
-    </div>
-    <div id="sol-payments" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Gateway" loading="lazy"></div><div class="sol-card-body"><h4>Crypto Payment Gateway</h4><p>Accept 100+ cryptocurrencies with instant settlement, fiat conversion, and zero chargebacks.</p><a href="solutions/payment-gateway/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770520/pexels-photo-6770520.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Ecommerce" loading="lazy"></div><div class="sol-card-body"><h4>E-Commerce Integration</h4><p>Plug-and-play crypto payments for Shopify, WooCommerce, Magento, and custom platforms.</p><a href="solutions/payment-gateway/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3943723/pexels-photo-3943723.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Cross Border" loading="lazy"></div><div class="sol-card-body"><h4>Cross-Border Payments</h4><p>Instant, low-cost international transfers powered by blockchain rails across 180+ countries.</p><a href="solutions/payment-gateway/">Learn more ?</a></div></div>
-    </div>
-    <div id="sol-banking" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Neobank" loading="lazy"></div><div class="sol-card-body"><h4>Neobank Platform</h4><p>Full-stack digital banking with accounts, virtual cards, lending, savings, and investment features.</p><a href="solutions/neobank/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Digital Banking" loading="lazy"></div><div class="sol-card-body"><h4>Digital Banking App</h4><p>Mobile-first banking apps with biometric auth, real-time notifications, and open banking APIs.</p><a href="solutions/neobank/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Fintech" loading="lazy"></div><div class="sol-card-body"><h4>Fintech Software</h4><p>Compliance-ready fintech platforms with KYC, AML, and regulatory reporting built in from day one.</p><a href="services/fintech/">Learn more ?</a></div></div>
-    </div>
-    <div id="sol-forex" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/9577254/pexels-photo-9577254.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Forex CRM" loading="lazy"></div><div class="sol-card-body"><h4>Forex CRM</h4><p>Complete broker CRM with IB management, lead tracking, KYC, and compliance tools.</p><a href="services/forex/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/9588213/pexels-photo-9588213.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Back Office" loading="lazy"></div><div class="sol-card-body"><h4>Back Office Software</h4><p>Automate operations, financial reporting, and client management for forex brokerages.</p><a href="services/forex/">Learn more ?</a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=500" alt="MT4 MT5" loading="lazy"></div><div class="sol-card-body"><h4>MT4/MT5 Integration</h4><p>Seamless MetaTrader integration with custom plugins, liquidity bridges, and CRM connectors.</p><a href="services/forex/">Learn more ?</a></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Process -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">How We Work</span>
-      <h2>From Idea to <span class="grad-text">Launch in 4 Steps</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">A transparent, structured process that keeps you in control at every stage —  no surprises, no hidden costs, just results.</p>
-    </div>
-    <div class="process-row reveal-stagger">
-      <div class="process-step">
-        <div class="step-circle anim-glow">01</div>
-        <h4>Discovery &amp; Strategy</h4>
-        <p>We deep-dive into your goals, market, and technical requirements to craft a winning product strategy. We ask the hard questions so you don't have to.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">02</div>
-        <h4>Architecture &amp; Design</h4>
-        <p>System architecture, UI/UX wireframes, and technical specs —  all reviewed and approved by you before a single line of code is written.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">03</div>
-        <h4>Build &amp; Test</h4>
-        <p>Agile development with weekly demos, automated testing, security audits, and continuous integration throughout the entire build process.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">04</div>
-        <h4>Launch &amp; Scale</h4>
-        <p>Smooth deployment, performance monitoring, and ongoing support to help you grow post-launch. We're with you for the long run.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Portfolio Preview -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Work</span>
-      <h2>Real Projects. <span class="grad-text2">Real Results.</span> Built for Growth.</h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">At PumaPulse, we turn complex ideas into powerful digital platforms. Here's how we've helped startups, enterprises, and financial innovators launch, scale, and lead with confidence.</p>
-    </div>
-    <div class="portfolio-grid reveal-stagger">
-      <div class="portfolio-card">
-        <div class="portfolio-img">
-          <img src="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dreamster Exchange" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-green">Crypto Exchange</span></div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Dreamster Exchange</h3>
-          <p>A Web3 digital asset trading platform focused on fast, accurate transactions with a clean, intuitive design enabling users to navigate advanced trading tools and access live market data.</p>
-          <div class="portfolio-quote">"They delivered a secure, easy-to-use platform with good communication and strong technical skills, plus gave useful suggestions throughout the project."</div>
-          <div class="portfolio-client">
-            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Mario Butler">
-            <div><div class="portfolio-client-name">Mario Butler</div><div class="portfolio-client-loc">Dubai, UAE</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-img">
-          <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MetaStation" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-blue">Exchange Platform</span></div>
-        </div>
-        <div class="portfolio-body">
-          <h3>MetaStation</h3>
-          <p>A crypto exchange platform built with advanced features for traders —  strong performance, top security, and hack-proof architecture giving users full confidence while trading.</p>
-          <div class="portfolio-quote">"The attention to detail was outstanding and the quality of work exceeded expectations. Communication throughout the project was transparent and timely."</div>
-          <div class="portfolio-client">
-            <img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Chandravadan Raut">
-            <div><div class="portfolio-client-name">Chandravadan Raut</div><div class="portfolio-client-loc">India</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-img">
-          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MarginFX" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-purple">Forex CRM</span></div>
-        </div>
-        <div class="portfolio-body">
-          <h3>MarginFX</h3>
-          <p>Custom Forex CRM software for a brokerage —  handling clients, managing trading data, KYC, IB tracking, and keeping everything in one unified, powerful platform.</p>
-          <div class="portfolio-quote">"From client registration to KYC and IB tracking, everything works well. The process was smooth, and we're fully satisfied with the outcome."</div>
-          <div class="portfolio-client">
-            <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Manoj Kumaran">
-            <div><div class="portfolio-client-name">Manoj Kumaran</div><div class="portfolio-client-loc">Malaysia</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center" style="margin-top:44px">
-      <a href="portfolio/" class="btn btn-outline btn-lg btn-magnetic">View All Projects</a>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Client Stories</span>
-      <h2>Trusted by <span class="grad-text">Builders Worldwide</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="testi-grid reveal-stagger">
-      <div class="testi-card glow-card">
-        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>"Big thanks to PumaPulse for handling our token project so well! Everything was fine from start to finish, and they delivered exactly as expected. We truly appreciate their effort and look forward to working with them again soon!"</blockquote>
-        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Steven Kim"></div><div><div class="testi-name">Steven Kim Wee</div><div class="testi-role">Founder, Cryptinum</div></div></div>
-      </div>
-      <div class="testi-card glow-card">
-        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>"The team supported me throughout, suggested useful changes, delivered on time, and quickly fixed any issues. The whole process was well handled. I highly recommend their services for any fintech project."</blockquote>
-        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Kooban Naidoo"></div><div><div class="testi-name">Kooban Naidoo</div><div class="testi-role">CEO, Apzor</div></div></div>
-      </div>
-      <div class="testi-card glow-card">
-        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>"I must commend the team on an exceptionally well executed delivery of our Cryptocurrency Exchange. I would not hesitate to recommend PumaPulse for any high-level fintech initiative."</blockquote>
-        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Chandravadan Raut"></div><div><div class="testi-name">Chandravadan Raut</div><div class="testi-role">Founder, MetaStation</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Built With <span class="grad-text3">Battle-Tested Tech</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We use the right tools for the job —  proven, scalable, and maintainable technologies that power the world's best fintech products.</p>
-    </div>
-    <div class="tech-grid reveal-stagger">
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span>Node.js</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React"><span>React</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"><span>Python</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/solidity/363636" alt="Solidity"><span>Solidity</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/rust/000000" alt="Rust"><span>Rust</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go"><span>Go</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span>PostgreSQL</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span>Redis</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span>Kafka</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span>Kubernetes</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span>AWS</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span>Docker</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Frequently Asked <span class="grad-text">Questions</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How long does it take to build a crypto exchange?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>A white-label exchange can be launched in 4— 6 weeks. A fully custom CEX typically takes 3— 5 months depending on features. DEX and hybrid platforms vary based on smart contract complexity. We provide a detailed timeline after the discovery phase.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do you provide post-launch support and maintenance?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>Yes. We offer flexible maintenance packages including 24/7 monitoring, bug fixes, security patches, feature updates, and dedicated support channels. Most clients stay with us long-term as their technology partner.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What blockchain networks do you develop on?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>We build on all major networks: Ethereum, Solana, BNB Chain, Polygon, Avalanche, Arbitrum, Optimism, zkSync, and more. We also develop custom private blockchains using Hyperledger Fabric and Quorum for enterprise clients.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How do you handle security and compliance?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>Security is built into every layer —  from smart contract audits and penetration testing to KYC/AML integration and regulatory compliance. We support GDPR, MiCA, FinCEN, and 30+ other regulatory frameworks across global jurisdictions.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do you sign NDAs before project discussions?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>Absolutely. We sign NDAs before any project discussion. Your ideas, business plans, and technical requirements are treated with complete confidentiality. We also offer fixed-price contracts so there are no surprises.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What is your pricing model?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>We offer both fixed-price and time &amp; materials contracts depending on project scope. After a free discovery call, we provide a detailed proposal with clear milestones and payment schedules. No hidden fees, ever.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <span class="eyebrow" style="justify-content:center;display:flex;color:rgba(255,255,255,0.6)">Ready to Build?</span>
-        <h2>Your Goals Deserve Clarity.<br><span class="grad-text">We're Here to Help.</span></h2>
-        <p>Book a free 30-minute strategy call. No sales pitch —  just honest advice on how to build your product right. We'll help you find the right solution for your specific goals.</p>
-        <div class="cta-btns">
-          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Book Free Strategy Call</a>
-          <a href="portfolio/" class="btn btn-white btn-lg">View Our Portfolio</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-
-<script src="js/nav.js"></script>
-<script src="js/main.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/animations.js"></script>
-<script>
-// FAQ toggle
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-// Solutions tabs
-function switchSol(id, btn) {
-  document.querySelectorAll('.sol-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.sol-tab').forEach(b => b.classList.remove('active'));
-  const panel = document.getElementById('sol-' + id);
-  if (panel) panel.classList.add('active');
-  if (btn) btn.classList.add('active');
-}
-// Ripple effect
-document.querySelectorAll('.ripple-btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    const circle = document.createElement('span');
-    circle.className = 'ripple-circle';
-    const r = btn.getBoundingClientRect();
-    const size = Math.max(r.width, r.height);
-    circle.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-r.left-size/2}px;top:${e.clientY-r.top-size/2}px`;
-    btn.appendChild(circle);
-    setTimeout(() => circle.remove(), 600);
-  });
-});
-</script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PumaPulse —  Trusted Digital Transformation Company</title>
+  <meta name="description" content="PumaPulse helps businesses grow revenue with smart digital solutions. Blockchain, crypto exchange, fintech, trading bots, and neobank development.">
+  <link rel="icon" href="img/icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    /* -- Hero extras -- */
+    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:100vh;padding-top:68px}
+    .hero-right{position:relative;z-index:3;display:flex;flex-direction:column;gap:16px}
+    .live-card{background:rgba(8,12,24,0.75);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 22px;display:flex;align-items:center;gap:14px;animation:slideDown 0.6s both}
+    .live-card:nth-child(2){animation-delay:0.15s}.live-card:nth-child(3){animation-delay:0.3s}.live-card:nth-child(4){animation-delay:0.45s}
+    .live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;animation:glowPulse 2s infinite}
+    .live-card-label{font-size:0.78rem;color:rgba(240,244,255,0.5);margin-bottom:2px}
+    .live-card-val{font-size:1rem;font-weight:700;color:#fff}
+    .live-card-sub{font-size:0.75rem;color:rgba(240,244,255,0.45);margin-top:1px}
+    .live-card-icon{width:44px;height:44px;border-radius:12px;overflow:hidden;flex-shrink:0}
+    .live-card-icon img{width:100%;height:100%;object-fit:cover}
+    /* -- Trusted by logos -- */
+    .trusted-row{display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08)}
+    .trusted-label{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,244,255,0.3);white-space:nowrap}
+    .trusted-logos{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+    .trusted-logo{font-size:0.82rem;font-weight:700;color:rgba(240,244,255,0.25);letter-spacing:0.05em;transition:color 0.2s}
+    .trusted-logo:hover{color:rgba(240,244,255,0.6)}
+    /* -- About strip -- */
+    .about-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .about-img-stack{position:relative;height:520px}
+    .about-img-main{width:75%;height:420px;object-fit:cover;border-radius:20px;position:absolute;top:0;left:0;box-shadow:0 32px 64px rgba(0,0,0,0.4)}
+    .about-img-accent{width:55%;height:260px;object-fit:cover;border-radius:16px;position:absolute;bottom:0;right:0;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+    .about-badge{position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);background:rgba(8,12,24,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px 22px;text-align:center;z-index:2}
+    .about-badge .big{font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+    .about-badge p{font-size:0.75rem;color:rgba(240,244,255,0.5);margin:4px 0 0}
+    /* -- Values -- */
+    .values-icon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    /* -- Portfolio -- */
+    .portfolio-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+    /* -- FAQ -- */
+    .faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.25s}
+    .faq-item.open{border-color:var(--border2)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:600;font-size:0.97rem;color:var(--text);gap:16px;user-select:none}
+    .faq-icon{width:24px;height:24px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s}
+    .faq-item.open .faq-icon{background:var(--accent);transform:rotate(45deg)}
+    .faq-icon svg{width:12px;height:12px;stroke:var(--accent);transition:stroke 0.3s}
+    .faq-item.open .faq-icon svg{stroke:#fff}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1),padding 0.3s}
+    .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
+    .faq-a p{padding:0 24px;font-size:0.9rem;line-height:1.75}
+    /* -- Tech stack -- */
+    .tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+    .tech-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;transition:all 0.3s;cursor:default}
+    .tech-item:hover{border-color:var(--border2);transform:translateY(-4px)}
+    .tech-item img{width:36px;height:36px;margin:0 auto 10px;object-fit:contain;filter:grayscale(0.3);transition:filter 0.3s}
+    .tech-item:hover img{filter:grayscale(0)}
+    .tech-item span{font-size:0.78rem;font-weight:600;color:var(--muted2)}
+    /* -- Responsive -- */
+    @media(max-width:1024px){.hero-split{grid-template-columns:1fr}.hero-right{display:none}.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.values-icon-grid{grid-template-columns:repeat(2,1fr)}.tech-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:768px){.trusted-row{flex-direction:column;align-items:flex-start;gap:16px}.values-icon-grid{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index/" class="nav-logo"><img src="img/logo.png" alt="PumaPulse"></a>
+    <ul class="nav-links" id="navLinks">
+
+      <!-- Services Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <div class="mega-menu" style="width:760px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+            <a href="services/blockchain/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(98,126,234,0.12)">
+                <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Blockchain">
+              </div>
+              <div>
+                <span class="mega-text-label">Blockchain Development</span>
+                <span class="mega-text-desc">Smart contracts, DeFi protocols, NFT platforms &amp; enterprise blockchain</span>
+              </div>
+            </a>
+            <a href="services/crypto-exchange/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(247,147,26,0.12)">
+                <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Exchange">
+              </div>
+              <div>
+                <span class="mega-text-label">Crypto Exchange</span>
+                <span class="mega-text-desc">CEX, DEX, P2P, hybrid &amp; white-label exchange platforms</span>
+              </div>
+            </a>
+            <a href="services/trading-bots/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(16,185,129,0.12)">
+                <img src="https://cdn.simpleicons.org/python/3776AB" alt="Trading Bots">
+              </div>
+              <div>
+                <span class="mega-text-label">Trading Bots</span>
+                <span class="mega-text-desc">Arbitrage, DCA, grid, sniper, signal &amp; AI/ML trading bots</span>
+              </div>
+            </a>
+            <a href="services/fintech/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(99,91,255,0.12)">
+                <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Fintech">
+              </div>
+              <div>
+                <span class="mega-text-label">Fintech Solutions</span>
+                <span class="mega-text-desc">Neobank apps, digital banking, KYC/AML &amp; lending platforms</span>
+              </div>
+            </a>
+            <a href="services/wallets/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(20,241,149,0.12)">
+                <img src="https://cdn.simpleicons.org/solana/9945FF" alt="Wallets">
+              </div>
+              <div>
+                <span class="mega-text-label">Wallet Development</span>
+                <span class="mega-text-desc">MPC, DeFi, custodial, non-custodial &amp; multi-currency wallets</span>
+              </div>
+            </a>
+            <a href="services/forex/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(0,174,239,0.12)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00AEEF" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div>
+                <span class="mega-text-label">Forex Solutions</span>
+                <span class="mega-text-desc">Forex CRM, back office, MT4/MT5 integration &amp; traders room</span>
+              </div>
+            </a>
+          </div>
+          <div class="mega-menu-footer">
+            <a href="portfolio/">View all case studies ?</a>
+            <a href="contact/" class="mega-cta">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              Free Consultation
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Solutions Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Solutions</a>
+        <div class="mega-menu" style="width:680px">
+          <div class="mega-menu-header">Financial Technology Solutions</div>
+          <div class="mega-menu-grid">
+            <a href="solutions/defi/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(99,102,241,0.12)">
+                <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="DeFi">
+              </div>
+              <div>
+                <span class="mega-text-label">DeFi Platforms</span>
+                <span class="mega-text-desc">AMMs, lending protocols, yield aggregators &amp; cross-chain bridges</span>
+              </div>
+            </a>
+            <a href="solutions/neobank/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(16,185,129,0.12)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <div>
+                <span class="mega-text-label">Neobank</span>
+                <span class="mega-text-desc">Full-stack digital banking with cards, lending &amp; investments</span>
+              </div>
+            </a>
+            <a href="solutions/payment-gateway/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(59,130,246,0.12)">
+                <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Payments">
+              </div>
+              <div>
+                <span class="mega-text-label">Payment Gateway</span>
+                <span class="mega-text-desc">Accept 100+ cryptocurrencies with instant settlement</span>
+              </div>
+            </a>
+            <a href="solutions/ai-trading/" class="mega-item">
+              <div class="mega-icon" style="background:rgba(167,139,250,0.12)">
+                <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="AI Trading">
+              </div>
+              <div>
+                <span class="mega-text-label">AI Trading</span>
+                <span class="mega-text-desc">ML price prediction, sentiment analysis &amp; smart order routing</span>
+              </div>
+            </a>
+          </div>
+          <div class="mega-menu-footer">
+            <a href="portfolio/">View all case studies ?</a>
+            <a href="contact/" class="mega-cta">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              Free Consultation
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="about/">About</a></li>
+      <li><a href="portfolio/">Portfolio</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="careers/">Careers</a></li>
+      <li><a href="contact/">Contact</a></li>
+    </ul>
+    <div class="nav-cta" id="navCta">
+      <a href="contact/" class="btn btn-accent btn-sm ripple-btn">Get a Free Quote</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" style="min-height:100vh;padding-top:0">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=1600">
+      <source src="https://cdn.coverr.co/videos/coverr-a-digital-globe-with-network-connections-1584/1080p.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-grid-line"></div>
+  <canvas id="particleCanvas"></canvas>
+  <div class="container" style="position:relative;z-index:3;width:100%">
+    <div class="hero-split">
+      <div class="hero-content" style="padding:120px 0 80px">
+        <div class="hero-badge anim-border">
+          <span class="hero-badge-dot"></span>
+          Trusted Digital Transformation Company
+        </div>
+        <h1 style="color:#fff">Your Business Deserves<br><span class="shimmer-text">More Revenue,</span><br>Not More Work</h1>
+        <p class="hero-desc">What's stopping your business from growing faster? We remove the friction, automate what slows you down, and help you scale at 10X speed —  effortlessly. From crypto exchanges to AI-powered trading bots, we engineer high-performance fintech products that last.</p>
+        <div class="hero-actions">
+          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Start Your Project</a>
+          <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
+        </div>
+        <div class="trusted-row">
+          <span class="trusted-label">Trusted by</span>
+          <div class="trusted-logos">
+            <span class="trusted-logo">Dreamster</span>
+            <span class="trusted-logo">Cryptinum</span>
+            <span class="trusted-logo">Apzor</span>
+            <span class="trusted-logo">MetaStation</span>
+            <span class="trusted-logo">MarginFX</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right" style="padding:120px 0 80px">
+        <div class="live-card tilt-card">
+          <div class="live-card-icon"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Exchange"></div>
+          <div><div class="live-card-label">Exchange Live</div><div class="live-card-val">$2.4M Volume</div><div class="live-card-sub">24h trading volume</div></div>
+          <div class="live-dot" style="margin-left:auto"></div>
+        </div>
+        <div class="live-card tilt-card">
+          <div class="live-card-icon"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Bot"></div>
+          <div><div class="live-card-label">Trading Bot Active</div><div class="live-card-val">+18.4% ROI</div><div class="live-card-sub">This month's return</div></div>
+          <div class="live-dot" style="margin-left:auto;background:#3b82f6"></div>
+        </div>
+        <div class="live-card tilt-card">
+          <div class="live-card-icon"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Neobank"></div>
+          <div><div class="live-card-label">Neobank Launched</div><div class="live-card-val">12,000 Users</div><div class="live-card-sub">Onboarded in 30 days</div></div>
+          <div class="live-dot" style="margin-left:auto;background:#a78bfa"></div>
+        </div>
+        <div class="live-card tilt-card">
+          <div class="live-card-icon"><img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Payment"></div>
+          <div><div class="live-card-label">Payment Gateway</div><div class="live-card-val">$890K Processed</div><div class="live-card-sub">Today's transactions</div></div>
+          <div class="live-dot" style="margin-left:auto;background:#f59e0b"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- Ticker -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">Crypto Exchange Development<span class="ticker-dot"></span></span>
+    <span class="ticker-item">DeFi Platforms<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Trading Bot Development<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Blockchain Solutions<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Neobank Apps<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Forex CRM<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Crypto Wallets<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Payment Gateways<span class="ticker-dot"></span></span>
+    <span class="ticker-item">AI Trading Systems<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Smart Contracts<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Crypto Exchange Development<span class="ticker-dot"></span></span>
+    <span class="ticker-item">DeFi Platforms<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Trading Bot Development<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Blockchain Solutions<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Neobank Apps<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Forex CRM<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Crypto Wallets<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Payment Gateways<span class="ticker-dot"></span></span>
+    <span class="ticker-item">AI Trading Systems<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Smart Contracts<span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="36" data-suffix="+">36+</div><p>Businesses Scaled Successfully</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="95" data-suffix="%">95%</div><p>Project Success Rate</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="20" data-suffix="+">20+</div><p>Growth-Focused Experts</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="25" data-suffix="+">25+</div><p>Countries Served</p></div>
+</div>
+
+<!-- About Strip -->
+<section class="section">
+  <div class="container">
+    <div class="about-strip">
+      <div class="about-img-stack reveal-left">
+        <img class="about-img-main" src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team">
+        <img class="about-img-accent" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PumaPulse Office">
+        <div class="about-badge anim-float">
+          <div class="big">98%</div>
+          <p>Client Retention Rate</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="eyebrow">Who We Are</span>
+        <h2>We Specialize in Creating Digital Experiences for a <span class="grad-text">Better Tomorrow</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:18px">PumaPulse is a team of dedicated technology enthusiasts, problem solvers, and inventors. We are faithful to building digital experiences that not only suit today's demands but also lay the groundwork for a brighter tomorrow.</p>
+        <p style="margin-bottom:18px">Our mission is to assist organizations of all sizes to innovate, evolve, and embrace the digital era. We prepare our clients for whatever the future brings by concentrating on smart, sustainable solutions.</p>
+        <p style="margin-bottom:32px">From crypto exchanges and trading bots to neobanks and DeFi protocols —  we turn complex ideas into powerful digital platforms that scale.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:0.88rem;color:var(--muted2)">Smarter Tech Solutions</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:0.88rem;color:var(--muted2)">Stronger Business Growth</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:0.88rem;color:var(--muted2)">Lasting Success Stories</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:0.88rem;color:var(--muted2)">Global Compliance Ready</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="about/" class="btn btn-accent btn-magnetic">Learn About Us</a>
+          <a href="portfolio/" class="btn btn-outline">View Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">What We Build</span>
+      <h2>End-to-End <span class="grad-text">Fintech Engineering</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We cover the full spectrum of blockchain and financial technology —  from ideation to deployment and beyond. Every solution is built with precision, security, and scale in mind.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Blockchain Development" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body"><h3>Blockchain Development</h3><p>Custom blockchain networks, smart contracts, DeFi protocols, and Web3 integrations. We build secure, audited, and production-ready blockchain infrastructure for enterprises and startups.</p><a href="services/blockchain/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Crypto Exchange" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body"><h3>Crypto Exchange Platforms</h3><p>Building scalable, secure, and user-friendly crypto exchange platforms —  CEX, DEX, P2P, hybrid, and white-label —  that enable businesses and traders to participate in the digital economy.</p><a href="services/crypto-exchange/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Trading Bots" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body"><h3>Trading Bot Development</h3><p>Creating intelligent, automated trading systems —  arbitrage, DCA, grid, sniper, and AI/ML bots —  to help businesses and individual traders optimize tactics, reduce risk, and increase earnings.</p><a href="services/trading-bots/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Fintech Banking" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body"><h3>Digital Banking &amp; Neobanking</h3><p>Making financial management simple, secure, and accessible with cutting-edge digital banking solutions. Full-stack neobank apps with accounts, cards, lending, savings, and investment features.</p><a href="services/fintech/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/5698696/pexels-photo-5698696.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Crypto Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body"><h3>Payment Solutions &amp; Wallets</h3><p>Developing seamless worldwide payment networks and secure digital wallets —  custodial, non-custodial, MPC, and DeFi —  that facilitate quick, efficient, and safe transactions globally.</p><a href="services/wallets/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Forex Trading" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body"><h3>Forex CRM &amp; Trading Solutions</h3><p>Comprehensive solutions for forex brokerages —  CRM, back-office, traders room, MT4/MT5 integration, and MAM/PAMM systems. Everything a modern broker needs to compete and grow.</p><a href="services/forex/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Our Core Values</span>
+      <h2>What Drives <span class="grad-text2">Everything We Do</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We don't just build software —  we build trust, relationships, and lasting success for every client we work with.</p>
+    </div>
+    <div class="values-icon-grid reveal-stagger">
+      <div class="value-icon-card">
+        <div class="value-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Trust First, Trust Always</h3>
+        <p>We believe trust isn't something you get —  it's something you earn. That's why we focus on honesty, reliability, and delivering real results. No hidden terms, no false promises —  just a strong partnership built for the long run.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Think Fresh, Build Smart</h3>
+        <p>We question, explore, and see things with fresh eyes. But when it's time to take action, we bring expert skills to the table. Real innovation comes from curiosity, not just following the usual way.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Take Responsibility. Make It Happen.</h3>
+        <p>We don't wait for things to change —  we make them happen. Taking responsibility isn't just what we do; it's our mindset. Every challenge is a chance to grow, and every action pushes us forward.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Empowering Global Change</h3>
+        <p>PumaPulse is dedicated to bringing about significant change in the financial industry. We lead responsibly, developing solutions that enable businesses, support entrepreneurs, and inspire economic growth worldwide.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Sustainability in Innovation</h3>
+        <p>Every project at PumaPulse incorporates sustainability. Whether we're creating hybrid crypto exchanges or clever trading bots, we help clients align their goals with environmental and social responsibility.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Transparency with Trust Built In</h3>
+        <p>We value transparency and accountability. By constantly refining our procedures and giving clear, transparent progress reports, we develop long-term trust with clients, entrepreneurs, and businesses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions Tabs -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Our Solutions</span>
+      <h2>Tailored for Every <span class="grad-text3">Vertical</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Deep expertise across every segment of the financial technology landscape —  from consumer fintech to institutional trading infrastructure.</p>
+    </div>
+    <div class="sol-tabs reveal">
+      <button class="sol-tab active" onclick="switchSol('exchange',this)">Exchange</button>
+      <button class="sol-tab" onclick="switchSol('trading',this)">Trading</button>
+      <button class="sol-tab" onclick="switchSol('payments',this)">Payments</button>
+      <button class="sol-tab" onclick="switchSol('banking',this)">Banking</button>
+      <button class="sol-tab" onclick="switchSol('forex',this)">Forex</button>
+    </div>
+    <div id="sol-exchange" class="sol-panel active">
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=500" alt="CEX" loading="lazy"></div><div class="sol-card-body"><h4>Centralized Exchange (CEX)</h4><p>High-performance order matching, KYC/AML, admin panel, and institutional-grade liquidity management.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=500" alt="DEX" loading="lazy"></div><div class="sol-card-body"><h4>Decentralized Exchange (DEX)</h4><p>AMM-based DEX with smart contract liquidity pools, yield farming, and governance token integration.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=500" alt="P2P" loading="lazy"></div><div class="sol-card-body"><h4>P2P Exchange</h4><p>Peer-to-peer trading with escrow, dispute resolution, reputation system, and 100+ payment methods.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770520/pexels-photo-6770520.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Hybrid" loading="lazy"></div><div class="sol-card-body"><h4>Hybrid Exchange</h4><p>Best of CEX and DEX —  centralized speed with decentralized custody and full transparency.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=500" alt="White Label" loading="lazy"></div><div class="sol-card-body"><h4>White-Label Exchange</h4><p>Launch your branded exchange in weeks with our fully customizable, battle-tested white-label platform.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Derivatives" loading="lazy"></div><div class="sol-card-body"><h4>Derivatives Exchange</h4><p>Futures, options, and perpetual contracts with advanced risk management engines and liquidation systems.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+    </div>
+    <div id="sol-trading" class="sol-panel">
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Algo" loading="lazy"></div><div class="sol-card-body"><h4>Algo Trading Software</h4><p>Rule-based and AI-driven algorithmic trading systems for crypto, forex, and equity markets.</p><a href="services/trading-bots/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/8185624/pexels-photo-8185624.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Arbitrage" loading="lazy"></div><div class="sol-card-body"><h4>Arbitrage Bots</h4><p>Cross-exchange and triangular arbitrage bots that capture price inefficiencies in milliseconds.</p><a href="services/trading-bots/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6777571/pexels-photo-6777571.jpeg?auto=compress&cs=tinysrgb&w=500" alt="DCA" loading="lazy"></div><div class="sol-card-body"><h4>DCA &amp; Grid Bots</h4><p>Dollar-cost averaging and grid trading bots with smart entry/exit logic and portfolio rebalancing.</p><a href="services/trading-bots/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+    </div>
+    <div id="sol-payments" class="sol-panel">
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Gateway" loading="lazy"></div><div class="sol-card-body"><h4>Crypto Payment Gateway</h4><p>Accept 100+ cryptocurrencies with instant settlement, fiat conversion, and zero chargebacks.</p><a href="solutions/payment-gateway/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770520/pexels-photo-6770520.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Ecommerce" loading="lazy"></div><div class="sol-card-body"><h4>E-Commerce Integration</h4><p>Plug-and-play crypto payments for Shopify, WooCommerce, Magento, and custom platforms.</p><a href="solutions/payment-gateway/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3943723/pexels-photo-3943723.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Cross Border" loading="lazy"></div><div class="sol-card-body"><h4>Cross-Border Payments</h4><p>Instant, low-cost international transfers powered by blockchain rails across 180+ countries.</p><a href="solutions/payment-gateway/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+    </div>
+    <div id="sol-banking" class="sol-panel">
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Neobank" loading="lazy"></div><div class="sol-card-body"><h4>Neobank Platform</h4><p>Full-stack digital banking with accounts, virtual cards, lending, savings, and investment features.</p><a href="solutions/neobank/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Digital Banking" loading="lazy"></div><div class="sol-card-body"><h4>Digital Banking App</h4><p>Mobile-first banking apps with biometric auth, real-time notifications, and open banking APIs.</p><a href="solutions/neobank/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Fintech" loading="lazy"></div><div class="sol-card-body"><h4>Fintech Software</h4><p>Compliance-ready fintech platforms with KYC, AML, and regulatory reporting built in from day one.</p><a href="services/fintech/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+    </div>
+    <div id="sol-forex" class="sol-panel">
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/9577254/pexels-photo-9577254.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Forex CRM" loading="lazy"></div><div class="sol-card-body"><h4>Forex CRM</h4><p>Complete broker CRM with IB management, lead tracking, KYC, and compliance tools.</p><a href="services/forex/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/9588213/pexels-photo-9588213.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Back Office" loading="lazy"></div><div class="sol-card-body"><h4>Back Office Software</h4><p>Automate operations, financial reporting, and client management for forex brokerages.</p><a href="services/forex/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=500" alt="MT4 MT5" loading="lazy"></div><div class="sol-card-body"><h4>MT4/MT5 Integration</h4><p>Seamless MetaTrader integration with custom plugins, liquidity bridges, and CRM connectors.</p><a href="services/forex/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>From Idea to <span class="grad-text">Launch in 4 Steps</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">A transparent, structured process that keeps you in control at every stage —  no surprises, no hidden costs, just results.</p>
+    </div>
+    <div class="process-row reveal-stagger">
+      <div class="process-step">
+        <div class="step-circle anim-glow">01</div>
+        <h4>Discovery &amp; Strategy</h4>
+        <p>We deep-dive into your goals, market, and technical requirements to craft a winning product strategy. We ask the hard questions so you don't have to.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">02</div>
+        <h4>Architecture &amp; Design</h4>
+        <p>System architecture, UI/UX wireframes, and technical specs —  all reviewed and approved by you before a single line of code is written.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">03</div>
+        <h4>Build &amp; Test</h4>
+        <p>Agile development with weekly demos, automated testing, security audits, and continuous integration throughout the entire build process.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">04</div>
+        <h4>Launch &amp; Scale</h4>
+        <p>Smooth deployment, performance monitoring, and ongoing support to help you grow post-launch. We're with you for the long run.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Preview -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Our Work</span>
+      <h2>Real Projects. <span class="grad-text2">Real Results.</span> Built for Growth.</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">At PumaPulse, we turn complex ideas into powerful digital platforms. Here's how we've helped startups, enterprises, and financial innovators launch, scale, and lead with confidence.</p>
+    </div>
+    <div class="portfolio-grid reveal-stagger">
+      <div class="portfolio-card">
+        <div class="portfolio-img">
+          <img src="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dreamster Exchange" loading="lazy">
+          <div class="portfolio-overlay"></div>
+          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-green">Crypto Exchange</span></div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Dreamster Exchange</h3>
+          <p>A Web3 digital asset trading platform focused on fast, accurate transactions with a clean, intuitive design enabling users to navigate advanced trading tools and access live market data.</p>
+          <div class="portfolio-quote">"They delivered a secure, easy-to-use platform with good communication and strong technical skills, plus gave useful suggestions throughout the project."</div>
+          <div class="portfolio-client">
+            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Mario Butler">
+            <div><div class="portfolio-client-name">Mario Butler</div><div class="portfolio-client-loc">Dubai, UAE</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-img">
+          <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MetaStation" loading="lazy">
+          <div class="portfolio-overlay"></div>
+          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-blue">Exchange Platform</span></div>
+        </div>
+        <div class="portfolio-body">
+          <h3>MetaStation</h3>
+          <p>A crypto exchange platform built with advanced features for traders —  strong performance, top security, and hack-proof architecture giving users full confidence while trading.</p>
+          <div class="portfolio-quote">"The attention to detail was outstanding and the quality of work exceeded expectations. Communication throughout the project was transparent and timely."</div>
+          <div class="portfolio-client">
+            <img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Chandravadan Raut">
+            <div><div class="portfolio-client-name">Chandravadan Raut</div><div class="portfolio-client-loc">India</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-img">
+          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MarginFX" loading="lazy">
+          <div class="portfolio-overlay"></div>
+          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-purple">Forex CRM</span></div>
+        </div>
+        <div class="portfolio-body">
+          <h3>MarginFX</h3>
+          <p>Custom Forex CRM software for a brokerage —  handling clients, managing trading data, KYC, IB tracking, and keeping everything in one unified, powerful platform.</p>
+          <div class="portfolio-quote">"From client registration to KYC and IB tracking, everything works well. The process was smooth, and we're fully satisfied with the outcome."</div>
+          <div class="portfolio-client">
+            <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Manoj Kumaran">
+            <div><div class="portfolio-client-name">Manoj Kumaran</div><div class="portfolio-client-loc">Malaysia</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:44px">
+      <a href="portfolio/" class="btn btn-outline btn-lg btn-magnetic">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Client Stories</span>
+      <h2>Trusted by <span class="grad-text">Builders Worldwide</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testi-grid reveal-stagger">
+      <div class="testi-card glow-card">
+        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+        <blockquote>"Big thanks to PumaPulse for handling our token project so well! Everything was fine from start to finish, and they delivered exactly as expected. We truly appreciate their effort and look forward to working with them again soon!"</blockquote>
+        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Steven Kim"></div><div><div class="testi-name">Steven Kim Wee</div><div class="testi-role">Founder, Cryptinum</div></div></div>
+      </div>
+      <div class="testi-card glow-card">
+        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+        <blockquote>"The team supported me throughout, suggested useful changes, delivered on time, and quickly fixed any issues. The whole process was well handled. I highly recommend their services for any fintech project."</blockquote>
+        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Kooban Naidoo"></div><div><div class="testi-name">Kooban Naidoo</div><div class="testi-role">CEO, Apzor</div></div></div>
+      </div>
+      <div class="testi-card glow-card">
+        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+        <blockquote>"I must commend the team on an exceptionally well executed delivery of our Cryptocurrency Exchange. I would not hesitate to recommend PumaPulse for any high-level fintech initiative."</blockquote>
+        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Chandravadan Raut"></div><div><div class="testi-name">Chandravadan Raut</div><div class="testi-role">Founder, MetaStation</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Built With <span class="grad-text3">Battle-Tested Tech</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We use the right tools for the job —  proven, scalable, and maintainable technologies that power the world's best fintech products.</p>
+    </div>
+    <div class="tech-grid reveal-stagger">
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span>Node.js</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React"><span>React</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"><span>Python</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/solidity/363636" alt="Solidity"><span>Solidity</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/rust/000000" alt="Rust"><span>Rust</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go"><span>Go</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span>PostgreSQL</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span>Redis</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span>Kafka</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span>Kubernetes</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span>AWS</span></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span>Docker</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently Asked <span class="grad-text">Questions</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does it take to build a crypto exchange?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a"><p>A white-label exchange can be launched in 4— 6 weeks. A fully custom CEX typically takes 3— 5 months depending on features. DEX and hybrid platforms vary based on smart contract complexity. We provide a detailed timeline after the discovery phase.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you provide post-launch support and maintenance?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a"><p>Yes. We offer flexible maintenance packages including 24/7 monitoring, bug fixes, security patches, feature updates, and dedicated support channels. Most clients stay with us long-term as their technology partner.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What blockchain networks do you develop on?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a"><p>We build on all major networks: Ethereum, Solana, BNB Chain, Polygon, Avalanche, Arbitrum, Optimism, zkSync, and more. We also develop custom private blockchains using Hyperledger Fabric and Quorum for enterprise clients.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do you handle security and compliance?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a"><p>Security is built into every layer —  from smart contract audits and penetration testing to KYC/AML integration and regulatory compliance. We support GDPR, MiCA, FinCEN, and 30+ other regulatory frameworks across global jurisdictions.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you sign NDAs before project discussions?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a"><p>Absolutely. We sign NDAs before any project discussion. Your ideas, business plans, and technical requirements are treated with complete confidentiality. We also offer fixed-price contracts so there are no surprises.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is your pricing model?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq-a"><p>We offer both fixed-price and time &amp; materials contracts depending on project scope. After a free discovery call, we provide a detailed proposal with clear milestones and payment schedules. No hidden fees, ever.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <span class="eyebrow" style="justify-content:center;display:flex;color:rgba(255,255,255,0.6)">Ready to Build?</span>
+        <h2>Your Goals Deserve Clarity.<br><span class="grad-text">We're Here to Help.</span></h2>
+        <p>Book a free 30-minute strategy call. No sales pitch —  just honest advice on how to build your product right. We'll help you find the right solution for your specific goals.</p>
+        <div class="cta-btns">
+          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Book Free Strategy Call</a>
+          <a href="portfolio/" class="btn btn-white btn-lg">View Our Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script>
+// FAQ toggle
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+// Solutions tabs
+function switchSol(id, btn) {
+  document.querySelectorAll('.sol-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sol-tab').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById('sol-' + id);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+// Ripple effect
+document.querySelectorAll('.ripple-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const circle = document.createElement('span');
+    circle.className = 'ripple-circle';
+    const r = btn.getBoundingClientRect();
+    const size = Math.max(r.width, r.height);
+    circle.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-r.left-size/2}px;top:${e.clientY-r.top-size/2}px`;
+    btn.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  });
+});
+</script>
+</body>
+</html>

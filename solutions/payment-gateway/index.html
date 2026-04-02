@@ -1,330 +1,329 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Payment Gateway Development —  PumaPulse</title>
-  <meta name="description" content="Build a crypto payment gateway that accepts 100+ cryptocurrencies with instant settlement, fiat conversion, and e-commerce integrations by PumaPulse.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .service-feature-list{display:flex;flex-direction:column;gap:16px}
-    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
-    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
-    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .sfeat-icon svg{width:20px;height:20px}
-    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
-    .sfeat p{font-size:0.86rem}
-    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
-    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .use-case h4{font-size:0.95rem;margin-bottom:8px}
-    .use-case p{font-size:0.84rem}
-    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Crypto Payment Gateway"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>Payment Gateway</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Payment Solutions</span>
-      <h1>Crypto Payment Gateway <span class="grad-text">Built for Business</span></h1>
-      <p>PumaPulse builds non-custodial crypto payment gateways that let businesses accept 100+ cryptocurrencies with instant settlement, zero chargebacks, and global reach across 180+ countries.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get a Free Quote</a>
-        <a href="#features" class="btn btn-ghost btn-lg">Explore Features</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="100" data-suffix="+">100+</div><p>Cryptocurrencies Supported</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="180" data-suffix="+">180+</div><p>Countries Covered</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="0" data-suffix=" Chargebacks">0</div><p>Chargeback Risk</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="99.9" data-suffix="%" data-decimals="1">99.9%</div><p>Uptime SLA</p></div>
-</div>
-
-<!-- Core Features -->
-<section class="section" id="features">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Gateway Features</span>
-      <h2>Everything You Need to <span class="grad-text">Accept Crypto</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">A complete payment infrastructure that handles everything from invoice generation to settlement —  so you can focus on your business, not the plumbing.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=700" alt="100+ Cryptocurrencies" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>100+ Cryptocurrencies</h3>
-          <p>Accept Bitcoin, Ethereum, USDT, USDC, BNB, SOL, and 100+ other tokens across all major networks. Automatic coin detection, real-time exchange rate calculation, and optional auto-conversion to stablecoins or fiat. Supports ERC-20, BEP-20, SPL tokens, and native coins across 15+ blockchain networks.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
-            <span class="tag-pill tag-green" style="font-size:0.68rem"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" style="width:10px;height:10px;display:inline;vertical-align:middle;margin-right:3px">BTC</span>
-            <span class="tag-pill tag-blue" style="font-size:0.68rem"><img src="https://cdn.simpleicons.org/ethereum/627EEA" style="width:10px;height:10px;display:inline;vertical-align:middle;margin-right:3px">ETH</span>
-            <span class="tag-pill tag-green" style="font-size:0.68rem">USDT</span>
-            <span class="tag-pill tag-purple" style="font-size:0.68rem">100+ more</span>
-          </div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Instant Settlement" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Instant Settlement</h3>
-          <p>Payments settle directly to your wallet in real time —  no waiting periods, no intermediaries, and zero risk of chargebacks or payment reversals. HD wallet derivation generates a unique deposit address per transaction for full privacy and auditability. Optional auto-sweep to cold storage for large merchants.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Real-time</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Non-custodial</span><span class="tag-pill tag-purple" style="font-size:0.68rem">HD Wallets</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=700" alt="E-Commerce Plugins" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>E-Commerce Plugins</h3>
-          <p>Ready-made plugins for WooCommerce, Shopify, Magento, PrestaShop, and OpenCart —  installable in minutes with no coding required. Plus a clean REST API and webhook system for custom integrations in any tech stack. Includes hosted payment pages, embeddable checkout widgets, and QR code generation.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">WooCommerce</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Shopify</span><span class="tag-pill tag-purple" style="font-size:0.68rem">REST API</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Non-Custodial" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Non-Custodial Architecture</h3>
-          <p>We never hold your funds. Every payment goes directly to your wallet using BIP-32/44 HD wallet derivation. Full control, zero counterparty risk, and complete auditability. Supports multi-sig treasury management for enterprises, hardware wallet integration, and automated cold storage sweeping policies.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">BIP-32/44</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Multi-sig</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Cold Storage</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Analytics Dashboard" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Analytics Dashboard</h3>
-          <p>Real-time payment analytics with revenue charts, conversion funnels, currency breakdowns, and exportable reports for accounting and tax purposes. Includes webhook logs, transaction history with blockchain explorer links, refund management, and automated reconciliation reports for your finance team.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Real-time</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Tax Reports</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Reconciliation</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/1098745/pexels-photo-1098745.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Global Coverage" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Global Coverage</h3>
-          <p>Accept payments from customers in 180+ countries with no geographic restrictions, no currency conversion fees, and no blocked regions. Multi-language checkout pages, automatic timezone handling, and compliance with local regulations. Supports cross-border B2B payments with instant settlement and full audit trails.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">180+ Countries</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Multi-language</span><span class="tag-pill tag-purple" style="font-size:0.68rem">B2B Payments</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Supported Networks with chain logos -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Supported Networks</span>
-      <h2>Accept Payments on <span class="grad-text2">Every Major Chain</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Our gateway supports all major blockchain networks —  customers can pay with their preferred cryptocurrency on their preferred chain.</p>
-    </div>
-    <div class="chains-grid reveal-stagger">
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(247,147,26,0.12)"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"></div>
-        <h4>Bitcoin</h4>
-        <p>Native BTC payments with Lightning Network support for instant micro-transactions and near-zero fees.</p>
-      </div>
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(98,126,234,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div>
-        <h4>Ethereum</h4>
-        <p>ETH and all ERC-20 tokens including USDT, USDC, DAI, LINK, and thousands of other tokens.</p>
-      </div>
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(243,186,47,0.12)"><img src="https://cdn.simpleicons.org/binance/F3BA2F" alt="BNB Chain"></div>
-        <h4>BNB Chain</h4>
-        <p>BNB and BEP-20 tokens with ultra-low fees —  ideal for high-volume merchants and micropayments.</p>
-      </div>
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(20,241,149,0.12)"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana"></div>
-        <h4>Solana</h4>
-        <p>SOL and SPL tokens with sub-second finality and fees under $0.001 —  perfect for gaming and retail.</p>
-      </div>
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(130,71,229,0.12)"><img src="https://cdn.simpleicons.org/polygon/8247E5" alt="Polygon"></div>
-        <h4>Polygon</h4>
-        <p>MATIC and Polygon ERC-20 tokens with Ethereum compatibility and dramatically lower gas costs.</p>
-      </div>
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(38,161,123,0.12)"><img src="https://cdn.simpleicons.org/tether/26A17B" alt="USDT/USDC"></div>
-        <h4>Stablecoins</h4>
-        <p>USDT, USDC, DAI, BUSD across all supported chains —  eliminate volatility risk for your business.</p>
-      </div>
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(40,160,240,0.12)"><img src="https://cdn.simpleicons.org/arbitrum/28A0F0" alt="Arbitrum"></div>
-        <h4>Arbitrum</h4>
-        <p>ETH and ERC-20 tokens on Arbitrum L2 —  Ethereum security with 10x lower fees.</p>
-      </div>
-      <div class="chain-card">
-        <div class="chain-logo" style="background:rgba(232,65,66,0.12)"><img src="https://cdn.simpleicons.org/avalanche/E84142" alt="Avalanche"></div>
-        <h4>Avalanche</h4>
-        <p>AVAX and Avalanche C-Chain tokens with sub-second finality and EVM compatibility.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Integration & Why Us -->
-<section class="section">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Developer Experience</span>
-        <h2>Integrate in <span class="grad-text">Minutes, Not Months</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Our gateway is designed for developers first. Clean REST APIs, comprehensive documentation, sandbox environment, and SDKs for all major languages mean you can go from zero to accepting crypto payments in a single afternoon.</p>
-        <div class="service-feature-list">
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-            <div><h4>REST API &amp; Webhooks</h4><p>Clean, versioned REST API with real-time webhooks for payment events, confirmations, underpayments, and refunds. Full OpenAPI spec included.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-            <div><h4>SDKs for Every Language</h4><p>Official SDKs for JavaScript/TypeScript, Python, PHP, Ruby, Go, and Java —  with code examples for every use case and framework.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-            <div><h4>Sandbox Environment</h4><p>Full-featured test environment with simulated blockchain confirmations, test tokens, and webhook testing tools —  test every scenario before going live.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div><h4>Dedicated Developer Support</h4><p>Integration support via Slack, comprehensive documentation, video tutorials, and a community forum. Average response time under 2 hours.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="split-img">
-          <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Payment Gateway Integration">
-          <div class="split-badge"><div class="num">180+</div><p>Countries supported</p></div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px">
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">100+</div>
-            <p style="font-size:0.82rem;margin-top:6px">Cryptocurrencies</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0%</div>
-            <p style="font-size:0.82rem;margin-top:6px">Chargeback Risk</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">&lt;1s</div>
-            <p style="font-size:0.82rem;margin-top:6px">Settlement Time</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">99.9%</div>
-            <p style="font-size:0.82rem;margin-top:6px">Uptime SLA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Use Cases -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Use Cases</span>
-      <h2>Industries We <span class="grad-text3">Power</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="use-case-grid reveal-stagger">
-      <div class="use-case"><h4>E-Commerce &amp; Retail</h4><p>Accept crypto at checkout alongside traditional payment methods. Reduce payment processing fees from 2-3% to near zero and eliminate chargebacks entirely.</p></div>
-      <div class="use-case"><h4>SaaS &amp; Subscriptions</h4><p>Recurring crypto billing with automatic renewal, failed payment handling, and dunning management. Support for monthly, annual, and usage-based billing models.</p></div>
-      <div class="use-case"><h4>Gaming &amp; NFTs</h4><p>In-game purchases, NFT minting fees, and marketplace transactions with instant settlement and support for micro-transactions under $0.01.</p></div>
-      <div class="use-case"><h4>Travel &amp; Hospitality</h4><p>Accept crypto for hotel bookings, flights, and experiences. Instant confirmation, no currency conversion risk, and global customer reach.</p></div>
-      <div class="use-case"><h4>Freelance &amp; Services</h4><p>Invoice clients in crypto with automatic payment tracking, partial payment support, and multi-currency invoicing with fiat equivalent display.</p></div>
-      <div class="use-case"><h4>Cross-Border B2B</h4><p>Eliminate SWIFT fees and 3-5 day settlement times. Pay international suppliers instantly with full audit trails and automated reconciliation.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text">Payment Gateway Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Battle-tested infrastructure processing millions of crypto transactions daily —  built for reliability, security, and global scale.</p>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Blockchain Connectivity</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ethers.js">
-          <div><span class="tname">ethers.js + Web3.js</span><span class="tdesc">EVM chain interaction —  HD wallet derivation, transaction monitoring, gas estimation, and ERC-20 token support</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin">
-          <div><span class="tname">Bitcoin Core + Lightning</span><span class="tdesc">Native BTC payments with Lightning Network support for instant micro-transactions and near-zero fees</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana"><span class="tname">@solana/web3.js</span><span class="tdesc">SOL & SPL tokens</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/binance/F3BA2F" alt="BNB"><span class="tname">BNB Chain SDK</span><span class="tdesc">BEP-20 tokens</span></div>
-      </div>
-      <div class="tech-category-label">Backend & APIs</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js">
-          <div><span class="tname">Node.js + Go</span><span class="tdesc">High-throughput payment processing microservices —  invoice generation, webhook delivery, and settlement engine</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL">
-          <div><span class="tname">PostgreSQL + Redis</span><span class="tdesc">ACID-compliant transaction ledger with Redis for real-time payment status and idempotency key management</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Payment event streaming</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/graphql/E10098" alt="REST"><span class="tname">REST + WebSocket</span><span class="tdesc">API & real-time updates</span></div>
-      </div>
-      <div class="tech-category-label">Infrastructure & Compliance</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">99.9% uptime SLA</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span class="tname">AWS Multi-Region</span><span class="tdesc">Global low-latency</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/terraform/7B42BC" alt="Terraform"><span class="tname">Terraform</span><span class="tdesc">Infrastructure as code</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"><span class="tname">Prometheus</span><span class="tdesc">Metrics & alerting</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana"><span class="tname">Grafana</span><span class="tdesc">Payment dashboards</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span class="tname">Docker</span><span class="tdesc">Containerized services</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Accept <span class="grad-text">Crypto Payments?</span></h2>
-        <p>Join hundreds of businesses using PumaPulse payment infrastructure to accept crypto from customers worldwide —  with zero chargebacks and instant settlement.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/theme.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Payment Gateway Development —  PumaPulse</title>
+  <meta name="description" content="Build a crypto payment gateway that accepts 100+ cryptocurrencies with instant settlement, fiat conversion, and e-commerce integrations by PumaPulse.">
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <style>
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .sfeat-icon svg{width:20px;height:20px}
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+    .sfeat p{font-size:0.86rem}
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+    .use-case p{font-size:0.84rem}
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Crypto Payment Gateway"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>Payment Gateway</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Payment Solutions</span>
+      <h1>Crypto Payment Gateway <span class="grad-text">Built for Business</span></h1>
+      <p>PumaPulse builds non-custodial crypto payment gateways that let businesses accept 100+ cryptocurrencies with instant settlement, zero chargebacks, and global reach across 180+ countries.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get a Free Quote</a>
+        <a href="#features" class="btn btn-ghost btn-lg">Explore Features</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="100" data-suffix="+">100+</div><p>Cryptocurrencies Supported</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="180" data-suffix="+">180+</div><p>Countries Covered</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="0" data-suffix=" Chargebacks">0</div><p>Chargeback Risk</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="99.9" data-suffix="%" data-decimals="1">99.9%</div><p>Uptime SLA</p></div>
+</div>
+
+<!-- Core Features -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Gateway Features</span>
+      <h2>Everything You Need to <span class="grad-text">Accept Crypto</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">A complete payment infrastructure that handles everything from invoice generation to settlement —  so you can focus on your business, not the plumbing.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=700" alt="100+ Cryptocurrencies" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>100+ Cryptocurrencies</h3>
+          <p>Accept Bitcoin, Ethereum, USDT, USDC, BNB, SOL, and 100+ other tokens across all major networks. Automatic coin detection, real-time exchange rate calculation, and optional auto-conversion to stablecoins or fiat. Supports ERC-20, BEP-20, SPL tokens, and native coins across 15+ blockchain networks.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+            <span class="tag-pill tag-green" style="font-size:0.68rem"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" style="width:10px;height:10px;display:inline;vertical-align:middle;margin-right:3px">BTC</span>
+            <span class="tag-pill tag-blue" style="font-size:0.68rem"><img src="https://cdn.simpleicons.org/ethereum/627EEA" style="width:10px;height:10px;display:inline;vertical-align:middle;margin-right:3px">ETH</span>
+            <span class="tag-pill tag-green" style="font-size:0.68rem">USDT</span>
+            <span class="tag-pill tag-purple" style="font-size:0.68rem">100+ more</span>
+          </div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Instant Settlement" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Instant Settlement</h3>
+          <p>Payments settle directly to your wallet in real time —  no waiting periods, no intermediaries, and zero risk of chargebacks or payment reversals. HD wallet derivation generates a unique deposit address per transaction for full privacy and auditability. Optional auto-sweep to cold storage for large merchants.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Real-time</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Non-custodial</span><span class="tag-pill tag-purple" style="font-size:0.68rem">HD Wallets</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=700" alt="E-Commerce Plugins" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>E-Commerce Plugins</h3>
+          <p>Ready-made plugins for WooCommerce, Shopify, Magento, PrestaShop, and OpenCart —  installable in minutes with no coding required. Plus a clean REST API and webhook system for custom integrations in any tech stack. Includes hosted payment pages, embeddable checkout widgets, and QR code generation.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">WooCommerce</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Shopify</span><span class="tag-pill tag-purple" style="font-size:0.68rem">REST API</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Non-Custodial" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Non-Custodial Architecture</h3>
+          <p>We never hold your funds. Every payment goes directly to your wallet using BIP-32/44 HD wallet derivation. Full control, zero counterparty risk, and complete auditability. Supports multi-sig treasury management for enterprises, hardware wallet integration, and automated cold storage sweeping policies.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">BIP-32/44</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Multi-sig</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Cold Storage</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Analytics Dashboard" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Analytics Dashboard</h3>
+          <p>Real-time payment analytics with revenue charts, conversion funnels, currency breakdowns, and exportable reports for accounting and tax purposes. Includes webhook logs, transaction history with blockchain explorer links, refund management, and automated reconciliation reports for your finance team.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Real-time</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Tax Reports</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Reconciliation</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/1098745/pexels-photo-1098745.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Global Coverage" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Global Coverage</h3>
+          <p>Accept payments from customers in 180+ countries with no geographic restrictions, no currency conversion fees, and no blocked regions. Multi-language checkout pages, automatic timezone handling, and compliance with local regulations. Supports cross-border B2B payments with instant settlement and full audit trails.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">180+ Countries</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Multi-language</span><span class="tag-pill tag-purple" style="font-size:0.68rem">B2B Payments</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Supported Networks with chain logos -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Supported Networks</span>
+      <h2>Accept Payments on <span class="grad-text2">Every Major Chain</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Our gateway supports all major blockchain networks —  customers can pay with their preferred cryptocurrency on their preferred chain.</p>
+    </div>
+    <div class="chains-grid reveal-stagger">
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(247,147,26,0.12)"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"></div>
+        <h4>Bitcoin</h4>
+        <p>Native BTC payments with Lightning Network support for instant micro-transactions and near-zero fees.</p>
+      </div>
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(98,126,234,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div>
+        <h4>Ethereum</h4>
+        <p>ETH and all ERC-20 tokens including USDT, USDC, DAI, LINK, and thousands of other tokens.</p>
+      </div>
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(243,186,47,0.12)"><img src="https://cdn.simpleicons.org/binance/F3BA2F" alt="BNB Chain"></div>
+        <h4>BNB Chain</h4>
+        <p>BNB and BEP-20 tokens with ultra-low fees —  ideal for high-volume merchants and micropayments.</p>
+      </div>
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(20,241,149,0.12)"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana"></div>
+        <h4>Solana</h4>
+        <p>SOL and SPL tokens with sub-second finality and fees under $0.001 —  perfect for gaming and retail.</p>
+      </div>
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(130,71,229,0.12)"><img src="https://cdn.simpleicons.org/polygon/8247E5" alt="Polygon"></div>
+        <h4>Polygon</h4>
+        <p>MATIC and Polygon ERC-20 tokens with Ethereum compatibility and dramatically lower gas costs.</p>
+      </div>
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(38,161,123,0.12)"><img src="https://cdn.simpleicons.org/tether/26A17B" alt="USDT/USDC"></div>
+        <h4>Stablecoins</h4>
+        <p>USDT, USDC, DAI, BUSD across all supported chains —  eliminate volatility risk for your business.</p>
+      </div>
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(40,160,240,0.12)"><svg viewBox="0 0 24 24" fill="none" style="width:32px;height:32px"><circle cx="12" cy="12" r="10" fill="#28A0F0"/><path d="M8 16l2.5-4.5L13 16M11 13.5l1.5-2.5 1.5 2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Arbitrum</h4>
+        <p>ETH and ERC-20 tokens on Arbitrum L2 —  Ethereum security with 10x lower fees.</p>
+      </div>
+      <div class="chain-card">
+        <div class="chain-logo" style="background:rgba(232,65,66,0.12)"><svg viewBox="0 0 24 24" fill="#E84142" style="width:32px;height:32px"><path d="M9.17 15.5H6.33a.5.5 0 01-.43-.75l5.67-9.83a.5.5 0 01.86 0l5.67 9.83a.5.5 0 01-.43.75h-2.84l-2.46-4.26-2.46 4.26z"/></svg></div>
+        <h4>Avalanche</h4>
+        <p>AVAX and Avalanche C-Chain tokens with sub-second finality and EVM compatibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integration & Why Us -->
+<section class="section">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Developer Experience</span>
+        <h2>Integrate in <span class="grad-text">Minutes, Not Months</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">Our gateway is designed for developers first. Clean REST APIs, comprehensive documentation, sandbox environment, and SDKs for all major languages mean you can go from zero to accepting crypto payments in a single afternoon.</p>
+        <div class="service-feature-list">
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <div><h4>REST API &amp; Webhooks</h4><p>Clean, versioned REST API with real-time webhooks for payment events, confirmations, underpayments, and refunds. Full OpenAPI spec included.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div><h4>SDKs for Every Language</h4><p>Official SDKs for JavaScript/TypeScript, Python, PHP, Ruby, Go, and Java —  with code examples for every use case and framework.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div><h4>Sandbox Environment</h4><p>Full-featured test environment with simulated blockchain confirmations, test tokens, and webhook testing tools —  test every scenario before going live.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div><h4>Dedicated Developer Support</h4><p>Integration support via Slack, comprehensive documentation, video tutorials, and a community forum. Average response time under 2 hours.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="split-img">
+          <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Payment Gateway Integration">
+          <div class="split-badge"><div class="num">180+</div><p>Countries supported</p></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">100+</div>
+            <p style="font-size:0.82rem;margin-top:6px">Cryptocurrencies</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0%</div>
+            <p style="font-size:0.82rem;margin-top:6px">Chargeback Risk</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">&lt;1s</div>
+            <p style="font-size:0.82rem;margin-top:6px">Settlement Time</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">99.9%</div>
+            <p style="font-size:0.82rem;margin-top:6px">Uptime SLA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Use Cases</span>
+      <h2>Industries We <span class="grad-text3">Power</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="use-case-grid reveal-stagger">
+      <div class="use-case"><h4>E-Commerce &amp; Retail</h4><p>Accept crypto at checkout alongside traditional payment methods. Reduce payment processing fees from 2-3% to near zero and eliminate chargebacks entirely.</p></div>
+      <div class="use-case"><h4>SaaS &amp; Subscriptions</h4><p>Recurring crypto billing with automatic renewal, failed payment handling, and dunning management. Support for monthly, annual, and usage-based billing models.</p></div>
+      <div class="use-case"><h4>Gaming &amp; NFTs</h4><p>In-game purchases, NFT minting fees, and marketplace transactions with instant settlement and support for micro-transactions under $0.01.</p></div>
+      <div class="use-case"><h4>Travel &amp; Hospitality</h4><p>Accept crypto for hotel bookings, flights, and experiences. Instant confirmation, no currency conversion risk, and global customer reach.</p></div>
+      <div class="use-case"><h4>Freelance &amp; Services</h4><p>Invoice clients in crypto with automatic payment tracking, partial payment support, and multi-currency invoicing with fiat equivalent display.</p></div>
+      <div class="use-case"><h4>Cross-Border B2B</h4><p>Eliminate SWIFT fees and 3-5 day settlement times. Pay international suppliers instantly with full audit trails and automated reconciliation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Our <span class="grad-text">Payment Gateway Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Battle-tested infrastructure processing millions of crypto transactions daily —  built for reliability, security, and global scale.</p>
+    </div>
+    <div class="tech-showcase reveal-stagger">
+      <div class="tech-category-label">Blockchain Connectivity</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ethers.js">
+          <div><span class="tname">ethers.js + Web3.js</span><span class="tdesc">EVM chain interaction —  HD wallet derivation, transaction monitoring, gas estimation, and ERC-20 token support</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin">
+          <div><span class="tname">Bitcoin Core + Lightning</span><span class="tdesc">Native BTC payments with Lightning Network support for instant micro-transactions and near-zero fees</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana"><span class="tname">@solana/web3.js</span><span class="tdesc">SOL & SPL tokens</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/binance/F3BA2F" alt="BNB"><span class="tname">BNB Chain SDK</span><span class="tdesc">BEP-20 tokens</span></div>
+      </div>
+      <div class="tech-category-label">Backend & APIs</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js">
+          <div><span class="tname">Node.js + Go</span><span class="tdesc">High-throughput payment processing microservices —  invoice generation, webhook delivery, and settlement engine</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL">
+          <div><span class="tname">PostgreSQL + Redis</span><span class="tdesc">ACID-compliant transaction ledger with Redis for real-time payment status and idempotency key management</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Payment event streaming</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/graphql/E10098" alt="REST"><span class="tname">REST + WebSocket</span><span class="tdesc">API & real-time updates</span></div>
+      </div>
+      <div class="tech-category-label">Infrastructure & Compliance</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">99.9% uptime SLA</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span class="tname">AWS Multi-Region</span><span class="tdesc">Global low-latency</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/terraform/7B42BC" alt="Terraform"><span class="tname">Terraform</span><span class="tdesc">Infrastructure as code</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"><span class="tname">Prometheus</span><span class="tdesc">Metrics & alerting</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana"><span class="tname">Grafana</span><span class="tdesc">Payment dashboards</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span class="tname">Docker</span><span class="tdesc">Containerized services</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Accept <span class="grad-text">Crypto Payments?</span></h2>
+        <p>Join hundreds of businesses using PumaPulse payment infrastructure to accept crypto from customers worldwide —  with zero chargebacks and instant settlement.</p>
+        <div class="cta-btns">
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/nav.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/animations.js"></script>
+</body>
+</html>
+

@@ -1,337 +1,336 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trading Solutions —  PumaPulse</title>
-  <meta name="description" content="AI-powered trading systems by PumaPulse. ML price prediction, sentiment analysis, smart order routing, risk management AI, anomaly detection, and backtesting engines.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .service-feature-list{display:flex;flex-direction:column;gap:16px}
-    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
-    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
-    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .sfeat-icon svg{width:20px;height:20px}
-    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
-    .sfeat p{font-size:0.86rem}
-    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
-    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .use-case h4{font-size:0.95rem;margin-bottom:8px}
-    .use-case p{font-size:0.84rem}
-    .perf-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:all 0.3s}
-    .perf-card:hover{border-color:var(--border2)}
-    .perf-roi{font-size:1.6rem;font-weight:800;line-height:1;flex-shrink:0}
-    .perf-label{font-size:0.78rem;color:var(--muted);margin-top:3px}
-    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="AI Trading Solutions"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>AI Trading</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">AI Trading</span>
-      <h1>AI Trading Systems That <span class="grad-text">Find the Edge</span></h1>
-      <p>PumaPulse builds machine learning trading systems that process market data, on-chain signals, and sentiment feeds to generate consistent alpha in any market regime —  24/7, without emotion.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get a Free Quote</a>
-        <a href="#capabilities" class="btn btn-ghost btn-lg">Explore Capabilities</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>ML Models Deployed</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="34" data-suffix="% Avg ROI">34%</div><p>Average Annual ROI</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="10" data-suffix="ms">&lt;10ms</div><p>Execution Latency</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Exchanges Connected</p></div>
-</div>
-
-<!-- AI Capabilities -->
-<section class="section" id="capabilities">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">AI Capabilities</span>
-      <h2>Machine Intelligence at Every Layer of <span class="grad-text">Your Trading Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Our AI trading systems combine multiple intelligence layers —  from price prediction to risk management —  into a unified, adaptive trading engine that learns and improves over time.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577236/pexels-photo-9577236.jpeg?auto=compress&cs=tinysrgb&w=700" alt="ML Price Prediction" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>ML Price Prediction</h3>
-          <p>LSTM, Transformer, and ensemble models trained on multi-timeframe OHLCV data, order book depth, funding rates, and on-chain metrics (whale movements, exchange flows, miner activity). Models are retrained weekly on fresh data and validated with walk-forward optimization to prevent overfitting. Achieves 58-65% directional accuracy on major pairs.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">LSTM</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Transformer</span><span class="tag-pill tag-purple" style="font-size:0.68rem">On-chain Data</span><span class="tag-pill tag-green" style="font-size:0.68rem">Walk-forward</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577240/pexels-photo-9577240.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sentiment Analysis" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Sentiment Analysis Engine</h3>
-          <p>Fine-tuned NLP models (FinBERT, custom LLMs) that process Twitter/X, Reddit, Telegram, Discord, and news feeds in real time to generate sentiment scores and detect narrative shifts before they move markets. Includes influencer tracking, whale wallet monitoring, and social volume anomaly detection with configurable alert thresholds.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">FinBERT</span><span class="tag-pill tag-blue" style="font-size:0.68rem">LLM</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Social Data</span><span class="tag-pill tag-green" style="font-size:0.68rem">Real-time</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577243/pexels-photo-9577243.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Smart Order Routing" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Smart Order Routing</h3>
-          <p>AI-powered order routing that splits large orders across venues to minimize market impact, slippage, and execution costs in real time. Uses reinforcement learning to continuously optimize routing decisions based on historical execution quality. Supports TWAP, VWAP, and adaptive execution algorithms with real-time market microstructure analysis.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">RL Agent</span><span class="tag-pill tag-blue" style="font-size:0.68rem">TWAP/VWAP</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-venue</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577253/pexels-photo-9577253.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Risk Management AI" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Risk Management AI</h3>
-          <p>Dynamic position sizing using Kelly Criterion and volatility-adjusted models. Portfolio-level VaR calculation, correlation-aware risk limits, and automated drawdown controls that adapt to changing volatility regimes. Includes stress testing against historical black swan events, Monte Carlo simulation, and real-time margin monitoring with automated deleveraging.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Kelly Criterion</span><span class="tag-pill tag-blue" style="font-size:0.68rem">VaR</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Monte Carlo</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577250/pexels-photo-9577250.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Anomaly Detection" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Anomaly Detection</h3>
-          <p>Unsupervised learning models (Isolation Forest, Autoencoders) that detect unusual market microstructure, wash trading, spoofing, layering, and flash crash precursors before they impact your positions. Monitors order book imbalances, trade-to-volume ratios, and cross-exchange price divergences with sub-second alerting and automated position protection.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Isolation Forest</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Autoencoder</span><span class="tag-pill tag-purple" style="font-size:0.68rem">MEV Detection</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577254/pexels-photo-9577254.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Backtesting Engine" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>High-Fidelity Backtesting Engine</h3>
-          <p>Event-driven backtesting with tick-level data, realistic slippage modeling based on order book depth, transaction cost analysis, and walk-forward optimization. Supports multi-asset portfolio backtesting, parameter sensitivity analysis, and regime-based strategy evaluation. Includes a visual strategy builder and automated report generation with Sharpe, Sortino, Calmar ratios.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Tick-level</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Walk-forward</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-asset</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Live Performance -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Live Performance</span>
-        <h2>Bots That <span class="grad-text2">Deliver Real Results</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Our AI systems are backtested across 5+ years of market data and live-tested in real market conditions before deployment. Here's a snapshot of recent live performance across deployed systems.</p>
-        <div style="display:flex;flex-direction:column;gap:14px">
-          <div class="perf-card">
-            <div>
-              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">ETH/USDT Arbitrage Bot</div>
-              <div style="font-size:0.82rem;color:var(--muted)">Cross-exchange arbitrage —  Binance, Kraken, Coinbase</div>
-              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 247 days · 0 downtime</div>
-            </div>
-            <div style="text-align:right">
-              <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+34.2%</div>
-              <div class="perf-label">Annual ROI</div>
-            </div>
-          </div>
-          <div class="perf-card">
-            <div>
-              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">BTC DCA Accumulation Bot</div>
-              <div style="font-size:0.82rem;color:var(--muted)">Weekly DCA with RSI + Fear/Greed dynamic sizing</div>
-              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 180 days · 12.4% better than static DCA</div>
-            </div>
-            <div style="text-align:right">
-              <div class="perf-roi" style="background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+61.8%</div>
-              <div class="perf-label">vs Buy &amp; Hold</div>
-            </div>
-          </div>
-          <div class="perf-card">
-            <div>
-              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">SOL/USDC Grid Bot</div>
-              <div style="font-size:0.82rem;color:var(--muted)">Tight grid on Solana DEX with auto-rebalancing</div>
-              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 89 days · 0 missed rebalances</div>
-            </div>
-            <div style="text-align:right">
-              <div class="perf-roi" style="background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+22.5%</div>
-              <div class="perf-label">Monthly yield</div>
-            </div>
-          </div>
-          <div class="perf-card">
-            <div>
-              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">Multi-Asset ML Portfolio</div>
-              <div style="font-size:0.82rem;color:var(--muted)">LSTM ensemble across BTC, ETH, SOL, BNB</div>
-              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 365 days · Sharpe ratio 2.4</div>
-            </div>
-            <div style="text-align:right">
-              <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+48.7%</div>
-              <div class="perf-label">Annual ROI</div>
-            </div>
-          </div>
-        </div>
-        <p style="font-size:0.75rem;color:var(--muted);margin-top:16px">Past performance does not guarantee future results. All figures are net of fees.</p>
-      </div>
-      <div class="reveal-right">
-        <div class="split-img">
-          <img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=900" alt="AI Trading Performance">
-          <div class="split-badge"><div class="num">50+</div><p>ML models deployed</p></div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px">
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">34%</div>
-            <p style="font-size:0.82rem;margin-top:6px">Avg Annual ROI</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">2.4</div>
-            <p style="font-size:0.82rem;margin-top:6px">Avg Sharpe Ratio</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">&lt;10ms</div>
-            <p style="font-size:0.82rem;margin-top:6px">Execution Latency</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">24/7</div>
-            <p style="font-size:0.82rem;margin-top:6px">Automated Trading</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Process -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Process</span>
-      <h2>From Data to <span class="grad-text">Deployed Alpha</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We follow a rigorous research-to-production pipeline that ensures every AI model is thoroughly validated before it trades real capital.</p>
-    </div>
-    <div class="process-row reveal-stagger">
-      <div class="process-step">
-        <div class="step-circle anim-glow">01</div>
-        <h4>Data Pipeline Engineering</h4>
-        <p>Clean, normalized tick data from 50+ exchanges with on-chain data feeds, alternative data sources, and real-time streaming infrastructure via Kafka.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">02</div>
-        <h4>Quantitative Research</h4>
-        <p>Hypothesis-driven alpha research with rigorous statistical testing, overfitting prevention via cross-validation, and out-of-sample validation on held-out data.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">03</div>
-        <h4>Paper Trading Validation</h4>
-        <p>Every strategy runs in paper trading mode for 30+ days before live deployment to validate real-world performance matches backtests under live market conditions.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">04</div>
-        <h4>Live Monitoring &amp; Iteration</h4>
-        <p>Real-time dashboards tracking PnL, Sharpe ratio, drawdown, and model drift —  with automated alerts, kill switches, and continuous model retraining.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Use Cases -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Use Cases</span>
-      <h2>Who We Build <span class="grad-text3">AI Trading For</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="use-case-grid reveal-stagger">
-      <div class="use-case"><h4>Hedge Funds &amp; Family Offices</h4><p>Institutional-grade AI systems with full audit trails, risk reporting, and compliance documentation. Supports AUM from $1M to $1B+.</p></div>
-      <div class="use-case"><h4>Crypto Exchanges</h4><p>Market making bots, liquidity provision algorithms, and fee optimization systems that improve exchange depth and reduce spread.</p></div>
-      <div class="use-case"><h4>Proprietary Trading Firms</h4><p>High-frequency and medium-frequency strategies with co-location support, ultra-low latency execution, and custom alpha research pipelines.</p></div>
-      <div class="use-case"><h4>DeFi Protocols</h4><p>Automated liquidity management, yield optimization, and rebalancing bots for DeFi treasuries and liquidity pools.</p></div>
-      <div class="use-case"><h4>Individual Traders</h4><p>Custom strategy automation, portfolio management bots, and signal-following systems for experienced retail traders.</p></div>
-      <div class="use-case"><h4>Fintech Startups</h4><p>AI-powered robo-advisory, automated portfolio rebalancing, and algorithmic investment products for consumer fintech apps.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text">AI Trading Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">The same ML infrastructure used by top quant funds —  from data ingestion to model deployment and live execution.</p>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Machine Learning & AI</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow">
-          <div><span class="tname">TensorFlow / PyTorch</span><span class="tdesc">LSTM, Transformer, and CNN models for price prediction, regime classification, and portfolio optimization</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn">
-          <div><span class="tname">scikit-learn + XGBoost</span><span class="tdesc">Feature engineering, gradient boosting, and ensemble methods for robust signal generation across market regimes</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face"><span class="tname">Hugging Face</span><span class="tdesc">FinBERT sentiment NLP</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Ray"><span class="tname">Ray + MLflow</span><span class="tdesc">Distributed training</span></div>
-      </div>
-      <div class="tech-category-label">Data & Execution</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
-          <div><span class="tname">Python + Rust</span><span class="tdesc">Python for strategy research and ML; Rust for ultra-low latency execution engine with sub-10ms order routing</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="Spark">
-          <div><span class="tname">Apache Spark</span><span class="tdesc">Distributed backtesting across 5+ years of tick data —  parallel strategy evaluation and parameter optimization</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="CCXT"><span class="tname">CCXT</span><span class="tdesc">50+ exchange APIs</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/influxdb/22ADF6" alt="InfluxDB"><span class="tname">TimescaleDB / InfluxDB</span><span class="tdesc">Time-series market data</span></div>
-      </div>
-      <div class="tech-category-label">Infrastructure & Monitoring</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Real-time market feeds</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Order state & signals</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Bot orchestration</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="CUDA"><span class="tname">NVIDIA CUDA</span><span class="tdesc">GPU model training</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana"><span class="tname">Grafana</span><span class="tdesc">P&L dashboards</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"><span class="tname">Prometheus</span><span class="tdesc">Bot health alerts</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Trade with <span class="grad-text">AI?</span></h2>
-        <p>Our quant researchers and ML engineers will build a custom AI trading system tailored to your strategy, risk tolerance, and target markets. No off-the-shelf solutions —  everything is built for your specific edge.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/theme.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trading Solutions —  PumaPulse</title>
+  <meta name="description" content="AI-powered trading systems by PumaPulse. ML price prediction, sentiment analysis, smart order routing, risk management AI, anomaly detection, and backtesting engines.">
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <style>
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .sfeat-icon svg{width:20px;height:20px}
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+    .sfeat p{font-size:0.86rem}
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+    .use-case p{font-size:0.84rem}
+    .perf-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:all 0.3s}
+    .perf-card:hover{border-color:var(--border2)}
+    .perf-roi{font-size:1.6rem;font-weight:800;line-height:1;flex-shrink:0}
+    .perf-label{font-size:0.78rem;color:var(--muted);margin-top:3px}
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="AI Trading Solutions"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>AI Trading</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">AI Trading</span>
+      <h1>AI Trading Systems That <span class="grad-text">Find the Edge</span></h1>
+      <p>PumaPulse builds machine learning trading systems that process market data, on-chain signals, and sentiment feeds to generate consistent alpha in any market regime —  24/7, without emotion.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get a Free Quote</a>
+        <a href="#capabilities" class="btn btn-ghost btn-lg">Explore Capabilities</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>ML Models Deployed</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="34" data-suffix="% Avg ROI">34%</div><p>Average Annual ROI</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="10" data-suffix="ms">&lt;10ms</div><p>Execution Latency</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Exchanges Connected</p></div>
+</div>
+
+<!-- AI Capabilities -->
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">AI Capabilities</span>
+      <h2>Machine Intelligence at Every Layer of <span class="grad-text">Your Trading Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Our AI trading systems combine multiple intelligence layers —  from price prediction to risk management —  into a unified, adaptive trading engine that learns and improves over time.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/9577236/pexels-photo-9577236.jpeg?auto=compress&cs=tinysrgb&w=700" alt="ML Price Prediction" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>ML Price Prediction</h3>
+          <p>LSTM, Transformer, and ensemble models trained on multi-timeframe OHLCV data, order book depth, funding rates, and on-chain metrics (whale movements, exchange flows, miner activity). Models are retrained weekly on fresh data and validated with walk-forward optimization to prevent overfitting. Achieves 58-65% directional accuracy on major pairs.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">LSTM</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Transformer</span><span class="tag-pill tag-purple" style="font-size:0.68rem">On-chain Data</span><span class="tag-pill tag-green" style="font-size:0.68rem">Walk-forward</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/9577240/pexels-photo-9577240.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sentiment Analysis" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Sentiment Analysis Engine</h3>
+          <p>Fine-tuned NLP models (FinBERT, custom LLMs) that process Twitter/X, Reddit, Telegram, Discord, and news feeds in real time to generate sentiment scores and detect narrative shifts before they move markets. Includes influencer tracking, whale wallet monitoring, and social volume anomaly detection with configurable alert thresholds.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">FinBERT</span><span class="tag-pill tag-blue" style="font-size:0.68rem">LLM</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Social Data</span><span class="tag-pill tag-green" style="font-size:0.68rem">Real-time</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/9577243/pexels-photo-9577243.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Smart Order Routing" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Smart Order Routing</h3>
+          <p>AI-powered order routing that splits large orders across venues to minimize market impact, slippage, and execution costs in real time. Uses reinforcement learning to continuously optimize routing decisions based on historical execution quality. Supports TWAP, VWAP, and adaptive execution algorithms with real-time market microstructure analysis.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">RL Agent</span><span class="tag-pill tag-blue" style="font-size:0.68rem">TWAP/VWAP</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-venue</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/9577253/pexels-photo-9577253.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Risk Management AI" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Risk Management AI</h3>
+          <p>Dynamic position sizing using Kelly Criterion and volatility-adjusted models. Portfolio-level VaR calculation, correlation-aware risk limits, and automated drawdown controls that adapt to changing volatility regimes. Includes stress testing against historical black swan events, Monte Carlo simulation, and real-time margin monitoring with automated deleveraging.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Kelly Criterion</span><span class="tag-pill tag-blue" style="font-size:0.68rem">VaR</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Monte Carlo</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/9577250/pexels-photo-9577250.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Anomaly Detection" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Anomaly Detection</h3>
+          <p>Unsupervised learning models (Isolation Forest, Autoencoders) that detect unusual market microstructure, wash trading, spoofing, layering, and flash crash precursors before they impact your positions. Monitors order book imbalances, trade-to-volume ratios, and cross-exchange price divergences with sub-second alerting and automated position protection.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Isolation Forest</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Autoencoder</span><span class="tag-pill tag-purple" style="font-size:0.68rem">MEV Detection</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/9577254/pexels-photo-9577254.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Backtesting Engine" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>High-Fidelity Backtesting Engine</h3>
+          <p>Event-driven backtesting with tick-level data, realistic slippage modeling based on order book depth, transaction cost analysis, and walk-forward optimization. Supports multi-asset portfolio backtesting, parameter sensitivity analysis, and regime-based strategy evaluation. Includes a visual strategy builder and automated report generation with Sharpe, Sortino, Calmar ratios.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Tick-level</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Walk-forward</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-asset</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Live Performance -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Live Performance</span>
+        <h2>Bots That <span class="grad-text2">Deliver Real Results</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">Our AI systems are backtested across 5+ years of market data and live-tested in real market conditions before deployment. Here's a snapshot of recent live performance across deployed systems.</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="perf-card">
+            <div>
+              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">ETH/USDT Arbitrage Bot</div>
+              <div style="font-size:0.82rem;color:var(--muted)">Cross-exchange arbitrage —  Binance, Kraken, Coinbase</div>
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 247 days · 0 downtime</div>
+            </div>
+            <div style="text-align:right">
+              <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+34.2%</div>
+              <div class="perf-label">Annual ROI</div>
+            </div>
+          </div>
+          <div class="perf-card">
+            <div>
+              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">BTC DCA Accumulation Bot</div>
+              <div style="font-size:0.82rem;color:var(--muted)">Weekly DCA with RSI + Fear/Greed dynamic sizing</div>
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 180 days · 12.4% better than static DCA</div>
+            </div>
+            <div style="text-align:right">
+              <div class="perf-roi" style="background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+61.8%</div>
+              <div class="perf-label">vs Buy &amp; Hold</div>
+            </div>
+          </div>
+          <div class="perf-card">
+            <div>
+              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">SOL/USDC Grid Bot</div>
+              <div style="font-size:0.82rem;color:var(--muted)">Tight grid on Solana DEX with auto-rebalancing</div>
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 89 days · 0 missed rebalances</div>
+            </div>
+            <div style="text-align:right">
+              <div class="perf-roi" style="background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+22.5%</div>
+              <div class="perf-label">Monthly yield</div>
+            </div>
+          </div>
+          <div class="perf-card">
+            <div>
+              <div style="font-weight:600;font-size:0.95rem;color:var(--text);margin-bottom:4px">Multi-Asset ML Portfolio</div>
+              <div style="font-size:0.82rem;color:var(--muted)">LSTM ensemble across BTC, ETH, SOL, BNB</div>
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Running 365 days · Sharpe ratio 2.4</div>
+            </div>
+            <div style="text-align:right">
+              <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+48.7%</div>
+              <div class="perf-label">Annual ROI</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--muted);margin-top:16px">Past performance does not guarantee future results. All figures are net of fees.</p>
+      </div>
+      <div class="reveal-right">
+        <div class="split-img">
+          <img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=900" alt="AI Trading Performance">
+          <div class="split-badge"><div class="num">50+</div><p>ML models deployed</p></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">34%</div>
+            <p style="font-size:0.82rem;margin-top:6px">Avg Annual ROI</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">2.4</div>
+            <p style="font-size:0.82rem;margin-top:6px">Avg Sharpe Ratio</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">&lt;10ms</div>
+            <p style="font-size:0.82rem;margin-top:6px">Execution Latency</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">24/7</div>
+            <p style="font-size:0.82rem;margin-top:6px">Automated Trading</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Process -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Our Process</span>
+      <h2>From Data to <span class="grad-text">Deployed Alpha</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We follow a rigorous research-to-production pipeline that ensures every AI model is thoroughly validated before it trades real capital.</p>
+    </div>
+    <div class="process-row reveal-stagger">
+      <div class="process-step">
+        <div class="step-circle anim-glow">01</div>
+        <h4>Data Pipeline Engineering</h4>
+        <p>Clean, normalized tick data from 50+ exchanges with on-chain data feeds, alternative data sources, and real-time streaming infrastructure via Kafka.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">02</div>
+        <h4>Quantitative Research</h4>
+        <p>Hypothesis-driven alpha research with rigorous statistical testing, overfitting prevention via cross-validation, and out-of-sample validation on held-out data.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">03</div>
+        <h4>Paper Trading Validation</h4>
+        <p>Every strategy runs in paper trading mode for 30+ days before live deployment to validate real-world performance matches backtests under live market conditions.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">04</div>
+        <h4>Live Monitoring &amp; Iteration</h4>
+        <p>Real-time dashboards tracking PnL, Sharpe ratio, drawdown, and model drift —  with automated alerts, kill switches, and continuous model retraining.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Use Cases</span>
+      <h2>Who We Build <span class="grad-text3">AI Trading For</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="use-case-grid reveal-stagger">
+      <div class="use-case"><h4>Hedge Funds &amp; Family Offices</h4><p>Institutional-grade AI systems with full audit trails, risk reporting, and compliance documentation. Supports AUM from $1M to $1B+.</p></div>
+      <div class="use-case"><h4>Crypto Exchanges</h4><p>Market making bots, liquidity provision algorithms, and fee optimization systems that improve exchange depth and reduce spread.</p></div>
+      <div class="use-case"><h4>Proprietary Trading Firms</h4><p>High-frequency and medium-frequency strategies with co-location support, ultra-low latency execution, and custom alpha research pipelines.</p></div>
+      <div class="use-case"><h4>DeFi Protocols</h4><p>Automated liquidity management, yield optimization, and rebalancing bots for DeFi treasuries and liquidity pools.</p></div>
+      <div class="use-case"><h4>Individual Traders</h4><p>Custom strategy automation, portfolio management bots, and signal-following systems for experienced retail traders.</p></div>
+      <div class="use-case"><h4>Fintech Startups</h4><p>AI-powered robo-advisory, automated portfolio rebalancing, and algorithmic investment products for consumer fintech apps.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Our <span class="grad-text">AI Trading Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">The same ML infrastructure used by top quant funds —  from data ingestion to model deployment and live execution.</p>
+    </div>
+    <div class="tech-showcase reveal-stagger">
+      <div class="tech-category-label">Machine Learning & AI</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow">
+          <div><span class="tname">TensorFlow / PyTorch</span><span class="tdesc">LSTM, Transformer, and CNN models for price prediction, regime classification, and portfolio optimization</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn">
+          <div><span class="tname">scikit-learn + XGBoost</span><span class="tdesc">Feature engineering, gradient boosting, and ensemble methods for robust signal generation across market regimes</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face"><span class="tname">Hugging Face</span><span class="tdesc">FinBERT sentiment NLP</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Ray"><span class="tname">Ray + MLflow</span><span class="tdesc">Distributed training</span></div>
+      </div>
+      <div class="tech-category-label">Data & Execution</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+          <div><span class="tname">Python + Rust</span><span class="tdesc">Python for strategy research and ML; Rust for ultra-low latency execution engine with sub-10ms order routing</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="Spark">
+          <div><span class="tname">Apache Spark</span><span class="tdesc">Distributed backtesting across 5+ years of tick data —  parallel strategy evaluation and parameter optimization</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="CCXT"><span class="tname">CCXT</span><span class="tdesc">50+ exchange APIs</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/influxdb/22ADF6" alt="InfluxDB"><span class="tname">TimescaleDB / InfluxDB</span><span class="tdesc">Time-series market data</span></div>
+      </div>
+      <div class="tech-category-label">Infrastructure & Monitoring</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Real-time market feeds</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Order state & signals</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Bot orchestration</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nvidia/76B900" alt="CUDA"><span class="tname">NVIDIA CUDA</span><span class="tdesc">GPU model training</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana"><span class="tname">Grafana</span><span class="tdesc">P&L dashboards</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"><span class="tname">Prometheus</span><span class="tdesc">Bot health alerts</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Trade with <span class="grad-text">AI?</span></h2>
+        <p>Our quant researchers and ML engineers will build a custom AI trading system tailored to your strategy, risk tolerance, and target markets. No off-the-shelf solutions —  everything is built for your specific edge.</p>
+        <div class="cta-btns">
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/nav.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/animations.js"></script>
+</body>
+</html>

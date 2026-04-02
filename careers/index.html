@@ -1,221 +1,220 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Careers at PumaPulse —  Join Our Team</title>
-  <meta name="description" content="Join PumaPulse and help build the financial infrastructure of tomorrow. We're hiring blockchain engineers, fintech developers, and product designers.">
-  <link rel="icon" href="../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/theme.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <style>
-    .culture-video{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9}
-    .culture-video video{width:100%;height:100%;object-fit:cover}
-    .culture-video-overlay{position:absolute;inset:0;background:rgba(8,12,24,0.3);display:flex;align-items:center;justify-content:center;transition:opacity 0.3s}
-    .play-btn{width:76px;height:76px;border-radius:50%;background:rgba(16,185,129,0.12);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;backdrop-filter:blur(10px)}
-    .play-btn:hover{background:var(--accent);transform:scale(1.08)}
-    .play-btn svg{width:26px;height:26px;fill:var(--accent);margin-left:4px;transition:fill 0.3s}
-    .play-btn:hover svg{fill:#000}
-    .culture-video.playing .culture-video-overlay{opacity:0;pointer-events:none}
-    .apply-form{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px}
-    .upload-area{border:2px dashed var(--border);border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:all 0.3s}
-    .upload-area:hover{border-color:var(--accent);background:var(--ad)}
-    .upload-area p{font-size:0.86rem;margin-top:6px;color:var(--muted2)}
-    .upload-area span{font-size:0.76rem;color:var(--muted)}
-    .step-badge{width:22px;height:22px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:var(--accent);flex-shrink:0}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1800&q=90&q=90" alt="PumaPulse Team"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="index/">Home</a><span>/</span><span>Careers</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6);">Join Our Team</span>
-      <h1>Build the Future of<br><span class="grad-text">Finance With Us</span></h1>
-      <p>We're a team of engineers, designers, and strategists obsessed with building world-class fintech products. If you love hard problems and high standards, you'll fit right in.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="#open-roles" class="btn btn-accent btn-lg">View Open Roles</a>
-        <a href="#culture" class="btn btn-ghost btn-lg">Our Culture</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Culture -->
-<section class="section" id="culture">
-  <div class="container">
-    <div class="split">
-      <div class="reveal-left">
-        <span class="eyebrow">Life at PumaPulse</span>
-        <h2>Where Great Work <span class="grad-text">Gets Done</span></h2>
-        <p style="margin-bottom:28px;">We're a remote-first team spread across 18 countries, united by a shared obsession with building exceptional financial technology. We move fast, think deeply, and take care of each other.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:13px;">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=120&q=80" alt="Remote" style="width:50px;height:50px;border-radius:11px;object-fit:cover;">
-            <div><h4 style="margin-bottom:3px;font-size:0.95rem;">Remote-First Culture</h4><p style="font-size:0.84rem;">Work from anywhere. We care about output, not office hours.</p></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:13px;">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=120&q=80" alt="Growth" style="width:50px;height:50px;border-radius:11px;object-fit:cover;">
-            <div><h4 style="margin-bottom:3px;font-size:0.95rem;">Rapid Career Growth</h4><p style="font-size:0.84rem;">Clear progression paths, mentorship, and real ownership from day one.</p></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:13px;">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=120&q=80" alt="Impact" style="width:50px;height:50px;border-radius:11px;object-fit:cover;">
-            <div><h4 style="margin-bottom:3px;font-size:0.95rem;">Real Impact</h4><p style="font-size:0.84rem;">Your work ships to millions of users. No bureaucracy, no busywork.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="culture-video" id="cultureVideo">
-          <video id="cultureVid" loop poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=85">
-            <source src="https://cdn.coverr.co/videos/coverr-a-team-of-people-working-in-an-office-3249/1080p.mp4" type="video/mp4">
-          </video>
-          <div class="culture-video-overlay" id="videoOverlay">
-            <div class="play-btn" id="playBtn">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Perks -->
-<section class="section" style="background:var(--bg2);">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Benefits &amp; Perks</span>
-      <h2>We Take Care of <span class="grad-text2">Our People</span></h2>
-      <p class="section-desc">Competitive compensation, great benefits, and a culture that actually lives its values.</p>
-    </div>
-    <div class="perks-grid reveal-stagger">
-      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=85" alt="Remote Work" loading="lazy"></div><div class="perk-body"><h4>Remote-First</h4><p>Work from anywhere in the world. We provide a $1,500 home office setup budget.</p></div></div>
-      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&q=85" alt="Compensation" loading="lazy"></div><div class="perk-body"><h4>Top-Tier Compensation</h4><p>Competitive salaries benchmarked to top-10% of market, plus equity and performance bonuses.</p></div></div>
-      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=85" alt="Health" loading="lazy"></div><div class="perk-body"><h4>Health &amp; Wellness</h4><p>Full medical, dental, and vision coverage. $100/month wellness stipend for gym, therapy, or whatever keeps you healthy.</p></div></div>
-      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=85" alt="Learning" loading="lazy"></div><div class="perk-body"><h4>Learning Budget</h4><p>$2,000/year for courses, conferences, books, and certifications. We invest in your growth.</p></div></div>
-      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=85" alt="Vacation" loading="lazy"></div><div class="perk-body"><h4>Unlimited PTO</h4><p>Take the time you need to recharge. We trust you to manage your time and deliver great work.</p></div></div>
-      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=85" alt="Team Retreats" loading="lazy"></div><div class="perk-body"><h4>Annual Team Retreats</h4><p>We fly the whole team to an amazing destination once a year to connect, collaborate, and celebrate.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Life Photos -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal" style="margin-bottom:44px;">
-      <span class="eyebrow">Our World</span>
-      <h2>A Glimpse of <span class="grad-text">Life at PumaPulse</span></h2>
-    </div>
-    <div class="life-grid reveal-stagger">
-      <div class="life-img tall"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=85" alt="Team collaboration" loading="lazy"></div>
-      <div class="life-img"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=85" alt="Team meeting" loading="lazy"></div>
-      <div class="life-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=85" alt="Workshop" loading="lazy"></div>
-      <div class="life-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=85" alt="Team retreat" loading="lazy"></div>
-      <div class="life-img"><img src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Remote work" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Open Roles -->
-<section class="section" style="background:var(--bg2);" id="open-roles">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Open Positions</span>
-      <h2>Find Your <span class="grad-text3">Perfect Role</span></h2>
-      <p class="section-desc">We're growing fast and always looking for exceptional people. Don't see your role? Send us an open application.</p>
-    </div>
-    <div class="jobs-list reveal">
-      <div class="dept-label">Engineering</div>
-      <div class="job-card"><div class="job-info"><h4>Senior Blockchain Engineer</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="job-card"><div class="job-info"><h4>Smart Contract Developer (Solidity / Rust)</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="job-card"><div class="job-info"><h4>Backend Engineer —  Trading Systems (Go / Rust)</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="job-card"><div class="job-info"><h4>Full-Stack Engineer (React / Node.js)</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="job-card"><div class="job-info"><h4>DevOps / Infrastructure Engineer</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="dept-label">Product &amp; Design</div>
-      <div class="job-card"><div class="job-info"><h4>Senior Product Designer (Fintech / Web3)</h4><div class="job-tags"><span class="jtag jtag-dept">Design</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="job-card"><div class="job-info"><h4>Product Manager —  Exchange Platforms</h4><div class="job-tags"><span class="jtag jtag-dept">Product</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="dept-label">Business &amp; Growth</div>
-      <div class="job-card"><div class="job-info"><h4>Business Development Manager —  APAC</h4><div class="job-tags"><span class="jtag jtag-dept">Business</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote / Singapore</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-      <div class="job-card"><div class="job-info"><h4>Technical Content Writer (Blockchain / DeFi)</h4><div class="job-tags"><span class="jtag jtag-dept">Marketing</span><span class="jtag jtag-type">Contract</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- Apply -->
-<section class="section" id="apply">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Apply Now</span>
-        <h2>Take the <span class="grad-text">First Step</span></h2>
-        <p style="margin-bottom:28px;">Send us your application and we'll get back to you within 3 business days. We review every application personally —  no automated rejections.</p>
-        
-          
-        </div>
-        <div style="padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;">
-          <h4 style="margin-bottom:14px;font-size:0.95rem;">Our Hiring Process</h4>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">1</span>Application review (1 - 3 days)</div>
-            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">2</span>30-min intro call</div>
-            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">3</span>Technical assessment (paid)</div>
-            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">4</span>Team interview &amp; offer</div>
-          </div>
-        </div>
-      </div>
-      <div class="apply-form reveal-right">
-        <h3 style="margin-bottom:7px;">Submit Your Application</h3>
-        <p style="margin-bottom:28px;font-size:0.87rem;">Don't see the right role? Apply anyway —  we hire for talent, not just open positions.</p>
-        <form>
-          <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
-            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
-          </div>
-          <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@example.com"></div>
-          <div class="form-group"><label>LinkedIn Profile</label><input type="url" placeholder="https://linkedin.com/in/..."></div>
-          <div class="form-group">
-            <label>Role You're Applying For</label>
-            <select>
-              <option value="">Select a role...</option>
-              <option>Senior Blockchain Engineer</option>
-              <option>Smart Contract Developer</option>
-              <option>Backend Engineer —  Trading Systems</option>
-              <option>Full-Stack Engineer</option>
-              <option>DevOps / Infrastructure Engineer</option>
-              <option>Senior Product Designer</option>
-              <option>Product Manager</option>
-              <option>Business Development Manager</option>
-              <option>Technical Content Writer</option>
-              <option>Open Application</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Why PumaPulse?</label><textarea placeholder="Tell us why you want to join PumaPulse and what you'd bring to the team..."></textarea></div>
-          <div class="form-group">
-            <label>Resume / CV</label>
-            <div class="upload-area" onclick="document.getElementById('resumeFile').click()">
-              <p style="color:var(--text);font-weight:600;margin:0;">Click to upload your resume</p>
-              <span>PDF, DOC, or DOCX —  max 5MB</span>
-              <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" style="display:none;" onchange="this.previousElementSibling.previousElementSibling.textContent = this.files[0]?.name || 'Click to upload your resume'">
-            </div>
-          </div>
-          <button type="submit" class="btn btn-accent" style="width:100%;justify-content:center;">Submit Application</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../js/nav.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers at PumaPulse —  Join Our Team</title>
+  <meta name="description" content="Join PumaPulse and help build the financial infrastructure of tomorrow. We're hiring blockchain engineers, fintech developers, and product designers.">
+  <link rel="icon" href="../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <style>
+    .culture-video{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9}
+    .culture-video video{width:100%;height:100%;object-fit:cover}
+    .culture-video-overlay{position:absolute;inset:0;background:rgba(8,12,24,0.3);display:flex;align-items:center;justify-content:center;transition:opacity 0.3s}
+    .play-btn{width:76px;height:76px;border-radius:50%;background:rgba(16,185,129,0.12);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;backdrop-filter:blur(10px)}
+    .play-btn:hover{background:var(--accent);transform:scale(1.08)}
+    .play-btn svg{width:26px;height:26px;fill:var(--accent);margin-left:4px;transition:fill 0.3s}
+    .play-btn:hover svg{fill:#000}
+    .culture-video.playing .culture-video-overlay{opacity:0;pointer-events:none}
+    .apply-form{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px}
+    .upload-area{border:2px dashed var(--border);border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:all 0.3s}
+    .upload-area:hover{border-color:var(--accent);background:var(--ad)}
+    .upload-area p{font-size:0.86rem;margin-top:6px;color:var(--muted2)}
+    .upload-area span{font-size:0.76rem;color:var(--muted)}
+    .step-badge{width:22px;height:22px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:var(--accent);flex-shrink:0}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1800&q=90&q=90" alt="PumaPulse Team"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index/">Home</a><span>/</span><span>Careers</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6);">Join Our Team</span>
+      <h1>Build the Future of<br><span class="grad-text">Finance With Us</span></h1>
+      <p>We're a team of engineers, designers, and strategists obsessed with building world-class fintech products. If you love hard problems and high standards, you'll fit right in.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="#open-roles" class="btn btn-accent btn-lg">View Open Roles</a>
+        <a href="#culture" class="btn btn-ghost btn-lg">Our Culture</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Culture -->
+<section class="section" id="culture">
+  <div class="container">
+    <div class="split">
+      <div class="reveal-left">
+        <span class="eyebrow">Life at PumaPulse</span>
+        <h2>Where Great Work <span class="grad-text">Gets Done</span></h2>
+        <p style="margin-bottom:28px;">We're a remote-first team spread across 18 countries, united by a shared obsession with building exceptional financial technology. We move fast, think deeply, and take care of each other.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:13px;">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=120&q=80" alt="Remote" style="width:50px;height:50px;border-radius:11px;object-fit:cover;">
+            <div><h4 style="margin-bottom:3px;font-size:0.95rem;">Remote-First Culture</h4><p style="font-size:0.84rem;">Work from anywhere. We care about output, not office hours.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:13px;">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=120&q=80" alt="Growth" style="width:50px;height:50px;border-radius:11px;object-fit:cover;">
+            <div><h4 style="margin-bottom:3px;font-size:0.95rem;">Rapid Career Growth</h4><p style="font-size:0.84rem;">Clear progression paths, mentorship, and real ownership from day one.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:13px;">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=120&q=80" alt="Impact" style="width:50px;height:50px;border-radius:11px;object-fit:cover;">
+            <div><h4 style="margin-bottom:3px;font-size:0.95rem;">Real Impact</h4><p style="font-size:0.84rem;">Your work ships to millions of users. No bureaucracy, no busywork.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="culture-video" id="cultureVideo">
+          <video id="cultureVid" loop poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=85">
+            <source src="https://cdn.coverr.co/videos/coverr-a-team-of-people-working-in-an-office-3249/1080p.mp4" type="video/mp4">
+          </video>
+          <div class="culture-video-overlay" id="videoOverlay">
+            <div class="play-btn" id="playBtn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Perks -->
+<section class="section" style="background:var(--bg2);">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Benefits &amp; Perks</span>
+      <h2>We Take Care of <span class="grad-text2">Our People</span></h2>
+      <p class="section-desc">Competitive compensation, great benefits, and a culture that actually lives its values.</p>
+    </div>
+    <div class="perks-grid reveal-stagger">
+      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=85" alt="Remote Work" loading="lazy"></div><div class="perk-body"><h4>Remote-First</h4><p>Work from anywhere in the world. We provide a $1,500 home office setup budget.</p></div></div>
+      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&q=85" alt="Compensation" loading="lazy"></div><div class="perk-body"><h4>Top-Tier Compensation</h4><p>Competitive salaries benchmarked to top-10% of market, plus equity and performance bonuses.</p></div></div>
+      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=85" alt="Health" loading="lazy"></div><div class="perk-body"><h4>Health &amp; Wellness</h4><p>Full medical, dental, and vision coverage. $100/month wellness stipend for gym, therapy, or whatever keeps you healthy.</p></div></div>
+      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=85" alt="Learning" loading="lazy"></div><div class="perk-body"><h4>Learning Budget</h4><p>$2,000/year for courses, conferences, books, and certifications. We invest in your growth.</p></div></div>
+      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=85" alt="Vacation" loading="lazy"></div><div class="perk-body"><h4>Unlimited PTO</h4><p>Take the time you need to recharge. We trust you to manage your time and deliver great work.</p></div></div>
+      <div class="perk-card"><div class="perk-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=85" alt="Team Retreats" loading="lazy"></div><div class="perk-body"><h4>Annual Team Retreats</h4><p>We fly the whole team to an amazing destination once a year to connect, collaborate, and celebrate.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Life Photos -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:44px;">
+      <span class="eyebrow">Our World</span>
+      <h2>A Glimpse of <span class="grad-text">Life at PumaPulse</span></h2>
+    </div>
+    <div class="life-grid reveal-stagger">
+      <div class="life-img tall"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=85" alt="Team collaboration" loading="lazy"></div>
+      <div class="life-img"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=85" alt="Team meeting" loading="lazy"></div>
+      <div class="life-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=85" alt="Workshop" loading="lazy"></div>
+      <div class="life-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=85" alt="Team retreat" loading="lazy"></div>
+      <div class="life-img"><img src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Remote work" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Open Roles -->
+<section class="section" style="background:var(--bg2);" id="open-roles">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Open Positions</span>
+      <h2>Find Your <span class="grad-text3">Perfect Role</span></h2>
+      <p class="section-desc">We're growing fast and always looking for exceptional people. Don't see your role? Send us an open application.</p>
+    </div>
+    <div class="jobs-list reveal">
+      <div class="dept-label">Engineering</div>
+      <div class="job-card"><div class="job-info"><h4>Senior Blockchain Engineer</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="job-card"><div class="job-info"><h4>Smart Contract Developer (Solidity / Rust)</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="job-card"><div class="job-info"><h4>Backend Engineer —  Trading Systems (Go / Rust)</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="job-card"><div class="job-info"><h4>Full-Stack Engineer (React / Node.js)</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="job-card"><div class="job-info"><h4>DevOps / Infrastructure Engineer</h4><div class="job-tags"><span class="jtag jtag-dept">Engineering</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="dept-label">Product &amp; Design</div>
+      <div class="job-card"><div class="job-info"><h4>Senior Product Designer (Fintech / Web3)</h4><div class="job-tags"><span class="jtag jtag-dept">Design</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="job-card"><div class="job-info"><h4>Product Manager —  Exchange Platforms</h4><div class="job-tags"><span class="jtag jtag-dept">Product</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="dept-label">Business &amp; Growth</div>
+      <div class="job-card"><div class="job-info"><h4>Business Development Manager —  APAC</h4><div class="job-tags"><span class="jtag jtag-dept">Business</span><span class="jtag jtag-type">Full-time</span><span class="jtag jtag-loc">Remote / Singapore</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="job-card"><div class="job-info"><h4>Technical Content Writer (Blockchain / DeFi)</h4><div class="job-tags"><span class="jtag jtag-dept">Marketing</span><span class="jtag jtag-type">Contract</span><span class="jtag jtag-loc">Remote</span></div></div><a href="#apply" class="btn btn-outline btn-sm">Apply Now</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Apply -->
+<section class="section" id="apply">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Apply Now</span>
+        <h2>Take the <span class="grad-text">First Step</span></h2>
+        <p style="margin-bottom:28px;">Send us your application and we'll get back to you within 3 business days. We review every application personally —  no automated rejections.</p>
+        
+          
+        </div>
+        <div style="padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;">
+          <h4 style="margin-bottom:14px;font-size:0.95rem;">Our Hiring Process</h4>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">1</span>Application review (1 - 3 days)</div>
+            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">2</span>30-min intro call</div>
+            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">3</span>Technical assessment (paid)</div>
+            <div style="display:flex;gap:10px;align-items:center;font-size:0.86rem;"><span class="step-badge">4</span>Team interview &amp; offer</div>
+          </div>
+        </div>
+      </div>
+      <div class="apply-form reveal-right">
+        <h3 style="margin-bottom:7px;">Submit Your Application</h3>
+        <p style="margin-bottom:28px;font-size:0.87rem;">Don't see the right role? Apply anyway —  we hire for talent, not just open positions.</p>
+        <form>
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@example.com"></div>
+          <div class="form-group"><label>LinkedIn Profile</label><input type="url" placeholder="https://linkedin.com/in/..."></div>
+          <div class="form-group">
+            <label>Role You're Applying For</label>
+            <select>
+              <option value="">Select a role...</option>
+              <option>Senior Blockchain Engineer</option>
+              <option>Smart Contract Developer</option>
+              <option>Backend Engineer —  Trading Systems</option>
+              <option>Full-Stack Engineer</option>
+              <option>DevOps / Infrastructure Engineer</option>
+              <option>Senior Product Designer</option>
+              <option>Product Manager</option>
+              <option>Business Development Manager</option>
+              <option>Technical Content Writer</option>
+              <option>Open Application</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Why PumaPulse?</label><textarea placeholder="Tell us why you want to join PumaPulse and what you'd bring to the team..."></textarea></div>
+          <div class="form-group">
+            <label>Resume / CV</label>
+            <div class="upload-area" onclick="document.getElementById('resumeFile').click()">
+              <p style="color:var(--text);font-weight:600;margin:0;">Click to upload your resume</p>
+              <span>PDF, DOC, or DOCX —  max 5MB</span>
+              <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" style="display:none;" onchange="this.previousElementSibling.previousElementSibling.textContent = this.files[0]?.name || 'Click to upload your resume'">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-accent" style="width:100%;justify-content:center;">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
 <script src="../js/main.js"></script>
-  <script src="../js/theme.js"></script>
-  <script src="../js/animations.js"></script>
-</body>
-</html>
-
-
-
-
+  <script src="../js/animations.js"></script>
+</body>
+</html>
+
+
+
+
