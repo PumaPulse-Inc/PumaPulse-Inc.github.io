@@ -1,239 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Wallet Development — PumaPulse</title>
-  <meta name="description" content="Custom crypto wallet development — MPC, DeFi, custodial, non-custodial, multi-currency, and mobile wallets with enterprise-grade security by PumaPulse.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .service-feature-list{display:flex;flex-direction:column;gap:16px}
-    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
-    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
-    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .sfeat-icon svg{width:20px;height:20px}
-    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
-    .sfeat p{font-size:0.86rem}
-    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
-    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .use-case h4{font-size:0.95rem;margin-bottom:8px}
-    .use-case p{font-size:0.84rem}
-    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Crypto Wallet Development"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Wallets</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Wallet Development</span>
-      <h1>Crypto Wallets Built for <span class="grad-text">Security and Scale</span></h1>
-      <p>PumaPulse engineers every type of crypto wallet — from MPC-secured institutional vaults to consumer-friendly DeFi wallets — with a relentless focus on security, user experience, and multi-chain support.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Wallet</a>
-        <a href="#wallet-types" class="btn btn-ghost btn-lg">Explore Wallet Types</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="500" data-suffix="+">500+</div><p>Supported Assets</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="20" data-suffix="+">20+</div><p>Blockchain Networks</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="0" data-suffix=" Incidents">0</div><p>Security Incidents</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="100" data-suffix="%">100%</div><p>Audit Pass Rate</p></div>
-</div>
-
-<!-- Wallet Types -->
-<section class="section" id="wallet-types">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Wallet Types</span>
-      <h2>Every Wallet Architecture, <span class="grad-text">Mastered</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Whether you need a self-custody DeFi wallet or an enterprise-grade MPC vault, our security engineers build it right the first time — with zero compromises on security.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MPC Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>MPC Wallet</h3>
-          <p>Multi-party computation wallets that eliminate single points of failure — private keys are never assembled in one place. We implement threshold signature schemes (TSS) where signing requires M-of-N parties, making key theft mathematically impossible. Ideal for exchanges, custodians, and institutional asset managers. Supports all EVM chains, Bitcoin, and Solana.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">TSS</span><span class="tag-pill tag-blue" style="font-size:0.68rem">M-of-N Signing</span><span class="tag-pill tag-purple" style="font-size:0.68rem">No Single Key</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/1098745/pexels-photo-1098745.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DeFi Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>DeFi Wallet</h3>
-          <p>Web3-native wallet with built-in dApp browser, WalletConnect v2 support, multi-chain token management, and integrated DEX aggregation for best-price swaps. Features NFT gallery, yield farming dashboard, transaction simulation (shows exact outcome before signing), and hardware wallet integration (Ledger, Trezor). Supports EVM, Solana, and Cosmos chains.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">WalletConnect</span><span class="tag-pill tag-blue" style="font-size:0.68rem">DEX Aggregator</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Tx Simulation</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Custodial Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Custodial Wallet</h3>
-          <p>Exchange-integrated custodial wallets with hot/warm/cold tiered storage architecture. Hot wallets hold only what's needed for daily operations, warm wallets for weekly settlements, and cold wallets for long-term storage. Includes automated sweeping policies, HSM-backed key management, multi-sig approval workflows, and real-time balance monitoring.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Hot/Cold Tiering</span><span class="tag-pill tag-blue" style="font-size:0.68rem">HSM Keys</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Auto-Sweep</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Non-Custodial Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Non-Custodial Wallet</h3>
-          <p>Self-custody wallets where users control their keys. BIP-39 seed phrase generation with secure enclave storage, hardware wallet support (Ledger, Trezor, Keystone), and social recovery via Shamir's Secret Sharing. Features account abstraction (ERC-4337) for gasless transactions, session keys, and batch operations without seed phrase exposure.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">BIP-39</span><span class="tag-pill tag-blue" style="font-size:0.68rem">ERC-4337</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Social Recovery</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Multi-Currency Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Multi-Currency Wallet</h3>
-          <p>Single wallet supporting 500+ cryptocurrencies across Bitcoin, Ethereum, Solana, Cosmos, Polkadot, and more — with real-time portfolio tracking, fiat on-ramps (credit card, bank transfer), and cross-chain atomic swaps. Includes price alerts, portfolio analytics, tax reporting (CSV export), and staking for supported networks.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">500+ Assets</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Fiat On-Ramp</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Cross-Chain Swap</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Mobile Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Mobile Wallet App</h3>
-          <p>Native iOS and Android wallet apps with Face ID/Touch ID authentication, QR code payments, NFC tap-to-pay, push notifications for transactions, and deep link support for dApp connections. Built with React Native for code sharing, or fully native Swift/Kotlin for maximum performance. Includes App Store optimization and submission support.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">iOS & Android</span><span class="tag-pill tag-blue" style="font-size:0.68rem">NFC Pay</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Biometric Auth</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Security -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Security First</span>
-        <h2>Security That <span class="grad-text2">Never Sleeps</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Every wallet we build goes through a rigorous security process — from threat modeling and code review to penetration testing and third-party audits. We've maintained a perfect security record across all deployed wallets.</p>
-        <div class="service-feature-list">
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div><div><h4>HSM Key Management</h4><p>Hardware Security Modules for root key generation and signing operations that never expose private keys to software layers.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h4>Multi-Signature Schemes</h4><p>M-of-N multi-sig and threshold signature schemes for institutional-grade transaction approval workflows with time-locks.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>Third-Party Security Audits</h4><p>Every wallet undergoes independent security audits by certified blockchain security firms before launch. All reports are public.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Secure Enclave Storage</h4><p>Private keys stored in device secure enclaves (iOS Secure Enclave, Android StrongBox) — never accessible to the app or OS.</p></div></div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="split-img">
-          <img src="https://images.pexels.com/photos/5698696/pexels-photo-5698696.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Wallet Security">
-          <div class="split-badge"><div class="num">500+</div><p>Supported assets</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Supported Chains -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Multi-Chain Support</span>
-      <h2>Every Major Chain, <span class="grad-text3">Fully Supported</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="chains-grid reveal-stagger">
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(98,126,234,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div><h4>Ethereum &amp; EVM</h4><p>All EVM-compatible chains including Polygon, Arbitrum, Optimism, Base, and zkSync.</p></div>
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(20,241,149,0.12)"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana"></div><h4>Solana</h4><p>SPL tokens, NFTs, staking, and DeFi protocol interactions on Solana.</p></div>
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(243,186,47,0.12)"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"></div><h4>Bitcoin</h4><p>Native BTC, Lightning Network payments, and Ordinals/BRC-20 token support.</p></div>
-      <div class="chain-card"><div class="chain-logo" style="background:rgba(0,112,243,0.12)"><img src="https://cdn.simpleicons.org/cosmos/2E3148" alt="Cosmos"></div><h4>Cosmos</h4><p>IBC-enabled cross-chain transfers across the entire Cosmos ecosystem.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text">Wallet Tech Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Security-first tools and standards used by institutional custodians and leading self-custody wallet providers.</p>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Mobile & Frontend</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
-          <div><span class="tname">React Native</span><span class="tdesc">Cross-platform iOS & Android wallet apps with biometric auth, hardware wallet support, and offline signing</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/swift/F05138" alt="Swift">
-          <div><span class="tname">Swift / Kotlin</span><span class="tdesc">Native iOS and Android apps using Secure Enclave for key storage and Face ID / fingerprint authentication</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter"><span class="tname">Flutter</span><span class="tdesc">Cross-platform native UI</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"><span class="tname">TypeScript</span><span class="tdesc">Web wallet extension</span></div>
-      </div>
-      <div class="tech-category-label">Blockchain Connectivity</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ethers.js">
-          <div><span class="tname">ethers.js + web3.js</span><span class="tdesc">EVM chain interaction — transaction signing, contract calls, ENS resolution, and gas estimation</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana">
-          <div><span class="tname">@solana/web3.js</span><span class="tdesc">Solana program interaction, SPL token management, and Anchor framework integration</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"><span class="tname">BitcoinJS</span><span class="tdesc">BTC / Lightning Network</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="WalletConnect"><span class="tname">WalletConnect v2</span><span class="tdesc">dApp connectivity</span></div>
-      </div>
-      <div class="tech-category-label">Security & Key Management</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="BIP-39"><span class="tname">BIP-39 / BIP-44</span><span class="tdesc">HD wallet derivation</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ERC-4337"><span class="tname">ERC-4337</span><span class="tdesc">Account abstraction</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="HSM"><span class="tname">AWS CloudHSM</span><span class="tdesc">Hardware key storage</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="MPC"><span class="tname">MPC / TSS</span><span class="tdesc">Threshold signatures</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Fireblocks"><span class="tname">Fireblocks SDK</span><span class="tdesc">Institutional custody</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/openzeppelin/4E5EE4" alt="OpenZeppelin"><span class="tname">OpenZeppelin</span><span class="tdesc">Audited contracts</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Build Your <span class="grad-text">Crypto Wallet?</span></h2>
-        <p>Our wallet security engineers will design the right architecture for your use case — from consumer apps to institutional custody infrastructure.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/theme.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Wallet Development —  PumaPulse</title>
+  <meta name="description" content="Custom crypto wallet development —  MPC, DeFi, custodial, non-custodial, multi-currency, and mobile wallets with enterprise-grade security by PumaPulse.">
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <style>
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .sfeat-icon svg{width:20px;height:20px}
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+    .sfeat p{font-size:0.86rem}
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+    .use-case p{font-size:0.84rem}
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Crypto Wallet Development"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Wallets</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Wallet Development</span>
+      <h1>Crypto Wallets Built for <span class="grad-text">Security and Scale</span></h1>
+      <p>PumaPulse engineers every type of crypto wallet —  from MPC-secured institutional vaults to consumer-friendly DeFi wallets —  with a relentless focus on security, user experience, and multi-chain support.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Wallet</a>
+        <a href="#wallet-types" class="btn btn-ghost btn-lg">Explore Wallet Types</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="500" data-suffix="+">500+</div><p>Supported Assets</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="20" data-suffix="+">20+</div><p>Blockchain Networks</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="0" data-suffix=" Incidents">0</div><p>Security Incidents</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="100" data-suffix="%">100%</div><p>Audit Pass Rate</p></div>
+</div>
+
+<!-- Wallet Types -->
+<section class="section" id="wallet-types">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Wallet Types</span>
+      <h2>Every Wallet Architecture, <span class="grad-text">Mastered</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Whether you need a self-custody DeFi wallet or an enterprise-grade MPC vault, our security engineers build it right the first time —  with zero compromises on security.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MPC Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>MPC Wallet</h3>
+          <p>Multi-party computation wallets that eliminate single points of failure —  private keys are never assembled in one place. We implement threshold signature schemes (TSS) where signing requires M-of-N parties, making key theft mathematically impossible. Ideal for exchanges, custodians, and institutional asset managers. Supports all EVM chains, Bitcoin, and Solana.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">TSS</span><span class="tag-pill tag-blue" style="font-size:0.68rem">M-of-N Signing</span><span class="tag-pill tag-purple" style="font-size:0.68rem">No Single Key</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/1098745/pexels-photo-1098745.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DeFi Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>DeFi Wallet</h3>
+          <p>Web3-native wallet with built-in dApp browser, WalletConnect v2 support, multi-chain token management, and integrated DEX aggregation for best-price swaps. Features NFT gallery, yield farming dashboard, transaction simulation (shows exact outcome before signing), and hardware wallet integration (Ledger, Trezor). Supports EVM, Solana, and Cosmos chains.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">WalletConnect</span><span class="tag-pill tag-blue" style="font-size:0.68rem">DEX Aggregator</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Tx Simulation</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Custodial Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Custodial Wallet</h3>
+          <p>Exchange-integrated custodial wallets with hot/warm/cold tiered storage architecture. Hot wallets hold only what's needed for daily operations, warm wallets for weekly settlements, and cold wallets for long-term storage. Includes automated sweeping policies, HSM-backed key management, multi-sig approval workflows, and real-time balance monitoring.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Hot/Cold Tiering</span><span class="tag-pill tag-blue" style="font-size:0.68rem">HSM Keys</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Auto-Sweep</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Non-Custodial Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Non-Custodial Wallet</h3>
+          <p>Self-custody wallets where users control their keys. BIP-39 seed phrase generation with secure enclave storage, hardware wallet support (Ledger, Trezor, Keystone), and social recovery via Shamir's Secret Sharing. Features account abstraction (ERC-4337) for gasless transactions, session keys, and batch operations without seed phrase exposure.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">BIP-39</span><span class="tag-pill tag-blue" style="font-size:0.68rem">ERC-4337</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Social Recovery</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Multi-Currency Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Multi-Currency Wallet</h3>
+          <p>Single wallet supporting 500+ cryptocurrencies across Bitcoin, Ethereum, Solana, Cosmos, Polkadot, and more —  with real-time portfolio tracking, fiat on-ramps (credit card, bank transfer), and cross-chain atomic swaps. Includes price alerts, portfolio analytics, tax reporting (CSV export), and staking for supported networks.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">500+ Assets</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Fiat On-Ramp</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Cross-Chain Swap</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Mobile Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Mobile Wallet App</h3>
+          <p>Native iOS and Android wallet apps with Face ID/Touch ID authentication, QR code payments, NFC tap-to-pay, push notifications for transactions, and deep link support for dApp connections. Built with React Native for code sharing, or fully native Swift/Kotlin for maximum performance. Includes App Store optimization and submission support.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">iOS & Android</span><span class="tag-pill tag-blue" style="font-size:0.68rem">NFC Pay</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Biometric Auth</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Security -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Security First</span>
+        <h2>Security That <span class="grad-text2">Never Sleeps</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">Every wallet we build goes through a rigorous security process —  from threat modeling and code review to penetration testing and third-party audits. We've maintained a perfect security record across all deployed wallets.</p>
+        <div class="service-feature-list">
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div><div><h4>HSM Key Management</h4><p>Hardware Security Modules for root key generation and signing operations that never expose private keys to software layers.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h4>Multi-Signature Schemes</h4><p>M-of-N multi-sig and threshold signature schemes for institutional-grade transaction approval workflows with time-locks.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>Third-Party Security Audits</h4><p>Every wallet undergoes independent security audits by certified blockchain security firms before launch. All reports are public.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Secure Enclave Storage</h4><p>Private keys stored in device secure enclaves (iOS Secure Enclave, Android StrongBox) —  never accessible to the app or OS.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="split-img">
+          <img src="https://images.pexels.com/photos/5698696/pexels-photo-5698696.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Wallet Security">
+          <div class="split-badge"><div class="num">500+</div><p>Supported assets</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Supported Chains -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Multi-Chain Support</span>
+      <h2>Every Major Chain, <span class="grad-text3">Fully Supported</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="chains-grid reveal-stagger">
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(98,126,234,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div><h4>Ethereum &amp; EVM</h4><p>All EVM-compatible chains including Polygon, Arbitrum, Optimism, Base, and zkSync.</p></div>
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(20,241,149,0.12)"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana"></div><h4>Solana</h4><p>SPL tokens, NFTs, staking, and DeFi protocol interactions on Solana.</p></div>
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(243,186,47,0.12)"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"></div><h4>Bitcoin</h4><p>Native BTC, Lightning Network payments, and Ordinals/BRC-20 token support.</p></div>
+      <div class="chain-card"><div class="chain-logo" style="background:rgba(0,112,243,0.12)"><img src="https://cdn.simpleicons.org/cosmos/2E3148" alt="Cosmos"></div><h4>Cosmos</h4><p>IBC-enabled cross-chain transfers across the entire Cosmos ecosystem.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Our <span class="grad-text">Wallet Tech Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Security-first tools and standards used by institutional custodians and leading self-custody wallet providers.</p>
+    </div>
+    <div class="tech-showcase reveal-stagger">
+      <div class="tech-category-label">Mobile & Frontend</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
+          <div><span class="tname">React Native</span><span class="tdesc">Cross-platform iOS & Android wallet apps with biometric auth, hardware wallet support, and offline signing</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/swift/F05138" alt="Swift">
+          <div><span class="tname">Swift / Kotlin</span><span class="tdesc">Native iOS and Android apps using Secure Enclave for key storage and Face ID / fingerprint authentication</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter"><span class="tname">Flutter</span><span class="tdesc">Cross-platform native UI</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"><span class="tname">TypeScript</span><span class="tdesc">Web wallet extension</span></div>
+      </div>
+      <div class="tech-category-label">Blockchain Connectivity</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ethers.js">
+          <div><span class="tname">ethers.js + web3.js</span><span class="tdesc">EVM chain interaction —  transaction signing, contract calls, ENS resolution, and gas estimation</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana">
+          <div><span class="tname">@solana/web3.js</span><span class="tdesc">Solana program interaction, SPL token management, and Anchor framework integration</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"><span class="tname">BitcoinJS</span><span class="tdesc">BTC / Lightning Network</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="WalletConnect"><span class="tname">WalletConnect v2</span><span class="tdesc">dApp connectivity</span></div>
+      </div>
+      <div class="tech-category-label">Security & Key Management</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="BIP-39"><span class="tname">BIP-39 / BIP-44</span><span class="tdesc">HD wallet derivation</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="ERC-4337"><span class="tname">ERC-4337</span><span class="tdesc">Account abstraction</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="HSM"><span class="tname">AWS CloudHSM</span><span class="tdesc">Hardware key storage</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="MPC"><span class="tname">MPC / TSS</span><span class="tdesc">Threshold signatures</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Fireblocks"><span class="tname">Fireblocks SDK</span><span class="tdesc">Institutional custody</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/openzeppelin/4E5EE4" alt="OpenZeppelin"><span class="tname">OpenZeppelin</span><span class="tdesc">Audited contracts</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Build Your <span class="grad-text">Crypto Wallet?</span></h2>
+        <p>Our wallet security engineers will design the right architecture for your use case —  from consumer apps to institutional custody infrastructure.</p>
+        <div class="cta-btns">
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/nav.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/animations.js"></script>
+</body>
+</html>
+

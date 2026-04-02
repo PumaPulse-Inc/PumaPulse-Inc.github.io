@@ -1,236 +1,247 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About PumaPulse — Beyond Services, We Build Success Stories</title>
-  <meta name="description" content="PumaPulse is a team of visionary experts and creators, driving the future of fintech and digital transformation with innovative solutions.">
-  <link rel="icon" href="../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/theme.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <style>
-    .about-img-stack{position:relative;height:520px}
-    .about-img-main{width:75%;height:420px;object-fit:cover;border-radius:20px;position:absolute;top:0;left:0;box-shadow:0 32px 64px rgba(0,0,0,0.4)}
-    .about-img-accent{width:55%;height:260px;object-fit:cover;border-radius:16px;position:absolute;bottom:0;right:0;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
-    .about-badge{position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);background:rgba(8,12,24,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px 22px;text-align:center;z-index:2}
-    .about-badge .big{font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-    .about-badge p{font-size:0.75rem;color:rgba(240,244,255,0.5);margin:4px 0 0}
-    .about-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .services-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .service-list-item{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;transition:all 0.25s}
-    .service-list-item:hover{border-color:var(--border2)}
-    .service-list-item .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px}
-    .service-list-item h5{font-size:0.9rem;margin-bottom:4px}
-    .service-list-item p{font-size:0.8rem}
-    .timeline{display:flex;flex-direction:column;gap:0;position:relative}
-    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--primary));opacity:0.3}
-    .timeline-item{display:flex;gap:24px;padding-bottom:36px;position:relative}
-    .timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--ad);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;font-weight:700;color:var(--accent);z-index:1}
-    .timeline-content{padding-top:8px}
-    .timeline-content h4{margin-bottom:6px;font-size:1rem}
-    .timeline-content p{font-size:0.87rem}
-    @media(max-width:1024px){.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.services-list{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="About PumaPulse"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="index/">Home</a><span>/</span><span>About</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Our Story</span>
-      <h1>Beyond Services,<br><span class="grad-text">We Build Success Stories</span></h1>
-      <p>PumaPulse partners with enterprises and startups to accelerate their journey in the digital era, providing tailored solutions that drive growth, efficiency, and competitive advantage.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="contact/" class="btn btn-accent btn-lg btn-magnetic">Work With Us</a>
-        <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stats -->
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="2016" data-suffix="">2016</div><p>Founded</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="120" data-suffix="+">120+</div><p>Team Members</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="36" data-suffix="+">36+</div><p>Projects Shipped</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="25" data-suffix="+">25+</div><p>Countries</p></div>
-</div>
-
-<!-- Who We Are -->
-<section class="section">
-  <div class="container">
-    <div class="about-strip">
-      <div class="about-img-stack reveal-left">
-        <img class="about-img-main" src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team">
-        <img class="about-img-accent" src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PumaPulse Office">
-        <div class="about-badge anim-float">
-          <div class="big">98%</div>
-          <p>Client Retention Rate</p>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <span class="eyebrow">Who We Are</span>
-        <h2>We Specialize in Creating Digital Experiences for a <span class="grad-text">Better Tomorrow</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:18px">PumaPulse is a team of dedicated technology enthusiasts, problem solvers, and inventors. We are faithful to building digital experiences that not only suit today's demands but also lay the groundwork for a brighter tomorrow.</p>
-        <p style="margin-bottom:18px">Our mission is to assist organizations of all sizes to innovate, evolve, and embrace the digital era. We prepare our clients for whatever the future brings by concentrating on smart, sustainable solutions.</p>
-        <p style="margin-bottom:32px">From crypto exchanges and trading bots to neobanks and DeFi protocols — we turn complex ideas into powerful digital platforms that scale. Every project is led by passionate professionals who are 100% committed to bringing your ideas to life.</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="contact/" class="btn btn-accent btn-magnetic">Start a Project</a>
-          <a href="careers/" class="btn btn-outline">Join Our Team</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Core Values -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Values</span>
-      <h2>What Drives <span class="grad-text2">Everything We Do</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We don't just build software — we build trust, relationships, and lasting success for every client we work with.</p>
-    </div>
-    <div class="values-icon-grid reveal-stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-      <div class="value-icon-card">
-        <div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Trust First, Trust Always</h3>
-        <p>We believe trust isn't something you get — it's something you earn. That's why we focus on honesty, reliability, and delivering real results. No hidden terms, no false promises — just a strong partnership built for the long run.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
-        <h3>Think Fresh, Build Smart</h3>
-        <p>We question, explore, and see things with fresh eyes. But when it's time to take action, we bring expert skills to the table. Real innovation comes from curiosity, not just following the usual way.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Take Responsibility. Make It Happen.</h3>
-        <p>We don't wait for things to change — we make them happen. Taking responsibility isn't just what we do; it's our mindset. Every challenge is a chance to grow, and every action pushes us forward. When we commit, we get it done.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h3>Empowering Global Change</h3>
-        <p>PumaPulse is dedicated to bringing about significant change in the financial industry. We lead responsibly, developing solutions that enable businesses, support entrepreneurs, and inspire economic growth around the world.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h3>Sustainability in Innovation</h3>
-        <p>Every project at PumaPulse incorporates sustainability. Whether we're creating hybrid crypto exchanges or clever trading bots, we help clients align their goals with environmental and social responsibility for long-term value.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>Transparency with Trust Built In</h3>
-        <p>We value transparency and accountability. By constantly refining our procedures and giving clear, transparent progress reports, we develop long-term trust with clients, entrepreneurs, and businesses. This dedication keeps everyone informed and confident.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- What We Do -->
-<section class="section">
-  <div class="container">
-    <div class="about-strip">
-      <div class="reveal-left">
-        <span class="eyebrow">What We Do</span>
-        <h2>Services We <span class="grad-text">Specialize In</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:32px">Our strength is in our people. PumaPulse team members are more than just competent professionals — they are participants in your success. Each project is led by passionate professionals who are 100% committed to bringing your ideas to life.</p>
-        <div class="services-list">
-          <div class="service-list-item"><div class="dot"></div><div><h5>Digital Banking &amp; Neobanking</h5><p>Making financial management simple, secure, and accessible with cutting-edge online banking solutions.</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Crypto Exchange Development</h5><p>Building scalable, secure, and user-friendly bitcoin exchange platforms for the digital economy.</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Algorithmic Trading Software</h5><p>Creating intelligent, automated trading systems to optimize tactics, reduce risk, and increase earnings.</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Payment Solutions &amp; Wallets</h5><p>Developing seamless worldwide payment networks and secure digital wallets for fast, safe transactions.</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Trading Bots &amp; Automation</h5><p>Creating robust trading bots that increase efficiency and profitability with minimal effort.</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Forex CRM &amp; Trading Solutions</h5><p>Comprehensive solutions for forex brokerages and trading operations worldwide.</p></div></div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Services" style="width:100%;height:480px;object-fit:cover;border-radius:20px">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Journey -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="about-strip">
-      <div class="reveal-left">
-        <span class="eyebrow">Our Journey</span>
-        <h2>From Startup to <span class="grad-text3">Global Fintech Partner</span></h2>
-        <div class="section-divider" style="margin:0 0 32px"></div>
-        <div class="timeline">
-          <div class="timeline-item"><div class="timeline-dot">16</div><div class="timeline-content"><h4>2016 — Founded in Toronto</h4><p>PumaPulse was founded by a small team of blockchain enthusiasts who believed great financial technology shouldn't be locked behind enterprise budgets.</p></div></div>
-          <div class="timeline-item"><div class="timeline-dot">18</div><div class="timeline-content"><h4>2018 — First Crypto Exchange</h4><p>Delivered our first full-scale cryptocurrency exchange platform, establishing our reputation for security-first architecture and on-time delivery.</p></div></div>
-          <div class="timeline-item"><div class="timeline-dot">20</div><div class="timeline-content"><h4>2020 — DeFi &amp; Trading Bots</h4><p>Expanded into DeFi protocol development and algorithmic trading bots, serving clients across 15+ countries with automated financial systems.</p></div></div>
-          <div class="timeline-item"><div class="timeline-dot">22</div><div class="timeline-content"><h4>2022 — Neobank &amp; Forex</h4><p>Launched our neobank and forex CRM practice, helping brokerages and digital banks modernize their technology stack and compliance infrastructure.</p></div></div>
-          <div class="timeline-item"><div class="timeline-dot">25</div><div class="timeline-content"><h4>2025 — 36+ Projects, 25+ Countries</h4><p>Today we're a 120+ person engineering powerhouse, trusted by startups and enterprises across 25+ countries to build the financial infrastructure of tomorrow.</p></div></div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Journey" style="width:100%;height:520px;object-fit:cover;border-radius:20px">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Team -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Dedicated Teams</span>
-      <h2>Dedicated Teams for Your <span class="grad-text">Dedicated Dreams</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Our strength is in our people. PumaPulse team members are more than just competent professionals — they are participants in your success. We take pleasure in our collaborative approach, which combines creativity and determination to provide the greatest results.</p>
-    </div>
-    <div class="team-grid reveal-stagger">
-      <div class="team-card">
-        <div class="team-photo"><img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Ryan Kovacs" loading="lazy"></div>
-        <div class="team-info"><h4>Ryan Kovacs</h4><div class="team-role">CEO &amp; Co-Founder</div><p>15 years in fintech. Former VP Engineering at a top-5 global exchange. Leads company vision and client strategy.</p></div>
-      </div>
-      <div class="team-card">
-        <div class="team-photo"><img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Nina Patel" loading="lazy"></div>
-        <div class="team-info"><h4>Nina Patel</h4><div class="team-role">CTO &amp; Co-Founder</div><p>Blockchain architect with 12 years experience. Built core infrastructure for 3 unicorn fintech companies. Leads all engineering.</p></div>
-      </div>
-      <div class="team-card">
-        <div class="team-photo"><img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=500" alt="James Liu" loading="lazy"></div>
-        <div class="team-info"><h4>James Liu</h4><div class="team-role">Head of Product</div><p>Ex-Coinbase product lead. Shipped products used by millions of traders. Obsessed with user experience and product-market fit.</p></div>
-      </div>
-      <div class="team-card">
-        <div class="team-photo"><img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Aisha Mensah" loading="lazy"></div>
-        <div class="team-info"><h4>Aisha Mensah</h4><div class="team-role">Head of Security</div><p>Certified blockchain security auditor. 200+ smart contract audits completed. Ensures every product we ship is bulletproof.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Build Something <span class="grad-text">Remarkable?</span></h2>
-        <p>Let's talk about your project. No commitment, just a conversation about what's possible. We'll help you find the right solution for your specific goals and budget.</p>
-        <div class="cta-btns">
-          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic">Start a Conversation</a>
-          <a href="careers/" class="btn btn-white btn-lg">Join Our Team</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/theme.js"></script>
-<script src="../js/animations.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About PumaPulse - Beyond Services, We Build Success Stories</title>
+  <meta name="description" content="PumaPulse is a team of visionary experts and creators, driving the future of fintech and digital transformation with innovative solutions.">
+  <link rel="icon" href="../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <style>
+    .about-img-stack{position:relative;height:520px}
+    .about-img-main{width:75%;height:420px;object-fit:cover;border-radius:20px;position:absolute;top:0;left:0;box-shadow:0 32px 64px rgba(0,0,0,0.4)}
+    .about-img-accent{width:55%;height:260px;object-fit:cover;border-radius:16px;position:absolute;bottom:0;right:0;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+    .about-badge{position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);background:rgba(8,12,24,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px 22px;text-align:center;z-index:2}
+    .about-badge .big{font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+    .about-badge p{font-size:0.75rem;color:rgba(240,244,255,0.5);margin:4px 0 0}
+    .about-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .services-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .service-list-item{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;transition:all 0.25s}
+    .service-list-item:hover{border-color:var(--border2)}
+    .service-list-item .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px}
+    .service-list-item h5{font-size:0.9rem;margin-bottom:4px}
+    .service-list-item p{font-size:0.8rem}
+    .timeline{display:flex;flex-direction:column;gap:0;position:relative}
+    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--primary));opacity:0.3}
+    .timeline-item{display:flex;gap:24px;padding-bottom:36px;position:relative}
+    .timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--ad);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;font-weight:700;color:var(--accent);z-index:1}
+    .timeline-content{padding-top:8px}
+    .timeline-content h4{margin-bottom:6px;font-size:1rem}
+    .timeline-content p{font-size:0.87rem}
+    @media(max-width:1024px){.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.services-list{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="About PumaPulse"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index/">Home</a><span>/</span><span>About</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Our Story</span>
+      <h1>Beyond Services,<br><span class="grad-text">We Build Success Stories</span></h1>
+      <p>PumaPulse partners with enterprises and startups to accelerate their journey in the digital era, providing tailored solutions that drive growth, efficiency, and competitive advantage.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="contact/" class="btn btn-accent btn-lg btn-magnetic">Work With Us</a>
+        <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="2016" data-suffix="">2016</div><p>Founded</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="120" data-suffix="+">120+</div><p>Team Members</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="36" data-suffix="+">36+</div><p>Projects Shipped</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="25" data-suffix="+">25+</div><p>Countries</p></div>
+</div>
+
+<!-- Who We Are -->
+<section class="section">
+  <div class="container">
+    <div class="about-strip">
+      <div class="about-img-stack reveal-left">
+        <img class="about-img-main" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team">
+        <img class="about-img-accent" src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PumaPulse Office">
+        <div class="about-badge anim-float">
+          <div class="big">98%</div>
+          <p>Client Retention Rate</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="eyebrow">Who We Are</span>
+        <h2>We Specialize in Creating Digital Experiences for a <span class="grad-text">Better Tomorrow</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:18px">PumaPulse is a team of dedicated technology enthusiasts, problem solvers, and inventors. We are faithful to building digital experiences that not only suit today's demands but also lay the groundwork for a brighter tomorrow.</p>
+        <p style="margin-bottom:18px">Our mission is to assist organizations of all sizes to innovate, evolve, and embrace the digital era. We prepare our clients for whatever the future brings by concentrating on smart, sustainable solutions.</p>
+        <p style="margin-bottom:32px">From crypto exchanges and trading bots to neobanks and DeFi protocols —  we turn complex ideas into powerful digital platforms that scale. Every project is led by passionate professionals who are 100% committed to bringing your ideas to life.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="contact/" class="btn btn-accent btn-magnetic">Start a Project</a>
+          <a href="careers/" class="btn btn-outline">Join Our Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Our Values</span>
+      <h2>What Drives <span class="grad-text2">Everything We Do</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We don't just build software —  we build trust, relationships, and lasting success for every client we work with.</p>
+    </div>
+    <div class="values-icon-grid reveal-stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+      <div class="value-icon-card">
+        <div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Trust First, Trust Always</h3>
+        <p>We believe trust isn't something you get —  it's something you earn. That's why we focus on honesty, reliability, and delivering real results. No hidden terms, no false promises —  just a strong partnership built for the long run.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+        <h3>Think Fresh, Build Smart</h3>
+        <p>We question, explore, and see things with fresh eyes. But when it's time to take action, we bring expert skills to the table. Real innovation comes from curiosity, not just following the usual way.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Take Responsibility. Make It Happen.</h3>
+        <p>We don't wait for things to change —  we make them happen. Taking responsibility isn't just what we do; it's our mindset. Every challenge is a chance to grow, and every action pushes us forward. When we commit, we get it done.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Empowering Global Change</h3>
+        <p>PumaPulse is dedicated to bringing about significant change in the financial industry. We lead responsibly, developing solutions that enable businesses, support entrepreneurs, and inspire economic growth around the world.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Sustainability in Innovation</h3>
+        <p>Every project at PumaPulse incorporates sustainability. Whether we're creating hybrid crypto exchanges or clever trading bots, we help clients align their goals with environmental and social responsibility for long-term value.</p>
+      </div>
+      <div class="value-icon-card">
+        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Transparency with Trust Built In</h3>
+        <p>We value transparency and accountability. By constantly refining our procedures and giving clear, transparent progress reports, we develop long-term trust with clients, entrepreneurs, and businesses. This dedication keeps everyone informed and confident.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Do -->
+<section class="section">
+  <div class="container">
+    <div class="about-strip">
+      <div class="reveal-left">
+        <span class="eyebrow">What We Do</span>
+        <h2>Services We <span class="grad-text">Specialize In</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:32px">Our strength is in our people. PumaPulse team members are more than just competent professionals —  they are participants in your success. Each project is led by passionate professionals who are 100% committed to bringing your ideas to life.</p>
+        <div class="services-list">
+          <div class="service-list-item"><div class="dot"></div><div><h5>Digital Banking &amp; Neobanking</h5><p>Making financial management simple, secure, and accessible with cutting-edge online banking solutions.</p></div></div>
+          <div class="service-list-item"><div class="dot"></div><div><h5>Crypto Exchange Development</h5><p>Building scalable, secure, and user-friendly bitcoin exchange platforms for the digital economy.</p></div></div>
+          <div class="service-list-item"><div class="dot"></div><div><h5>Algorithmic Trading Software</h5><p>Creating intelligent, automated trading systems to optimize tactics, reduce risk, and increase earnings.</p></div></div>
+          <div class="service-list-item"><div class="dot"></div><div><h5>Payment Solutions &amp; Wallets</h5><p>Developing seamless worldwide payment networks and secure digital wallets for fast, safe transactions.</p></div></div>
+          <div class="service-list-item"><div class="dot"></div><div><h5>Trading Bots &amp; Automation</h5><p>Creating robust trading bots that increase efficiency and profitability with minimal effort.</p></div></div>
+          <div class="service-list-item"><div class="dot"></div><div><h5>Forex CRM &amp; Trading Solutions</h5><p>Comprehensive solutions for forex brokerages and trading operations worldwide.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Services" style="width:100%;height:480px;object-fit:cover;border-radius:20px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Journey -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="about-strip">
+      <div class="reveal-left">
+        <span class="eyebrow">Our Journey</span>
+        <h2>From Startup to <span class="grad-text3">Global Fintech Partner</span></h2>
+        <div class="section-divider" style="margin:0 0 32px"></div>
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-dot">16</div><div class="timeline-content"><h4>2016 — Founded in Toronto</h4><p>PumaPulse was founded by a small team of blockchain enthusiasts who believed great financial technology shouldn't be locked behind enterprise budgets.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot">18</div><div class="timeline-content"><h4>2018 — First Crypto Exchange</h4><p>Delivered our first full-scale cryptocurrency exchange platform, establishing our reputation for security-first architecture and on-time delivery.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot">20</div><div class="timeline-content"><h4>2020 — DeFi &amp; Trading Bots</h4><p>Expanded into DeFi protocol development and algorithmic trading bots, serving clients across 15+ countries with automated financial systems.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot">22</div><div class="timeline-content"><h4>2022 — Neobank &amp; Forex</h4><p>Launched our neobank and forex CRM practice, helping brokerages and digital banks modernize their technology stack and compliance infrastructure.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot">25</div><div class="timeline-content"><h4>2025 — 36+ Projects, 25+ Countries</h4><p>Today we're a 120+ person engineering powerhouse, trusted by startups and enterprises across 25+ countries to build the financial infrastructure of tomorrow.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Journey" style="width:100%;height:520px;object-fit:cover;border-radius:20px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Dedicated Teams</span>
+      <h2>Dedicated Teams for Your <span class="grad-text">Dedicated Dreams</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Our strength is in our people. PumaPulse team members are more than just competent professionals —  they are participants in your success. We take pleasure in our collaborative approach, which combines creativity and determination to provide the greatest results.</p>
+    </div>
+        <div class="team-grid reveal-stagger">
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#10b981,#059669)">
+          <span class="team-initials">RK</span>
+          <div class="team-avatar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        </div>
+        <div class="team-info"><h4>Ryan Kovacs</h4><div class="team-role">CEO &amp; Co-Founder</div><p>15 years in fintech. Former VP Engineering at a top-5 global exchange. Leads company vision and client strategy.</p></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+          <span class="team-initials">NP</span>
+          <div class="team-avatar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        </div>
+        <div class="team-info"><h4>Nina Patel</h4><div class="team-role">CTO &amp; Co-Founder</div><p>Blockchain architect with 12 years experience. Built core infrastructure for 3 unicorn fintech companies. Leads all engineering.</p></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">
+          <span class="team-initials">JL</span>
+          <div class="team-avatar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        </div>
+        <div class="team-info"><h4>James Liu</h4><div class="team-role">Head of Product</div><p>Ex-Coinbase product lead. Shipped products used by millions of traders. Obsessed with user experience and product-market fit.</p></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+          <span class="team-initials">AM</span>
+          <div class="team-avatar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        </div>
+        <div class="team-info"><h4>Aisha Mensah</h4><div class="team-role">Head of Security</div><p>Certified blockchain security auditor. 200+ smart contract audits completed. Ensures every product we ship is bulletproof.</p></div>
+      </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Build Something <span class="grad-text">Remarkable?</span></h2>
+        <p>Let's talk about your project. No commitment, just a conversation about what's possible. We'll help you find the right solution for your specific goals and budget.</p>
+        <div class="cta-btns">
+          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic">Start a Conversation</a>
+          <a href="careers/" class="btn btn-white btn-lg">Join Our Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/animations.js"></script>
+</body>
+</html>

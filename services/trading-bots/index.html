@@ -1,348 +1,348 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trading Bot Development — PumaPulse</title>
-  <meta name="description" content="Custom algorithmic and AI-powered trading bots — arbitrage, DCA, grid, sniper, signal, and ML bots engineered for consistent performance by PumaPulse.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .service-feature-list{display:flex;flex-direction:column;gap:16px}
-    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
-    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
-    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .sfeat-icon svg{width:20px;height:20px}
-    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
-    .sfeat p{font-size:0.86rem}
-    .perf-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:all 0.3s}
-    .perf-card:hover{border-color:var(--border2)}
-    .perf-roi{font-size:1.6rem;font-weight:800;flex-shrink:0}
-    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
-    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .use-case h4{font-size:0.95rem;margin-bottom:8px}
-    .use-case p{font-size:0.84rem}
-    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg">
-    <img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Trading Bot Development">
-  </div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Trading Bots</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Algorithmic Trading</span>
-      <h1>Trading Bots That <span class="grad-text">Actually Perform</span></h1>
-      <p>PumaPulse builds custom algorithmic trading bots for crypto, forex, and equities — from simple DCA strategies to multi-exchange AI-driven systems that trade 24/7 without emotion, fatigue, or hesitation.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Bot</a>
-        <a href="#bot-types" class="btn btn-ghost btn-lg">Explore Bot Types</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Bots Deployed</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="99.9" data-suffix="%" data-decimals="1">99.9%</div><p>Uptime Guarantee</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Exchanges Supported</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="24" data-suffix="/7">24/7</div><p>Automated Trading</p></div>
-</div>
-
-<!-- Bot Types -->
-<section class="section" id="bot-types">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Bot Types</span>
-      <h2>Every Strategy, <span class="grad-text">Automated</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We build bots for every trading style and market condition — from low-risk DCA accumulation to high-frequency arbitrage across dozens of exchanges simultaneously.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-
-      <!-- Arbitrage Bot — trading screens -->
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img">
-          <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Arbitrage Bot" loading="lazy">
-          <div class="svc-img-overlay"></div>
-        </div>
-        <div class="svc-body">
-          <h3>Arbitrage Bot</h3>
-          <p>Cross-exchange and triangular arbitrage bots that detect and exploit price discrepancies in milliseconds across CEX and DEX venues simultaneously. Our bots monitor 50+ exchanges in real time, calculate net profit after fees and slippage, and execute trades within the same block on DEXs. Includes flash loan arbitrage for capital-efficient strategies.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
-            <span class="tag-pill tag-green" style="font-size:0.68rem">Cross-Exchange</span>
-            <span class="tag-pill tag-blue" style="font-size:0.68rem">Triangular</span>
-            <span class="tag-pill tag-purple" style="font-size:0.68rem">Flash Loans</span>
-          </div>
-          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <!-- DCA Bot — coins/investment -->
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img">
-          <img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DCA Bot" loading="lazy">
-          <div class="svc-img-overlay"></div>
-        </div>
-        <div class="svc-body">
-          <h3>DCA Bot</h3>
-          <p>Dollar-cost averaging bots with configurable intervals, dynamic position sizing based on RSI/fear-greed index, take-profit triggers, and portfolio rebalancing across multiple assets. Supports smart DCA that increases buy size during dips and reduces during pumps. Includes backtesting engine and performance analytics dashboard.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
-            <span class="tag-pill tag-green" style="font-size:0.68rem">Smart DCA</span>
-            <span class="tag-pill tag-blue" style="font-size:0.68rem">RSI-Based</span>
-            <span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-Asset</span>
-          </div>
-          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <!-- Grid Bot — chart patterns -->
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img">
-          <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Grid Bot" loading="lazy">
-          <div class="svc-img-overlay"></div>
-        </div>
-        <div class="svc-body">
-          <h3>Grid Trading Bot</h3>
-          <p>Automated grid strategies that profit from sideways markets by placing buy and sell orders at predefined price intervals. Features dynamic grid adjustment that widens/narrows based on volatility, compound reinvestment of profits, and automatic range reset when price breaks out. Works on both spot and futures markets.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
-            <span class="tag-pill tag-green" style="font-size:0.68rem">Dynamic Grid</span>
-            <span class="tag-pill tag-blue" style="font-size:0.68rem">Spot &amp; Futures</span>
-            <span class="tag-pill tag-purple" style="font-size:0.68rem">Auto-Compound</span>
-          </div>
-          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <!-- Sniper Bot — speed/tech -->
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img">
-          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sniper Bot" loading="lazy">
-          <div class="svc-img-overlay"></div>
-        </div>
-        <div class="svc-body">
-          <h3>Sniper Bot</h3>
-          <p>Token launch snipers and MEV bots that monitor mempools, detect new liquidity events, and execute trades within the same block for maximum edge. Features anti-rug pull detection, honeypot scanning, gas optimization with EIP-1559 support, and private mempool submission via Flashbots to avoid front-running.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
-            <span class="tag-pill tag-green" style="font-size:0.68rem">Mempool Monitor</span>
-            <span class="tag-pill tag-blue" style="font-size:0.68rem">Flashbots</span>
-            <span class="tag-pill tag-purple" style="font-size:0.68rem">Anti-Rug</span>
-          </div>
-          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <!-- Signal Bot — communication -->
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img">
-          <img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Signal Bot" loading="lazy">
-          <div class="svc-img-overlay"></div>
-        </div>
-        <div class="svc-body">
-          <h3>Signal-Based Bot</h3>
-          <p>Bots that consume trading signals from TradingView webhooks, Telegram channels, Discord bots, or custom indicator feeds and execute trades automatically with configurable risk controls. Supports multiple signal providers simultaneously, signal filtering by confidence score, and position sizing based on signal strength.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
-            <span class="tag-pill tag-green" style="font-size:0.68rem">TradingView</span>
-            <span class="tag-pill tag-blue" style="font-size:0.68rem">Telegram</span>
-            <span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-Signal</span>
-          </div>
-          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <!-- AI/ML Bot — AI/data science -->
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img">
-          <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=700" alt="AI ML Bot" loading="lazy">
-          <div class="svc-img-overlay"></div>
-        </div>
-        <div class="svc-body">
-          <h3>AI / ML Trading Bot</h3>
-          <p>Machine learning models trained on historical OHLCV data, order book depth, on-chain metrics, and sentiment feeds to generate alpha in any market regime. We use LSTM, Transformer, and ensemble models with walk-forward optimization to prevent overfitting. Includes real-time model retraining and performance monitoring.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
-            <span class="tag-pill tag-green" style="font-size:0.68rem">LSTM</span>
-            <span class="tag-pill tag-blue" style="font-size:0.68rem">Transformer</span>
-            <span class="tag-pill tag-purple" style="font-size:0.68rem">On-Chain Data</span>
-          </div>
-          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Live Performance -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Live Performance</span>
-        <h2>Bots That <span class="grad-text2">Deliver Real Results</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Our bots are backtested across 5+ years of market data and live-tested in real market conditions before deployment. Here's a snapshot of recent performance from deployed bots.</p>
-        <div style="display:flex;flex-direction:column;gap:14px">
-          <div class="perf-card">
-            <div><h4 style="margin-bottom:4px;font-size:0.97rem">ETH/USDT Arbitrage Bot</h4><p style="font-size:0.82rem">Cross-exchange arbitrage across Binance, Kraken, and Coinbase — running 247 days</p></div>
-            <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+34.2%</div>
-          </div>
-          <div class="perf-card">
-            <div><h4 style="margin-bottom:4px;font-size:0.97rem">BTC Smart DCA Bot</h4><p style="font-size:0.82rem">Weekly DCA with dynamic sizing based on RSI and fear/greed index — running 180 days</p></div>
-            <div class="perf-roi" style="background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+61.8%</div>
-          </div>
-          <div class="perf-card">
-            <div><h4 style="margin-bottom:4px;font-size:0.97rem">SOL/USDC Grid Bot</h4><p style="font-size:0.82rem">Tight grid on Solana DEX with auto-rebalancing on range breaks — running 89 days</p></div>
-            <div class="perf-roi" style="background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+22.5%</div>
-          </div>
-          <div class="perf-card">
-            <div><h4 style="margin-bottom:4px;font-size:0.97rem">Multi-Asset ML Bot</h4><p style="font-size:0.82rem">LSTM model trading BTC, ETH, SOL with on-chain signal integration — running 120 days</p></div>
-            <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+48.7%</div>
-          </div>
-        </div>
-        <p style="font-size:0.75rem;color:var(--muted);margin-top:12px">Past performance does not guarantee future results. All figures are net of fees.</p>
-      </div>
-      <div class="reveal-right">
-        <div class="split-img">
-          <img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bot Performance">
-          <div class="split-badge"><div class="num">24/7</div><p>Automated trading</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why Our Bots Win -->
-<section class="section">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Trading Infrastructure" style="width:100%;height:460px;object-fit:cover;border-radius:20px">
-      </div>
-      <div class="reveal-right">
-        <span class="eyebrow">Why Our Bots Win</span>
-        <h2>Speed, Intelligence, and <span class="grad-text">Reliability</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Every bot we build is engineered for real-world performance — not just backtested results. We optimize for live market conditions, slippage, gas costs, and execution quality.</p>
-        <div class="service-feature-list">
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <div><h4>Sub-10ms Execution</h4><p>Co-located servers near exchange matching engines for the fastest possible order execution. We use dedicated bare-metal servers, not shared cloud instances.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><h4>Risk Management Built In</h4><p>Stop-loss, take-profit, max drawdown limits, position sizing rules, and portfolio correlation checks enforced at the engine level — not as afterthoughts.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-            <div><h4>Real-Time Dashboard</h4><p>Monitor P&amp;L, open positions, trade history, bot health, and performance metrics from a beautiful web dashboard with mobile notifications.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-            <div><h4>Multi-Exchange Support</h4><p>Connect to Binance, Coinbase, Kraken, OKX, Bybit, and 50+ other exchanges via unified API. One bot, all markets.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Use Cases -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Use Cases</span>
-      <h2>Who Uses Our <span class="grad-text3">Trading Bots</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="use-case-grid reveal-stagger">
-      <div class="use-case"><h4>Crypto Hedge Funds</h4><p>Institutional-grade arbitrage and market-making bots with risk management, compliance reporting, and multi-strategy portfolio management.</p></div>
-      <div class="use-case"><h4>Individual Traders</h4><p>Automated DCA, grid, and signal bots that execute your strategy 24/7 without requiring you to watch charts constantly.</p></div>
-      <div class="use-case"><h4>Crypto Exchanges</h4><p>Market-making bots that provide liquidity, tighten spreads, and improve the trading experience for exchange users.</p></div>
-      <div class="use-case"><h4>DeFi Protocols</h4><p>Liquidation bots, arbitrage bots, and keeper bots that maintain protocol health and capture MEV opportunities.</p></div>
-      <div class="use-case"><h4>Forex Brokerages</h4><p>Algorithmic trading systems for forex markets with MT4/MT5 integration, risk management, and regulatory compliance.</p></div>
-      <div class="use-case"><h4>Prop Trading Firms</h4><p>High-frequency trading systems with co-location, ultra-low latency execution, and sophisticated risk controls for professional traders.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text">Bot Tech Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">The same tools used by professional quant funds and HFT firms — optimized for speed, reliability, and alpha generation.</p>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Core Languages</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
-          <div><span class="tname">Python</span><span class="tdesc">Primary language for strategy development, ML models, backtesting, and data pipelines</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/rust/CE422B" alt="Rust">
-          <div><span class="tname">Rust</span><span class="tdesc">Ultra-low latency execution engine for HFT and MEV bots requiring sub-millisecond performance</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js</span><span class="tdesc">WebSocket feeds & APIs</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go"><span class="tname">Go</span><span class="tdesc">Concurrent order routing</span></div>
-      </div>
-      <div class="tech-category-label">AI & Machine Learning</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow">
-          <div><span class="tname">TensorFlow / PyTorch</span><span class="tdesc">LSTM, Transformer, and ensemble models for price prediction and market regime classification</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn">
-          <div><span class="tname">scikit-learn + XGBoost</span><span class="tdesc">Feature engineering, gradient boosting, and ensemble methods for signal generation</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face"><span class="tname">Hugging Face</span><span class="tdesc">NLP sentiment models</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Ray"><span class="tname">Ray + MLflow</span><span class="tdesc">Distributed training</span></div>
-      </div>
-      <div class="tech-category-label">Exchange Connectivity & Infrastructure</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="CCXT"><span class="tname">CCXT</span><span class="tdesc">50+ exchange APIs</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Web3.py"><span class="tname">Web3.py</span><span class="tdesc">On-chain execution</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Real-time state</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Market data streams</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span class="tname">Docker / K8s</span><span class="tdesc">Containerized bots</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana"><span class="tname">Grafana</span><span class="tdesc">Performance dashboards</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Automate Your <span class="grad-text">Trading Strategy?</span></h2>
-        <p>Tell us your strategy and target markets. We'll design, build, and deploy a bot that trades smarter than any manual approach — 24/7, without emotion.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Bot</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/theme.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Bot Development —  PumaPulse</title>
+  <meta name="description" content="Custom algorithmic and AI-powered trading bots —  arbitrage, DCA, grid, sniper, signal, and ML bots engineered for consistent performance by PumaPulse.">
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <style>
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .sfeat-icon svg{width:20px;height:20px}
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+    .sfeat p{font-size:0.86rem}
+    .perf-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:all 0.3s}
+    .perf-card:hover{border-color:var(--border2)}
+    .perf-roi{font-size:1.6rem;font-weight:800;flex-shrink:0}
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+    .use-case p{font-size:0.84rem}
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Trading Bot Development">
+  </div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Trading Bots</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Algorithmic Trading</span>
+      <h1>Trading Bots That <span class="grad-text">Actually Perform</span></h1>
+      <p>PumaPulse builds custom algorithmic trading bots for crypto, forex, and equities —  from simple DCA strategies to multi-exchange AI-driven systems that trade 24/7 without emotion, fatigue, or hesitation.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Bot</a>
+        <a href="#bot-types" class="btn btn-ghost btn-lg">Explore Bot Types</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Bots Deployed</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="99.9" data-suffix="%" data-decimals="1">99.9%</div><p>Uptime Guarantee</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Exchanges Supported</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="24" data-suffix="/7">24/7</div><p>Automated Trading</p></div>
+</div>
+
+<!-- Bot Types -->
+<section class="section" id="bot-types">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Bot Types</span>
+      <h2>Every Strategy, <span class="grad-text">Automated</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We build bots for every trading style and market condition —  from low-risk DCA accumulation to high-frequency arbitrage across dozens of exchanges simultaneously.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+
+      <!-- Arbitrage Bot —  trading screens -->
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img">
+          <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Arbitrage Bot" loading="lazy">
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-body">
+          <h3>Arbitrage Bot</h3>
+          <p>Cross-exchange and triangular arbitrage bots that detect and exploit price discrepancies in milliseconds across CEX and DEX venues simultaneously. Our bots monitor 50+ exchanges in real time, calculate net profit after fees and slippage, and execute trades within the same block on DEXs. Includes flash loan arbitrage for capital-efficient strategies.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+            <span class="tag-pill tag-green" style="font-size:0.68rem">Cross-Exchange</span>
+            <span class="tag-pill tag-blue" style="font-size:0.68rem">Triangular</span>
+            <span class="tag-pill tag-purple" style="font-size:0.68rem">Flash Loans</span>
+          </div>
+          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- DCA Bot —  coins/investment -->
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img">
+          <img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DCA Bot" loading="lazy">
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-body">
+          <h3>DCA Bot</h3>
+          <p>Dollar-cost averaging bots with configurable intervals, dynamic position sizing based on RSI/fear-greed index, take-profit triggers, and portfolio rebalancing across multiple assets. Supports smart DCA that increases buy size during dips and reduces during pumps. Includes backtesting engine and performance analytics dashboard.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+            <span class="tag-pill tag-green" style="font-size:0.68rem">Smart DCA</span>
+            <span class="tag-pill tag-blue" style="font-size:0.68rem">RSI-Based</span>
+            <span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-Asset</span>
+          </div>
+          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Grid Bot —  chart patterns -->
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img">
+          <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Grid Bot" loading="lazy">
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-body">
+          <h3>Grid Trading Bot</h3>
+          <p>Automated grid strategies that profit from sideways markets by placing buy and sell orders at predefined price intervals. Features dynamic grid adjustment that widens/narrows based on volatility, compound reinvestment of profits, and automatic range reset when price breaks out. Works on both spot and futures markets.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+            <span class="tag-pill tag-green" style="font-size:0.68rem">Dynamic Grid</span>
+            <span class="tag-pill tag-blue" style="font-size:0.68rem">Spot &amp; Futures</span>
+            <span class="tag-pill tag-purple" style="font-size:0.68rem">Auto-Compound</span>
+          </div>
+          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Sniper Bot —  speed/tech -->
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img">
+          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sniper Bot" loading="lazy">
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-body">
+          <h3>Sniper Bot</h3>
+          <p>Token launch snipers and MEV bots that monitor mempools, detect new liquidity events, and execute trades within the same block for maximum edge. Features anti-rug pull detection, honeypot scanning, gas optimization with EIP-1559 support, and private mempool submission via Flashbots to avoid front-running.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+            <span class="tag-pill tag-green" style="font-size:0.68rem">Mempool Monitor</span>
+            <span class="tag-pill tag-blue" style="font-size:0.68rem">Flashbots</span>
+            <span class="tag-pill tag-purple" style="font-size:0.68rem">Anti-Rug</span>
+          </div>
+          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Signal Bot —  communication -->
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img">
+          <img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Signal Bot" loading="lazy">
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-body">
+          <h3>Signal-Based Bot</h3>
+          <p>Bots that consume trading signals from TradingView webhooks, Telegram channels, Discord bots, or custom indicator feeds and execute trades automatically with configurable risk controls. Supports multiple signal providers simultaneously, signal filtering by confidence score, and position sizing based on signal strength.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+            <span class="tag-pill tag-green" style="font-size:0.68rem">TradingView</span>
+            <span class="tag-pill tag-blue" style="font-size:0.68rem">Telegram</span>
+            <span class="tag-pill tag-purple" style="font-size:0.68rem">Multi-Signal</span>
+          </div>
+          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- AI/ML Bot —  AI/data science -->
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img">
+          <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=700" alt="AI ML Bot" loading="lazy">
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-body">
+          <h3>AI / ML Trading Bot</h3>
+          <p>Machine learning models trained on historical OHLCV data, order book depth, on-chain metrics, and sentiment feeds to generate alpha in any market regime. We use LSTM, Transformer, and ensemble models with walk-forward optimization to prevent overfitting. Includes real-time model retraining and performance monitoring.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+            <span class="tag-pill tag-green" style="font-size:0.68rem">LSTM</span>
+            <span class="tag-pill tag-blue" style="font-size:0.68rem">Transformer</span>
+            <span class="tag-pill tag-purple" style="font-size:0.68rem">On-Chain Data</span>
+          </div>
+          <a href="../../contact/" class="svc-link hover-underline">Build This Bot <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Live Performance -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Live Performance</span>
+        <h2>Bots That <span class="grad-text2">Deliver Real Results</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">Our bots are backtested across 5+ years of market data and live-tested in real market conditions before deployment. Here's a snapshot of recent performance from deployed bots.</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="perf-card">
+            <div><h4 style="margin-bottom:4px;font-size:0.97rem">ETH/USDT Arbitrage Bot</h4><p style="font-size:0.82rem">Cross-exchange arbitrage across Binance, Kraken, and Coinbase —  running 247 days</p></div>
+            <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+34.2%</div>
+          </div>
+          <div class="perf-card">
+            <div><h4 style="margin-bottom:4px;font-size:0.97rem">BTC Smart DCA Bot</h4><p style="font-size:0.82rem">Weekly DCA with dynamic sizing based on RSI and fear/greed index —  running 180 days</p></div>
+            <div class="perf-roi" style="background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+61.8%</div>
+          </div>
+          <div class="perf-card">
+            <div><h4 style="margin-bottom:4px;font-size:0.97rem">SOL/USDC Grid Bot</h4><p style="font-size:0.82rem">Tight grid on Solana DEX with auto-rebalancing on range breaks —  running 89 days</p></div>
+            <div class="perf-roi" style="background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+22.5%</div>
+          </div>
+          <div class="perf-card">
+            <div><h4 style="margin-bottom:4px;font-size:0.97rem">Multi-Asset ML Bot</h4><p style="font-size:0.82rem">LSTM model trading BTC, ETH, SOL with on-chain signal integration —  running 120 days</p></div>
+            <div class="perf-roi" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+48.7%</div>
+          </div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--muted);margin-top:12px">Past performance does not guarantee future results. All figures are net of fees.</p>
+      </div>
+      <div class="reveal-right">
+        <div class="split-img">
+          <img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bot Performance">
+          <div class="split-badge"><div class="num">24/7</div><p>Automated trading</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Our Bots Win -->
+<section class="section">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="reveal-left">
+        <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Trading Infrastructure" style="width:100%;height:460px;object-fit:cover;border-radius:20px">
+      </div>
+      <div class="reveal-right">
+        <span class="eyebrow">Why Our Bots Win</span>
+        <h2>Speed, Intelligence, and <span class="grad-text">Reliability</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">Every bot we build is engineered for real-world performance —  not just backtested results. We optimize for live market conditions, slippage, gas costs, and execution quality.</p>
+        <div class="service-feature-list">
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div><h4>Sub-10ms Execution</h4><p>Co-located servers near exchange matching engines for the fastest possible order execution. We use dedicated bare-metal servers, not shared cloud instances.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><h4>Risk Management Built In</h4><p>Stop-loss, take-profit, max drawdown limits, position sizing rules, and portfolio correlation checks enforced at the engine level —  not as afterthoughts.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div><h4>Real-Time Dashboard</h4><p>Monitor P&amp;L, open positions, trade history, bot health, and performance metrics from a beautiful web dashboard with mobile notifications.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div><h4>Multi-Exchange Support</h4><p>Connect to Binance, Coinbase, Kraken, OKX, Bybit, and 50+ other exchanges via unified API. One bot, all markets.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Use Cases</span>
+      <h2>Who Uses Our <span class="grad-text3">Trading Bots</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="use-case-grid reveal-stagger">
+      <div class="use-case"><h4>Crypto Hedge Funds</h4><p>Institutional-grade arbitrage and market-making bots with risk management, compliance reporting, and multi-strategy portfolio management.</p></div>
+      <div class="use-case"><h4>Individual Traders</h4><p>Automated DCA, grid, and signal bots that execute your strategy 24/7 without requiring you to watch charts constantly.</p></div>
+      <div class="use-case"><h4>Crypto Exchanges</h4><p>Market-making bots that provide liquidity, tighten spreads, and improve the trading experience for exchange users.</p></div>
+      <div class="use-case"><h4>DeFi Protocols</h4><p>Liquidation bots, arbitrage bots, and keeper bots that maintain protocol health and capture MEV opportunities.</p></div>
+      <div class="use-case"><h4>Forex Brokerages</h4><p>Algorithmic trading systems for forex markets with MT4/MT5 integration, risk management, and regulatory compliance.</p></div>
+      <div class="use-case"><h4>Prop Trading Firms</h4><p>High-frequency trading systems with co-location, ultra-low latency execution, and sophisticated risk controls for professional traders.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Our <span class="grad-text">Bot Tech Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">The same tools used by professional quant funds and HFT firms —  optimized for speed, reliability, and alpha generation.</p>
+    </div>
+    <div class="tech-showcase reveal-stagger">
+      <div class="tech-category-label">Core Languages</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+          <div><span class="tname">Python</span><span class="tdesc">Primary language for strategy development, ML models, backtesting, and data pipelines</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/rust/CE422B" alt="Rust">
+          <div><span class="tname">Rust</span><span class="tdesc">Ultra-low latency execution engine for HFT and MEV bots requiring sub-millisecond performance</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js</span><span class="tdesc">WebSocket feeds & APIs</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go"><span class="tname">Go</span><span class="tdesc">Concurrent order routing</span></div>
+      </div>
+      <div class="tech-category-label">AI & Machine Learning</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow">
+          <div><span class="tname">TensorFlow / PyTorch</span><span class="tdesc">LSTM, Transformer, and ensemble models for price prediction and market regime classification</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn">
+          <div><span class="tname">scikit-learn + XGBoost</span><span class="tdesc">Feature engineering, gradient boosting, and ensemble methods for signal generation</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face"><span class="tname">Hugging Face</span><span class="tdesc">NLP sentiment models</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Ray"><span class="tname">Ray + MLflow</span><span class="tdesc">Distributed training</span></div>
+      </div>
+      <div class="tech-category-label">Exchange Connectivity & Infrastructure</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="CCXT"><span class="tname">CCXT</span><span class="tdesc">50+ exchange APIs</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Web3.py"><span class="tname">Web3.py</span><span class="tdesc">On-chain execution</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Real-time state</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Market data streams</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span class="tname">Docker / K8s</span><span class="tdesc">Containerized bots</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana"><span class="tname">Grafana</span><span class="tdesc">Performance dashboards</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Automate Your <span class="grad-text">Trading Strategy?</span></h2>
+        <p>Tell us your strategy and target markets. We'll design, build, and deploy a bot that trades smarter than any manual approach —  24/7, without emotion.</p>
+        <div class="cta-btns">
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Bot</a>
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/nav.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/animations.js"></script>
+</body>
+</html>

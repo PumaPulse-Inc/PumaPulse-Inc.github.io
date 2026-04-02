@@ -1,251 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Exchange Development — PumaPulse</title>
-  <meta name="description" content="Build a world-class crypto exchange — CEX, DEX, P2P, hybrid, or white-label. PumaPulse delivers secure, scalable exchange platforms with proven track record.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .exchange-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .exc-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden}
-    .exc-card.featured{border-color:rgba(16,185,129,0.4);background:linear-gradient(135deg,rgba(16,185,129,0.05),var(--card))}
-    .exc-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--accent);color:#fff;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.05em}
-    .exc-card:hover{border-color:var(--border2);transform:translateY(-5px)}
-    .exc-card h3{font-size:1.1rem;margin-bottom:10px}
-    .exc-card .price{font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:14px}
-    .exc-card ul{display:flex;flex-direction:column;gap:8px}
-    .exc-card ul li{display:flex;gap:8px;align-items:flex-start;font-size:0.84rem;color:var(--muted2)}
-    .exc-card ul li::before{content:'?';color:var(--accent);font-weight:700;flex-shrink:0}
-    .feature-table{width:100%;border-collapse:collapse}
-    .feature-table th{text-align:left;padding:14px 16px;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
-    .feature-table td{padding:14px 16px;font-size:0.87rem;border-bottom:1px solid var(--border);color:var(--muted2)}
-    .feature-table tr:last-child td{border-bottom:none}
-    .feature-table tr:hover td{background:rgba(255,255,255,0.02)}
-    .check{color:var(--accent);font-weight:700}.cross{color:var(--muted);opacity:0.4}
-    @media(max-width:1024px){.exchange-compare{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Crypto Exchange Development"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Crypto Exchange</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Exchange Development</span>
-      <h1>Build a Crypto Exchange That <span class="grad-text">Scales to Millions</span></h1>
-      <p>From centralized order books to fully decentralized AMMs — PumaPulse engineers high-performance trading platforms built for institutional-grade volume, bulletproof security, and exceptional user experience.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get a Free Quote</a>
-        <a href="#exchange-types" class="btn btn-ghost btn-lg">Explore Exchange Types</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="15" data-suffix="+">15+</div><p>Exchanges Launched</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="1" data-suffix="M+ TPS">1M+ TPS</div><p>Matching Engine Speed</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="4" data-suffix=" Weeks">4 Weeks</div><p>White-Label Launch Time</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="99.9" data-suffix="%" data-decimals="1">99.9%</div><p>Uptime SLA</p></div>
-</div>
-
-<!-- Exchange Types -->
-<section class="section" id="exchange-types">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Exchange Types</span>
-      <h2>Every Exchange Model, <span class="grad-text">Engineered Right</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We build all major exchange architectures — choose the model that fits your business, or combine them into a hybrid powerhouse.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="CEX" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Centralized Exchange (CEX)</h3>
-          <p>High-throughput in-memory order book engine processing 1M+ orders per second with sub-millisecond matching. Includes price-time priority, partial fills, stop-loss/take-profit orders, and iceberg orders. Built with hot/warm/cold wallet tiering, HSM-backed key management, automated sweeping, and multi-sig treasury management.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Order Book</span><span class="tag-pill tag-blue" style="font-size:0.68rem">KYC/AML</span><span class="tag-pill tag-purple" style="font-size:0.68rem">HSM Custody</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DEX" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Decentralized Exchange (DEX)</h3>
-          <p>AMM-based or on-chain order book DEX with concentrated liquidity (Uniswap v3 style), multi-hop routing for optimal swap execution, and MEV-resistant order flow. Includes yield farming hooks, governance token integration, liquidity mining programs, and The Graph subgraph for real-time analytics.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">AMM</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Liquidity Pools</span><span class="tag-pill tag-purple" style="font-size:0.68rem">MEV Protection</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=700" alt="P2P" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>P2P Exchange</h3>
-          <p>Peer-to-peer trading platform with escrow smart contracts, multi-sig dispute resolution, and a reputation scoring system. Supports 100+ local payment methods including bank transfer, PayPal, cash, and mobile money. Includes automated trade matching, chat system, and fraud detection algorithms.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Escrow</span><span class="tag-pill tag-blue" style="font-size:0.68rem">100+ Payments</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Reputation</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Hybrid" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Hybrid Exchange</h3>
-          <p>Best of both worlds — CEX-speed matching engine with non-custodial settlement. Users keep control of their private keys while enjoying the UX of a centralized platform. Off-chain order matching with on-chain settlement via state channels or ZK-rollups. Ideal for regulated markets requiring both performance and transparency.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Non-Custodial</span><span class="tag-pill tag-blue" style="font-size:0.68rem">ZK Settlement</span><span class="tag-pill tag-purple" style="font-size:0.68rem">CEX Speed</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg?auto=compress&cs=tinysrgb&w=700" alt="White Label" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>White-Label Exchange</h3>
-          <p>Launch your fully branded exchange in 4—Å“6 weeks with our battle-tested white-label platform. Full source code ownership, custom UI/UX with your brand identity, modular architecture you can extend at any time. Includes admin dashboard, liquidity management tools, and a dedicated launch support team.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">4-6 Weeks</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Full Source</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Custom Brand</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Derivatives" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Derivatives Exchange</h3>
-          <p>Perpetual futures, options, and structured products with cross-margin and isolated-margin engines. Includes real-time liquidation systems with insurance fund management, funding rate mechanisms, mark price calculation using oracle aggregation, and risk management dashboards for operators.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Perpetuals</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Options</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Risk Engine</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Feature Comparison -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Comparison</span>
-      <h2>Which Exchange Type is <span class="grad-text2">Right for You?</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-top:40px" class="reveal">
-      <table class="feature-table">
-        <thead><tr><th>Feature</th><th>CEX</th><th>DEX</th><th>P2P</th><th>Hybrid</th><th>Derivatives</th></tr></thead>
-        <tbody>
-          <tr><td>Matching Speed</td><td class="check">1M+ TPS</td><td>On-chain</td><td>Manual</td><td class="check">1M+ TPS</td><td class="check">1M+ TPS</td></tr>
-          <tr><td>User Custody</td><td class="cross">Custodial</td><td class="check">Self-custody</td><td class="check">Self-custody</td><td class="check">Self-custody</td><td class="cross">Custodial</td></tr>
-          <tr><td>KYC/AML</td><td class="check">Built-in</td><td class="cross">Optional</td><td class="check">Built-in</td><td class="check">Built-in</td><td class="check">Built-in</td></tr>
-          <tr><td>Liquidity</td><td class="check">Deep</td><td>Pool-based</td><td>P2P</td><td class="check">Deep</td><td class="check">Deep</td></tr>
-          <tr><td>Launch Time</td><td>3-5 months</td><td>2-4 months</td><td>2-3 months</td><td>4-6 months</td><td>4-6 months</td></tr>
-          <tr><td>White-Label</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- Core Features -->
-<section class="section">
-  <div class="container">
-    <div class="split">
-      <div class="reveal-left">
-        <span class="eyebrow">Core Features</span>
-        <h2>Built for <span class="grad-text">Performance and Trust</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Every exchange we build ships with a battle-tested feature set that covers the full trading lifecycle — from order placement to settlement and compliance reporting.</p>
-        <div class="service-feature-list">
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Ultra-Low Latency Matching Engine</h4><p>In-memory order book processing 1M+ TPS with sub-millisecond execution. Price-time priority, partial fills, and all major order types.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Multi-Layer Security Architecture</h4><p>HSM-backed cold storage, 2FA, IP whitelisting, DDoS protection, real-time anomaly detection, and automated threat response.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><h4>Professional Trading Interface</h4><p>TradingView charts, advanced order types, portfolio analytics, mobile apps (iOS/Android), and API for algorithmic traders.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h4>Integrated KYC/AML Compliance</h4><p>Automated identity verification, transaction monitoring, FATF Travel Rule support, SAR reporting, and 30+ jurisdiction compliance.</p></div></div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="split-img">
-          <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Exchange Platform">
-          <div class="split-badge"><div class="num">1M+</div><p>Orders per second</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text3">Exchange Tech Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">The same battle-tested stack powering the world's top crypto exchanges — engineered for speed, security, and scale.</p>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Core Backend</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/rust/CE422B" alt="Rust">
-          <div><span class="tname">Rust</span><span class="tdesc">Ultra-low latency matching engine — processes 1M+ orders/sec with sub-millisecond execution</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go">
-          <div><span class="tname">Go</span><span class="tdesc">High-throughput microservices for order management, wallet, and settlement systems</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js</span><span class="tdesc">API gateway & WebSocket</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Event streaming</span></div>
-      </div>
-      <div class="tech-category-label">Frontend & Mobile</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
-          <div><span class="tname">React + TradingView</span><span class="tdesc">Professional trading UI with advanced charting, order book visualization, and real-time data</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
-          <div><span class="tname">React Native</span><span class="tdesc">Native iOS & Android trading apps with full feature parity and biometric authentication</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"><span class="tname">TypeScript</span><span class="tdesc">Type-safe frontend</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js"><span class="tname">Next.js</span><span class="tdesc">SSR landing pages</span></div>
-      </div>
-      <div class="tech-category-label">Data & Infrastructure</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span class="tname">PostgreSQL</span><span class="tdesc">Primary database</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Order book cache</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/elasticsearch/005571" alt="Elasticsearch"><span class="tname">Elasticsearch</span><span class="tdesc">Trade history search</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Container orchestration</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span class="tname">AWS / GCP</span><span class="tdesc">Cloud infrastructure</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"><span class="tname">Prometheus</span><span class="tdesc">Metrics & alerting</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Launch Your <span class="grad-text">Crypto Exchange?</span></h2>
-        <p>Talk to our exchange architects. We'll scope your project, recommend the right architecture, and give you a clear roadmap to launch.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get Free Quote</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/theme.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Exchange Development —  PumaPulse</title>
+  <meta name="description" content="Build a world-class crypto exchange —  CEX, DEX, P2P, hybrid, or white-label. PumaPulse delivers secure, scalable exchange platforms with proven track record.">
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <style>
+    .exchange-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .exc-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden}
+    .exc-card.featured{border-color:rgba(16,185,129,0.4);background:linear-gradient(135deg,rgba(16,185,129,0.05),var(--card))}
+    .exc-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--accent);color:#fff;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.05em}
+    .exc-card:hover{border-color:var(--border2);transform:translateY(-5px)}
+    .exc-card h3{font-size:1.1rem;margin-bottom:10px}
+    .exc-card .price{font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:14px}
+    .exc-card ul{display:flex;flex-direction:column;gap:8px}
+    .exc-card ul li{display:flex;gap:8px;align-items:flex-start;font-size:0.84rem;color:var(--muted2)}
+    .exc-card ul li::before{content:'?';color:var(--accent);font-weight:700;flex-shrink:0}
+    .feature-table{width:100%;border-collapse:collapse}
+    .feature-table th{text-align:left;padding:14px 16px;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+    .feature-table td{padding:14px 16px;font-size:0.87rem;border-bottom:1px solid var(--border);color:var(--muted2)}
+    .feature-table tr:last-child td{border-bottom:none}
+    .feature-table tr:hover td{background:rgba(255,255,255,0.02)}
+    .check{color:var(--accent);font-weight:700}.cross{color:var(--muted);opacity:0.4}
+    @media(max-width:1024px){.exchange-compare{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Crypto Exchange Development"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Crypto Exchange</span></div>
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Exchange Development</span>
+      <h1>Build a Crypto Exchange That <span class="grad-text">Scales to Millions</span></h1>
+      <p>From centralized order books to fully decentralized AMMs —  PumaPulse engineers high-performance trading platforms built for institutional-grade volume, bulletproof security, and exceptional user experience.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get a Free Quote</a>
+        <a href="#exchange-types" class="btn btn-ghost btn-lg">Explore Exchange Types</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="15" data-suffix="+">15+</div><p>Exchanges Launched</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="1" data-suffix="M+ TPS">1M+ TPS</div><p>Matching Engine Speed</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="4" data-suffix=" Weeks">4 Weeks</div><p>White-Label Launch Time</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="99.9" data-suffix="%" data-decimals="1">99.9%</div><p>Uptime SLA</p></div>
+</div>
+
+<!-- Exchange Types -->
+<section class="section" id="exchange-types">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Exchange Types</span>
+      <h2>Every Exchange Model, <span class="grad-text">Engineered Right</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">We build all major exchange architectures —  choose the model that fits your business, or combine them into a hybrid powerhouse.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="CEX" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Centralized Exchange (CEX)</h3>
+          <p>High-throughput in-memory order book engine processing 1M+ orders per second with sub-millisecond matching. Includes price-time priority, partial fills, stop-loss/take-profit orders, and iceberg orders. Built with hot/warm/cold wallet tiering, HSM-backed key management, automated sweeping, and multi-sig treasury management.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Order Book</span><span class="tag-pill tag-blue" style="font-size:0.68rem">KYC/AML</span><span class="tag-pill tag-purple" style="font-size:0.68rem">HSM Custody</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=700" alt="DEX" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Decentralized Exchange (DEX)</h3>
+          <p>AMM-based or on-chain order book DEX with concentrated liquidity (Uniswap v3 style), multi-hop routing for optimal swap execution, and MEV-resistant order flow. Includes yield farming hooks, governance token integration, liquidity mining programs, and The Graph subgraph for real-time analytics.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">AMM</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Liquidity Pools</span><span class="tag-pill tag-purple" style="font-size:0.68rem">MEV Protection</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=700" alt="P2P" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>P2P Exchange</h3>
+          <p>Peer-to-peer trading platform with escrow smart contracts, multi-sig dispute resolution, and a reputation scoring system. Supports 100+ local payment methods including bank transfer, PayPal, cash, and mobile money. Includes automated trade matching, chat system, and fraud detection algorithms.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Escrow</span><span class="tag-pill tag-blue" style="font-size:0.68rem">100+ Payments</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Reputation</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Hybrid" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Hybrid Exchange</h3>
+          <p>Best of both worlds —  CEX-speed matching engine with non-custodial settlement. Users keep control of their private keys while enjoying the UX of a centralized platform. Off-chain order matching with on-chain settlement via state channels or ZK-rollups. Ideal for regulated markets requiring both performance and transparency.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Non-Custodial</span><span class="tag-pill tag-blue" style="font-size:0.68rem">ZK Settlement</span><span class="tag-pill tag-purple" style="font-size:0.68rem">CEX Speed</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg?auto=compress&cs=tinysrgb&w=700" alt="White Label" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>White-Label Exchange</h3>
+          <p>Launch your fully branded exchange in 4— —...“6 weeks with our battle-tested white-label platform. Full source code ownership, custom UI/UX with your brand identity, modular architecture you can extend at any time. Includes admin dashboard, liquidity management tools, and a dedicated launch support team.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">4-6 Weeks</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Full Source</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Custom Brand</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Derivatives" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Derivatives Exchange</h3>
+          <p>Perpetual futures, options, and structured products with cross-margin and isolated-margin engines. Includes real-time liquidation systems with insurance fund management, funding rate mechanisms, mark price calculation using oracle aggregation, and risk management dashboards for operators.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Perpetuals</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Options</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Risk Engine</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Comparison -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Comparison</span>
+      <h2>Which Exchange Type is <span class="grad-text2">Right for You?</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-top:40px" class="reveal">
+      <table class="feature-table">
+        <thead><tr><th>Feature</th><th>CEX</th><th>DEX</th><th>P2P</th><th>Hybrid</th><th>Derivatives</th></tr></thead>
+        <tbody>
+          <tr><td>Matching Speed</td><td class="check">1M+ TPS</td><td>On-chain</td><td>Manual</td><td class="check">1M+ TPS</td><td class="check">1M+ TPS</td></tr>
+          <tr><td>User Custody</td><td class="cross">Custodial</td><td class="check">Self-custody</td><td class="check">Self-custody</td><td class="check">Self-custody</td><td class="cross">Custodial</td></tr>
+          <tr><td>KYC/AML</td><td class="check">Built-in</td><td class="cross">Optional</td><td class="check">Built-in</td><td class="check">Built-in</td><td class="check">Built-in</td></tr>
+          <tr><td>Liquidity</td><td class="check">Deep</td><td>Pool-based</td><td>P2P</td><td class="check">Deep</td><td class="check">Deep</td></tr>
+          <tr><td>Launch Time</td><td>3-5 months</td><td>2-4 months</td><td>2-3 months</td><td>4-6 months</td><td>4-6 months</td></tr>
+          <tr><td>White-Label</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Core Features -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="reveal-left">
+        <span class="eyebrow">Core Features</span>
+        <h2>Built for <span class="grad-text">Performance and Trust</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">Every exchange we build ships with a battle-tested feature set that covers the full trading lifecycle —  from order placement to settlement and compliance reporting.</p>
+        <div class="service-feature-list">
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Ultra-Low Latency Matching Engine</h4><p>In-memory order book processing 1M+ TPS with sub-millisecond execution. Price-time priority, partial fills, and all major order types.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Multi-Layer Security Architecture</h4><p>HSM-backed cold storage, 2FA, IP whitelisting, DDoS protection, real-time anomaly detection, and automated threat response.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><h4>Professional Trading Interface</h4><p>TradingView charts, advanced order types, portfolio analytics, mobile apps (iOS/Android), and API for algorithmic traders.</p></div></div>
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h4>Integrated KYC/AML Compliance</h4><p>Automated identity verification, transaction monitoring, FATF Travel Rule support, SAR reporting, and 30+ jurisdiction compliance.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="split-img">
+          <img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Exchange Platform">
+          <div class="split-badge"><div class="num">1M+</div><p>Orders per second</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Our <span class="grad-text3">Exchange Tech Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">The same battle-tested stack powering the world's top crypto exchanges —  engineered for speed, security, and scale.</p>
+    </div>
+    <div class="tech-showcase reveal-stagger">
+      <div class="tech-category-label">Core Backend</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/rust/CE422B" alt="Rust">
+          <div><span class="tname">Rust</span><span class="tdesc">Ultra-low latency matching engine —  processes 1M+ orders/sec with sub-millisecond execution</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go">
+          <div><span class="tname">Go</span><span class="tdesc">High-throughput microservices for order management, wallet, and settlement systems</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js</span><span class="tdesc">API gateway & WebSocket</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Event streaming</span></div>
+      </div>
+      <div class="tech-category-label">Frontend & Mobile</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
+          <div><span class="tname">React + TradingView</span><span class="tdesc">Professional trading UI with advanced charting, order book visualization, and real-time data</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
+          <div><span class="tname">React Native</span><span class="tdesc">Native iOS & Android trading apps with full feature parity and biometric authentication</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"><span class="tname">TypeScript</span><span class="tdesc">Type-safe frontend</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js"><span class="tname">Next.js</span><span class="tdesc">SSR landing pages</span></div>
+      </div>
+      <div class="tech-category-label">Data & Infrastructure</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span class="tname">PostgreSQL</span><span class="tdesc">Primary database</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Order book cache</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/elasticsearch/005571" alt="Elasticsearch"><span class="tname">Elasticsearch</span><span class="tdesc">Trade history search</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Container orchestration</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span class="tname">AWS / GCP</span><span class="tdesc">Cloud infrastructure</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"><span class="tname">Prometheus</span><span class="tdesc">Metrics & alerting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Launch Your <span class="grad-text">Crypto Exchange?</span></h2>
+        <p>Talk to our exchange architects. We'll scope your project, recommend the right architecture, and give you a clear roadmap to launch.</p>
+        <div class="cta-btns">
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get Free Quote</a>
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/nav.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/animations.js"></script>
+</body>
+</html>
+
+
+
+
