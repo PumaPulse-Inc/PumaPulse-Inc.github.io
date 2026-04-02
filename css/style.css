@@ -1,4 +1,4 @@
-﻿/* =====================================================
+/* =====================================================
    PumaPulse â€” Complete Design System (Fixed)
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -183,7 +183,7 @@ p{color:var(--muted2);line-height:1.75}
 .hero-video-wrap::after{
   content:'';
   position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(8,12,24,0.92) 0%,rgba(8,12,24,0.70) 60%,rgba(8,12,24,0.85) 100%);
+  background:linear-gradient(135deg,rgba(8,12,24,0.75) 0%,rgba(8,12,24,0.50) 60%,rgba(8,12,24,0.70) 100%);
   z-index:1;
 }
 /* Grid overlay */
