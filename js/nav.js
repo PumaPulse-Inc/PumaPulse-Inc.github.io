@@ -2,11 +2,11 @@
 (function() {
   var path = window.location.pathname;
   var depth = (path.match(/\//g) || []).length - 1;
-  // services/blockchain/ or solutions/defi/ = depth 2 → ../../
-  // about/ blog/ careers/ etc = depth 1 → ../
-  // root = depth 0 → ''
+  // On GitHub Pages root: pathname = '/' → depth 0
+  // about/ → depth 1, services/blockchain/ → depth 2
   var base = depth >= 2 ? '../../' : depth === 1 ? '../' : '';
-  var home = depth >= 2 ? '../../' : depth === 1 ? '../' : '/';
+  // Logo always goes to root — use absolute path to avoid /index/ issue
+  var home = '/';
 
   /* ── NAVBAR ── */
   var navHTML = '<nav class="navbar" id="navbar"><div class="navbar-inner">'
