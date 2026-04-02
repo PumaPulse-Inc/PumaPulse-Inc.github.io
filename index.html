@@ -17,7 +17,7 @@
     @keyframes barGrow{from{transform:scaleY(0);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
     .dashboard-mockup{animation:fadeInUp 0.8s 0.3s both}
 
-    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:100vh;padding-top:68px}
+    .hero-split{display:grid;grid-template-columns:1fr;align-items:center;min-height:100vh;padding-top:68px}
     .hero-right{position:relative;z-index:3;display:flex;flex-direction:column;gap:16px}
     .live-card{background:rgba(8,12,24,0.75);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 22px;display:flex;align-items:center;gap:14px;animation:slideDown 0.6s both}
     .live-card:nth-child(2){animation-delay:0.15s}.live-card:nth-child(3){animation-delay:0.3s}.live-card:nth-child(4){animation-delay:0.45s}
@@ -213,38 +213,35 @@
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero" style="min-height:100vh;padding-top:0">
+<!-- Hero -->
+<section class="hero" style="min-height:100vh;padding-top:0">
   <div class="hero-video-wrap">
-    <img src="https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?auto=format&fit=crop&w=1920&q=90" alt="bg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0">
-  </div></div>
-  <div class="container hero-split">
-    <div class="hero-left" style="position:relative;z-index:3">
-      <div class="hero-badge anim-float">
-        <span class="hero-badge-dot"></span>
-        Trusted Digital Transformation Company
-      </div>
-      <h1 style="color:#fff">Your Business Deserves<br><span class="shimmer-text">More Revenue,</span><br>Not More Work</h1>
-      <p class="hero-desc">What's stopping your business from growing faster? We remove the friction, automate what slows you down, and help you scale at 10X speed — effortlessly. From crypto exchanges to AI-powered trading bots, we engineer high-performance fintech products that last.</p>
-      <div class="hero-actions">
-        <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Start Your Project</a>
-        <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
-      </div>
-      <div class="trusted-row">
-        <span class="trusted-label">Trusted by</span>
-        <div class="trusted-logos">
-          <span class="trusted-logo">Dreamster</span>
-          <span class="trusted-logo">Cryptinum</span>
-          <span class="trusted-logo">Apzor</span>
-          <span class="trusted-logo">MetaStation</span>
-          <span class="trusted-logo">MarginFX</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-right" style="position:relative;z-index:3;display:flex;align-items:center;justify-content:center;padding:80px 0">
-      <canvas id="particleCanvas" style="width:100%;max-width:480px;height:480px;display:block;border-radius:24px"></canvas>
-    </div>
-  </div>
+    <img src="https://images.unsplash.com/photo-1642790106117-e829e14a3f2c?auto=format&fit=crop&w=1920&q=90" alt="bg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0">
+  </div>
+  <div class="container" style="position:relative;z-index:3;width:100%;padding-top:68px">
+    <div style="max-width:720px;padding-left:0">
+      <div class="hero-badge anim-float">
+        <span class="hero-badge-dot"></span>
+        Trusted Digital Transformation Company
+      </div>
+      <h1 style="color:#fff">Your Business Deserves<br><span class="shimmer-text">More Revenue,</span><br>Not More Work</h1>
+      <p class="hero-desc">What's stopping your business from growing faster? We remove the friction, automate what slows you down, and help you scale at 10X speed — effortlessly. From crypto exchanges to AI-powered trading bots, we engineer high-performance fintech products that last.</p>
+      <div class="hero-actions">
+        <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Start Your Project</a>
+        <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
+      </div>
+      <div class="trusted-row">
+        <span class="trusted-label">Trusted by</span>
+        <div class="trusted-logos">
+          <span class="trusted-logo">Dreamster</span>
+          <span class="trusted-logo">Cryptinum</span>
+          <span class="trusted-logo">Apzor</span>
+          <span class="trusted-logo">MetaStation</span>
+          <span class="trusted-logo">MarginFX</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
     <div class="text-center" style="margin-top:44px">
       
@@ -558,68 +555,96 @@ document.querySelectorAll('.ripple-btn').forEach(btn => {
 
 
 
-<script>
-(function(){
-  var c = document.getElementById('particleCanvas');
-  if(!c) return;
-  var W = c.offsetWidth || 480, H = 480;
-  c.width = W; c.height = H;
-  var ctx = c.getContext('2d');
 
-  var nodes = [];
-  for(var i = 0; i < 60; i++){
-    nodes.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.6,
-      vy: (Math.random() - 0.5) * 0.6,
-      r: Math.random() * 2.5 + 1,
-      hue: [160, 220, 270, 200][Math.floor(Math.random() * 4)]
-    });
-  }
 
-  function draw(){
-    ctx.clearRect(0, 0, W, H);
-
-    // Draw connections
-    for(var i = 0; i < nodes.length; i++){
-      for(var j = i + 1; j < nodes.length; j++){
-        var dx = nodes[i].x - nodes[j].x;
-        var dy = nodes[i].y - nodes[j].y;
-        var dist = Math.sqrt(dx*dx + dy*dy);
-        if(dist < 100){
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.strokeStyle = 'rgba(16,185,129,' + (1 - dist/100) * 0.35 + ')';
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Draw nodes
-    nodes.forEach(function(n){
-      var grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 2);
-      grd.addColorStop(0, 'hsla(' + n.hue + ',80%,70%,0.9)');
-      grd.addColorStop(1, 'hsla(' + n.hue + ',80%,70%,0)');
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r * 2, 0, Math.PI * 2);
-      ctx.fillStyle = grd;
-      ctx.fill();
-
-      // Move
-      n.x += n.vx;
-      n.y += n.vy;
-      if(n.x < 0 || n.x > W) n.vx *= -1;
-      if(n.y < 0 || n.y > H) n.vy *= -1;
-    });
-
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-</script>
-
+
+<style>
+#coinExplosion { overflow:visible; }
+.coin-wrap { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); }
+.eth-center {
+  width:90px; height:90px; border-radius:50%;
+  background:radial-gradient(circle at 35% 35%, #8a9ff0, #627EEA 60%, #3a4fa0);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 40px rgba(98,126,234,0.7), 0 0 80px rgba(98,126,234,0.3);
+  animation:ethPulse 2s ease-in-out infinite;
+  position:relative; z-index:10;
+}
+.eth-center svg { width:44px; height:44px; }
+@keyframes ethPulse {
+  0%,100%{ box-shadow:0 0 40px rgba(98,126,234,0.7),0 0 80px rgba(98,126,234,0.3); transform:scale(1); }
+  50%{ box-shadow:0 0 60px rgba(98,126,234,0.9),0 0 120px rgba(98,126,234,0.5); transform:scale(1.06); }
+}
+.coin {
+  position:absolute; top:50%; left:50%;
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:800; color:#fff;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+  animation:coinOrbit linear infinite;
+  transform-origin:0 0;
+}
+@keyframes coinOrbit {
+  0%   { transform:translate(-50%,-50%) rotate(0deg)   translateX(var(--r)) rotate(0deg); }
+  100% { transform:translate(-50%,-50%) rotate(360deg) translateX(var(--r)) rotate(-360deg); }
+}
+.coin-trail {
+  position:absolute; top:50%; left:50%;
+  width:6px; height:6px; border-radius:50%;
+  animation:trailFloat linear infinite;
+  opacity:0;
+}
+@keyframes trailFloat {
+  0%   { transform:translate(-50%,-50%) rotate(var(--a)) translateX(var(--r2)); opacity:0.8; }
+  100% { transform:translate(-50%,-50%) rotate(calc(var(--a) + 360deg)) translateX(calc(var(--r2) + 40px)); opacity:0; }
+}
+</style>
+<script>
+(function(){
+  var el = document.getElementById('coinExplosion');
+  if(!el) return;
+
+  var coins = [
+    { sym:'BTC', color:'#f7931a', bg:'linear-gradient(135deg,#f7931a,#e07b10)', r:110, dur:8,  delay:0,   icon:'₿' },
+    { sym:'SOL', color:'#9945FF', bg:'linear-gradient(135deg,#9945FF,#14F195)', r:150, dur:12, delay:-3,  icon:'◎' },
+    { sym:'BNB', color:'#F3BA2F', bg:'linear-gradient(135deg,#F3BA2F,#d4a010)', r:90,  dur:6,  delay:-1,  icon:'B' },
+    { sym:'ADA', color:'#0033AD', bg:'linear-gradient(135deg,#0033AD,#3468d1)', r:170, dur:15, delay:-5,  icon:'₳' },
+    { sym:'DOT', color:'#E6007A', bg:'linear-gradient(135deg,#E6007A,#ff4da6)', r:130, dur:10, delay:-2,  icon:'●' },
+    { sym:'AVAX',color:'#E84142', bg:'linear-gradient(135deg,#E84142,#ff6b6b)', r:80,  dur:7,  delay:-4,  icon:'A' },
+    { sym:'LINK',color:'#2A5ADA', bg:'linear-gradient(135deg,#2A5ADA,#5b8af5)', r:190, dur:18, delay:-7,  icon:'⬡' },
+    { sym:'MATIC',color:'#8247E5',bg:'linear-gradient(135deg,#8247E5,#a970ff)', r:60,  dur:5,  delay:-0.5,icon:'M' },
+  ];
+
+  // ETH center
+  var wrap = document.createElement('div');
+  wrap.className = 'coin-wrap';
+  wrap.innerHTML = '<div class="eth-center"><svg viewBox="0 0 24 24" fill="none"><polygon points="12,2 20,12 12,16 4,12" fill="rgba(255,255,255,0.9)"/><polygon points="12,16 20,12 12,22 4,12" fill="rgba(255,255,255,0.5)"/></svg></div>';
+  el.appendChild(wrap);
+
+  // Orbiting coins
+  coins.forEach(function(coin){
+    var div = document.createElement('div');
+    div.className = 'coin';
+    div.style.cssText = 'background:' + coin.bg + ';--r:' + coin.r + 'px;animation-duration:' + coin.dur + 's;animation-delay:' + coin.delay + 's;box-shadow:0 0 12px ' + coin.color + '88;';
+    div.innerHTML = '<span style="font-size:13px">' + coin.icon + '</span>';
+    el.appendChild(div);
+
+    // Add label
+    var lbl = document.createElement('div');
+    lbl.className = 'coin';
+    lbl.style.cssText = 'background:transparent;--r:' + (coin.r + 28) + 'px;animation-duration:' + coin.dur + 's;animation-delay:' + coin.delay + 's;font-size:9px;color:rgba(255,255,255,0.6);width:auto;height:auto;white-space:nowrap;';
+    lbl.textContent = coin.sym;
+    el.appendChild(lbl);
+  });
+
+  // Floating particles
+  for(var i = 0; i < 20; i++){
+    var trail = document.createElement('div');
+    trail.className = 'coin-trail';
+    var colors = ['#10b981','#627EEA','#f7931a','#9945FF','#F3BA2F'];
+    trail.style.cssText = '--a:' + (i*18) + 'deg;--r2:' + (40+Math.random()*120) + 'px;background:' + colors[i%5] + ';animation-duration:' + (3+Math.random()*4) + 's;animation-delay:-' + (Math.random()*5) + 's;';
+    el.appendChild(trail);
+  }
+})();
+</script>
 </body>
 </html>
