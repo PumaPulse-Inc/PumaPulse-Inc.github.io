@@ -6,10 +6,11 @@
   // about/ blog/ careers/ etc = depth 1 → ../
   // root = depth 0 → ''
   var base = depth >= 2 ? '../../' : depth === 1 ? '../' : '';
+  var home = depth >= 2 ? '../../' : depth === 1 ? '../' : '/';
 
   /* ── NAVBAR ── */
   var navHTML = '<nav class="navbar" id="navbar"><div class="navbar-inner">'
-    + '<a href="' + base + '" class="nav-logo"><img src="' + base + 'img/logo.png" alt="PumaPulse"></a>'
+    + '<a href="' + home + '" class="nav-logo"><img src="' + base + 'img/logo.png" alt="PumaPulse"></a>'
     + '<ul class="nav-links" id="navLinks">'
 
     /* Services mega menu */
@@ -53,7 +54,7 @@
   var footerHTML = '<footer>'
     + '<div class="footer-top"><div class="container"><div class="footer-top-inner">'
     + '<div class="footer-brand-new">'
-    + '<a href="' + base + '" class="nav-logo"><img src="' + base + 'img/logo.png" alt="PumaPulse"></a>'
+    + '<a href="' + home + '" class="nav-logo"><img src="' + base + 'img/logo.png" alt="PumaPulse"></a>'
     + '<p class="tagline">PumaPulse offers digital transformation solutions that help your business grow and adapt. We simplify complex tech and help startups and entrepreneurs succeed with smart, customized solutions.</p>'
     + '</div>'
     + '<div class="footer-col-new"><h5>Services</h5><ul>'
