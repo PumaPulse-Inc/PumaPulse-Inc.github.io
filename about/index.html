@@ -1,341 +1,963 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About PumaPulse - Beyond Services, We Build Success Stories</title>
-  <meta name="description" content="PumaPulse is a team of visionary experts and creators, driving the future of fintech and digital transformation with innovative solutions.">
-  <link rel="icon" href="../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/theme.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <style>
-    .about-img-stack{position:relative;height:520px}
-    .about-img-main{width:75%;height:420px;object-fit:cover;border-radius:20px;position:absolute;top:0;left:0;box-shadow:0 32px 64px rgba(0,0,0,0.25)}
-    .about-img-accent{width:55%;height:260px;object-fit:cover;border-radius:16px;position:absolute;bottom:0;right:0;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,0.2)}
-    .about-badge{position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);background:rgba(8,12,24,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px 22px;text-align:center;z-index:2}
-    .about-badge .big{font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-    .about-badge p{font-size:0.75rem;color:rgba(240,244,255,0.5);margin:4px 0 0}
-    .about-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .services-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .service-list-item{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;transition:all 0.25s}
-    .service-list-item:hover{border-color:var(--border2)}
-    .service-list-item .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px}
-    .service-list-item h5{font-size:0.9rem;margin-bottom:4px}
-    .service-list-item p{font-size:0.8rem}
-    .timeline{display:flex;flex-direction:column;gap:0;position:relative}
-    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--primary));opacity:0.3}
-    .timeline-item{display:flex;gap:24px;padding-bottom:36px;position:relative}
-    .timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--ad);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;font-weight:700;color:var(--accent);z-index:1}
-    .timeline-content{padding-top:8px}
-    .timeline-content h4{margin-bottom:6px;font-size:1rem}
-    .timeline-content p{font-size:0.87rem}
-    @media(max-width:1024px){.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.services-list{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="About PumaPulse"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../">Home</a><span>/</span><span>About</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Our Story</span>
-      <h1>Beyond Services, We Build <span class="grad-text">Success Stories</span></h1>
-      <p>PumaPulse is a team of engineers, designers, and strategists obsessed with building world-class fintech and blockchain products. We don't just write code — we build businesses.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../contact/" class="btn btn-accent btn-lg btn-magnetic">Start a Project</a>
-        <a href="../careers/" class="btn btn-ghost btn-lg">Join Our Team</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stats -->
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="8" data-suffix="+">8+</div><p>Years in Fintech</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="120" data-suffix="+">120+</div><p>Projects Delivered</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="40" data-suffix="+">40+</div><p>Countries Served</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="98" data-suffix="%">98%</div><p>Client Satisfaction</p></div>
-</div>
-
-<!-- Who We Are -->
-<section class="section">
-  <div class="container">
-    <div class="about-strip">
-      <div class="about-img-stack reveal-left">
-        <img class="about-img-main" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team">
-        <img class="about-img-accent" src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PumaPulse Office">
-        <div class="about-badge anim-float">
-          <div class="big">98%</div>
-          <p>Client Satisfaction</p>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <span class="eyebrow">Who We Are</span>
-        <h2>A Team That Builds <span class="grad-text">What Others Can't</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:20px">PumaPulse Infoservices is a Toronto-based digital transformation company specializing in blockchain, fintech, and trading technology. We work with startups, scale-ups, and enterprises across 40+ countries to build the financial infrastructure of tomorrow.</p>
-        <p style="margin-bottom:28px">We don't just build software — we build trust, reliability, and long-term partnerships. Our approach combines deep technical expertise with a genuine understanding of your business goals.</p>
-        <div class="services-list">
-          <div class="service-list-item"><div class="dot"></div><div><h5>Blockchain Development</h5><p>Smart contracts, DeFi, NFT platforms</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Crypto Exchanges</h5><p>CEX, DEX, P2P, hybrid platforms</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Trading Bots</h5><p>AI/ML, arbitrage, grid, DCA bots</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Fintech Apps</h5><p>Neobanks, KYC/AML, lending</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Crypto Wallets</h5><p>MPC, custodial, non-custodial</p></div></div>
-          <div class="service-list-item"><div class="dot"></div><div><h5>Forex Solutions</h5><p>CRM, MT4/MT5, traders room</p></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Core Values -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Values</span>
-      <h2>What Drives <span class="grad-text2">Everything We Do</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(3,1fr)">
-      <div class="svc-card" style="padding:32px">
-        <div style="width:52px;height:52px;border-radius:14px;background:var(--ad);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 style="margin-bottom:10px">Security First</h3>
-        <p>Every product we ship is built with security as a foundation, not an afterthought. We follow industry best practices and conduct thorough audits before launch.</p>
-      </div>
-      <div class="svc-card" style="padding:32px">
-        <div style="width:52px;height:52px;border-radius:14px;background:var(--pd);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <h3 style="margin-bottom:10px">Speed Without Compromise</h3>
-        <p>We move fast and ship on time. Our agile process and pre-built modules let us deliver production-ready products in weeks, not months.</p>
-      </div>
-      <div class="svc-card" style="padding:32px">
-        <div style="width:52px;height:52px;border-radius:14px;background:var(--vd);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3 style="margin-bottom:10px">Client Partnership</h3>
-        <p>We treat every client as a long-term partner. Transparent communication, honest advice, and genuine investment in your success.</p>
-      </div>
-      <div class="svc-card" style="padding:32px">
-        <div style="width:52px;height:52px;border-radius:14px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3 style="margin-bottom:10px">On-Time Delivery</h3>
-        <p>We respect your timeline. Our project management process ensures milestones are hit, scope is controlled, and you always know exactly where things stand.</p>
-      </div>
-      <div class="svc-card" style="padding:32px">
-        <div style="width:52px;height:52px;border-radius:14px;background:var(--ad);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3 style="margin-bottom:10px">Performance Obsessed</h3>
-        <p>We benchmark everything. From matching engine throughput to API response times, we optimize relentlessly to ensure your product performs at scale.</p>
-      </div>
-      <div class="svc-card" style="padding:32px">
-        <div style="width:52px;height:52px;border-radius:14px;background:var(--pd);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        </div>
-        <h3 style="margin-bottom:10px">Compliance Built-In</h3>
-        <p>Regulatory compliance is not optional in fintech. We build KYC, AML, and reporting requirements into every product from the ground up.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why PumaPulse -->
-<section class="section">
-  <div class="container">
-    <div class="split">
-      <div class="reveal-left">
-        <span class="eyebrow">Why Choose Us</span>
-        <h2>We Don't Just Build Software <span class="grad-text">We Build Businesses</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Most dev shops take your requirements and disappear. We stay engaged throughout — from architecture review to post-launch support. Our clients don't just get a product, they get a technical partner who's invested in their success.</p>
-        <div style="display:flex;flex-direction:column;gap:16px">
-        <h2>We Don't Just Build Software <span class="grad-text">We Build Businesses</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Most dev shops take your requirements and disappear. We stay engaged throughout — from architecture review to post-launch support. Our clients don't just get a product, they get a technical partner who's invested in their success.</p>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:36px;height:36px;border-radius:10px;background:var(--ad);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
-            <div><h5 style="margin-bottom:4px">Full-cycle development</h5><p style="font-size:0.87rem">From architecture to deployment and ongoing maintenance — we own the full lifecycle.</p></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:36px;height:36px;border-radius:10px;background:var(--pd);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
-            <div><h5 style="margin-bottom:4px">Domain expertise</h5><p style="font-size:0.87rem">8+ years exclusively in fintech and blockchain — we know the regulations, the pitfalls, and the shortcuts that work.</p></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:36px;height:36px;border-radius:10px;background:var(--vd);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
-            <div><h5 style="margin-bottom:4px">Transparent process</h5><p style="font-size:0.87rem">Weekly updates, shared project boards, and direct access to engineers — no black boxes, no surprises.</p></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
-            <div><h5 style="margin-bottom:4px">Post-launch support</h5><p style="font-size:0.87rem">We don't disappear after go-live. Dedicated support, SLA-backed uptime, and continuous improvement.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team at Work" style="width:100%;height:480px;object-fit:cover;border-radius:20px">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Journey -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="split">
-      <div class="reveal-left">
-        <span class="eyebrow">Our Journey</span>
-        <h2>From Startup to <span class="grad-text3">Global Fintech Partner</span></h2>
-        <div class="section-divider" style="margin:0 0 32px"></div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot">16</div>
-            <div class="timeline-content"><h4>2016 — Founded in Toronto</h4><p>PumaPulse was founded with a mission to make enterprise-grade fintech accessible to startups and growing businesses worldwide.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">18</div>
-            <div class="timeline-content"><h4>2018 — First Crypto Exchange</h4><p>Launched our first full-featured CEX for a client in Southeast Asia. The platform processed $50M in volume in its first month.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">20</div>
-            <div class="timeline-content"><h4>2020 — DeFi Expansion</h4><p>Expanded into DeFi protocol development as the ecosystem exploded. Deployed 50+ smart contracts with zero security incidents.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">22</div>
-            <div class="timeline-content"><h4>2022 — 100+ Projects Milestone</h4><p>Crossed 100 delivered projects across 35 countries. Expanded the team to 60+ engineers, designers, and compliance specialists.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">24</div>
-            <div class="timeline-content"><h4>2024 — AI Trading & Neobanking</h4><p>Launched our AI trading infrastructure division and neobank platform suite, serving clients in Europe, APAC, and the Middle East.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Journey" style="width:100%;height:520px;object-fit:cover;border-radius:20px">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Global Presence -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Global Presence</span>
-      <h2>Serving Clients <span class="grad-text">Around the World</span></h2>
-      <div class="section-divider"></div>
-      <p style="max-width:600px;margin:16px auto 0">From our Toronto headquarters to clients across 40+ countries, PumaPulse operates where fintech innovation happens.</p>
-    </div>
-    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(4,1fr);margin-top:48px">
-      <div class="svc-card" style="padding:28px;text-align:center">
-        <div style="font-size:2rem;margin-bottom:12px">🇨🇦</div>
-        <h4 style="margin-bottom:6px">Toronto, Canada</h4>
-        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">Headquarters</p>
-        <p style="font-size:0.83rem">43 King Street West — our founding home and primary engineering hub.</p>
-      </div>
-      <div class="svc-card" style="padding:28px;text-align:center">
-        <div style="font-size:2rem;margin-bottom:12px">🇦🇪</div>
-        <h4 style="margin-bottom:6px">Dubai, UAE</h4>
-        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">MENA Office</p>
-        <p style="font-size:0.83rem">Serving the rapidly growing crypto and fintech ecosystem across the Middle East.</p>
-      </div>
-      <div class="svc-card" style="padding:28px;text-align:center">
-        <div style="font-size:2rem;margin-bottom:12px">🇸🇬</div>
-        <h4 style="margin-bottom:6px">Singapore</h4>
-        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">APAC Office</p>
-        <p style="font-size:0.83rem">Gateway to Southeast Asia's booming digital finance and neobanking markets.</p>
-      </div>
-      <div class="svc-card" style="padding:28px;text-align:center">
-        <div style="font-size:2rem;margin-bottom:12px">🇬🇧</div>
-        <h4 style="margin-bottom:6px">London, UK</h4>
-        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">Europe Office</p>
-        <p style="font-size:0.83rem">Supporting European clients with FCA-aligned compliance and fintech expertise.</p>
-      </div>
-    </div>
-    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(4,1fr);margin-top:20px">
-      <div class="svc-card" style="padding:24px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:10px">🇮🇳</div>
-        <h4 style="margin-bottom:4px;font-size:0.95rem">India</h4>
-        <p style="font-size:0.8rem">Engineering &amp; QA talent hub</p>
-      </div>
-      <div class="svc-card" style="padding:24px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:10px">🇺🇸</div>
-        <h4 style="margin-bottom:4px;font-size:0.95rem">United States</h4>
-        <p style="font-size:0.8rem">Key enterprise &amp; exchange clients</p>
-      </div>
-      <div class="svc-card" style="padding:24px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:10px">🇩🇪</div>
-        <h4 style="margin-bottom:4px;font-size:0.95rem">Germany</h4>
-        <p style="font-size:0.8rem">Regulated fintech &amp; DeFi projects</p>
-      </div>
-      <div class="svc-card" style="padding:24px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:10px">🌍</div>
-        <h4 style="margin-bottom:4px;font-size:0.95rem">35+ More Countries</h4>
-        <p style="font-size:0.8rem">Active clients across every continent</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- By the Numbers -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">By the Numbers</span>
-      <h2>The Scale of <span class="grad-text2">What We've Built</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(4,1fr);margin-top:48px">
-      <div class="svc-card" style="padding:36px 28px;text-align:center">
-        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">120+</div>
-        <h4 style="margin-bottom:8px">Projects Delivered</h4>
-        <p style="font-size:0.83rem">Crypto exchanges, DeFi protocols, neobanks, trading bots, and more — shipped and live.</p>
-      </div>
-      <div class="svc-card" style="padding:36px 28px;text-align:center">
-        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">40+</div>
-        <h4 style="margin-bottom:8px">Countries Served</h4>
-        <p style="font-size:0.83rem">Clients across North America, Europe, MENA, APAC, and Africa trust PumaPulse.</p>
-      </div>
-      <div class="svc-card" style="padding:36px 28px;text-align:center">
-        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">8+</div>
-        <h4 style="margin-bottom:8px">Years in Fintech</h4>
-        <p style="font-size:0.83rem">Founded in 2016, we've navigated every market cycle and regulatory shift in the industry.</p>
-      </div>
-      <div class="svc-card" style="padding:36px 28px;text-align:center">
-        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">$2B+</div>
-        <h4 style="margin-bottom:8px">Client Transaction Volume</h4>
-        <p style="font-size:0.83rem">The platforms we've built collectively process over $2 billion in transactions annually.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Build Something <span class="grad-text">Remarkable?</span></h2>
-        <p>Let's talk about your project. No commitment, just a conversation about what's possible. We'll help you find the right solution for your specific goals and budget.</p>
-        <div class="cta-btns">
-          <a href="../contact/" class="btn btn-accent btn-lg btn-magnetic">Start a Conversation</a>
-          <a href="../careers/" class="btn btn-white btn-lg">Join Our Team</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/animations.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+
+
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>About PumaPulse - Beyond Services, We Build Success Stories</title>
+
+
+  <meta name="description" content="PumaPulse is a team of visionary experts and creators, driving the future of fintech and digital transformation with innovative solutions.">
+
+
+  <link rel="icon" href="../img/icon.png" type="image/png">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="../css/style.css">
+
+
+  <link rel="stylesheet" href="../css/theme.css">
+
+
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+
+
+  <style>
+
+
+    .about-img-stack{position:relative;height:520px}
+
+
+    .about-img-main{width:75%;height:420px;object-fit:cover;border-radius:20px;position:absolute;top:0;left:0;box-shadow:0 32px 64px rgba(0,0,0,0.25)}
+
+
+    .about-img-accent{width:55%;height:260px;object-fit:cover;border-radius:16px;position:absolute;bottom:0;right:0;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,0.2)}
+
+
+    .about-badge{position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);background:rgba(8,12,24,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px 22px;text-align:center;z-index:2}
+
+
+    .about-badge .big{font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+
+
+    .about-badge p{font-size:0.75rem;color:rgba(240,244,255,0.5);margin:4px 0 0}
+
+
+    .about-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+
+
+    .services-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+
+    .service-list-item{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;transition:all 0.25s}
+
+
+    .service-list-item:hover{border-color:var(--border2)}
+
+
+    .service-list-item .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px}
+
+
+    .service-list-item h5{font-size:0.9rem;margin-bottom:4px}
+
+
+    .service-list-item p{font-size:0.8rem}
+
+
+    .timeline{display:flex;flex-direction:column;gap:0;position:relative}
+
+
+    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--primary));opacity:0.3}
+
+
+    .timeline-item{display:flex;gap:24px;padding-bottom:36px;position:relative}
+
+
+    .timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--ad);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;font-weight:700;color:var(--accent);z-index:1}
+
+
+    .timeline-content{padding-top:8px}
+
+
+    .timeline-content h4{margin-bottom:6px;font-size:1rem}
+
+
+    .timeline-content p{font-size:0.87rem}
+
+
+    @media(max-width:1024px){.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.services-list{grid-template-columns:1fr}}
+
+
+  </style>
+
+
+</head>
+
+
+<body>
+
+
+<div id="nav-placeholder"></div>
+
+
+
+
+
+<section class="page-hero">
+
+
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="About PumaPulse"></div>
+
+
+  <div class="container">
+
+
+    <div class="page-hero-content">
+
+
+      <div class="breadcrumb"><a href="../">Home</a><span>/</span><span>About</span></div>
+
+
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Our Story</span>
+
+
+      <h1>Beyond Services, We Build <span class="grad-text">Success Stories</span></h1>
+
+
+      <p>PumaPulse is a team of engineers, designers, and strategists obsessed with building world-class fintech and blockchain products. We don't just write code — we build businesses.</p>
+
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+
+
+        <a href="../contact/" class="btn btn-accent btn-lg btn-magnetic">Start a Project</a>
+
+
+        <a href="../careers/" class="btn btn-ghost btn-lg">Join Our Team</a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- Stats -->
+
+
+<div class="stats-row counter-section">
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="8" data-suffix="+">8+</div><p>Years in Fintech</p></div>
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="120" data-suffix="+">120+</div><p>Projects Delivered</p></div>
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="40" data-suffix="+">40+</div><p>Countries Served</p></div>
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="98" data-suffix="%">98%</div><p>Client Satisfaction</p></div>
+
+
+</div>
+
+
+
+
+
+<!-- Who We Are -->
+
+
+<section class="section">
+
+
+  <div class="container">
+
+
+    <div class="about-strip">
+
+
+      <div class="about-img-stack reveal-left">
+
+
+        <img class="about-img-main" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team">
+
+
+        <img class="about-img-accent" src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PumaPulse Office">
+
+
+        <div class="about-badge anim-float">
+
+
+          <div class="big">98%</div>
+
+
+          <p>Client Satisfaction</p>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="reveal-right">
+
+
+        <span class="eyebrow">Who We Are</span>
+
+
+        <h2>A Team That Builds <span class="grad-text">What Others Can't</span></h2>
+
+
+        <div class="section-divider" style="margin:0 0 24px"></div>
+
+
+        <p style="margin-bottom:20px">PumaPulse Infoservices is a Toronto-based digital transformation company specializing in blockchain, fintech, and trading technology. We work with startups, scale-ups, and enterprises across 40+ countries to build the financial infrastructure of tomorrow.</p>
+
+
+        <p style="margin-bottom:28px">We don't just build software — we build trust, reliability, and long-term partnerships. Our approach combines deep technical expertise with a genuine understanding of your business goals.</p>
+
+
+        <div class="services-list">
+
+
+          <div class="service-list-item"><div class="dot"></div><div><h5>Blockchain Development</h5><p>Smart contracts, DeFi, NFT platforms</p></div></div>
+
+
+          <div class="service-list-item"><div class="dot"></div><div><h5>Crypto Exchanges</h5><p>CEX, DEX, P2P, hybrid platforms</p></div></div>
+
+
+          <div class="service-list-item"><div class="dot"></div><div><h5>Trading Bots</h5><p>AI/ML, arbitrage, grid, DCA bots</p></div></div>
+
+
+          <div class="service-list-item"><div class="dot"></div><div><h5>Fintech Apps</h5><p>Neobanks, KYC/AML, lending</p></div></div>
+
+
+          <div class="service-list-item"><div class="dot"></div><div><h5>Crypto Wallets</h5><p>MPC, custodial, non-custodial</p></div></div>
+
+
+          <div class="service-list-item"><div class="dot"></div><div><h5>Forex Solutions</h5><p>CRM, MT4/MT5, traders room</p></div></div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- Core Values -->
+
+
+<section class="section" style="background:var(--bg2)">
+
+  <div class="container">
+
+    <div class="text-center reveal">
+
+      <span class="eyebrow">Our Values</span>
+
+      <h2>What Drives <span class="grad-text2">Everything We Do</span></h2>
+
+      <div class="section-divider"></div>
+
+    </div>
+
+    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(3,1fr)">
+
+      <div class="svc-card" style="padding:32px">
+
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--ad);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+        </div>
+
+        <h3 style="margin-bottom:10px">Security First</h3>
+
+        <p>Every product we ship is built with security as a foundation, not an afterthought. We follow industry best practices and conduct thorough audits before launch.</p>
+
+      </div>
+
+      <div class="svc-card" style="padding:32px">
+
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--pd);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+
+        </div>
+
+        <h3 style="margin-bottom:10px">Speed Without Compromise</h3>
+
+        <p>We move fast and ship on time. Our agile process and pre-built modules let us deliver production-ready products in weeks, not months.</p>
+
+      </div>
+
+      <div class="svc-card" style="padding:32px">
+
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--vd);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+        </div>
+
+        <h3 style="margin-bottom:10px">Client Partnership</h3>
+
+        <p>We treat every client as a long-term partner. Transparent communication, honest advice, and genuine investment in your success.</p>
+
+      </div>
+
+      <div class="svc-card" style="padding:32px">
+
+        <div style="width:52px;height:52px;border-radius:14px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+
+        </div>
+
+        <h3 style="margin-bottom:10px">On-Time Delivery</h3>
+
+        <p>We respect your timeline. Our project management process ensures milestones are hit, scope is controlled, and you always know exactly where things stand.</p>
+
+      </div>
+
+      <div class="svc-card" style="padding:32px">
+
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--ad);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+
+        </div>
+
+        <h3 style="margin-bottom:10px">Performance Obsessed</h3>
+
+        <p>We benchmark everything. From matching engine throughput to API response times, we optimize relentlessly to ensure your product performs at scale.</p>
+
+      </div>
+
+      <div class="svc-card" style="padding:32px">
+
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--pd);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" style="width:24px;height:24px"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+
+        </div>
+
+        <h3 style="margin-bottom:10px">Compliance Built-In</h3>
+
+        <p>Regulatory compliance is not optional in fintech. We build KYC, AML, and reporting requirements into every product from the ground up.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- Why PumaPulse -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="split">
+
+      <div class="reveal-left">
+
+        <span class="eyebrow">Why Choose Us</span>
+
+        <h2>We Don't Just Build Software <span class="grad-text">We Build Businesses</span></h2>
+
+        <div class="section-divider" style="margin:0 0 24px"></div>
+
+        <p style="margin-bottom:28px">Most dev shops take your requirements and disappear. We stay engaged throughout — from architecture review to post-launch support. Our clients don't just get a product, they get a technical partner who's invested in their success.</p>
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+
+
+        <h2>We Don't Just Build Software <span class="grad-text">We Build Businesses</span></h2>
+
+
+        <div class="section-divider" style="margin:0 0 24px"></div>
+
+
+        <p style="margin-bottom:28px">Most dev shops take your requirements and disappear. We stay engaged throughout — from architecture review to post-launch support. Our clients don't just get a product, they get a technical partner who's invested in their success.</p>
+
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+
+
+          <div style="display:flex;gap:14px;align-items:flex-start">
+
+
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--ad);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+
+
+            <div><h5 style="margin-bottom:4px">Full-cycle development</h5><p style="font-size:0.87rem">From architecture to deployment and ongoing maintenance — we own the full lifecycle.</p></div>
+
+
+          </div>
+
+
+          <div style="display:flex;gap:14px;align-items:flex-start">
+
+
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--pd);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+
+
+            <div><h5 style="margin-bottom:4px">Domain expertise</h5><p style="font-size:0.87rem">8+ years exclusively in fintech and blockchain — we know the regulations, the pitfalls, and the shortcuts that work.</p></div>
+
+
+          </div>
+
+
+          <div style="display:flex;gap:14px;align-items:flex-start">
+
+
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--vd);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+
+
+            <div><h5 style="margin-bottom:4px">Transparent process</h5><p style="font-size:0.87rem">Weekly updates, shared project boards, and direct access to engineers — no black boxes, no surprises.</p></div>
+
+
+          </div>
+
+
+          <div style="display:flex;gap:14px;align-items:flex-start">
+
+
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" style="width:16px;height:16px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+
+
+            <div><h5 style="margin-bottom:4px">Post-launch support</h5><p style="font-size:0.87rem">We don't disappear after go-live. Dedicated support, SLA-backed uptime, and continuous improvement.</p></div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="reveal-right">
+
+
+        <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team at Work" style="width:100%;height:480px;object-fit:cover;border-radius:20px">
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- Our Journey -->
+
+
+<section class="section" style="background:var(--bg2)">
+
+
+  <div class="container">
+
+
+    <div class="split">
+
+
+      <div class="reveal-left">
+
+
+        <span class="eyebrow">Our Journey</span>
+
+
+        <h2>From Startup to <span class="grad-text3">Global Fintech Partner</span></h2>
+
+
+        <div class="section-divider" style="margin:0 0 32px"></div>
+
+
+        <div class="timeline">
+
+
+          <div class="timeline-item">
+
+
+            <div class="timeline-dot">16</div>
+
+
+            <div class="timeline-content"><h4>2016 — Founded in Toronto</h4><p>PumaPulse was founded with a mission to make enterprise-grade fintech accessible to startups and growing businesses worldwide.</p></div>
+
+
+          </div>
+
+
+          <div class="timeline-item">
+
+
+            <div class="timeline-dot">18</div>
+
+
+            <div class="timeline-content"><h4>2018 — First Crypto Exchange</h4><p>Launched our first full-featured CEX for a client in Southeast Asia. The platform processed $50M in volume in its first month.</p></div>
+
+
+          </div>
+
+
+          <div class="timeline-item">
+
+
+            <div class="timeline-dot">20</div>
+
+
+            <div class="timeline-content"><h4>2020 — DeFi Expansion</h4><p>Expanded into DeFi protocol development as the ecosystem exploded. Deployed 50+ smart contracts with zero security incidents.</p></div>
+
+
+          </div>
+
+
+          <div class="timeline-item">
+
+
+            <div class="timeline-dot">22</div>
+
+
+            <div class="timeline-content"><h4>2022 — 100+ Projects Milestone</h4><p>Crossed 100 delivered projects across 35 countries. Expanded the team to 60+ engineers, designers, and compliance specialists.</p></div>
+
+
+          </div>
+
+
+          <div class="timeline-item">
+
+
+            <div class="timeline-dot">24</div>
+
+
+            <div class="timeline-content"><h4>2024 — AI Trading & Neobanking</h4><p>Launched our AI trading infrastructure division and neobank platform suite, serving clients in Europe, APAC, and the Middle East.</p></div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="reveal-right">
+
+
+        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Journey" style="width:100%;height:520px;object-fit:cover;border-radius:20px">
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- Global Presence -->
+
+
+<section class="section">
+
+
+  <div class="container">
+
+
+    <div class="text-center reveal">
+
+
+      <span class="eyebrow">Global Presence</span>
+
+
+      <h2>Serving Clients <span class="grad-text">Around the World</span></h2>
+
+
+      <div class="section-divider"></div>
+
+
+      <p style="max-width:600px;margin:16px auto 0">From our Toronto headquarters to clients across 40+ countries, PumaPulse operates where fintech innovation happens.</p>
+
+
+    </div>
+
+
+    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(4,1fr);margin-top:48px">
+
+
+      <div class="svc-card" style="padding:28px;text-align:center">
+
+
+        <div style="font-size:2rem;margin-bottom:12px">🇨🇦</div>
+
+
+        <h4 style="margin-bottom:6px">Toronto, Canada</h4>
+
+
+        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">Headquarters</p>
+
+
+        <p style="font-size:0.83rem">43 King Street West — our founding home and primary engineering hub.</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:28px;text-align:center">
+
+
+        <div style="font-size:2rem;margin-bottom:12px">🇦🇪</div>
+
+
+        <h4 style="margin-bottom:6px">Dubai, UAE</h4>
+
+
+        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">MENA Office</p>
+
+
+        <p style="font-size:0.83rem">Serving the rapidly growing crypto and fintech ecosystem across the Middle East.</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:28px;text-align:center">
+
+
+        <div style="font-size:2rem;margin-bottom:12px">🇸🇬</div>
+
+
+        <h4 style="margin-bottom:6px">Singapore</h4>
+
+
+        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">APAC Office</p>
+
+
+        <p style="font-size:0.83rem">Gateway to Southeast Asia's booming digital finance and neobanking markets.</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:28px;text-align:center">
+
+
+        <div style="font-size:2rem;margin-bottom:12px">🇬🇧</div>
+
+
+        <h4 style="margin-bottom:6px">London, UK</h4>
+
+
+        <p style="font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:8px">Europe Office</p>
+
+
+        <p style="font-size:0.83rem">Supporting European clients with FCA-aligned compliance and fintech expertise.</p>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(4,1fr);margin-top:20px">
+
+
+      <div class="svc-card" style="padding:24px;text-align:center">
+
+
+        <div style="font-size:1.6rem;margin-bottom:10px">🇮🇳</div>
+
+
+        <h4 style="margin-bottom:4px;font-size:0.95rem">India</h4>
+
+
+        <p style="font-size:0.8rem">Engineering &amp; QA talent hub</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:24px;text-align:center">
+
+
+        <div style="font-size:1.6rem;margin-bottom:10px">🇺🇸</div>
+
+
+        <h4 style="margin-bottom:4px;font-size:0.95rem">United States</h4>
+
+
+        <p style="font-size:0.8rem">Key enterprise &amp; exchange clients</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:24px;text-align:center">
+
+
+        <div style="font-size:1.6rem;margin-bottom:10px">🇩🇪</div>
+
+
+        <h4 style="margin-bottom:4px;font-size:0.95rem">Germany</h4>
+
+
+        <p style="font-size:0.8rem">Regulated fintech &amp; DeFi projects</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:24px;text-align:center">
+
+
+        <div style="font-size:1.6rem;margin-bottom:10px">🌍</div>
+
+
+        <h4 style="margin-bottom:4px;font-size:0.95rem">35+ More Countries</h4>
+
+
+        <p style="font-size:0.8rem">Active clients across every continent</p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- By the Numbers -->
+
+
+<section class="section" style="background:var(--bg2)">
+
+
+  <div class="container">
+
+
+    <div class="text-center reveal">
+
+
+      <span class="eyebrow">By the Numbers</span>
+
+
+      <h2>The Scale of <span class="grad-text2">What We've Built</span></h2>
+
+
+      <div class="section-divider"></div>
+
+
+    </div>
+
+
+    <div class="svc-grid reveal-stagger" style="grid-template-columns:repeat(4,1fr);margin-top:48px">
+
+
+      <div class="svc-card" style="padding:36px 28px;text-align:center">
+
+
+        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">120+</div>
+
+
+        <h4 style="margin-bottom:8px">Projects Delivered</h4>
+
+
+        <p style="font-size:0.83rem">Crypto exchanges, DeFi protocols, neobanks, trading bots, and more — shipped and live.</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:36px 28px;text-align:center">
+
+
+        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">40+</div>
+
+
+        <h4 style="margin-bottom:8px">Countries Served</h4>
+
+
+        <p style="font-size:0.83rem">Clients across North America, Europe, MENA, APAC, and Africa trust PumaPulse.</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:36px 28px;text-align:center">
+
+
+        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">8+</div>
+
+
+        <h4 style="margin-bottom:8px">Years in Fintech</h4>
+
+
+        <p style="font-size:0.83rem">Founded in 2016, we've navigated every market cycle and regulatory shift in the industry.</p>
+
+
+      </div>
+
+
+      <div class="svc-card" style="padding:36px 28px;text-align:center">
+
+
+        <div style="font-size:3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px">$2B+</div>
+
+
+        <h4 style="margin-bottom:8px">Client Transaction Volume</h4>
+
+
+        <p style="font-size:0.83rem">The platforms we've built collectively process over $2 billion in transactions annually.</p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- CTA -->
+
+
+<section class="section-sm">
+
+
+  <div class="container">
+
+
+    <div class="cta-banner reveal">
+
+
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+
+
+      <div class="cta-content">
+
+
+        <h2>Ready to Build Something <span class="grad-text">Remarkable?</span></h2>
+
+
+        <p>Let's talk about your project. No commitment, just a conversation about what's possible. We'll help you find the right solution for your specific goals and budget.</p>
+
+
+        <div class="cta-btns">
+
+
+          <a href="../contact/" class="btn btn-accent btn-lg btn-magnetic">Start a Conversation</a>
+
+
+          <a href="../careers/" class="btn btn-white btn-lg">Join Our Team</a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<div id="footer-placeholder"></div>
+
+
+<script src="../js/nav.js"></script>
+
+
+<script src="../js/main.js"></script>
+
+
+<script src="../js/animations.js"></script>
+
+
+</body>
+
+
+</html>
+
+

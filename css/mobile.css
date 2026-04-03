@@ -1,0 +1,196 @@
+/* ============================================================
+   PumaPulse — Mobile Responsive Overrides
+   Breakpoints: 1024px (tablet), 768px (mobile), 480px (small)
+   ============================================================ */
+
+/* ── Shared container ── */
+@media(max-width:1024px){
+  .container{padding:0 24px}
+  .hero-content{padding:60px 24px 0}
+  .h-btns{flex-direction:column;align-items:flex-start}
+  .h-btns a{width:100%;justify-content:center}
+
+  /* Services v2 */
+  .svc2-grid{grid-template-columns:repeat(2,1fr)}
+  .svc2-badges{grid-template-columns:repeat(2,1fr)}
+
+  /* Solutions v2 */
+  .sol2-split{grid-template-columns:1fr}
+  .sol2-split-img{min-height:280px}
+  .sol2-panel.on{grid-template-columns:repeat(2,1fr)}
+  .sol2-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+  /* Work rows */
+  .w-row{grid-template-columns:1fr 1fr;gap:20px}
+  .w-client{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px}
+
+  /* Process */
+  .proc-row{grid-template-columns:repeat(2,1fr)}
+  .proc-connector{display:none}
+
+  /* Tech grid */
+  .tech-grid{grid-template-columns:repeat(4,1fr)}
+
+  /* FAQ layout */
+  .faq-layout{grid-template-columns:1fr;gap:40px}
+
+  /* Image split */
+  .img-split{grid-template-columns:1fr}
+  .img-split-visual{min-height:260px}
+
+  /* Footer */
+  .footer-top-inner{grid-template-columns:1fr 1fr;gap:32px}
+
+  /* Testimonials */
+  .tc-card{height:360px}
+
+  /* CTA section */
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns a{width:100%;max-width:320px;justify-content:center}
+}
+
+/* ── Mobile ── */
+@media(max-width:768px){
+  /* Typography */
+  h1{font-size:clamp(36px,9vw,56px) !important;line-height:1.05 !important}
+  h2.light,h2.dark,.svc2-title{font-size:clamp(28px,7vw,40px) !important}
+
+  /* Container */
+  .container{padding:0 16px}
+
+  /* Hero */
+  .hero{padding-top:68px}
+  .hero-content{padding:48px 16px 0}
+  .h-stats{flex-wrap:wrap;gap:0}
+  .h-stat{flex:0 0 50%;padding:16px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .h-stat:nth-child(odd){border-right:1px solid rgba(255,255,255,0.1)}
+  .h-stat:last-child,.h-stat:nth-last-child(2):nth-child(odd){border-bottom:none}
+
+  /* Ticker */
+  .ticker-bar,.ticker-wrap{height:auto;padding:8px 0}
+
+  /* Stats row */
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .stat-cell{padding:28px 16px}
+
+  /* Services v2 */
+  .svc2-grid{grid-template-columns:1fr}
+  .svc2-badges{grid-template-columns:1fr}
+  .svc2-header{margin-bottom:36px}
+
+  /* Solutions v2 */
+  .sol2-split{grid-template-columns:1fr}
+  .sol2-split-content{padding:28px 20px}
+  .sol2-panel.on{grid-template-columns:1fr}
+  .sol2-card-img{height:120px}
+  .sol2-split-stats{flex-wrap:wrap;gap:8px;padding:14px 16px}
+  .sol2-stat{flex:1;min-width:80px}
+
+  /* Process */
+  .proc-row{grid-template-columns:1fr}
+  .p-step{margin-right:0;margin-bottom:-1px}
+
+  /* Work rows */
+  .w-row{grid-template-columns:1fr;gap:16px}
+  .w-client{display:none}
+
+  /* Tech grid */
+  .tech-grid{grid-template-columns:repeat(3,1fr)}
+
+  /* Testimonials */
+  [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr !important}
+  .tc-card{height:320px}
+
+  /* FAQ */
+  .faq-layout{grid-template-columns:1fr}
+  .faq-q{font-size:14px}
+
+  /* Image split */
+  .img-split{grid-template-columns:1fr}
+  .img-split-visual{order:-1;min-height:220px}
+  .img-split-content{padding:28px 20px}
+
+  /* CTA */
+  .cta-section{padding:80px 0 60px}
+  .cta-section h2{font-size:clamp(28px,7vw,44px)}
+
+  /* Footer */
+  .footer-top-inner{grid-template-columns:1fr;gap:28px}
+  .footer-brand-new{max-width:100%}
+  .footer-bottom-bar{flex-direction:column;gap:16px;text-align:center;padding:20px 16px}
+  .footer-bottom-bar .footer-contact-mini{flex-direction:column;gap:8px}
+
+  /* Sections */
+  .section-light,.section-white,.section-dark,.section-tint,.section{padding:60px 0}
+
+  /* About grid */
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .sticky-side{position:static}
+
+  /* Security strip */
+  .security-strip,.svc2-badges{grid-template-columns:1fr}
+
+  /* Metrics */
+  .metrics-wrap{grid-template-columns:repeat(2,1fr)}
+
+  /* Live panel */
+  .lp-grid{grid-template-columns:repeat(2,1fr)}
+
+  /* Tab row */
+  .tab-row,.sol2-tabs{flex-wrap:wrap}
+  .tab,.sol2-tab{flex:1;min-width:80px;text-align:center}
+
+  /* Wave SVG */
+  .wave-down svg,.wave-up svg{height:40px}
+
+  /* Buttons */
+  .h-btns{flex-direction:column;gap:10px}
+  .h-btns a,.btn-primary,.btn-outline-light{width:100%;justify-content:center;text-align:center}
+}
+
+/* ── Small mobile ── */
+@media(max-width:480px){
+  h1{font-size:clamp(30px,10vw,44px) !important}
+
+  .container{padding:0 14px}
+
+  /* Hero stats stack */
+  .h-stats{flex-direction:column}
+  .h-stat{flex:none;width:100%;padding:12px 0;border-right:none !important;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .h-stat:last-child{border-bottom:none}
+
+  /* Stats row */
+  .stats-row{grid-template-columns:1fr}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--border,#e0e4ef)}
+  .stat-cell:last-child{border-bottom:none}
+
+  /* Tech grid */
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+
+  /* Sol2 stats */
+  .sol2-split-stats{display:none}
+
+  /* Metrics */
+  .metrics-wrap{grid-template-columns:1fr}
+
+  /* Testimonials */
+  .tc-card{height:280px}
+  .tc-text{font-size:12.5px}
+
+  /* Process */
+  .p-num{font-size:36px}
+
+  /* Footer */
+  .footer-top-inner{grid-template-columns:1fr}
+}
+
+/* ── Prevent horizontal overflow globally ── */
+html,body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+.mega-menu{max-width:calc(100vw - 32px)}
+
+/* ── Mobile nav hamburger spans ── */
+@media(max-width:1024px){
+  .hamburger span{background:var(--ink,#1a1e2e)}
+  .navbar.scrolled .hamburger span{background:rgba(240,244,255,0.85)}
+}
