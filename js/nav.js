@@ -24,7 +24,7 @@
     + '<a href="' + base + 'services/wallets/" class="mega-item"><div class="mega-icon" style="background:rgba(20,241,149,0.12)"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Wallets"></div><div><span class="mega-text-label">Wallet Development</span><span class="mega-text-desc">MPC, DeFi, custodial, non-custodial &amp; multi-currency wallets</span></div></a>'
     + '<a href="' + base + 'services/forex/" class="mega-item"><div class="mega-icon" style="background:rgba(0,174,239,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#00AEEF" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><span class="mega-text-label">Forex Solutions</span><span class="mega-text-desc">Forex CRM, back office, MT4/MT5 integration &amp; traders room</span></div></a>'
     + '</div>'
-    + '<div class="mega-menu-footer"><a href="' + base + 'portfolio/">View all case studies →</a><a href="' + base + 'contact/" class="mega-cta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>Free Consultation</a></div>'
+    + '<div class="mega-menu-footer"><a href="' + base + 'portfolio/">View all case studies →</a></div>'
     + '</div></li>'
 
     /* Solutions mega menu */
