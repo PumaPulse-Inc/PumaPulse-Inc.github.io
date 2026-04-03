@@ -94,7 +94,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 
 // ── Glowing cursor trail ──
 const trail = document.createElement('div');
-trail.style.cssText = 'position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:0;transition:opacity 0.3s;opacity:0;background:radial-gradient(circle,rgba(16,185,129,0.06) 0%,transparent 70%);transform:translate(-50%,-50%);';
+trail.style.cssText = 'position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:0;transition:opacity 0.3s;opacity:0;background:radial-gradient(circle,rgba(192,32,42,0.06) 0%,transparent 70%);transform:translate(-50%,-50%);';
 document.body.appendChild(trail);
 let trailX = 0, trailY = 0, curX = 0, curY = 0;
 document.addEventListener('mousemove', e => { curX = e.clientX; curY = e.clientY; trail.style.opacity = '1'; });
@@ -118,7 +118,7 @@ document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => {
 
 // ── Scroll progress bar ──
 const bar = document.createElement('div');
-bar.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#10b981,#3b82f6);z-index:99999;transition:width 0.1s linear;width:0%;';
+bar.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#c0202a,#e0263a);z-index:99999;transition:width 0.1s linear;width:0%;';
 document.body.appendChild(bar);
 window.addEventListener('scroll', () => {
   const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
