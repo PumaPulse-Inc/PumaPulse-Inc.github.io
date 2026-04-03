@@ -1,79 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy —  PumaPulse</title>
-  <meta name="description" content="PumaPulse privacy policy —  how we collect, use, and protect your data.">
-  <link rel="icon" href="../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/theme.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <style>
-    .legal-content{max-width:800px;margin:0 auto}
-    .legal-content h2{font-size:1.25rem;margin:36px 0 12px;color:#fff}
-    .legal-content p,.legal-content li{font-size:0.93rem;color:rgba(240,244,255,0.55);line-height:1.85}
-    .legal-content ul{padding-left:20px;display:flex;flex-direction:column;gap:6px}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero" style="min-height:280px">
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../">Home</a><span>/</span><span>Privacy Policy</span></div>
-      <h1>Privacy <span class="grad-text">Policy</span></h1>
-      <p>Last updated: January 1, 2025</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="legal-content">
-      <p>PumaPulse Infoservices Private Limited ("PumaPulse", "we", "us") is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information when you visit our website or use our services.</p>
-
-      <h2>Information We Collect</h2>
-      <ul>
-        <li>Contact information you provide (name, email, phone) when submitting forms</li>
-        <li>Usage data such as pages visited, time spent, and browser type</li>
-        <li>Communications you send us via email or contact forms</li>
-      </ul>
-
-      <h2>How We Use Your Information</h2>
-      <ul>
-        <li>To respond to your inquiries and provide requested services</li>
-        <li>To send relevant updates, newsletters (only with your consent)</li>
-        <li>To improve our website and service offerings</li>
-        <li>To comply with legal obligations</li>
-      </ul>
-
-      <h2>Data Sharing</h2>
-      <p>We do not sell, trade, or rent your personal information to third parties. We may share data with trusted service providers who assist in operating our website, subject to confidentiality agreements.</p>
-
-      <h2>Cookies</h2>
-      <p>We use cookies to enhance your browsing experience. You can disable cookies in your browser settings, though some features may not function properly.</p>
-
-      <h2>Data Security</h2>
-      <p>We implement industry-standard security measures to protect your data. However, no method of transmission over the internet is 100% secure.</p>
-
-      <h2>Your Rights</h2>
-      <ul>
-        <li>Access, correct, or delete your personal data</li>
-        <li>Withdraw consent for marketing communications at any time</li>
-        <li>Request data portability</li>
-      </ul>
-
-      <h2>Contact Us</h2>
-      <p>For privacy-related questions, contact us at <a href="mailto:sales@pumapulse.org" style="color:#10b981">sales@pumapulse.org</a>.</p>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/animations.js"></script>
-</body>
-</html>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — PumaPulse</title>
+<meta name="description" content="PumaPulse privacy policy — how we collect, use, and protect your data.">
+<link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+.leg-hero{min-height:44vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#060a14}
+.leg-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1800&q=80') center/cover no-repeat;opacity:.12}
+.leg-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,.15) 0%,transparent 55%),linear-gradient(to top,#060a14 0%,transparent 60%)}
+.leg-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.leg-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:120px 44px 60px}
+.leg-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,.9);margin-bottom:18px}
+.leg-eyebrow::before{content:'';width:24px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.leg-hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:#fff;margin-bottom:14px}
+.leg-hero h1 em{color:#e0263a;font-style:normal}
+.leg-hero-meta{font-size:13px;color:rgba(200,215,235,.5);font-weight:500}
+/* Content */
+.leg-section{padding:80px 0 100px}
+.leg-container{max-width:1200px;margin:0 auto;padding:0 44px;display:grid;grid-template-columns:240px 1fr;gap:60px;align-items:start}
+/* TOC sidebar */
+.leg-toc{position:sticky;top:90px}
+.leg-toc-title{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8a93b0;margin-bottom:16px}
+.leg-toc-list{display:flex;flex-direction:column;gap:2px}
+.leg-toc-item{font-size:13px;font-weight:500;color:#4a5470;text-decoration:none;padding:7px 12px;border-left:2px solid #e0e4ef;transition:color .15s,border-color .15s,background .15s;display:block}
+.leg-toc-item:hover{color:#c0202a;border-left-color:#c0202a;background:rgba(192,32,42,.04)}
+/* Article */
+.leg-article{background:#fff;border:1px solid #e0e4ef;padding:52px}
+.leg-article h2{font-size:18px;font-weight:800;color:#1a1e2e;margin:40px 0 12px;letter-spacing:-.01em;padding-top:8px;border-top:1px solid #e0e4ef}
+.leg-article h2:first-child{margin-top:0;border-top:none;padding-top:0}
+.leg-article p{font-size:14px;line-height:1.85;color:#4a5470;margin-bottom:14px}
+.leg-article ul{padding-left:0;display:flex;flex-direction:column;gap:8px;margin-bottom:14px;list-style:none}
+.leg-article ul li{font-size:14px;line-height:1.75;color:#4a5470;padding-left:20px;position:relative}
+.leg-article ul li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#c0202a;flex-shrink:0}
+.leg-article a{color:#c0202a;text-decoration:none;font-weight:600}
+.leg-article a:hover{text-decoration:underline}
+.leg-article .leg-updated{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a93b0;background:#f5f6fa;border:1px solid #e0e4ef;padding:6px 14px;margin-bottom:32px}
+@media(max-width:1024px){.leg-container{grid-template-columns:1fr}.leg-toc{display:none}.leg-hero-inner{padding:100px 24px 50px}.leg-article{padding:32px}}
+@media(max-width:768px){.leg-section{padding:52px 0 72px}.leg-container{padding:0 16px}.leg-article{padding:24px}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="leg-hero">
+  <div class="leg-hero-bg"></div>
+  <div class="leg-hero-overlay"></div>
+  <div class="leg-hero-grid"></div>
+  <div class="leg-hero-inner">
+    <div class="leg-eyebrow">Legal</div>
+    <h1>Privacy <em>Policy.</em></h1>
+    <div class="leg-hero-meta">Last updated: January 1, 2025</div>
+  </div>
+</section>
+
+<section class="leg-section" style="background:#f5f6fa">
+  <div class="leg-container">
+    <!-- TOC -->
+    <nav class="leg-toc">
+      <div class="leg-toc-title">On This Page</div>
+      <div class="leg-toc-list">
+        <a href="#info-collect" class="leg-toc-item">Information We Collect</a>
+        <a href="#how-use" class="leg-toc-item">How We Use Your Info</a>
+        <a href="#data-sharing" class="leg-toc-item">Data Sharing</a>
+        <a href="#cookies" class="leg-toc-item">Cookies</a>
+        <a href="#data-security" class="leg-toc-item">Data Security</a>
+        <a href="#your-rights" class="leg-toc-item">Your Rights</a>
+        <a href="#contact-priv" class="leg-toc-item">Contact Us</a>
+      </div>
+    </nav>
+    <!-- Article -->
+    <article class="leg-article">
+      <div class="leg-updated">&#128274; Last Updated: January 1, 2025</div>
+      <p>PumaPulse Infoservices Private Limited ("PumaPulse", "we", "us") is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information when you visit our website or use our services.</p>
+
+      <h2 id="info-collect">Information We Collect</h2>
+      <ul>
+        <li>Contact information you provide (name, email, phone) when submitting forms</li>
+        <li>Usage data such as pages visited, time spent, and browser type</li>
+        <li>Communications you send us via email or contact forms</li>
+      </ul>
+
+      <h2 id="how-use">How We Use Your Information</h2>
+      <ul>
+        <li>To respond to your inquiries and provide requested services</li>
+        <li>To send relevant updates and newsletters (only with your consent)</li>
+        <li>To improve our website and service offerings</li>
+        <li>To comply with legal obligations</li>
+      </ul>
+
+      <h2 id="data-sharing">Data Sharing</h2>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share data with trusted service providers who assist in operating our website, subject to confidentiality agreements.</p>
+
+      <h2 id="cookies">Cookies</h2>
+      <p>We use cookies to enhance your browsing experience. You can disable cookies in your browser settings, though some features may not function properly.</p>
+
+      <h2 id="data-security">Data Security</h2>
+      <p>We implement industry-standard security measures to protect your data. However, no method of transmission over the internet is 100% secure.</p>
+
+      <h2 id="your-rights">Your Rights</h2>
+      <ul>
+        <li>Access, correct, or delete your personal data</li>
+        <li>Withdraw consent for marketing communications at any time</li>
+        <li>Request data portability</li>
+      </ul>
+
+      <h2 id="contact-priv">Contact Us</h2>
+      <p>For privacy-related questions, contact us at <a href="mailto:sales@pumapulse.org">sales@pumapulse.org</a> or write to us at 43 King Street West, Toronto, ON, Canada.</p>
+    </article>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+</body>
+</html>

@@ -3026,7 +3026,7 @@ footer {
 
 
 
-  background: #060a14;
+  background: #000000;
 
 
 
@@ -3101,7 +3101,7 @@ footer::before {
 
 
 
-  background: linear-gradient(135deg, rgba(16,185,129,0.04) 0%, rgba(59,130,246,0.04) 100%);
+  background: #000000;
 
 
 
@@ -3662,6 +3662,11 @@ footer::before {
 
 
 .footer-bottom-bar {
+
+
+
+
+  background: #000000;
 
 
 
@@ -4736,3 +4741,12 @@ footer .container {
 
 
 
+
+/* ── Force all footer parts black on all pages ── */
+footer,
+footer .footer-top,
+footer .footer-bottom-bar,
+footer .container,
+.footer-top-inner {
+  background: #000000 !important;
+}

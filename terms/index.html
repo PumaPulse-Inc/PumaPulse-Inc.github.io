@@ -1,60 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service —  PumaPulse</title>
-  <meta name="description" content="PumaPulse terms of service.">
-  <link rel="icon" href="../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/theme.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <style>
-    .legal-content{max-width:800px;margin:0 auto}
-    .legal-content h2{font-size:1.25rem;margin:36px 0 12px;color:#fff}
-    .legal-content p,.legal-content li{font-size:0.93rem;color:rgba(240,244,255,0.55);line-height:1.85}
-    .legal-content ul{padding-left:20px;display:flex;flex-direction:column;gap:6px}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-<section class="page-hero" style="min-height:280px">
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../">Home</a><span>/</span><span>Terms of Service</span></div>
-      <h1>Terms of <span class="grad-text">Service</span></h1>
-      <p>Last updated: January 1, 2025</p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="legal-content">
-      <p>By accessing or using the PumaPulse website and services, you agree to be bound by these Terms of Service. Please read them carefully.</p>
-      <h2>Use of Services</h2>
-      <ul>
-        <li>You must be at least 18 years old to use our services</li>
-        <li>You agree not to misuse our services or help anyone else do so</li>
-        <li>You are responsible for maintaining the confidentiality of your account credentials</li>
-      </ul>
-      <h2>Intellectual Property</h2>
-      <p>All content on this website, including text, graphics, logos, and code, is the property of PumaPulse Infoservices Private Limited and is protected by applicable intellectual property laws.</p>
-      <h2>Disclaimer of Warranties</h2>
-      <p>Our services are provided "as is" without warranties of any kind, either express or implied. We do not warrant that our services will be uninterrupted or error-free.</p>
-      <h2>Limitation of Liability</h2>
-      <p>PumaPulse shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services.</p>
-      <h2>Governing Law</h2>
-      <p>These terms are governed by the laws of Ontario, Canada. Any disputes shall be resolved in the courts of Toronto, Ontario.</p>
-      <h2>Changes to Terms</h2>
-      <p>We reserve the right to modify these terms at any time. Continued use of our services after changes constitutes acceptance of the new terms.</p>
-      <h2>Contact</h2>
-      <p>Questions about these terms? Email us at <a href="mailto:sales@pumapulse.org" style="color:#10b981">sales@pumapulse.org</a>.</p>
-    </div>
-  </div>
-</section>
-<div id="footer-placeholder"></div>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/animations.js"></script>
-</body>
-</html>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — PumaPulse</title>
+<meta name="description" content="PumaPulse terms of service — read our usage terms and conditions.">
+<link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+.leg-hero{min-height:44vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#060a14}
+.leg-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=1800&q=80') center/cover no-repeat;opacity:.12}
+.leg-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,.15) 0%,transparent 55%),linear-gradient(to top,#060a14 0%,transparent 60%)}
+.leg-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.leg-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:120px 44px 60px}
+.leg-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,.9);margin-bottom:18px}
+.leg-eyebrow::before{content:'';width:24px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.leg-hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:#fff;margin-bottom:14px}
+.leg-hero h1 em{color:#e0263a;font-style:normal}
+.leg-hero-meta{font-size:13px;color:rgba(200,215,235,.5);font-weight:500}
+.leg-section{padding:80px 0 100px}
+.leg-container{max-width:1200px;margin:0 auto;padding:0 44px;display:grid;grid-template-columns:240px 1fr;gap:60px;align-items:start}
+.leg-toc{position:sticky;top:90px}
+.leg-toc-title{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8a93b0;margin-bottom:16px}
+.leg-toc-list{display:flex;flex-direction:column;gap:2px}
+.leg-toc-item{font-size:13px;font-weight:500;color:#4a5470;text-decoration:none;padding:7px 12px;border-left:2px solid #e0e4ef;transition:color .15s,border-color .15s,background .15s;display:block}
+.leg-toc-item:hover{color:#c0202a;border-left-color:#c0202a;background:rgba(192,32,42,.04)}
+.leg-article{background:#fff;border:1px solid #e0e4ef;padding:52px}
+.leg-article h2{font-size:18px;font-weight:800;color:#1a1e2e;margin:40px 0 12px;letter-spacing:-.01em;padding-top:8px;border-top:1px solid #e0e4ef}
+.leg-article h2:first-child{margin-top:0;border-top:none;padding-top:0}
+.leg-article p{font-size:14px;line-height:1.85;color:#4a5470;margin-bottom:14px}
+.leg-article ul{padding-left:0;display:flex;flex-direction:column;gap:8px;margin-bottom:14px;list-style:none}
+.leg-article ul li{font-size:14px;line-height:1.75;color:#4a5470;padding-left:20px;position:relative}
+.leg-article ul li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#c0202a}
+.leg-article a{color:#c0202a;text-decoration:none;font-weight:600}
+.leg-article a:hover{text-decoration:underline}
+.leg-article .leg-updated{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a93b0;background:#f5f6fa;border:1px solid #e0e4ef;padding:6px 14px;margin-bottom:32px}
+@media(max-width:1024px){.leg-container{grid-template-columns:1fr}.leg-toc{display:none}.leg-hero-inner{padding:100px 24px 50px}.leg-article{padding:32px}}
+@media(max-width:768px){.leg-section{padding:52px 0 72px}.leg-container{padding:0 16px}.leg-article{padding:24px}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="leg-hero">
+  <div class="leg-hero-bg"></div>
+  <div class="leg-hero-overlay"></div>
+  <div class="leg-hero-grid"></div>
+  <div class="leg-hero-inner">
+    <div class="leg-eyebrow">Legal</div>
+    <h1>Terms of <em>Service.</em></h1>
+    <div class="leg-hero-meta">Last updated: January 1, 2025</div>
+  </div>
+</section>
+
+<section class="leg-section" style="background:#f5f6fa">
+  <div class="leg-container">
+    <nav class="leg-toc">
+      <div class="leg-toc-title">On This Page</div>
+      <div class="leg-toc-list">
+        <a href="#use-services" class="leg-toc-item">Use of Services</a>
+        <a href="#ip" class="leg-toc-item">Intellectual Property</a>
+        <a href="#disclaimer" class="leg-toc-item">Disclaimer</a>
+        <a href="#liability" class="leg-toc-item">Limitation of Liability</a>
+        <a href="#governing" class="leg-toc-item">Governing Law</a>
+        <a href="#changes" class="leg-toc-item">Changes to Terms</a>
+        <a href="#contact-terms" class="leg-toc-item">Contact</a>
+      </div>
+    </nav>
+    <article class="leg-article">
+      <div class="leg-updated">&#128196; Last Updated: January 1, 2025</div>
+      <p>By accessing or using the PumaPulse website and services, you agree to be bound by these Terms of Service. Please read them carefully before using our platform.</p>
+
+      <h2 id="use-services">Use of Services</h2>
+      <ul>
+        <li>You must be at least 18 years old to use our services</li>
+        <li>You agree not to misuse our services or help anyone else do so</li>
+        <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+        <li>You agree to provide accurate and complete information when engaging with PumaPulse</li>
+      </ul>
+
+      <h2 id="ip">Intellectual Property</h2>
+      <p>All content on this website, including text, graphics, logos, and code, is the property of PumaPulse Infoservices Private Limited and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
+
+      <h2 id="disclaimer">Disclaimer of Warranties</h2>
+      <p>Our services are provided "as is" without warranties of any kind, either express or implied. We do not warrant that our services will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+      <h2 id="liability">Limitation of Liability</h2>
+      <p>PumaPulse shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services, including but not limited to loss of profits, data, or business opportunities.</p>
+
+      <h2 id="governing">Governing Law</h2>
+      <p>These terms are governed by the laws of Ontario, Canada. Any disputes arising from these terms shall be resolved exclusively in the courts of Toronto, Ontario.</p>
+
+      <h2 id="changes">Changes to Terms</h2>
+      <p>We reserve the right to modify these terms at any time. We will notify users of significant changes. Continued use of our services after changes constitutes acceptance of the new terms.</p>
+
+      <h2 id="contact-terms">Contact</h2>
+      <p>Questions about these terms? Email us at <a href="mailto:sales@pumapulse.org">sales@pumapulse.org</a> or write to us at 43 King Street West, Toronto, ON, Canada.</p>
+    </article>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+</body>
+</html>
