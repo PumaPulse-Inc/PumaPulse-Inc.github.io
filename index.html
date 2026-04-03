@@ -1,712 +1,1320 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PumaPulse —  Trusted Digital Transformation Company</title>
-  <meta name="description" content="PumaPulse helps businesses grow revenue with smart digital solutions. Blockchain, crypto exchange, fintech, trading bots, and neobank development.">
-  <link rel="icon" href="img/icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <style>
-    /* -- Hero extras -- */
-
-    @keyframes barGrow{from{transform:scaleY(0);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
-    .dashboard-mockup{animation:fadeInUp 0.8s 0.3s both}
-
-    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:100vh;padding-top:68px}
-    .hero-right{position:relative;z-index:3;display:flex;flex-direction:column;gap:16px}
-    .live-card{background:rgba(8,12,24,0.75);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 22px;display:flex;align-items:center;gap:14px;animation:slideDown 0.6s both}
-    .live-card:nth-child(2){animation-delay:0.15s}.live-card:nth-child(3){animation-delay:0.3s}.live-card:nth-child(4){animation-delay:0.45s}
-    .live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;animation:glowPulse 2s infinite}
-    .live-card-label{font-size:0.78rem;color:rgba(240,244,255,0.5);margin-bottom:2px}
-    .live-card-val{font-size:1rem;font-weight:700;color:#fff}
-    .live-card-sub{font-size:0.75rem;color:rgba(240,244,255,0.45);margin-top:1px}
-    .live-card-icon{width:44px;height:44px;border-radius:12px;overflow:hidden;flex-shrink:0}
-    .live-card-icon img{width:100%;height:100%;object-fit:cover}
-    /* -- Trusted by logos -- */
-    .trusted-row{display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08)}
-    .trusted-label{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,244,255,0.3);white-space:nowrap}
-    .trusted-logos{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
-    .trusted-logo{font-size:0.82rem;font-weight:700;color:rgba(240,244,255,0.25);letter-spacing:0.05em;transition:color 0.2s}
-    .trusted-logo:hover{color:rgba(240,244,255,0.6)}
-    /* -- About strip -- */
-    .about-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .about-img-stack{position:relative;height:520px}
-    .about-img-main{width:75%;height:420px;object-fit:cover;border-radius:20px;position:absolute;top:0;left:0;box-shadow:0 32px 64px rgba(0,0,0,0.4)}
-    .about-img-accent{width:55%;height:260px;object-fit:cover;border-radius:16px;position:absolute;bottom:0;right:0;border:4px solid var(--bg);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
-    .about-badge{position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);background:rgba(8,12,24,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:18px 22px;text-align:center;z-index:2}
-    .about-badge .big{font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-    .about-badge p{font-size:0.75rem;color:rgba(240,244,255,0.5);margin:4px 0 0}
-    /* -- Values -- */
-    .values-icon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    /* -- Portfolio -- */
-    .portfolio-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
-    /* -- FAQ -- */
-    .faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
-    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.25s}
-    .faq-item.open{border-color:var(--border2)}
-    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:600;font-size:0.97rem;color:var(--text);gap:16px;user-select:none}
-    .faq-icon{width:24px;height:24px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s}
-    .faq-item.open .faq-icon{background:var(--accent);transform:rotate(45deg)}
-    .faq-icon svg{width:12px;height:12px;stroke:var(--accent);transition:stroke 0.3s}
-    .faq-item.open .faq-icon svg{stroke:#fff}
-    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1),padding 0.3s}
-    .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
-    .faq-a p{padding:0 24px;font-size:0.9rem;line-height:1.75}
-    /* -- Tech stack -- */
-    .tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-    .tech-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;transition:all 0.3s;cursor:default}
-    .tech-item:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .tech-item img{width:36px;height:36px;margin:0 auto 10px;object-fit:contain;filter:grayscale(0.3);transition:filter 0.3s}
-    .tech-item:hover img{filter:grayscale(0)}
-    .tech-item span{font-size:0.78rem;font-weight:600;color:var(--muted2)}
-    /* -- Responsive -- */
-    @media(max-width:1024px){.hero-split{grid-template-columns:1fr}.hero-right{display:none}.about-strip{grid-template-columns:1fr;gap:44px}.about-img-stack{height:320px}.values-icon-grid{grid-template-columns:repeat(2,1fr)}.tech-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:768px){.trusted-row{flex-direction:column;align-items:flex-start;gap:16px}.values-icon-grid{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(2,1fr)}}
-  </style>
-<style>@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-    @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}</style>
-</head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="navbar-inner">
-    <a href="index/" class="nav-logo"><img src="img/logo.png" alt="PumaPulse"></a>
-    <ul class="nav-links" id="navLinks">
-
-      <!-- Services Mega Menu -->
-      <li class="dropdown">
-        <a href="#">Services</a>
-        <div class="mega-menu" style="width:760px">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-            <a href="services/blockchain/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(98,126,234,0.12)">
-                <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Blockchain">
-              </div>
-              <div>
-                <span class="mega-text-label">Blockchain Development</span>
-                <span class="mega-text-desc">Smart contracts, DeFi protocols, NFT platforms &amp; enterprise blockchain</span>
-              </div>
-            </a>
-            <a href="services/crypto-exchange/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(247,147,26,0.12)">
-                <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Exchange">
-              </div>
-              <div>
-                <span class="mega-text-label">Crypto Exchange</span>
-                <span class="mega-text-desc">CEX, DEX, P2P, hybrid &amp; white-label exchange platforms</span>
-              </div>
-            </a>
-            <a href="services/trading-bots/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(16,185,129,0.12)">
-                <img src="https://cdn.simpleicons.org/python/3776AB" alt="Trading Bots">
-              </div>
-              <div>
-                <span class="mega-text-label">Trading Bots</span>
-                <span class="mega-text-desc">Arbitrage, DCA, grid, sniper, signal &amp; AI/ML trading bots</span>
-              </div>
-            </a>
-            <a href="services/fintech/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(99,91,255,0.12)">
-                <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Fintech">
-              </div>
-              <div>
-                <span class="mega-text-label">Fintech Solutions</span>
-                <span class="mega-text-desc">Neobank apps, digital banking, KYC/AML &amp; lending platforms</span>
-              </div>
-            </a>
-            <a href="services/wallets/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(20,241,149,0.12)">
-                <img src="https://cdn.simpleicons.org/solana/9945FF" alt="Wallets">
-              </div>
-              <div>
-                <span class="mega-text-label">Wallet Development</span>
-                <span class="mega-text-desc">MPC, DeFi, custodial, non-custodial &amp; multi-currency wallets</span>
-              </div>
-            </a>
-            <a href="services/forex/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(0,174,239,0.12)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#00AEEF" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-              <div>
-                <span class="mega-text-label">Forex Solutions</span>
-                <span class="mega-text-desc">Forex CRM, back office, MT4/MT5 integration &amp; traders room</span>
-              </div>
-            </a>
-          </div>
-          <div class="mega-menu-footer">
-            <a href="portfolio/">View all case studies ?</a>
-            <a href="contact/" class="mega-cta">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-              Free Consultation
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Solutions Mega Menu -->
-      <li class="dropdown">
-        <a href="#">Solutions</a>
-        <div class="mega-menu" style="width:680px">
-          <div class="mega-menu-header">Financial Technology Solutions</div>
-          <div class="mega-menu-grid">
-            <a href="solutions/defi/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(99,102,241,0.12)">
-                <img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="DeFi">
-              </div>
-              <div>
-                <span class="mega-text-label">DeFi Platforms</span>
-                <span class="mega-text-desc">AMMs, lending protocols, yield aggregators &amp; cross-chain bridges</span>
-              </div>
-            </a>
-            <a href="solutions/neobank/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(16,185,129,0.12)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-              </div>
-              <div>
-                <span class="mega-text-label">Neobank</span>
-                <span class="mega-text-desc">Full-stack digital banking with cards, lending &amp; investments</span>
-              </div>
-            </a>
-            <a href="solutions/payment-gateway/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(59,130,246,0.12)">
-                <img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Payments">
-              </div>
-              <div>
-                <span class="mega-text-label">Payment Gateway</span>
-                <span class="mega-text-desc">Accept 100+ cryptocurrencies with instant settlement</span>
-              </div>
-            </a>
-            <a href="solutions/ai-trading/" class="mega-item">
-              <div class="mega-icon" style="background:rgba(167,139,250,0.12)">
-                <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="AI Trading">
-              </div>
-              <div>
-                <span class="mega-text-label">AI Trading</span>
-                <span class="mega-text-desc">ML price prediction, sentiment analysis &amp; smart order routing</span>
-              </div>
-            </a>
-          </div>
-          <div class="mega-menu-footer">
-            <a href="portfolio/">View all case studies ?</a>
-            <a href="contact/" class="mega-cta">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-              Free Consultation
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <li><a href="about/">About</a></li>
-      <li><a href="portfolio/">Portfolio</a></li>
-      <li><a href="blog/">Blog</a></li>
-      <li><a href="careers/">Careers</a></li>
-      <li><a href="contact/">Contact</a></li>
-    </ul>
-    <div class="nav-cta" id="navCta">
-      <a href="contact/" class="btn btn-accent btn-sm ripple-btn">Get a Free Quote</a>
-    </div>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="hero" style="min-height:100vh;padding-top:0">
-  <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=1600">
-      <source src="https://cdn.coverr.co/videos/coverr-a-digital-globe-with-network-connections-1584/1080p.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-grid-line"></div>
-  <div class="container" style="position:relative;z-index:3;width:100%">
-    <div class="hero-split">
-      <div class="hero-content">
-        <div class="hero-badge anim-float">
-          <span class="hero-badge-dot"></span>
-          Trusted Digital Transformation Company
-        </div>
-        <h1 style="color:#fff">Your Business Deserves<br><span class="shimmer-text">More Revenue,</span><br>Not More Work</h1>
-        <p class="hero-desc">What's stopping your business from growing faster? We remove the friction, automate what slows you down, and help you scale at 10X speed — effortlessly. From crypto exchanges to AI-powered trading bots, we engineer high-performance fintech products that last.</p>
-        <div class="hero-actions">
-          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Start Your Project</a>
-          <a href="portfolio/" class="btn btn-ghost btn-lg">View Our Work</a>
-        </div>
-        <div class="trusted-row">
-          <span class="trusted-label">Trusted by</span>
-          <div class="trusted-logos">
-            <span class="trusted-logo">Dreamster</span>
-            <span class="trusted-logo">Cryptinum</span>
-            <span class="trusted-logo">Apzor</span>
-            <span class="trusted-logo">MetaStation</span>
-            <span class="trusted-logo">MarginFX</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-right" style="padding:120px 0 80px">
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Exchange"></div>
-          <div><div class="live-card-label">Exchange Live</div><div class="live-card-val">$2.4M Volume</div><div class="live-card-sub">24h trading volume</div></div>
-          <div class="live-dot" style="margin-left:auto"></div>
-        </div>
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Bot"></div>
-          <div><div class="live-card-label">Trading Bot Active</div><div class="live-card-val">+18.4% ROI</div><div class="live-card-sub">This month's return</div></div>
-          <div class="live-dot" style="margin-left:auto;background:#3b82f6"></div>
-        </div>
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Neobank"></div>
-          <div><div class="live-card-label">Neobank Launched</div><div class="live-card-val">12,000 Users</div><div class="live-card-sub">Onboarded in 30 days</div></div>
-          <div class="live-dot" style="margin-left:auto;background:#a78bfa"></div>
-        </div>
-        <div class="live-card tilt-card">
-          <div class="live-card-icon"><img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Payment"></div>
-          <div><div class="live-card-label">Payment Gateway</div><div class="live-card-val">$890K Processed</div><div class="live-card-sub">Today's transactions</div></div>
-          <div class="live-dot" style="margin-left:auto;background:#f59e0b"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Ticker -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item">Crypto Exchange Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">DeFi Platforms<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Trading Bot Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Blockchain Solutions<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Neobank Apps<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Forex CRM<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Crypto Wallets<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Payment Gateways<span class="ticker-dot"></span></span>
-    <span class="ticker-item">AI Trading Systems<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Smart Contracts<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Crypto Exchange Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">DeFi Platforms<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Trading Bot Development<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Blockchain Solutions<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Neobank Apps<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Forex CRM<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Crypto Wallets<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Payment Gateways<span class="ticker-dot"></span></span>
-    <span class="ticker-item">AI Trading Systems<span class="ticker-dot"></span></span>
-    <span class="ticker-item">Smart Contracts<span class="ticker-dot"></span></span>
-  </div>
-</div>
-
-<!-- Stats -->
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="36" data-suffix="+">36+</div><p>Businesses Scaled Successfully</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="95" data-suffix="%">95%</div><p>Project Success Rate</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="20" data-suffix="+">20+</div><p>Growth-Focused Experts</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="25" data-suffix="+">25+</div><p>Countries Served</p></div>
-</div>
-
-<!-- About Strip -->
-<section class="section">
-  <div class="container">
-    <div class="about-strip">
-      <div class="about-img-stack reveal-left">
-        <img class="about-img-main" src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=900" alt="PumaPulse Team">
-        <img class="about-img-accent" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PumaPulse Office">
-        <div class="about-badge anim-float">
-          <div class="big">98%</div>
-          <p>Client Retention Rate</p>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <span class="eyebrow">Who We Are</span>
-        <h2>We Specialize in Creating Digital Experiences for a <span class="grad-text">Better Tomorrow</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:18px">PumaPulse is a team of dedicated technology enthusiasts, problem solvers, and inventors. We are faithful to building digital experiences that not only suit today's demands but also lay the groundwork for a brighter tomorrow.</p>
-        <p style="margin-bottom:18px">Our mission is to assist organizations of all sizes to innovate, evolve, and embrace the digital era. We prepare our clients for whatever the future brings by concentrating on smart, sustainable solutions.</p>
-        <p style="margin-bottom:32px">From crypto exchanges and trading bots to neobanks and DeFi protocols ù we turn complex ideas into powerful digital platforms that scale.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px">
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Smarter Tech Solutions</span>
-          </div>
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Stronger Business Growth</span>
-          </div>
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Lasting Success Stories</span>
-          </div>
-          <div style="display:flex;gap:10px;align-items:flex-start">
-            <div style="width:20px;height:20px;border-radius:50%;background:var(--ad);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:0.88rem;color:var(--muted2)">Global Compliance Ready</span>
-          </div>
-        </div>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="about/" class="btn btn-accent btn-magnetic">Learn About Us</a>
-          <a href="portfolio/" class="btn btn-outline">View Portfolio</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Services -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">What We Build</span>
-      <h2>End-to-End <span class="grad-text">Fintech Engineering</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We cover the full spectrum of blockchain and financial technology ù from ideation to deployment and beyond. Every solution is built with precision, security, and scale in mind.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Blockchain Development" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Blockchain Development</h3><p>Custom blockchain networks, smart contracts, DeFi protocols, and Web3 integrations. We build secure, audited, and production-ready blockchain infrastructure for enterprises and startups.</p><a href="services/blockchain/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Crypto Exchange" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Crypto Exchange Platforms</h3><p>Building scalable, secure, and user-friendly crypto exchange platforms ù CEX, DEX, P2P, hybrid, and white-label ù that enable businesses and traders to participate in the digital economy.</p><a href="services/crypto-exchange/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577236/pexels-photo-9577236.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Trading Bots" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Trading Bot Development</h3><p>Creating intelligent, automated trading systems ù arbitrage, DCA, grid, sniper, and AI/ML bots ù to help businesses and individual traders optimize tactics, reduce risk, and increase earnings.</p><a href="services/trading-bots/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577253/pexels-photo-9577253.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Fintech Banking" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Digital Banking &amp; Neobanking</h3><p>Making financial management simple, secure, and accessible with cutting-edge digital banking solutions. Full-stack neobank apps with accounts, cards, lending, savings, and investment features.</p><a href="services/fintech/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/5698696/pexels-photo-5698696.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Crypto Wallet" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Payment Solutions &amp; Wallets</h3><p>Developing seamless worldwide payment networks and secure digital wallets ù custodial, non-custodial, MPC, and DeFi ù that facilitate quick, efficient, and safe transactions globally.</p><a href="services/wallets/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/9577250/pexels-photo-9577250.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Forex Trading" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body"><h3>Forex CRM &amp; Trading Solutions</h3><p>Comprehensive solutions for forex brokerages ù CRM, back-office, traders room, MT4/MT5 integration, and MAM/PAMM systems. Everything a modern broker needs to compete and grow.</p><a href="services/forex/" class="svc-link hover-underline">Explore <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Core Values -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Core Values</span>
-      <h2>What Drives <span class="grad-text2">Everything We Do</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We don't just build software ù we build trust, relationships, and lasting success for every client we work with.</p>
-    </div>
-    <div class="values-icon-grid reveal-stagger">
-      <div class="value-icon-card">
-        <div class="value-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Trust First, Trust Always</h3>
-        <p>We believe trust isn't something you get ù it's something you earn. That's why we focus on honesty, reliability, and delivering real results. No hidden terms, no false promises ù just a strong partnership built for the long run.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3>Think Fresh, Build Smart</h3>
-        <p>We question, explore, and see things with fresh eyes. But when it's time to take action, we bring expert skills to the table. Real innovation comes from curiosity, not just following the usual way.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Take Responsibility. Make It Happen.</h3>
-        <p>We don't wait for things to change ù we make them happen. Taking responsibility isn't just what we do; it's our mindset. Every challenge is a chance to grow, and every action pushes us forward.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Empowering Global Change</h3>
-        <p>PumaPulse is dedicated to bringing about significant change in the financial industry. We lead responsibly, developing solutions that enable businesses, support entrepreneurs, and inspire economic growth worldwide.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--pd);border-color:rgba(59,130,246,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>Sustainability in Innovation</h3>
-        <p>Every project at PumaPulse incorporates sustainability. Whether we're creating hybrid crypto exchanges or clever trading bots, we help clients align their goals with environmental and social responsibility.</p>
-      </div>
-      <div class="value-icon-card">
-        <div class="value-icon-wrap" style="background:var(--vd);border-color:rgba(167,139,250,0.2)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3>Transparency with Trust Built In</h3>
-        <p>We value transparency and accountability. By constantly refining our procedures and giving clear, transparent progress reports, we develop long-term trust with clients, entrepreneurs, and businesses.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Solutions Tabs -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Solutions</span>
-      <h2>Tailored for Every <span class="grad-text3">Vertical</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Deep expertise across every segment of the financial technology landscape ù from consumer fintech to institutional trading infrastructure.</p>
-    </div>
-    <div class="sol-tabs reveal">
-      <button class="sol-tab active" onclick="switchSol('exchange',this)">Exchange</button>
-      <button class="sol-tab" onclick="switchSol('trading',this)">Trading</button>
-      <button class="sol-tab" onclick="switchSol('payments',this)">Payments</button>
-      <button class="sol-tab" onclick="switchSol('banking',this)">Banking</button>
-      <button class="sol-tab" onclick="switchSol('forex',this)">Forex</button>
-    </div>
-    <div id="sol-exchange" class="sol-panel active">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=500" alt="CEX" loading="lazy"></div><div class="sol-card-body"><h4>Centralized Exchange (CEX)</h4><p>High-performance order matching, KYC/AML, admin panel, and institutional-grade liquidity management.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=500" alt="DEX" loading="lazy"></div><div class="sol-card-body"><h4>Decentralized Exchange (DEX)</h4><p>AMM-based DEX with smart contract liquidity pools, yield farming, and governance token integration.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/9577243/pexels-photo-9577243.jpeg?auto=compress&cs=tinysrgb&w=500" alt="P2P" loading="lazy"></div><div class="sol-card-body"><h4>P2P Exchange</h4><p>Peer-to-peer trading with escrow, dispute resolution, reputation system, and 100+ payment methods.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/9577254/pexels-photo-9577254.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Hybrid" loading="lazy"></div><div class="sol-card-body"><h4>Hybrid Exchange</h4><p>Best of CEX and DEX ù centralized speed with decentralized custody and full transparency.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/9588213/pexels-photo-9588213.jpeg?auto=compress&cs=tinysrgb&w=500" alt="White Label" loading="lazy"></div><div class="sol-card-body"><h4>White-Label Exchange</h4><p>Launch your branded exchange in weeks with our fully customizable, battle-tested white-label platform.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Derivatives" loading="lazy"></div><div class="sol-card-body"><h4>Derivatives Exchange</h4><p>Futures, options, and perpetual contracts with advanced risk management engines and liquidation systems.</p><a href="services/crypto-exchange/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-    </div>
-    <div id="sol-trading" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Algo" loading="lazy"></div><div class="sol-card-body"><h4>Algo Trading Software</h4><p>Rule-based and AI-driven algorithmic trading systems for crypto, forex, and equity markets.</p><a href="services/trading-bots/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/8185624/pexels-photo-8185624.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Arbitrage" loading="lazy"></div><div class="sol-card-body"><h4>Arbitrage Bots</h4><p>Cross-exchange and triangular arbitrage bots that capture price inefficiencies in milliseconds.</p><a href="services/trading-bots/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6777571/pexels-photo-6777571.jpeg?auto=compress&cs=tinysrgb&w=500" alt="DCA" loading="lazy"></div><div class="sol-card-body"><h4>DCA &amp; Grid Bots</h4><p>Dollar-cost averaging and grid trading bots with smart entry/exit logic and portfolio rebalancing.</p><a href="services/trading-bots/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-    </div>
-    <div id="sol-payments" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Gateway" loading="lazy"></div><div class="sol-card-body"><h4>Crypto Payment Gateway</h4><p>Accept 100+ cryptocurrencies with instant settlement, fiat conversion, and zero chargebacks.</p><a href="solutions/payment-gateway/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770520/pexels-photo-6770520.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Ecommerce" loading="lazy"></div><div class="sol-card-body"><h4>E-Commerce Integration</h4><p>Plug-and-play crypto payments for Shopify, WooCommerce, Magento, and custom platforms.</p><a href="solutions/payment-gateway/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3943723/pexels-photo-3943723.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Cross Border" loading="lazy"></div><div class="sol-card-body"><h4>Cross-Border Payments</h4><p>Instant, low-cost international transfers powered by blockchain rails across 180+ countries.</p><a href="solutions/payment-gateway/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-    </div>
-    <div id="sol-banking" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Neobank" loading="lazy"></div><div class="sol-card-body"><h4>Neobank Platform</h4><p>Full-stack digital banking with accounts, virtual cards, lending, savings, and investment features.</p><a href="solutions/neobank/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Digital Banking" loading="lazy"></div><div class="sol-card-body"><h4>Digital Banking App</h4><p>Mobile-first banking apps with biometric auth, real-time notifications, and open banking APIs.</p><a href="solutions/neobank/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Fintech" loading="lazy"></div><div class="sol-card-body"><h4>Fintech Software</h4><p>Compliance-ready fintech platforms with KYC, AML, and regulatory reporting built in from day one.</p><a href="services/fintech/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-    </div>
-    <div id="sol-forex" class="sol-panel">
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/6770520/pexels-photo-6770520.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Forex CRM" loading="lazy"></div><div class="sol-card-body"><h4>Forex CRM</h4><p>Complete broker CRM with IB management, lead tracking, KYC, and compliance tools.</p><a href="services/forex/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Back Office" loading="lazy"></div><div class="sol-card-body"><h4>Back Office Software</h4><p>Automate operations, financial reporting, and client management for forex brokerages.</p><a href="services/forex/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-      <div class="sol-card"><div class="sol-card-img"><img src="https://images.pexels.com/photos/7267598/pexels-photo-7267598.jpeg?auto=compress&cs=tinysrgb&w=500" alt="MT4 MT5" loading="lazy"></div><div class="sol-card-body"><h4>MT4/MT5 Integration</h4><p>Seamless MetaTrader integration with custom plugins, liquidity bridges, and CRM connectors.</p><a href="services/forex/">Learn more <svg viewBox="0 0 14 14" fill="none" style="width:11px;height:11px;vertical-align:middle;margin-left:2px"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Process -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">How We Work</span>
-      <h2>From Idea to <span class="grad-text">Launch in 4 Steps</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">A transparent, structured process that keeps you in control at every stage ù no surprises, no hidden costs, just results.</p>
-    </div>
-    <div class="process-row reveal-stagger">
-      <div class="process-step">
-        <div class="step-circle anim-glow">01</div>
-        <h4>Discovery &amp; Strategy</h4>
-        <p>We deep-dive into your goals, market, and technical requirements to craft a winning product strategy. We ask the hard questions so you don't have to.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">02</div>
-        <h4>Architecture &amp; Design</h4>
-        <p>System architecture, UI/UX wireframes, and technical specs ù all reviewed and approved by you before a single line of code is written.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">03</div>
-        <h4>Build &amp; Test</h4>
-        <p>Agile development with weekly demos, automated testing, security audits, and continuous integration throughout the entire build process.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">04</div>
-        <h4>Launch &amp; Scale</h4>
-        <p>Smooth deployment, performance monitoring, and ongoing support to help you grow post-launch. We're with you for the long run.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Portfolio Preview -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Our Work</span>
-      <h2>Real Projects. <span class="grad-text2">Real Results.</span> Built for Growth.</h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">At PumaPulse, we turn complex ideas into powerful digital platforms. Here's how we've helped startups, enterprises, and financial innovators launch, scale, and lead with confidence.</p>
-    </div>
-    <div class="portfolio-grid reveal-stagger">
-      <div class="portfolio-card">
-        <div class="portfolio-img">
-          <img src="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dreamster Exchange" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-green">Crypto Exchange</span></div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Dreamster Exchange</h3>
-          <p>A Web3 digital asset trading platform focused on fast, accurate transactions with a clean, intuitive design enabling users to navigate advanced trading tools and access live market data.</p>
-          <div class="portfolio-quote">"They delivered a secure, easy-to-use platform with good communication and strong technical skills, plus gave useful suggestions throughout the project."</div>
-          <div class="portfolio-client">
-            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Mario Butler">
-            <div><div class="portfolio-client-name">Mario Butler</div><div class="portfolio-client-loc">Dubai, UAE</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-img">
-          <img src="https://images.pexels.com/photos/9577236/pexels-photo-9577236.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MetaStation" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-blue">Exchange Platform</span></div>
-        </div>
-        <div class="portfolio-body">
-          <h3>MetaStation</h3>
-          <p>A crypto exchange platform built with advanced features for traders ù strong performance, top security, and hack-proof architecture giving users full confidence while trading.</p>
-          <div class="portfolio-quote">"The attention to detail was outstanding and the quality of work exceeded expectations. Communication throughout the project was transparent and timely."</div>
-          <div class="portfolio-client">
-            <img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Chandravadan Raut">
-            <div><div class="portfolio-client-name">Chandravadan Raut</div><div class="portfolio-client-loc">India</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-img">
-          <img src="https://images.pexels.com/photos/9577250/pexels-photo-9577250.jpeg?auto=compress&cs=tinysrgb&w=700" alt="MarginFX" loading="lazy">
-          <div class="portfolio-overlay"></div>
-          <div style="position:absolute;top:16px;left:16px;z-index:2"><span class="tag-pill tag-purple">Forex CRM</span></div>
-        </div>
-        <div class="portfolio-body">
-          <h3>MarginFX</h3>
-          <p>Custom Forex CRM software for a brokerage ù handling clients, managing trading data, KYC, IB tracking, and keeping everything in one unified, powerful platform.</p>
-          <div class="portfolio-quote">"From client registration to KYC and IB tracking, everything works well. The process was smooth, and we're fully satisfied with the outcome."</div>
-          <div class="portfolio-client">
-            <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=80" alt="Manoj Kumaran">
-            <div><div class="portfolio-client-name">Manoj Kumaran</div><div class="portfolio-client-loc">Malaysia</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center" style="margin-top:44px">
-      <a href="portfolio/" class="btn btn-outline btn-lg btn-magnetic">View All Projects</a>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Client Stories</span>
-      <h2>Trusted by <span class="grad-text">Builders Worldwide</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="testi-grid reveal-stagger">
-      <div class="testi-card glow-card">
-        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>"Big thanks to PumaPulse for handling our token project so well! Everything was fine from start to finish, and they delivered exactly as expected. We truly appreciate their effort and look forward to working with them again soon!"</blockquote>
-        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Steven Kim"></div><div><div class="testi-name">Steven Kim Wee</div><div class="testi-role">Founder, Cryptinum</div></div></div>
-      </div>
-      <div class="testi-card glow-card">
-        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>"The team supported me throughout, suggested useful changes, delivered on time, and quickly fixed any issues. The whole process was well handled. I highly recommend their services for any fintech project."</blockquote>
-        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Kooban Naidoo"></div><div><div class="testi-name">Kooban Naidoo</div><div class="testi-role">CEO, Apzor</div></div></div>
-      </div>
-      <div class="testi-card glow-card">
-        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>"I must commend the team on an exceptionally well executed delivery of our Cryptocurrency Exchange. I would not hesitate to recommend PumaPulse for any high-level fintech initiative."</blockquote>
-        <div class="testi-author"><div class="testi-photo"><img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Chandravadan Raut"></div><div><div class="testi-name">Chandravadan Raut</div><div class="testi-role">Founder, MetaStation</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Built With <span class="grad-text3">Battle-Tested Tech</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We use the right tools for the job ù proven, scalable, and maintainable technologies that power the world's best fintech products.</p>
-    </div>
-    <div class="tech-grid reveal-stagger">
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span>Node.js</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React"><span>React</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"><span>Python</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/solidity/363636" alt="Solidity"><span>Solidity</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/rust/000000" alt="Rust"><span>Rust</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go"><span>Go</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span>PostgreSQL</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span>Redis</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span>Kafka</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span>Kubernetes</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span>AWS</span></div>
-      <div class="tech-item"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span>Docker</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Frequently Asked <span class="grad-text">Questions</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How long does it take to build a crypto exchange?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>A white-label exchange can be launched in 4û6 weeks. A fully custom CEX typically takes 3û5 months depending on features. DEX and hybrid platforms vary based on smart contract complexity. We provide a detailed timeline after the discovery phase.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do you provide post-launch support and maintenance?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>Yes. We offer flexible maintenance packages including 24/7 monitoring, bug fixes, security patches, feature updates, and dedicated support channels. Most clients stay with us long-term as their technology partner.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What blockchain networks do you develop on?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>We build on all major networks: Ethereum, Solana, BNB Chain, Polygon, Avalanche, Arbitrum, Optimism, zkSync, and more. We also develop custom private blockchains using Hyperledger Fabric and Quorum for enterprise clients.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How do you handle security and compliance?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>Security is built into every layer ù from smart contract audits and penetration testing to KYC/AML integration and regulatory compliance. We support GDPR, MiCA, FinCEN, and 30+ other regulatory frameworks across global jurisdictions.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do you sign NDAs before project discussions?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>Absolutely. We sign NDAs before any project discussion. Your ideas, business plans, and technical requirements are treated with complete confidentiality. We also offer fixed-price contracts so there are no surprises.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What is your pricing model?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
-        <div class="faq-a"><p>We offer both fixed-price and time &amp; materials contracts depending on project scope. After a free discovery call, we provide a detailed proposal with clear milestones and payment schedules. No hidden fees, ever.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <span class="eyebrow" style="justify-content:center;display:flex;color:rgba(255,255,255,0.6)">Ready to Build?</span>
-        <h2>Your Goals Deserve Clarity.<br><span class="grad-text">We're Here to Help.</span></h2>
-        <p>Book a free 30-minute strategy call. No sales pitch ù just honest advice on how to build your product right. We'll help you find the right solution for your specific goals.</p>
-        <div class="cta-btns">
-          <a href="contact/" class="btn btn-accent btn-lg btn-magnetic ripple-btn">Book Free Strategy Call</a>
-          <a href="portfolio/" class="btn btn-white btn-lg">View Our Portfolio</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<div id="footer-placeholder"></div>
-<script src="js/nav.js"></script>
-<script src="js/main.js"></script>
-<script src="js/animations.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PumaPulse-Trading Solutions & Blockchain & Fintech Engineering</title>
+<meta name="description" content="PumaPulse engineers high-performance fintech products — crypto exchanges, trading bots, DeFi protocols, neobanks, and blockchain infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/animations.css">
+<style>
+
+/* Mega menu */
+.mega-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s,top .2s;z-index:1000;min-width:480px}
+.nav-links .dropdown:hover .mega-menu{opacity:1;visibility:visible;top:calc(100% + 4px)}
+.mega-item{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:8px;text-decoration:none;transition:background .15s;border:1px solid transparent}
+.mega-item:hover{background:rgba(192,32,42,0.04);border-color:rgba(192,32,42,0.1)}
+.mega-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mega-icon img,.mega-icon svg{width:20px;height:20px}
+.mega-text-label{font-size:0.86rem;font-weight:600;color:var(--ink,#1a1e2e);display:block;margin-bottom:2px}
+.mega-text-desc{font-size:0.75rem;color:var(--mid,#4a5470);line-height:1.4;display:block}
+.mega-menu-header{font-size:0.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--dim,#8a93b0);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.mega-menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.mega-cta{display:flex;align-items:center;gap:6px;background:var(--red,#c0202a);color:#fff !important;padding:7px 14px;border-radius:50px;font-weight:600;transition:background .15s}
+.mega-cta:hover{background:var(--red2,#e0263a) !important}
+/* Mobile */
+@media(max-width:1024px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
+@media(max-width:1024px){.nav-mobile-open .nav-links{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,12,24,0.98);padding:16px;gap:4px;z-index:9998}.nav-mobile-open .nav-links>li>a{color:rgba(240,244,255,0.7);padding:12px 16px;border-radius:6px}.nav-mobile-open .nav-cta{display:flex;position:fixed;bottom:24px;left:24px;right:24px;z-index:9998}.nav-mobile-open .mega-menu{display:none}}
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#0a0c12;
+  --bg2:#0f1219;
+  --bg3:#141820;
+  --bg-light:#f5f6fa;
+  --bg-light2:#edeef5;
+  --card:#ffffff;
+  --card-dark:#131a26;
+  --card-dark2:#192031;
+  --border:#e0e4ef;
+  --border-dark:#1e2a3c;
+  --red:#c0202a;
+  --red2:#e0263a;
+  --red3:#ff3b4e;
+  --red-glow:rgba(192,32,42,0.25);
+  --white:#ffffff;
+  --ink:#1a1e2e;
+  --mid:#4a5470;
+  --dim:#8a93b0;
+  --green:#0da678;
+  --yellow:#e8b800;
+  --display:'Inter',sans-serif;
+  --body:'Inter',sans-serif;
+  --cond:'Inter',sans-serif;
+  --mono:'Inter',monospace;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-light);color:var(--ink);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg-light)}
+::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
+
+/* ===================== LIGHT STREAM CANVAS ===================== */
+#lightCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.55}
+
+
+/* ===================== TICKER ===================== */
+.ticker-bar{
+  position:fixed;top:62px;left:0;right:0;z-index:299;height:30px;
+  background:var(--bg);border-bottom:1px solid var(--border-dark);
+  overflow:hidden;display:flex;align-items:center;
+}
+.t-live{
+  display:flex;align-items:center;gap:7px;padding:0 16px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:#4a7;flex-shrink:0;border-right:1px solid var(--border-dark);height:100%;white-space:nowrap;
+}
+.t-live .status-dot{background:#16c784;box-shadow:0 0 5px #16c784}
+.t-scroll{display:flex;white-space:nowrap;animation:slide 48s linear infinite}
+.t-item{display:flex;align-items:center;gap:10px;padding:0 22px;border-right:1px solid var(--border-dark);font-family:var(--mono);font-size:10px;}
+.t-sym{color:#ccd;font-weight:400;letter-spacing:.05em}
+.t-px{color:#6a7a99}
+.t-chg{font-size:9px;padding:2px 5px;border-radius:2px}
+.t-chg.up{background:rgba(22,199,132,0.15);color:#16c784}
+.t-chg.dn{background:rgba(255,59,78,0.15);color:#ff3b4e}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===================== HERO ===================== */
+.hero{
+  min-height:100svh;padding-top:62px;position:relative;overflow:hidden;
+  background:url('img/Background.png') center 20% / cover no-repeat,linear-gradient(155deg,#0a0c12 0%,#141028 45%,#1a0a10 100%);
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.hero-orb1{
+  position:absolute;top:-180px;left:-120px;width:900px;height:700px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(192,32,42,0.2) 0%,transparent 65%);
+}
+.hero-orb2{
+  position:absolute;bottom:-200px;right:-80px;width:700px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(100,60,200,0.1) 0%,transparent 65%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr;gap:60px;align-items:center;
+  max-width:1200px;margin:0 auto;padding:80px 44px 0;
+}
+.hero-left{color:#fff}
+.h-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(192,32,42,0.9);margin-bottom:22px;
+  opacity:0;animation:rise .6s ease .1s forwards;
+}
+.h-eyebrow::before{content:'——';margin-right:4px;color:rgba(255,255,255,0.35);letter-spacing:-.05em}
+h1{
+  font-family:'Inter',sans-serif;font-weight:900;
+  font-size:clamp(48px,6vw,88px);line-height:1.0;letter-spacing:-.03em;color:#fff;
+  opacity:0;animation:rise .65s ease .18s forwards;
+}
+h1 .accent{color:var(--red2)}
+h1 .dim-text{color:rgba(255,255,255,0.28);display:block;font-weight:400}
+.h-sub{
+  margin-top:22px;max-width:490px;font-size:16px;line-height:1.8;font-weight:300;
+  font-family:'Inter',sans-serif;
+  color:rgba(200,210,230,0.75);
+  opacity:0;animation:rise .6s ease .28s forwards;
+}
+.h-btns{
+  margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;
+  opacity:0;animation:rise .6s ease .38s forwards;
+}
+.btn-primary{
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:.01em;text-transform:none;
+  background:var(--red);color:#fff;border:none;padding:14px 28px;cursor:pointer;
+  border-radius:50px;
+  transition:background .15s,box-shadow .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--red2);box-shadow:0 0 28px rgba(192,32,42,0.5)}
+.btn-outline-light{
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;
+  background:rgba(255,255,255,0.08);color:#fff;
+  border:1px solid rgba(255,255,255,0.25);
+  padding:14px 28px;cursor:pointer;border-radius:50px;
+  transition:color .15s,border-color .15s,background .15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-outline-light:hover{color:#fff;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.14)}
+/* ── Footer: force completely dark ── */
+footer,
+.footer-top,
+.footer-bottom-bar,
+footer .container {
+  background: #060a14 !important;
+  color: rgba(200,215,235,0.6) !important;
+}
+.footer-top-inner { background: #060a14 !important; }
+.footer-brand-new .nav-logo img { height: 64px !important; width: auto !important; }
+.footer-col-new h5 { color: rgba(200,215,235,0.85) !important; }
+.footer-col-new ul li a { color: rgba(200,215,235,0.4) !important; }
+.footer-col-new ul li a:hover { color: rgba(200,215,235,0.85) !important; }
+.footer-brand-new .tagline { color: rgba(200,215,235,0.4) !important; }
+.footer-bottom-bar { background: #040710 !important; border-top: 1px solid rgba(255,255,255,0.06) !important; }
+.footer-bottom-bar p { color: rgba(200,215,235,0.25) !important; }
+.footer-contact-mini a { color: rgba(200,215,235,0.4) !important; }
+.footer-contact-mini a:hover { color: rgba(200,215,235,0.8) !important; }
+.btn,.btn-primary,.btn-accent,.btn-ghost,.btn-outline,.btn-outline-light,.btn-white{
+  border-radius:50px !important;
+  clip-path:none !important;
+  font-family:'Inter',sans-serif !important;
+  letter-spacing:.01em !important;
+  text-transform:none !important;
+}
+.btn:hover,.btn-primary:hover,.btn-accent:hover,.btn-ghost:hover,.btn-outline:hover,.btn-outline-light:hover,.btn-white:hover{
+  transform:none !important;
+}
+.btn-primary{background:#c0202a !important;color:#fff !important;padding:14px 28px !important;font-size:14px !important;font-weight:700 !important}
+.btn-primary:hover{background:#e0263a !important;box-shadow:0 0 28px rgba(192,32,42,0.5) !important}
+.btn-accent{background:#c0202a !important;color:#fff !important}
+.btn-accent:hover{background:#e0263a !important;box-shadow:0 4px 16px rgba(192,32,42,0.4) !important}
+.btn-ghost,.btn-outline-light{background:rgba(255,255,255,0.08) !important;color:#fff !important;border:1.5px solid rgba(255,255,255,0.28) !important;padding:14px 28px !important;font-size:14px !important;font-weight:600 !important}
+.btn-ghost:hover,.btn-outline-light:hover{background:rgba(255,255,255,0.14) !important;border-color:rgba(255,255,255,0.55) !important;color:#fff !important}
+.h-stats{
+  margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1);
+  display:flex;gap:0;
+  opacity:0;animation:rise .6s ease .48s forwards;
+}
+.h-stat{padding-right:32px;border-right:1px solid rgba(255,255,255,0.1)}
+.h-stat:last-child{border-right:none;padding-left:32px;padding-right:0}
+.h-stat:not(:first-child){padding-left:32px}
+.h-stat-val{font-family:'Inter',sans-serif;font-weight:800;font-size:38px;line-height:1;color:#fff}
+.h-stat-val span{color:var(--red2)}
+.h-stat-lbl{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(200,210,230,0.45);margin-top:4px}
+
+/* HERO DASHBOARD */
+.hero-right{opacity:0;animation:rise .65s ease .32s forwards;position:relative;z-index:2}
+.dash-widget{
+  background:rgba(15,18,28,0.85);
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(20px);
+  position:relative;overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(192,32,42,0.15);
+}
+.dash-widget::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--red2),transparent);
+}
+.dw-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02)}
+.dw-title{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,210,230,0.4)}
+.dw-badge{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;color:#16c784}
+.dw-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,0.07)}
+.dw-tab{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;color:rgba(200,210,230,0.35);cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.dw-tab.on{color:var(--red2);border-bottom-color:var(--red2)}
+.dw-pair{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,0.05);transition:background .15s}
+.dw-pair:hover{background:rgba(255,255,255,0.03)}
+.dw-pair:last-child{border-bottom:none}
+.dw-sym{font-family:var(--display);font-weight:600;font-size:13px;color:#fff}
+.dw-sub{font-family:var(--mono);font-size:8.5px;color:rgba(200,210,230,0.3);display:block;margin-top:1px}
+.dw-price{font-family:var(--mono);font-size:12px;color:#dde;text-align:right}
+.dw-chg{font-family:var(--mono);font-size:9.5px;padding:3px 7px;text-align:right}
+.dw-chg.up{background:rgba(22,199,132,0.12);color:#16c784}
+.dw-chg.dn{background:rgba(255,59,78,0.12);color:#ff3b4e}
+.mini-chart{width:56px;height:26px;display:flex;align-items:flex-end;gap:1.5px;padding:0 4px}
+.mc-bar{flex:1;border-radius:1px;min-height:2px}
+.mc-bar.up{background:#16c784;opacity:.65}
+.mc-bar.dn{background:#ff3b4e;opacity:.65}
+.dw-vol{font-family:var(--mono);font-size:8.5px;color:rgba(200,210,230,0.3)}
+.dw-vol span{color:rgba(200,210,230,0.6)}
+
+/* ===================== WAVE DIVIDERS ===================== */
+.wave-down{position:relative;z-index:1;line-height:0;margin-top:-1px}
+.wave-down svg{display:block;width:100%;}
+.wave-up{position:relative;z-index:1;line-height:0;margin-bottom:-1px}
+.wave-up svg{display:block;width:100%;}
+.angle-div{position:relative;z-index:1;height:60px;overflow:hidden}
+.angle-div::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:var(--bg-light);clip-path:polygon(0 60px,100% 0,100% 60px)}
+
+/* ===================== LAYOUT ===================== */
+.container{max-width:1200px;margin:0 auto;padding:0 44px}
+.section-light{background:var(--bg-light);padding:100px 0;position:relative}
+.section-white{background:#fff;padding:100px 0;position:relative}
+.section-dark{background:var(--bg);padding:100px 0;position:relative;color:#fff}
+.section-tint{background:var(--bg-light2);padding:100px 0;position:relative}
+
+/* EYEBROW / HEADINGS (light sections) */
+.eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--red);display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;
+}
+.eyebrow::before{content:'——';color:rgba(192,32,42,0.4);letter-spacing:-.05em}
+h2.light{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(32px,4vw,54px);line-height:1.05;letter-spacing:-.03em;color:var(--ink)}
+h2.light .muted{color:var(--mid);font-weight:400}
+h2.dark{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(32px,4vw,54px);line-height:1.05;letter-spacing:-.03em;color:#fff}
+h2.dark .muted{color:rgba(200,215,235,0.45);font-weight:400}
+.sec-sub.light{font-size:16px;line-height:1.8;color:var(--mid);font-weight:300;max-width:480px;margin-top:14px}
+.sec-sub.dark{font-size:16px;line-height:1.8;color:rgba(200,215,235,0.6);font-weight:300;max-width:480px;margin-top:14px}
+
+/* ===================== TECH STRIP ===================== */
+.tech-strip{background:var(--bg);padding:18px 0;overflow:hidden;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)}
+.ts-scroll{display:flex;white-space:nowrap;animation:slide 32s linear infinite}
+.ts-item{display:inline-flex;align-items:center;gap:10px;padding:0 30px;font-family:var(--cond);font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(150,170,200,0.4);border-right:1px solid var(--border-dark);white-space:nowrap}
+.ts-item img{width:18px;height:18px;object-fit:contain;filter:grayscale(1) brightness(.5);transition:filter .2s}
+.ts-item:hover img{filter:grayscale(0) brightness(1)}
+.ts-item:hover{color:rgba(200,215,235,0.7)}
+
+/* ===================== METRICS (dark section) ===================== */
+.metrics-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);margin-top:52px}
+.metric{padding:44px 24px;background:rgba(255,255,255,0.02);text-align:center;position:relative;overflow:hidden;transition:background .2s}
+.metric:hover{background:rgba(255,255,255,0.05)}
+.metric-val{font-family:var(--display);font-weight:700;font-size:44px;line-height:1;color:#fff}
+.metric-val span{color:var(--red2)}
+.metric-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,0.35);margin-top:8px}
+.metric-sub{font-size:11px;color:rgba(200,215,235,0.25);margin-top:4px}
+
+/* LIVE PANEL */
+.live-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden;margin-top:44px}
+.live-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red2),transparent)}
+.lp-header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
+.lp-title{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,215,235,0.45)}
+.lp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06)}
+.lp-cell{background:rgba(10,12,18,0.8);padding:22px 24px}
+.lp-cell-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(200,215,235,0.3)}
+.lp-cell-val{font-family:var(--display);font-size:30px;font-weight:700;color:#fff;margin-top:4px;line-height:1}
+.lp-cell-val .unit{font-size:16px;color:rgba(200,215,235,0.35)}
+.lp-cell-change{font-family:var(--mono);font-size:9.5px;margin-top:5px;color:#16c784}
+
+/* ===================== SERVICES (light) ===================== */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.svc{
+  padding:36px 28px;background:#fff;
+  border:1px solid var(--border);
+  transition:transform .2s,box-shadow .2s,border-color .2s,padding .3s;
+  position:relative;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+.svc::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(rgba(255,255,255,0.98),rgba(255,255,255,1));
+  transition:opacity .3s;z-index:0;
+}
+.svc:hover::after{opacity:0.3}
+.svc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(192,32,42,0.1);border-color:rgba(192,32,42,0.2);padding-top:20px}
+.svc::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--red);transition:height .3s;z-index:1}
+.svc:hover::before{height:100%}
+.svc-icon{font-size:32px;margin-bottom:18px;display:block;position:relative;z-index:1}
+.svc-n{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;display:block;position:relative;z-index:1}
+.svc-t{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;position:relative;z-index:1}
+.svc-d{font-size:13px;line-height:1.75;color:var(--mid);position:relative;z-index:1}
+.svc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;position:relative;z-index:1}
+.tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);color:var(--dim);background:var(--bg-light)}
+
+/* SECURITY */
+.security-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.sec-badge{background:#fff;border:1px solid var(--border);padding:22px;display:flex;align-items:center;gap:16px;transition:box-shadow .2s,border-color .2s}
+.sec-badge:hover{box-shadow:0 8px 30px rgba(192,32,42,0.08);border-color:rgba(192,32,42,0.2)}
+.sec-badge-icon{font-size:26px;flex-shrink:0}
+.sec-badge-t{font-family:var(--display);font-size:14px;font-weight:700;color:var(--ink)}
+.sec-badge-d{font-size:11px;color:var(--dim);margin-top:2px}
+
+/* ===================== SERVICES v2 (modern) ===================== */
+.svc2-header{max-width:640px;margin-bottom:56px}
+.svc2-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
+.svc2-line{display:inline-block;width:28px;height:2px;background:var(--red);border-radius:2px;flex-shrink:0}
+.svc2-title{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(36px,4.5vw,60px);line-height:1.0;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px}
+.svc2-accent{color:var(--red)}
+.svc2-sub{font-size:16px;line-height:1.8;color:var(--mid);font-weight:300;max-width:480px}
+
+/* Grid */
+.svc2-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1px}
+
+/* Card */
+.svc2-card{
+  background:#fff;padding:0 0 32px;
+  display:flex;flex-direction:column;gap:0;
+  position:relative;overflow:hidden;
+  transition:background .2s,box-shadow .2s;
+  cursor:default;
+}
+.svc2-card:hover{background:#fafafa;z-index:1;box-shadow:0 0 0 2px var(--red) inset}
+.svc2-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--red);transition:height .3s;z-index:2}
+.svc2-card:hover::before{height:100%}
+
+/* Number */
+.svc2-num{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(192,32,42,0.3);padding:20px 28px 0;margin-bottom:0}
+
+/* Image */
+.svc2-img-wrap{overflow:hidden;position:relative;height:200px;margin-bottom:0}
+.svc2-img{width:100%;height:200px;object-fit:cover;display:block;transition:transform .5s ease}
+.svc2-card:hover .svc2-img{transform:scale(1.06)}
+.svc2-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(10,12,18,0.4) 100%)}
+
+/* Body */
+.svc2-body{padding:20px 28px 0;flex:1;display:flex;flex-direction:column}
+
+/* Body */
+.svc2-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.svc2-name{font-family:'Inter',sans-serif;font-size:17px;font-weight:800;color:var(--ink);line-height:1.2;margin-bottom:12px;letter-spacing:-.02em}
+.svc2-desc{font-size:13px;line-height:1.75;color:var(--mid);font-weight:400;flex:1}
+.svc2-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;padding-bottom:36px}
+.svc2-tags span{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--border);color:var(--dim);background:var(--bg-light);border-radius:4px;transition:border-color .2s,color .2s}
+.svc2-card:hover .svc2-tags span{border-color:rgba(192,32,42,0.2);color:var(--red)}
+
+/* Arrow */
+.svc2-arrow{position:absolute;bottom:20px;right:24px;font-size:16px;color:rgba(192,32,42,0.2);transition:color .2s,transform .2s;font-weight:700}
+.svc2-card:hover .svc2-arrow{color:var(--red);transform:translateX(4px)}
+
+/* Trust badges */
+.svc2-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:1px}
+.svc2-badge{background:#fff;padding:22px 24px;display:flex;align-items:center;gap:14px;transition:background .2s}
+.svc2-badge:hover{background:var(--bg-light)}
+.svc2-badge-icon{font-size:24px;flex-shrink:0}
+.svc2-badge strong{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.svc2-badge span{font-size:11px;color:var(--dim);line-height:1.4}
+
+/* Responsive */
+@media(max-width:1024px){.svc2-grid{grid-template-columns:repeat(2,1fr)}.svc2-badges{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.svc2-grid{grid-template-columns:1fr}.svc2-badges{grid-template-columns:1fr}}
+
+/* ===================== ABOUT / VALUES ===================== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.sticky-side{position:sticky;top:90px}
+.val-list{margin-top:40px;border-top:1px solid var(--border)}
+.v-row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.v-k{font-family:var(--cond);font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--red)}
+.v-v{font-size:13px;line-height:1.75;color:var(--mid)}
+.about-cards{display:grid;gap:16px}
+.a-card{
+  background:#fff;border:1px solid var(--border);padding:28px;
+  position:relative;transition:box-shadow .2s,transform .2s;overflow:hidden;
+}
+.a-card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.08);transform:translateY(-2px)}
+.a-card-num{font-family:var(--display);font-size:72px;font-weight:700;color:rgba(192,32,42,0.06);position:absolute;top:8px;right:16px;line-height:1}
+.a-card-t{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.a-card-d{font-size:13px;line-height:1.75;color:var(--mid)}
+
+/* ===================== SOLUTIONS v2 ===================== */
+/* Feature split */
+.sol2-split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:52px;border:1px solid rgba(255,255,255,0.08);overflow:hidden}
+.sol2-split-img{position:relative;min-height:380px;overflow:hidden}
+.sol2-split-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.6);transition:transform .5s}
+.sol2-split:hover .sol2-split-img img{transform:scale(1.03)}
+.sol2-split-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,0.25) 0%,transparent 60%)}
+.sol2-split-stats{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.08);padding:18px 24px;display:flex;align-items:center;gap:0}
+.sol2-stat{flex:1;text-align:center}
+.sol2-stat-val{font-family:'Inter',sans-serif;font-size:26px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.02em}
+.sol2-stat-val span{font-size:14px;color:rgba(200,215,235,0.45);font-weight:400}
+.sol2-stat-lbl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,0.35);margin-top:4px}
+.sol2-stat-div{width:1px;height:36px;background:rgba(255,255,255,0.1);flex-shrink:0}
+/* Content side */
+.sol2-split-content{padding:44px 40px;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;justify-content:center}
+.sol2-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,0.85);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.sol2-eyebrow::before{content:'';width:20px;height:2px;background:rgba(192,32,42,0.6);border-radius:2px;flex-shrink:0}
+.sol2-heading{font-family:'Inter',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.sol2-heading span{color:rgba(200,215,235,0.35);font-weight:400}
+.sol2-body{font-size:14px;line-height:1.85;color:rgba(200,215,235,0.55);margin-bottom:24px}
+.sol2-checks{display:flex;flex-direction:column;gap:10px}
+.sol2-check{display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(200,215,235,0.65)}
+.sol2-check span{width:20px;height:20px;background:rgba(192,32,42,0.15);border:1px solid rgba(192,32,42,0.35);border-radius:4px;display:grid;place-items:center;font-size:10px;color:#e0263a;flex-shrink:0;font-weight:700}
+/* Tabs */
+.sol2-tabs{display:flex;gap:0;margin-top:44px;border-bottom:1px solid rgba(255,255,255,0.08);overflow-x:auto}
+.sol2-tab{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px 22px;border:none;background:none;cursor:pointer;color:rgba(200,215,235,0.35);border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap;flex-shrink:0}
+.sol2-tab:hover{color:rgba(200,215,235,0.7)}
+.sol2-tab.on{color:#fff;border-bottom-color:#c0202a}
+/* Panels */
+.sol2-panel{display:none;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-top:none;margin-bottom:0}
+.sol2-panel.on{display:grid}
+/* Cards */
+.sol2-card{background:#0d1018;overflow:hidden;transition:background .2s;position:relative}
+.sol2-card:hover{background:#111520}
+.sol2-card-img{height:140px;background-size:cover;background-position:center;opacity:0.55;transition:opacity .3s,transform .4s;transform-origin:center}
+.sol2-card:hover .sol2-card-img{opacity:0.75;transform:scale(1.04)}
+.sol2-card-body{padding:18px 20px 22px}
+.sol2-card-t{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:7px;letter-spacing:-.01em}
+.sol2-card-d{font-size:12px;line-height:1.65;color:rgba(200,215,235,0.45)}
+/* Responsive */
+@media(max-width:1024px){.sol2-split{grid-template-columns:1fr}.sol2-panel.on{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sol2-panel.on{grid-template-columns:1fr}}
+.tab-row{display:flex;border:1px solid rgba(255,255,255,0.1);width:fit-content;margin-top:40px;overflow:hidden}
+.tab{font-family:var(--cond);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:10px 20px;border:none;background:none;cursor:pointer;color:rgba(200,215,235,0.4);border-right:1px solid rgba(255,255,255,0.1);transition:all .15s}
+.tab:last-child{border-right:none}
+.tab.on{background:var(--red);color:#fff}
+.tab:not(.on):hover{background:rgba(255,255,255,0.05);color:rgba(200,215,235,0.8)}
+.sol-panel{display:none;margin-top:20px}
+.sol-panel.on{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}
+.sol-card{background:rgba(255,255,255,0.03);padding:0;transition:background .2s;position:relative;overflow:hidden}
+.sol-card:hover{background:rgba(255,255,255,0.06)}
+.sol-card-img{width:100%;height:140px;object-fit:cover;display:block;opacity:0.7;transition:opacity .3s,transform .4s}
+.sol-card:hover .sol-card-img{opacity:0.9;transform:scale(1.04)}
+.sol-card-body{padding:20px 22px 24px}
+.sol-card::after{content:'→';position:absolute;bottom:20px;right:20px;color:rgba(200,215,235,0.2);font-size:16px;opacity:0;transition:opacity .2s,transform .2s}
+.sol-card:hover::after{opacity:1;transform:translateX(4px)}
+.sol-t{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
+.sol-d{font-size:12.5px;line-height:1.65;color:rgba(200,215,235,0.5)}
+
+/* ===================== PROCESS (light) ===================== */
+.proc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
+.proc-connector{
+  position:absolute;top:40px;left:12%;right:12%;height:1px;z-index:0;
+  background:linear-gradient(90deg,var(--red) 0%,rgba(192,32,42,0.15) 100%);
+  opacity:.4;
+}
+.p-step{
+  padding:36px 24px 32px;background:#fff;
+  border:1px solid var(--border);margin-right:-1px;
+  transition:z-index .0s,box-shadow .2s,transform .2s;
+  position:relative;z-index:1;
+}
+.p-step:hover{z-index:2;box-shadow:0 12px 40px rgba(192,32,42,0.12);transform:translateY(-4px);border-color:rgba(192,32,42,0.25)}
+.p-num{font-family:'Inter',sans-serif;font-size:52px;font-weight:900;color:rgba(192,32,42,0.18);margin-bottom:12px;line-height:1;transition:color .2s;letter-spacing:-.03em}
+.p-step:hover .p-num{color:rgba(192,32,42,0.45)}
+.p-t{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:var(--ink,#1a1e2e);margin-bottom:10px;letter-spacing:-.01em}
+.p-d{font-size:13px;line-height:1.75;color:var(--mid,#4a5470)}
+.p-tag{display:inline-block;margin-top:14px;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(192,32,42,0.25);color:var(--red,#c0202a);background:rgba(192,32,42,0.05);border-radius:4px}
+
+/* ===================== WORK ===================== */
+.work-rows{margin-top:52px;border-top:1px solid var(--border)}
+.w-row{
+  display:grid;grid-template-columns:2fr 1.4fr 160px;
+  gap:32px;align-items:start;padding:32px 0;border-bottom:1px solid var(--border);
+  transition:padding .15s,background .15s;
+}
+.w-row:hover{padding-left:12px;background:rgba(192,32,42,0.02)}
+.w-tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px;display:block}
+.w-name{font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink)}
+.w-desc{margin-top:8px;font-size:13px;line-height:1.65;color:var(--mid)}
+.w-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.w-pill{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);color:var(--dim);background:var(--bg-light)}
+.w-quote{font-size:13px;line-height:1.8;color:var(--mid);font-style:italic;position:relative;padding-left:14px}
+.w-quote::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:2px;background:var(--red);opacity:.5}
+.w-client{text-align:left;padding-left:8px;border-left:2px solid rgba(192,32,42,0.2)}
+.w-cn{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:var(--ink,#1a1e2e);line-height:1.3;word-break:break-word}
+.w-cl{font-family:'Inter',sans-serif;font-size:10px;color:var(--dim,#8a93b0);margin-top:4px;font-weight:500}
+.w-stars{color:var(--yellow,#e8b800);font-size:12px;margin-top:8px}
+
+/* ===================== TESTIMONIALS v2 ===================== */
+.tc-card{
+  position:relative;overflow:hidden;
+  height:420px;
+  border-radius:0;
+  cursor:default;
+  transition:transform .3s,box-shadow .3s;
+}
+.tc-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.25)}
+.tc-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center top;
+  transition:transform .5s ease;
+  filter:brightness(0.55);
+}
+.tc-card:hover .tc-bg{transform:scale(1.05);filter:brightness(0.45)}
+.tc-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 55%, transparent 100%);
+}
+.tc-content{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:32px 28px;
+  z-index:2;
+}
+.tc-quote{
+  font-family:'Inter',sans-serif;font-size:80px;font-weight:900;
+  color:rgba(192,32,42,0.5);line-height:1;
+  margin-bottom:8px;
+}
+.tc-text{
+  font-size:13.5px;line-height:1.8;
+  color:rgba(255,255,255,0.85);
+  margin-bottom:20px;
+  font-weight:300;
+}
+.tc-footer{border-top:1px solid rgba(255,255,255,0.15);padding-top:16px}
+.tc-name{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.tc-role{font-size:11px;color:rgba(255,255,255,0.45);margin-top:3px;font-weight:500;letter-spacing:.03em}
+.tc-stars{color:#e8b800;font-size:12px;margin-top:8px;letter-spacing:2px}
+@media(max-width:768px){
+  .tc-card{height:360px}
+  [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr !important}
+}
+
+/* ===================== TESTIMONIALS (old - keep for compat) ===================== */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.testi{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  padding:36px 28px;transition:background .2s,border-color .2s;position:relative;overflow:hidden;
+}
+.testi:hover{background:rgba(255,255,255,0.07);border-color:rgba(192,32,42,0.3)}
+.testi::before{content:'\201C';position:absolute;top:-16px;left:16px;font-family:var(--display);font-size:120px;color:var(--red);opacity:.08;line-height:1}
+.testi-q{font-size:13.5px;line-height:1.85;color:rgba(200,215,235,0.65);margin-bottom:24px;position:relative;z-index:1}
+.testi-n{font-family:var(--display);font-size:15px;font-weight:700;color:#fff}
+.testi-r{font-family:var(--mono);font-size:9.5px;color:rgba(200,215,235,0.3);margin-top:3px}
+.testi-rating{display:flex;gap:3px;margin-top:8px}
+.star{color:var(--yellow);font-size:11px}
+
+/* ===================== TECH GRID (light) ===================== */
+.tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--border);margin-top:52px}
+.tech-chip{
+  background:#fff;padding:24px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .2s,box-shadow .2s;
+}
+.tech-chip:nth-child(6n){border-right:none}
+.tech-chip:hover{background:var(--bg-light);box-shadow:inset 0 -2px 0 var(--red)}
+.tech-chip img{width:28px;height:28px;object-fit:contain;filter:grayscale(1) brightness(.6);transition:filter .3s}
+.tech-chip:hover img{filter:grayscale(0) brightness(1)}
+.tech-chip span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--dim);text-align:center;transition:color .2s}
+.tech-chip:hover span{color:var(--mid)}
+
+/* ===================== FAQ ===================== */
+.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.faq-list{border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;font-family:var(--display);font-size:16px;font-weight:600;color:var(--ink);letter-spacing:.01em;transition:color .15s}
+.faq-q:hover{color:var(--red)}
+.faq-ico{width:28px;height:28px;border:1px solid var(--border);display:grid;place-items:center;flex-shrink:0;transition:transform .25s,border-color .15s,background .15s}
+.faq-ico svg{width:10px;height:10px;stroke:var(--dim);stroke-width:1.8;fill:none;stroke-linecap:round;transition:stroke .15s}
+.faq-item.open .faq-ico{transform:rotate(45deg);border-color:var(--red);background:rgba(192,32,42,0.06)}
+.faq-item.open .faq-ico svg{stroke:var(--red)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-ans{max-height:300px}
+.faq-ans p{padding-bottom:18px;font-size:13.5px;line-height:1.85;color:var(--mid)}
+
+/* ===================== SECTION IMAGE CARDS ===================== */
+.img-split{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:440px;overflow:hidden;margin-top:52px}
+.img-split-content{padding:50px 48px;display:flex;flex-direction:column;justify-content:center}
+.img-split-visual{position:relative;overflow:hidden;background:var(--bg);min-height:340px}
+.img-split-visual img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .4s,transform .4s}
+.img-split:hover .img-split-visual img{opacity:.85;transform:scale(1.03)}
+.img-split-visual-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(192,32,42,0.3) 0%,transparent 60%);
+}
+.img-split-visual-badge{
+  position:absolute;bottom:20px;left:20px;right:20px;
+  background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);padding:14px 18px;
+  display:flex;align-items:center;gap:14px;
+}
+.isvb-val{font-family:var(--display);font-size:28px;font-weight:700;color:#fff;line-height:1}
+.isvb-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,215,235,0.5)}
+
+/* ===================== CTA ===================== */
+.cta-section{
+  background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);
+  padding:160px 0 100px;position:relative;overflow:hidden;text-align:center;color:#fff;
+}
+.cta-section::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:800px;height:400px;
+  background:radial-gradient(ellipse,rgba(192,32,42,0.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-logo{margin-bottom:28px;opacity:0;animation:rise .6s ease .1s forwards}
+.cta-logo img{height:48px;filter:drop-shadow(0 0 16px rgba(192,32,42,0.6))}
+.cta-section h2{font-size:clamp(36px,5vw,64px);position:relative;z-index:1;font-family:var(--display);font-weight:700;color:#fff;line-height:.95}
+.cta-section p{font-size:16px;color:rgba(200,215,235,0.6);margin:20px auto 36px;max-width:480px;position:relative;z-index:1}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===================== SCROLL REVEAL ===================== */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-content,.about-grid,.faq-layout,.img-split,.f-top{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .svc-grid,.metrics-wrap,.tech-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-row{grid-template-columns:repeat(2,1fr)}
+  .sol-panel.on,.testi-grid{grid-template-columns:1fr}
+  .w-row{grid-template-columns:1fr}
+  .security-strip{grid-template-columns:repeat(2,1fr)}
+  .lp-grid{grid-template-columns:repeat(2,1fr)}
+  nav{padding:0 20px}
+  .container{padding:0 20px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOWING LIGHT CANVAS -->
+<canvas id="lightCanvas"></canvas>
+
+<!-- NAV -->
+<div id="nav-placeholder"></div>
+
+<!-- ===================== HERO (dark) ===================== -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb1"></div>
+    <div class="hero-orb2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="h-eyebrow">Blockchain & Fintech Engineering</div>
+      <h1>Build the Future<br><span class="accent">of Finance.</span><span class="dim-text">Today.</span></h1>
+      <p class="h-sub">PumaPulse engineers institutional-grade crypto exchanges, trading bots, DeFi protocols, and neobank infrastructure — trusted by 150+ clients across 40 countries.</p>
+      <div class="h-btns">
+        <a href="#contact" class="btn-primary">Start Your Project</a>
+        <a href="#work" class="btn-outline-light">View Portfolio →</a>
+      </div>
+      <div class="h-stats">
+        <div class="h-stat"><div class="h-stat-val">150<span>+</span></div><div class="h-stat-lbl">Projects Delivered</div></div>
+        <div class="h-stat"><div class="h-stat-val">$2.4<span>B</span></div><div class="h-stat-lbl">Volume Processed</div></div>
+        <div class="h-stat"><div class="h-stat-val">40<span>+</span></div><div class="h-stat-lbl">Countries</div></div>
+        <div class="h-stat"><div class="h-stat-val">99.9<span>%</span></div><div class="h-stat-lbl">Uptime SLA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="tech-strip" style="position:relative;z-index:3;border-bottom:none;">
+  <div class="ts-scroll" id="servicesStrip" style="animation-direction:reverse;"></div>
+</div>
+
+<!-- TECH STRIP -->
+<div class="tech-strip" style="position:relative;z-index:3;border-top:none;margin-top:-1px;">
+  <div class="ts-scroll" id="techStrip"></div>
+</div>
+
+<!-- ===================== METRICS (dark) ===================== -->
+<section class="section-dark" id="about" style="position:relative">
+  <div class="container" style="position:relative;z-index:2;padding-top:0px">
+    <div class="rv">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.85)">By the Numbers</span>
+      <h2 class="dark">Proven Scale.<br><span class="muted">Measurable Results.</span></h2>
+      <p class="sec-sub dark">Years of engineering fintech products that process real volume, serve real clients, and run at institutional-grade uptime.</p>
+    </div>
+    <div class="metrics-wrap rv d1">
+      <div class="metric"><div class="metric-val">150<span>+</span></div><div class="metric-lbl">Projects Shipped</div><div class="metric-sub">Exchanges, Bots, DeFi, Neobanks</div></div>
+      <div class="metric"><div class="metric-val">$2.4<span>B</span></div><div class="metric-lbl">Volume Processed</div><div class="metric-sub">Across all platforms</div></div>
+      <div class="metric"><div class="metric-val">40<span>+</span></div><div class="metric-lbl">Countries Served</div><div class="metric-sub">Global client base</div></div>
+      <div class="metric"><div class="metric-val">99.9<span>%</span></div><div class="metric-lbl">Uptime SLA</div><div class="metric-sub">Production guarantee</div></div>
+      <div class="metric"><div class="metric-val">7<span>yr</span></div><div class="metric-lbl">In the Market</div><div class="metric-sub">Est. 2018</div></div>
+    </div>
+    <div class="live-panel rv d2">
+      <div class="lp-header">
+        <span class="lp-title">// PLATFORM PERFORMANCE — REAL-TIME</span>
+        <div class="dw-badge"><span class="status-dot"></span>LIVE</div>
+      </div>
+      <div class="lp-grid">
+        <div class="lp-cell"><div class="lp-cell-lbl">Trade Executions / Sec</div><div class="lp-cell-val"><span id="tps">12,400</span></div><div class="lp-cell-change">↑ +2.1% vs last hour</div></div>
+        <div class="lp-cell"><div class="lp-cell-lbl">Active Connections</div><div class="lp-cell-val"><span id="conn">8,932</span></div><div class="lp-cell-change">↑ Live WebSocket feeds</div></div>
+        <div class="lp-cell"><div class="lp-cell-lbl">Avg. Latency</div><div class="lp-cell-val"><span id="lat">2.4</span><span class="unit">ms</span></div><div class="lp-cell-change">↑ Below 5ms SLA</div></div>
+        <div class="lp-cell"><div class="lp-cell-lbl">Nodes Online</div><div class="lp-cell-val"><span id="nodes">247</span><span class="unit">/250</span></div><div class="lp-cell-change">↑ 98.8% availability</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Wave bottom to light -->
+  <div style="position:absolute;bottom:0;left:0;right:0;z-index:1;line-height:0">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="height:70px;display:block;width:100%">
+      <path d="M0,70 C480,0 960,0 1440,70 L1440,70 L0,70 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== SERVICES (light) ===================== -->
+<section class="section-light" id="services">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="svc2-header rv">
+      <div class="svc2-eyebrow">
+        <span class="svc2-line"></span>
+        <span>Core Services</span>
+      </div>
+      <h2 class="svc2-title">What We <span class="svc2-accent">Build.</span></h2>
+      <p class="svc2-sub">Full-stack fintech engineering — from architecture and design through launch and long-term maintenance.</p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="svc2-grid rv d1">
+
+      <div class="svc2-card">
+        <div class="svc2-num">01</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=700&q=80" alt="Crypto Exchange"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Exchange</div>
+          <div class="svc2-name">Crypto Exchange Development</div>
+          <p class="svc2-desc">CEX, DEX, hybrid, and white-label exchange platforms — with matching engines handling 50,000+ TPS, institutional-grade security, and full KYC/AML compliance.</p>
+          <div class="svc2-tags"><span>CEX</span><span>DEX</span><span>P2P</span><span>Derivatives</span></div>
+        </div>
+        <div class="svc2-arrow">→</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">02</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Algo Trading"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Automation</div>
+          <div class="svc2-name">Algo Trading &amp; Bots</div>
+          <p class="svc2-desc">Market-making, arbitrage, DCA, grid, and AI-driven strategy bots. Sub-millisecond execution on 20+ exchanges with live PnL dashboards and risk controls.</p>
+          <div class="svc2-tags"><span>Arbitrage</span><span>Grid Bot</span><span>AI Strategy</span></div>
+        </div>
+        <div class="svc2-arrow">→</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">03</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=700&q=80" alt="Blockchain"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Blockchain</div>
+          <div class="svc2-name">Blockchain Infrastructure</div>
+          <p class="svc2-desc">Smart contract development, DeFi protocols, token launches, Layer-2 solutions, and private blockchain networks for enterprise — across 15+ chains.</p>
+          <div class="svc2-tags"><span>Solidity</span><span>DeFi</span><span>Token</span><span>L2</span></div>
+        </div>
+        <div class="svc2-arrow">→</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">04</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="Neobank"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Fintech</div>
+          <div class="svc2-name">Neobank &amp; Fintech Apps</div>
+          <p class="svc2-desc">Full-stack digital banking platforms with multi-currency accounts, virtual cards, biometric auth, open banking APIs, and compliance infrastructure.</p>
+          <div class="svc2-tags"><span>KYC/AML</span><span>Open Banking</span><span>Cards</span></div>
+        </div>
+        <div class="svc2-arrow">→</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">05</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&q=80" alt="Forex CRM"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Forex</div>
+          <div class="svc2-name">Forex CRM &amp; Back Office</div>
+          <p class="svc2-desc">Custom broker CRM with IB management, lead tracking, MT4/MT5 bridge integration, automated reporting, and multi-tier affiliate systems.</p>
+          <div class="svc2-tags"><span>MT4/MT5</span><span>IB Mgmt</span><span>CRM</span></div>
+        </div>
+        <div class="svc2-arrow">→</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">06</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=80" alt="Security"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Security</div>
+          <div class="svc2-name">Security &amp; Compliance</div>
+          <p class="svc2-desc">Smart contract audits, penetration testing, GDPR/MiCA compliance, 2FA/MFA, cold wallet architecture, and 24/7 threat monitoring for live platforms.</p>
+          <div class="svc2-tags"><span>Audit</span><span>MiCA</span><span>Pen Test</span></div>
+        </div>
+        <div class="svc2-arrow">→</div>
+      </div>
+
+    </div>
+
+    <!-- Trust badges -->
+    <div class="svc2-badges rv d2">
+      <div class="svc2-badge"><span class="svc2-badge-icon">🛡️</span><div><strong>Smart Contract Audited</strong><span>Every deployment independently verified</span></div></div>
+      <div class="svc2-badge"><span class="svc2-badge-icon">⚖️</span><div><strong>30+ Regulatory Frameworks</strong><span>GDPR, MiCA, FinCEN, FATF compliant</span></div></div>
+      <div class="svc2-badge"><span class="svc2-badge-icon">🔒</span><div><strong>ISO 27001 Aligned</strong><span>Enterprise security standards</span></div></div>
+      <div class="svc2-badge"><span class="svc2-badge-icon">📋</span><div><strong>NDA Before Discovery</strong><span>Full confidentiality guaranteed</span></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIAGONAL DIVIDER -->
+<div style="background:#f5f6fa;line-height:0;position:relative;z-index:1">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;display:block;width:100%">
+    <path d="M0,0 L1440,60 L1440,60 L0,60 Z" fill="#0a0c12"/>
+  </svg>
+</div>
+
+<!-- ===================== SOLUTIONS (dark) ===================== -->
+<section class="section-dark" id="solutions" style="padding-top:80px;padding-bottom:0">
+  <div class="container" style="position:relative;z-index:2">
+
+    <!-- Header -->
+    <div class="rv" style="max-width:700px">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.9)">Solution Verticals</span>
+      <h2 class="dark" style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(36px,4.5vw,60px);letter-spacing:-.03em">Tailored for Every <span style="color:rgba(200,215,235,0.35);font-weight:400">Market.</span></h2>
+      <p class="sec-sub dark">Deep expertise across every segment of the financial technology landscape — from consumer fintech to institutional trading infrastructure.</p>
+    </div>
+
+    <!-- Feature split -->
+    <div class="sol2-split rv d1">
+      <div class="sol2-split-img">
+        <img src="https://images.unsplash.com/photo-1639322537504-6427a16b0a28?w=900&q=80" alt="Crypto trading infrastructure">
+        <div class="sol2-split-overlay"></div>
+        <div class="sol2-split-stats">
+          <div class="sol2-stat"><div class="sol2-stat-val">50K<span>+</span></div><div class="sol2-stat-lbl">TPS Engine</div></div>
+          <div class="sol2-stat-div"></div>
+          <div class="sol2-stat"><div class="sol2-stat-val">&lt;2<span>ms</span></div><div class="sol2-stat-lbl">Execution</div></div>
+          <div class="sol2-stat-div"></div>
+          <div class="sol2-stat"><div class="sol2-stat-val">15<span>+</span></div><div class="sol2-stat-lbl">Chains</div></div>
+        </div>
+      </div>
+      <div class="sol2-split-content">
+        <div class="sol2-eyebrow">Why PumaPulse</div>
+        <h3 class="sol2-heading">Institutional Engineering.<br><span>Startup Velocity.</span></h3>
+        <p class="sol2-body">We bring enterprise-grade architecture to companies that move fast — rigorous security, battle-tested patterns, and delivery timelines that make investors smile.</p>
+        <div class="sol2-checks">
+          <div class="sol2-check"><span>✓</span>Fixed-price contracts with clear milestones</div>
+          <div class="sol2-check"><span>✓</span>NDA signed before any project discussion</div>
+          <div class="sol2-check"><span>✓</span>Weekly video demos throughout build phase</div>
+          <div class="sol2-check"><span>✓</span>24/7 post-launch monitoring and support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="sol2-tabs rv d2" id="tabRow">
+      <button class="sol2-tab on" data-tab="exchange">Exchange</button>
+      <button class="sol2-tab" data-tab="trading">Trading</button>
+      <button class="sol2-tab" data-tab="defi">DeFi</button>
+      <button class="sol2-tab" data-tab="payments">Payments</button>
+      <button class="sol2-tab" data-tab="banking">Banking</button>
+      <button class="sol2-tab" data-tab="forex">Forex</button>
+    </div>
+
+    <!-- Panels -->
+    <div class="sol2-panel on rv d3" id="panel-exchange">
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Centralized Exchange (CEX)</div><p class="sol2-card-d">50,000+ TPS matching engine, liquidity management, admin console, KYC/AML, and institutional-grade custody.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Decentralized Exchange (DEX)</div><p class="sol2-card-d">AMM-based DEX with audited smart contracts, concentrated liquidity, yield farming, and DAO governance.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">P2P Exchange</div><p class="sol2-card-d">Peer-to-peer trading with escrow, dispute resolution, reputation system, and 100+ payment methods.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">White-Label Exchange</div><p class="sol2-card-d">Launch your branded exchange in 4–6 weeks with our fully tested, ready-to-deploy white-label platform.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Margin Trading Platform</div><p class="sol2-card-d">Leveraged spot and futures trading with cross/isolated margin, auto-liquidation, and insurance funds.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Derivatives Exchange</div><p class="sol2-card-d">Perpetual futures, options, and margin trading with advanced risk engines, liquidation systems, and funding rates.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-trading">
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Algorithmic Trading</div><p class="sol2-card-d">Rule-based and AI-driven strategies deployed across crypto and forex markets with live PnL dashboards.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Arbitrage Bots</div><p class="sol2-card-d">Cross-exchange, triangular, and statistical arbitrage systems that capture inefficiencies in under 10ms.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Market Making Bots</div><p class="sol2-card-d">Automated liquidity provision with dynamic spread management, inventory control, and risk hedging.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">DCA &amp; Grid Bots</div><p class="sol2-card-d">Dollar-cost averaging and grid trading with smart entry/exit logic and automated portfolio rebalancing.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">HFT Infrastructure</div><p class="sol2-card-d">Co-location, FPGA-accelerated execution, and ultra-low-latency data feeds for professional trading desks.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Copy Trading Platform</div><p class="sol2-card-d">Social trading infrastructure with signal providers, follower management, and profit-sharing mechanics.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-defi">
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">DeFi Protocol Development</div><p class="sol2-card-d">Custom AMMs, lending protocols, yield optimizers, and liquidity mining programs with audited contracts.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Token Launch &amp; IDO</div><p class="sol2-card-d">ERC-20/BEP-20 token creation, tokenomics design, vesting schedules, and launchpad integration.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">NFT Marketplace</div><p class="sol2-card-d">Full-featured NFT platform with minting, auctions, royalties, and multi-chain asset support.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Cross-Chain Bridge</div><p class="sol2-card-d">Secure asset bridges with validator sets, merkle proof verification, and liquidity aggregation.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">DAO Infrastructure</div><p class="sol2-card-d">Governance frameworks, voting mechanisms, treasury management, and proposal execution systems.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Staking Platforms</div><p class="sol2-card-d">Delegated proof-of-stake platforms with validator dashboards, rewards distribution, and slashing protection.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-payments">
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Crypto Payment Gateway</div><p class="sol2-card-d">Accept 100+ cryptocurrencies with instant settlement, auto fiat conversion, and zero chargeback risk.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">E-Commerce Integration</div><p class="sol2-card-d">Plug-and-play crypto payments for Shopify, WooCommerce, Magento, and headless storefronts.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Cross-Border Transfers</div><p class="sol2-card-d">Instant, low-cost international remittances powered by blockchain rails across 180+ countries.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Crypto Wallet</div><p class="sol2-card-d">MPC, custodial, and non-custodial wallets with multi-chain support, DeFi integration, and biometric auth.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">POS Crypto Payments</div><p class="sol2-card-d">In-store crypto payment terminals with QR codes, NFC, and real-time fiat settlement for merchants.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Payment Compliance</div><p class="sol2-card-d">AML screening, transaction monitoring, FATF travel rule compliance, and regulatory reporting tools.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-banking">
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Neobank Platform</div><p class="sol2-card-d">Full-stack digital banking with multi-currency accounts, virtual cards, lending, savings, and investing.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Digital Banking App</div><p class="sol2-card-d">Mobile-first banking with biometric auth, real-time push notifications, and PSD2-compliant open banking APIs.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">KYC/AML Platform</div><p class="sol2-card-d">Automated identity verification, sanctions screening, transaction monitoring, and regulatory reporting.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Lending Platform</div><p class="sol2-card-d">P2P and institutional lending with credit scoring, collateral management, and automated repayment.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Virtual &amp; Physical Cards</div><p class="sol2-card-d">Visa/Mastercard-powered debit and prepaid cards with real-time spend controls and crypto top-up.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Open Banking APIs</div><p class="sol2-card-d">PSD2-compliant APIs for account aggregation, payment initiation, and third-party app integration.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-forex">
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Forex Broker CRM</div><p class="sol2-card-d">Complete CRM with IB management, lead lifecycle, KYC workflows, and regulatory compliance tools.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Back Office Software</div><p class="sol2-card-d">Automate operations, financial reconciliation, client reporting, and compliance for FX brokerages.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">MT4/MT5 Integration</div><p class="sol2-card-d">Seamless MetaTrader bridge with custom plugins, multi-bank liquidity, and CRM connectors.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Traders Room</div><p class="sol2-card-d">Client portal with account management, deposit/withdrawal, trading history, and document upload.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">IB &amp; Affiliate System</div><p class="sol2-card-d">Multi-tier introducing broker management with automated commission calculation and real-time reporting.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Prop Trading Platform</div><p class="sol2-card-d">Funded trader challenges, evaluation dashboards, payout management, and risk parameter controls.</p></div></div>
+    </div>
+
+  </div>
+  <!-- Wave to light -->
+  <div style="line-height:0;position:relative;z-index:1;margin-top:60px">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:80px;display:block;width:100%">
+      <path d="M0,80 Q360,0 720,40 Q1080,80 1440,0 L1440,80 L0,80 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== PROCESS (light) ===================== -->
+<section class="section-light" id="process" style="padding-top:80px">
+  <div class="container">
+    <div class="rv">
+      <span class="eyebrow">Engagement Model</span>
+      <h2 class="light">From Idea to <span class="muted">Live Platform.</span></h2>
+      <p class="sec-sub light">A disciplined, four-phase process that keeps you in control at every stage — no surprises, no hidden costs.</p>
+    </div>
+    <div class="proc-row rv d1">
+      <div class="proc-connector"></div>
+      <div class="p-step"><div class="p-num">01</div><div class="p-t">Discovery & Strategy</div><p class="p-d">We deep-dive into your goals, competitive landscape, and technical requirements. Deliverable: a signed architecture brief, full project scope, and fixed-price contract. NDA first, always.</p><span class="p-tag">Week 1–2</span></div>
+      <div class="p-step"><div class="p-num">02</div><div class="p-t">Architecture & Design</div><p class="p-d">System architecture diagrams, database schemas, API specs, and high-fidelity UI/UX prototypes — reviewed and signed off before a single line of production code is written.</p><span class="p-tag">Week 2–4</span></div>
+      <div class="p-step"><div class="p-num">03</div><div class="p-t">Build & Harden</div><p class="p-d">Agile sprints with weekly video demos. Automated test coverage above 80%, smart contract audits, penetration testing, and staged deployments to preview environments.</p><span class="p-tag">Week 4–Launch</span></div>
+      <div class="p-step"><div class="p-num">04</div><div class="p-t">Launch & Scale</div><p class="p-d">Zero-downtime deployment, 24/7 monitoring, performance tuning, and flexible retainer-based maintenance. Most clients continue with us as a long-term engineering partner.</p><span class="p-tag">Ongoing</span></div>
+    </div>
+    <!-- IMAGE SPLIT: team / global reach -->
+    <div class="img-split rv d2" style="margin-top:52px;border:1px solid var(--border);overflow:hidden">
+      <div class="img-split-visual" style="order:-1">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Global fintech team">
+        <div class="img-split-visual-overlay"></div>
+        <div class="img-split-visual-badge">
+          <div><div class="isvb-val" style="color:#fff">40<span style="font-size:16px;color:rgba(200,215,235,0.5)">+</span></div><div class="isvb-lbl">Countries</div></div>
+          <div style="width:1px;height:40px;background:rgba(255,255,255,0.15)"></div>
+          <div><div class="isvb-val" style="color:#fff">7yr</div><div class="isvb-lbl">Market Presence</div></div>
+        </div>
+      </div>
+      <div class="img-split-content" style="background:var(--bg-light)">
+        <span class="eyebrow">Global Reach</span>
+        <h2 class="light" style="font-size:clamp(26px,3vw,38px)">Remote-First.<br><span class="muted">World-Class Delivery.</span></h2>
+        <p class="sec-sub light" style="max-width:100%">Distributed engineering team across multiple time zones — meaning your project moves around the clock. Clients from Dubai, Singapore, Malaysia, India, the EU, and beyond trust PumaPulse for mission-critical fintech.</p>
+        <div style="margin-top:20px"><a href="#contact" class="btn-primary">Book a Free Call</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGONAL DIVIDER (light → dark) -->
+<div style="background:var(--bg-light);line-height:0;position:relative;z-index:1">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;display:block;width:100%">
+    <path d="M0,60 L1440,0 L1440,60 L0,60 Z" fill="#0a0c12"/>
+  </svg>
+</div>
+
+<!-- ===================== PORTFOLIO (dark) ===================== -->
+<section class="section-dark" id="work" style="padding-top:80px;padding-bottom:0px">
+  <div class="container" style="position:relative;z-index:2">
+    <div class="rv">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.85)">Selected Work</span>
+      <h2 class="dark">Real Projects. <span class="muted">Real Results.</span></h2>
+      <p class="sec-sub dark">How we've helped startups, enterprises, and financial innovators launch, scale, and lead their markets.</p>
+    </div>
+    <div class="work-rows rv d1" style="border-top:1px solid rgba(255,255,255,0.08)">
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// Crypto Exchange — Dubai, UAE</span><div class="w-name" style="color:#fff">Dreamster Exchange</div><p class="w-desc" style="color:rgba(200,215,235,0.55)">A Web3 digital asset trading platform with high-performance matching engine, advanced trading tools, live market data, and an intuitive interface built for retail and institutional traders.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Node.js</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">React</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">PostgreSQL</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Redis</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Kubernetes</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.5);border-left:2px solid rgba(192,32,42,0.5)">They delivered a secure, easy-to-use platform with excellent communication and strong technical skills — gave useful suggestions throughout the project.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">Mario Butler</div><div class="w-cl">Founder · Dubai, UAE</div><div class="w-stars">★★★★★</div></div>
+      </div>
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// Exchange Platform — India</span><div class="w-name" style="color:#fff">MetaStation</div><p class="w-desc" style="color:rgba(200,215,235,0.55)">A full-featured crypto exchange with hack-proof multi-layer security architecture, advanced order types, and institutional custody — built for high-trust, high-volume trading.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Go</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Rust</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Kafka</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">AWS</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.5);border-left:2px solid rgba(192,32,42,0.5)">Attention to detail was outstanding and quality exceeded expectations. Communication throughout was transparent and timely.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">Chandravadan Raut</div><div class="w-cl">Founder · India</div><div class="w-stars">★★★★★</div></div>
+      </div>
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// Forex CRM — Malaysia</span><div class="w-name" style="color:#fff">MarginFX</div><p class="w-desc" style="color:rgba(200,215,235,0.55)">Custom Forex CRM for a regulated brokerage — handling client onboarding, KYC/AML, IB affiliate tracking, MT5 bridge, and automated compliance reporting in one unified platform.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Python</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">React</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">MT5 Bridge</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.5);border-left:2px solid rgba(192,32,42,0.5)">From client registration to KYC and IB tracking, everything works flawlessly. The process was smooth and professional.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">Manoj Kumaran</div><div class="w-cl">CEO · Malaysia</div><div class="w-stars">★★★★★</div></div>
+      </div>
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// DeFi Protocol — Singapore</span><div class="w-name" style="color:#fff">Cryptinum Protocol</div><p class="w-desc" style="color:rgba(200,215,235,0.55)">An EVM-compatible DeFi ecosystem with audited AMM liquidity pools, token staking, governance DAO, and a cross-chain bridge supporting Ethereum, BNB Chain, and Polygon.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Solidity</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Hardhat</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Chainlink</span><span class="w-pill" style="border-color:rgba(255,255,255,0.1);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">IPFS</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.5);border-left:2px solid rgba(192,32,42,0.5)">Big thanks to PumaPulse for handling our token project so well. Everything delivered exactly as expected — truly appreciate the effort.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">Steven Kim Wee</div><div class="w-cl">Founder · Singapore</div><div class="w-stars">★★★★★</div></div>
+      </div>
+    </div>
+    <div style="margin-top:32px" class="rv d2"><a href="#" class="btn-outline-light">View All 150+ Projects →</a></div>
+  </div>
+  <!-- Wave to light -->
+  <div style="line-height:0;margin-top:80px">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="height:70px;display:block;width:100%">
+      <path d="M0,0 C360,70 1080,0 1440,70 L1440,70 L0,70 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS (light) ===================== -->
+<section class="section-light" style="padding-top:80px;padding-bottom:100px">
+  <div class="container">
+    <div class="rv">
+      <span class="eyebrow">Client Stories</span>
+      <h2 class="light" style="font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.03em">Trusted by <span class="muted">Builders Worldwide.</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px">
+
+      <!-- Card 1 - Steven Kim Wee - img/user1.jpg -->
+      <div class="tc-card">
+        <div class="tc-bg" style="background-image:url('img/user1.jpg')"></div>
+        <div class="tc-overlay"></div>
+        <div class="tc-content">
+          <div class="tc-quote">"</div>
+          <p class="tc-text">Big thanks to PumaPulse for handling our token project so well! Everything was fine from start to finish, and they delivered exactly as expected. We truly appreciate their effort and look forward to working with them again.</p>
+          <div class="tc-footer">
+            <div class="tc-name">Steven Kim Wee</div>
+            <div class="tc-role">Founder, Cryptinum · Singapore</div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 - Kooban Naidoo - img/user2.jpg -->
+      <div class="tc-card">
+        <div class="tc-bg" style="background-image:url('img/user2.jpg')"></div>
+        <div class="tc-overlay"></div>
+        <div class="tc-content">
+          <div class="tc-quote">"</div>
+          <p class="tc-text">The team supported me throughout, suggested useful changes, delivered on time, and quickly resolved any issues. The whole process was handled professionally. I highly recommend PumaPulse for any fintech project.</p>
+          <div class="tc-footer">
+            <div class="tc-name">Kooban Naidoo</div>
+            <div class="tc-role">CEO, Apzor · South Africa</div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 - Chandravadan Raut - img/user4.jpg (order: 1,2,4,3) -->
+      <div class="tc-card">
+        <div class="tc-bg" style="background-image:url('img/user4.jpg')"></div>
+        <div class="tc-overlay"></div>
+        <div class="tc-content">
+          <div class="tc-quote">"</div>
+          <p class="tc-text">I must commend the team on an exceptionally well-executed delivery of our Cryptocurrency Exchange. I would not hesitate to recommend PumaPulse for any high-level fintech initiative requiring precision and reliability.</p>
+          <div class="tc-footer">
+            <div class="tc-name">Chandravadan Raut</div>
+            <div class="tc-role">Founder, MetaStation · India</div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WAVE divider light → dark -->
+<div style="background:var(--bg-light);line-height:0;position:relative;z-index:1">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="height:70px;display:block;width:100%">
+    <path d="M0,0 Q720,70 1440,0 L1440,70 L0,70 Z" fill="#0a0c12"/>
+  </svg>
+</div>
+
+<!-- ===================== TECH STACK (dark) ===================== -->
+<section class="section-dark" style="padding-top:0px;padding-bottom:0px">
+  <div class="container" style="position:relative;z-index:2">
+    <div class="rv">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.85)">Technology</span>
+      <h2 class="dark">Battle-Tested <span class="muted">Stack.</span></h2>
+      <p class="sec-sub dark">High-performance technologies that power the world's most demanding fintech products.</p>
+    </div>
+    <div class="tech-grid rv d1" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);margin-top:5px">
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span style="color:rgba(200,215,235,0.3)">Node.js</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React"><span style="color:rgba(200,215,235,0.3)">React</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"><span style="color:rgba(200,215,235,0.3)">Python</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/solidity/cccccc" alt="Solidity"><span style="color:rgba(200,215,235,0.3)">Solidity</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/rust/ffffff" alt="Rust"><span style="color:rgba(200,215,235,0.3)">Rust</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go"><span style="color:rgba(200,215,235,0.3)">Go</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span style="color:rgba(200,215,235,0.3)">PostgreSQL</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span style="color:rgba(200,215,235,0.3)">Redis</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/apachekafka/ffffff" alt="Kafka"><span style="color:rgba(200,215,235,0.3)">Kafka</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span style="color:rgba(200,215,235,0.3)">Kubernetes</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="filter:brightness(0) invert(1);"><span style="color:rgba(200,215,235,0.3)">AWS</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"><span style="color:rgba(200,215,235,0.3)">Docker</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.simpleicons.org/ethereum/cccccc" alt="Ethereum"><span style="color:rgba(200,215,235,0.3)">Ethereum</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.simpleicons.org/solana/9945FF" alt="Solana"><span style="color:rgba(200,215,235,0.3)">Solana</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.simpleicons.org/chainlink/375BD2" alt="Chainlink"><span style="color:rgba(200,215,235,0.3)">Chainlink</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.simpleicons.org/graphql/E10098" alt="GraphQL"><span style="color:rgba(200,215,235,0.3)">GraphQL</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"><span style="color:rgba(200,215,235,0.3)">TypeScript</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:none;border-bottom:none"><img src="https://cdn.simpleicons.org/nginx/009639" alt="NGINX"><span style="color:rgba(200,215,235,0.3)">NGINX</span></div>
+    </div>
+  </div>
+  <!-- Curved wave to light -->
+  <div style="line-height:0;margin-top:5px;margin-bottom:-1px;">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="height:100px;display:block;width:100%">
+      <path d="M0,0 C360,100 1080,100 1440,0 L1440,100 L0,100 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== FAQ (light) ===================== -->
+<section class="section-light" id="faq" style="padding-top:100px;">
+  <div class="container">
+    <div class="faq-layout rv">
+      <div>
+        <h2 class="light">Common <span class="muted">Questions.</span></h2>
+        <p class="sec-sub light">Answers to the questions we hear most before starting a project. Don't see yours? Book a call.</p>
+        <div style="margin-top:28px"><a href="#contact" class="btn-primary">Book Free Strategy Call</a></div>
+        <!-- FAQ image -->
+        <div style="margin-top:32px;position:relative;overflow:hidden;border:1px solid var(--border)">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,0.2) 0%,transparent 70%)"></div>
+          <div style="position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);padding:10px 14px;border:1px solid rgba(255,255,255,0.1)">
+            <div style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,0.5)">CHAIN INTEGRATIONS</div>
+            <div style="font-family:var(--display);font-size:22px;font-weight:700;color:#fff;line-height:1;margin-top:2px">15<span style="color:var(--red2)">+</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">How long does it take to build a crypto exchange?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>A white-label exchange can be launched in 4–6 weeks. A fully custom CEX typically takes 3–5 months. DEX and hybrid platforms vary based on smart contract complexity. We provide a detailed timeline after the discovery phase.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">Do you provide post-launch support?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>Yes. We offer flexible retainer packages including 24/7 monitoring, bug fixes, security patches, feature development, and dedicated support channels. Most clients stay with us as a long-term engineering partner.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">What blockchain networks do you build on?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>We build on all major networks: Ethereum, Solana, BNB Chain, Polygon, Avalanche, Arbitrum, Optimism, zkSync, and more. We also build private blockchains using Hyperledger Fabric and Quorum for enterprise clients.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">How do you handle security and compliance?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>Security is layered into every phase — smart contract audits, penetration testing, KYC/AML integration, and regulatory compliance. We support GDPR, MiCA, FinCEN, and 30+ other frameworks across global jurisdictions.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">Do you sign NDAs before discussions?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>Absolutely. We sign NDAs before any project discussion. Your ideas, plans, and technical requirements are treated with complete confidentiality. Fixed-price contracts are available so there are no surprises.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">What is your pricing model?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>We offer both fixed-price and time-and-materials contracts. After a free discovery call, we provide a detailed proposal with clear milestones and payment schedules. No hidden fees, ever.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===================== CTA (dark gradient) ===================== -->
+<div class="cta-section" id="contact">
+  <div class="container">
+    <h2>Your Fintech Vision.<br><span style="color:rgba(255,255,255,0.3);font-weight:400">Our Engineering Precision.</span></h2>
+    <p>Book a free 30-minute strategy call. No sales pitch — just honest advice on how to build your product right, on time, and within budget.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">Book Free Strategy Call</a>
+      <a href="#work" class="btn-outline-light">View Portfolio →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<div id="footer-placeholder"></div>
+
+<script>
+// ===================== LIGHT STREAMS =====================
+(function(){
+  const canvas = document.getElementById('lightCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, streams = [];
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function Stream(){
+    this.reset();
+  }
+  Stream.prototype.reset = function(){
+    this.x = Math.random() * W;
+    this.y = -100 - Math.random() * H;
+    this.len = 80 + Math.random() * 200;
+    this.speed = 0.4 + Math.random() * 1.2;
+    this.width = 0.5 + Math.random() * 1.5;
+    this.alpha = 0.04 + Math.random() * 0.12;
+    // Color: mostly red-crimson, occasional blue-purple or white
+    const r = Math.random();
+    if (r < 0.65) {
+      this.color = `rgba(${192 + Math.floor(Math.random()*40)}, ${20 + Math.floor(Math.random()*20)}, ${30 + Math.floor(Math.random()*20)}, `;
+    } else if (r < 0.85) {
+      this.color = `rgba(180, 160, 255, `;
+    } else {
+      this.color = `rgba(220, 230, 255, `;
+    }
+    this.angle = -0.15 + Math.random() * 0.3;
+    this.dx = Math.sin(this.angle) * this.speed * 0.4;
+  };
+  Stream.prototype.update = function(){
+    this.y += this.speed;
+    this.x += this.dx;
+    if (this.y - this.len > H || this.x < -50 || this.x > W + 50) this.reset();
+  };
+  Stream.prototype.draw = function(){
+    const grad = ctx.createLinearGradient(this.x, this.y - this.len, this.x + this.dx * this.len, this.y);
+    grad.addColorStop(0, this.color + '0)');
+    grad.addColorStop(0.4, this.color + this.alpha + ')');
+    grad.addColorStop(1, this.color + '0)');
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y - this.len);
+    ctx.lineTo(this.x + this.dx * (this.len / this.speed), this.y);
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = this.width;
+    ctx.stroke();
+  };
+
+  for (let i = 0; i < 55; i++) {
+    const s = new Stream();
+    s.y = Math.random() * H * 2; // distribute initially
+    streams.push(s);
+  }
+
+  function animate(){
+    ctx.clearRect(0, 0, W, H);
+    streams.forEach(s => { s.update(); s.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+// ===================== TECH STRIP =====================
+(function(){
+  const techs=[
+    {name:'Node.js',icon:'nodedotjs/339933'},{name:'React',icon:'react/61DAFB'},
+    {name:'Python',icon:'python/3776AB'},{name:'Solidity',icon:'solidity/cccccc'},
+    {name:'Rust',icon:'rust/ffffff'},{name:'Go',icon:'go/00ADD8'},
+    {name:'PostgreSQL',icon:'postgresql/4169E1'},{name:'Redis',icon:'redis/DC382D'},
+    {name:'Kafka',icon:'apachekafka/ffffff'},{name:'Kubernetes',icon:'kubernetes/326CE5'},
+    {name:'AWS',icon:'awslambda/FF9900',isAWS:true},{name:'Docker',icon:'docker/2496ED'},
+    {name:'Ethereum',icon:'ethereum/cccccc'},{name:'Solana',icon:'solana/9945FF'},
+  ];
+  let h='';
+  for(let r=0;r<2;r++) techs.forEach(t=>{
+    const imgSrc = t.isAWS ? 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' : `https://cdn.simpleicons.org/${t.icon}`;
+    h+=`<div class="ts-item"><img src="${imgSrc}" alt="${t.name}" style="${t.isAWS?'filter:brightness(0) invert(1);':''}">${t.name}</div>`;
+  });
+  document.getElementById('techStrip').innerHTML=h;
+})();
+
+// ===================== SERVICES STRIP =====================
+(function(){
+  const services=[
+    'Trading Bot Development',
+    'Blockchain Solutions',
+    'Neobank Apps',
+    'Forex CRM',
+    'Crypto Wallets',
+    'Payment Gateways',
+    'AI Trading Systems',
+    'Smart Contracts',
+    'Crypto Exchange Development',
+    'DeFi Platforms'
+  ];
+  let h='';
+  for(let r=0;r<2;r++) services.forEach(s=>{
+    h+=`<div class="ts-item">${s}</div>`;
+  });
+  document.getElementById('servicesStrip').innerHTML=h;
+})();
+
+// ===================== LIVE METRICS =====================
+(function(){
+  setInterval(()=>{
+    const tps=document.getElementById('tps');
+    const conn=document.getElementById('conn');
+    const lat=document.getElementById('lat');
+    if(tps) tps.textContent=(12000+Math.floor(Math.random()*1000)).toLocaleString();
+    if(conn) conn.textContent=(8500+Math.floor(Math.random()*800)).toLocaleString();
+    if(lat) lat.textContent=(2+Math.random()*1.5).toFixed(1);
+  },2500);
+})();
+
+// ===================== TABS =====================
+document.getElementById('tabRow').addEventListener('click',e=>{
+  const b=e.target.closest('.sol2-tab'); if(!b) return;
+  document.querySelectorAll('.sol2-tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.sol2-panel').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const p=document.getElementById('panel-'+b.dataset.tab);
+  if(p) p.classList.add('on');
+});
+
+// ===================== FAQ =====================
+function faq(el){
+  const item=el.closest('.faq-item');
+  const was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(x=>x.classList.remove('open'));
+  if(!was) item.classList.add('open');
+}
+
+// ===================== SCROLL REVEAL =====================
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+},{threshold:0.06});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
