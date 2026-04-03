@@ -37,7 +37,7 @@
     + '<a href="' + base + 'solutions/payment-gateway/" class="mega-item"><div class="mega-icon" style="background:rgba(59,130,246,0.12)"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Payments"></div><div><span class="mega-text-label">Payment Gateway</span><span class="mega-text-desc">Accept 100+ cryptocurrencies with instant settlement</span></div></a>'
     + '<a href="' + base + 'solutions/ai-trading/" class="mega-item"><div class="mega-icon" style="background:rgba(167,139,250,0.12)"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="AI Trading"></div><div><span class="mega-text-label">AI Trading</span><span class="mega-text-desc">ML price prediction, sentiment analysis &amp; smart order routing</span></div></a>'
     + '</div>'
-    + '<div class="mega-menu-footer"><a href="' + base + 'portfolio/">View all case studies →</a><a href="' + base + 'contact/" class="mega-cta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>Free Consultation</a></div>'
+    + '<div class="mega-menu-footer"><a href="' + base + 'portfolio/">View all case studies →</a></div>'
     + '</div></li>'
 
     + '<li><a href="' + base + 'about/">About</a></li>'
@@ -83,7 +83,6 @@
     + '<div class="footer-col-new"><h5>Resources</h5><ul>'
     + '<li><a href="' + base + 'blog/">Insights &amp; Trends</a></li>'
     + '<li><a href="' + base + 'portfolio/">Case Studies</a></li>'
-    + '<li><a href="' + base + 'contact/">Free Consultation</a></li>'
     + '<li><a href="' + base + 'careers/">Open Positions</a></li>'
     + '</ul></div>'
     + '</div></div></div>'
