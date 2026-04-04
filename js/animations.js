@@ -116,7 +116,8 @@ document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => {
   io.observe(el);
 });
 
-// ── Scroll progress bar ──
+// ── No scrollbar manipulation needed - use CSS scrollbar-gutter ──
+
 const bar = document.createElement('div');
 bar.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#c0202a,#e0263a);z-index:99999;transition:width 0.1s linear;width:0%;';
 document.body.appendChild(bar);

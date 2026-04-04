@@ -15,8 +15,8 @@
 
     /* Services mega menu */
     + '<li class="dropdown"><a href="#">Services</a>'
-    + '<div class="mega-menu" style="width:760px">'
-    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">'
+    + '<div class="mega-menu">'
+    + '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;width:100%">'
     + '<a href="' + base + 'services/blockchain/" class="mega-item"><div class="mega-icon" style="background:rgba(98,126,234,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Blockchain"></div><div><span class="mega-text-label">Blockchain Development</span><span class="mega-text-desc">Smart contracts, DeFi protocols, NFT platforms &amp; enterprise blockchain</span></div></a>'
     + '<a href="' + base + 'services/crypto-exchange/" class="mega-item"><div class="mega-icon" style="background:rgba(247,147,26,0.12)"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Exchange"></div><div><span class="mega-text-label">Crypto Exchange</span><span class="mega-text-desc">CEX, DEX, P2P, hybrid &amp; white-label exchange platforms</span></div></a>'
     + '<a href="' + base + 'services/trading-bots/" class="mega-item"><div class="mega-icon" style="background:rgba(16,185,129,0.12)"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Bots"></div><div><span class="mega-text-label">Trading Bots</span><span class="mega-text-desc">Arbitrage, DCA, grid, sniper, signal &amp; AI/ML trading bots</span></div></a>'
@@ -29,8 +29,7 @@
 
     /* Solutions mega menu */
     + '<li class="dropdown"><a href="#">Solutions</a>'
-    + '<div class="mega-menu" style="width:680px">'
-    + '<div class="mega-menu-header">Financial Technology Solutions</div>'
+    + '<div class="mega-menu" style="width:480px">'
     + '<div class="mega-menu-grid">'
     + '<a href="' + base + 'solutions/defi/" class="mega-item"><div class="mega-icon" style="background:rgba(99,102,241,0.12)"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="DeFi"></div><div><span class="mega-text-label">DeFi Platforms</span><span class="mega-text-desc">AMMs, lending protocols, yield aggregators &amp; cross-chain bridges</span></div></a>'
     + '<a href="' + base + 'solutions/neobank/" class="mega-item"><div class="mega-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div><span class="mega-text-label">Neobank</span><span class="mega-text-desc">Full-stack digital banking with cards, lending &amp; investments</span></div></a>'

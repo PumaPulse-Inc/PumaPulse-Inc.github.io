@@ -4750,3 +4750,6 @@ footer .container,
 .footer-top-inner {
   background: #000000 !important;
 }
+
+/* ── Allow mega menu to show full width ── */
+body { overflow-x: clip; }

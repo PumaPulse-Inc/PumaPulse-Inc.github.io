@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,22 +17,22 @@
 <link rel="stylesheet" href="css/mobile.css">
 <style>
 
-/* Mega menu */
-.mega-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s,top .2s;z-index:1000;min-width:480px}
-.nav-links .dropdown:hover .mega-menu{opacity:1;visibility:visible;top:calc(100% + 4px)}
-.mega-item{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:8px;text-decoration:none;transition:background .15s;border:1px solid transparent}
-.mega-item:hover{background:rgba(192,32,42,0.04);border-color:rgba(192,32,42,0.1)}
-.mega-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.mega-icon img,.mega-icon svg{width:20px;height:20px}
-.mega-text-label{font-size:0.86rem;font-weight:600;color:var(--ink,#1a1e2e);display:block;margin-bottom:2px}
-.mega-text-desc{font-size:0.75rem;color:#4a5470;line-height:1.4;display:block}
-.mega-menu-header{font-size:0.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--dim,#8a93b0);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.06)}
-.mega-menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.mega-cta{display:flex;align-items:center;gap:6px;background:var(--red,#c0202a);color:#fff !important;padding:7px 14px;border-radius:50px;font-weight:600;transition:background .15s}
-.mega-cta:hover{background:var(--red2,#e0263a) !important}
+/* Mega menu - appended to body via JS */
+.mega-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:220px;background:rgba(8,12,24,0.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:none;border-radius:0;padding:12px 0;box-shadow:0 16px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:9999;overflow:hidden;box-sizing:border-box}
+.nav-links .dropdown:hover .mega-menu{opacity:1;visibility:visible}
+.mega-item{display:flex;align-items:center;gap:0;padding:10px 20px;border-radius:0;text-decoration:none;transition:color .15s,background .15s;border:none;background:none;width:100%}
+.mega-item:hover{background:rgba(255,255,255,0.06)}
+.mega-icon{display:none}
+.mega-text-label{font-size:13px;font-weight:400;color:rgba(240,244,255,0.75);display:block;transition:color .15s;letter-spacing:0;white-space:nowrap}
+.mega-item:hover .mega-text-label{color:#fff}
+.mega-text-desc{display:none}
+.mega-menu-header{display:none}
+.mega-menu-grid{display:flex;flex-direction:column;gap:0;width:100%;padding:0}
+.mega-cta{display:none}
+.mega-menu-footer{display:none}
 /* Mobile */
 @media(max-width:1024px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
-@media(max-width:1024px){.nav-mobile-open .nav-links{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,12,24,0.98);padding:16px;gap:4px;z-index:9998}.nav-mobile-open .nav-links>li>a{color:rgba(240,244,255,0.7);padding:12px 16px;border-radius:6px}.nav-mobile-open .nav-cta{display:flex;position:fixed;bottom:24px;left:24px;right:24px;z-index:9998}.nav-mobile-open .mega-menu{display:none}}
+@media(max-width:1024px){.nav-mobile-open .nav-links{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,12,24,0.96);padding:16px;gap:4px;z-index:9998}.nav-mobile-open .nav-links>li>a{color:rgba(240,244,255,0.7);padding:12px 16px;border-radius:6px}.nav-mobile-open .nav-cta{display:flex;position:fixed;bottom:24px;left:24px;right:24px;z-index:9998}.nav-mobile-open .mega-menu{display:none}}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -436,13 +436,12 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 .sol2-panel{display:none;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-top:none;margin-bottom:0}
 .sol2-panel.on{display:grid}
 /* Cards */
-.sol2-card{background:#0d1018;overflow:hidden;transition:background .2s;position:relative}
-.sol2-card:hover{background:#111520}
-.sol2-card-img{height:140px;background-size:cover;background-position:center;opacity:0.55;transition:opacity .3s,transform .4s;transform-origin:center}
-.sol2-card:hover .sol2-card-img{opacity:0.75;transform:scale(1.04)}
-.sol2-card-body{padding:18px 20px 22px}
-.sol2-card-t{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:#fff !important;margin-bottom:7px;letter-spacing:-.01em}
-.sol2-card-d{font-size:12px;line-height:1.65;color:rgba(200,215,235,0.85) !important}
+.sol2-card{background:#0d1018;overflow:hidden;transition:background .2s,border-color .2s;position:relative;padding:24px 22px;border:1px solid rgba(255,255,255,0.06)}
+.sol2-card:hover{background:#111520;border-color:rgba(192,32,42,0.3)}
+.sol2-card-img{display:none !important}
+.sol2-card-body{padding:0}
+.sol2-card-t{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:#fff !important;margin-bottom:8px;letter-spacing:-.01em}
+.sol2-card-d{font-size:12.5px;line-height:1.65;color:rgba(200,215,235,0.75) !important}
 /* Responsive */
 @media(max-width:1024px){.sol2-split{grid-template-columns:1fr}.sol2-panel.on{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.sol2-panel.on{grid-template-columns:1fr}}
@@ -511,17 +510,17 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
   cursor:default;
   transition:transform .3s,box-shadow .3s;
 }
-.tc-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.25)}
+.tc-card:hover{}
 .tc-bg{
   position:absolute;inset:0;
   background-size:cover;background-position:center top;
-  transition:transform .5s ease;
-  filter:brightness(0.55);
+  transition:transform .5s ease,filter .4s;
+  filter:brightness(0.45);
 }
-.tc-card:hover .tc-bg{transform:scale(1.05);filter:brightness(0.45)}
+.tc-card:hover .tc-bg{transform:scale(1.02);filter:brightness(0.45)}
 .tc-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 55%, transparent 100%);
+  background:linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 55%, transparent 100%);
 }
 .tc-content{
   position:absolute;inset:0;
@@ -533,14 +532,21 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
   font-family:'Inter',sans-serif;font-size:80px;font-weight:900;
   color:rgba(192,32,42,0.5);line-height:1;
   margin-bottom:8px;
+  opacity:1;transform:none;
+  transition:none;
 }
+.tc-card:hover .tc-quote{opacity:1;transform:translateY(0)}
 .tc-text{
   font-size:13.5px;line-height:1.8;
-  color:rgba(255,255,255,0.95);
+  color:rgba(255,255,255,0.92);
   margin-bottom:20px;
-  font-weight:300;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .4s ease .1s,transform .4s ease .1s;
 }
-.tc-footer{border-top:1px solid rgba(255,255,255,0.15);padding-top:16px}
+.tc-card:hover .tc-text{opacity:1;transform:translateY(0)}
+.tc-footer{border-top:1px solid rgba(255,255,255,0.4);padding-top:16px;opacity:1;transform:none;transition:none;}
+}
+.tc-footer{border-top:1px solid rgba(255,255,255,0.4);padding-top:16px;opacity:1;transform:none;transition:none;}
 .tc-name{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
 .tc-role{font-size:11px;color:rgba(255,255,255,0.7);margin-top:3px;font-weight:500;letter-spacing:.03em}
 .tc-stars{color:#e8b800;font-size:12px;margin-top:8px;letter-spacing:2px}
@@ -885,52 +891,52 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
     <!-- Panels -->
     <div class="sol2-panel on rv d3" id="panel-exchange">
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Centralized Exchange (CEX)</div><p class="sol2-card-d">50,000+ TPS matching engine, liquidity management, admin console, KYC/AML, and institutional-grade custody.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Decentralized Exchange (DEX)</div><p class="sol2-card-d">AMM-based DEX with audited smart contracts, concentrated liquidity, yield farming, and DAO governance.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">P2P Exchange</div><p class="sol2-card-d">Peer-to-peer trading with escrow, dispute resolution, reputation system, and 100+ payment methods.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">White-Label Exchange</div><p class="sol2-card-d">Launch your branded exchange in 4–6 weeks with our fully tested, ready-to-deploy white-label platform.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Margin Trading Platform</div><p class="sol2-card-d">Leveraged spot and futures trading with cross/isolated margin, auto-liquidation, and insurance funds.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Derivatives Exchange</div><p class="sol2-card-d">Perpetual futures, options, and margin trading with advanced risk engines, liquidation systems, and funding rates.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Centralized Exchange (CEX)</div><p class="sol2-card-d">50,000+ TPS matching engine, liquidity management, admin console, KYC/AML, and institutional-grade custody.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Decentralized Exchange (DEX)</div><p class="sol2-card-d">AMM-based DEX with audited smart contracts, concentrated liquidity, yield farming, and DAO governance.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">P2P Exchange</div><p class="sol2-card-d">Peer-to-peer trading with escrow, dispute resolution, reputation system, and 100+ payment methods.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">White-Label Exchange</div><p class="sol2-card-d">Launch your branded exchange in 4–6 weeks with our fully tested, ready-to-deploy white-label platform.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Margin Trading Platform</div><p class="sol2-card-d">Leveraged spot and futures trading with cross/isolated margin, auto-liquidation, and insurance funds.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Derivatives Exchange</div><p class="sol2-card-d">Perpetual futures, options, and margin trading with advanced risk engines, liquidation systems, and funding rates.</p></div></div>
     </div>
     <div class="sol2-panel" id="panel-trading">
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Algorithmic Trading</div><p class="sol2-card-d">Rule-based and AI-driven strategies deployed across crypto and forex markets with live PnL dashboards.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Arbitrage Bots</div><p class="sol2-card-d">Cross-exchange, triangular, and statistical arbitrage systems that capture inefficiencies in under 10ms.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Market Making Bots</div><p class="sol2-card-d">Automated liquidity provision with dynamic spread management, inventory control, and risk hedging.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">DCA &amp; Grid Bots</div><p class="sol2-card-d">Dollar-cost averaging and grid trading with smart entry/exit logic and automated portfolio rebalancing.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">HFT Infrastructure</div><p class="sol2-card-d">Co-location, FPGA-accelerated execution, and ultra-low-latency data feeds for professional trading desks.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Copy Trading Platform</div><p class="sol2-card-d">Social trading infrastructure with signal providers, follower management, and profit-sharing mechanics.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Algorithmic Trading</div><p class="sol2-card-d">Rule-based and AI-driven strategies deployed across crypto and forex markets with live PnL dashboards.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Arbitrage Bots</div><p class="sol2-card-d">Cross-exchange, triangular, and statistical arbitrage systems that capture inefficiencies in under 10ms.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Market Making Bots</div><p class="sol2-card-d">Automated liquidity provision with dynamic spread management, inventory control, and risk hedging.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">DCA &amp; Grid Bots</div><p class="sol2-card-d">Dollar-cost averaging and grid trading with smart entry/exit logic and automated portfolio rebalancing.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">HFT Infrastructure</div><p class="sol2-card-d">Co-location, FPGA-accelerated execution, and ultra-low-latency data feeds for professional trading desks.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Copy Trading Platform</div><p class="sol2-card-d">Social trading infrastructure with signal providers, follower management, and profit-sharing mechanics.</p></div></div>
     </div>
     <div class="sol2-panel" id="panel-defi">
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">DeFi Protocol Development</div><p class="sol2-card-d">Custom AMMs, lending protocols, yield optimizers, and liquidity mining programs with audited contracts.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Token Launch &amp; IDO</div><p class="sol2-card-d">ERC-20/BEP-20 token creation, tokenomics design, vesting schedules, and launchpad integration.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">NFT Marketplace</div><p class="sol2-card-d">Full-featured NFT platform with minting, auctions, royalties, and multi-chain asset support.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Cross-Chain Bridge</div><p class="sol2-card-d">Secure asset bridges with validator sets, merkle proof verification, and liquidity aggregation.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">DAO Infrastructure</div><p class="sol2-card-d">Governance frameworks, voting mechanisms, treasury management, and proposal execution systems.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Staking Platforms</div><p class="sol2-card-d">Delegated proof-of-stake platforms with validator dashboards, rewards distribution, and slashing protection.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">DeFi Protocol Development</div><p class="sol2-card-d">Custom AMMs, lending protocols, yield optimizers, and liquidity mining programs with audited contracts.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Token Launch &amp; IDO</div><p class="sol2-card-d">ERC-20/BEP-20 token creation, tokenomics design, vesting schedules, and launchpad integration.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">NFT Marketplace</div><p class="sol2-card-d">Full-featured NFT platform with minting, auctions, royalties, and multi-chain asset support.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Cross-Chain Bridge</div><p class="sol2-card-d">Secure asset bridges with validator sets, merkle proof verification, and liquidity aggregation.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">DAO Infrastructure</div><p class="sol2-card-d">Governance frameworks, voting mechanisms, treasury management, and proposal execution systems.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Staking Platforms</div><p class="sol2-card-d">Delegated proof-of-stake platforms with validator dashboards, rewards distribution, and slashing protection.</p></div></div>
     </div>
     <div class="sol2-panel" id="panel-payments">
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Crypto Payment Gateway</div><p class="sol2-card-d">Accept 100+ cryptocurrencies with instant settlement, auto fiat conversion, and zero chargeback risk.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">E-Commerce Integration</div><p class="sol2-card-d">Plug-and-play crypto payments for Shopify, WooCommerce, Magento, and headless storefronts.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Cross-Border Transfers</div><p class="sol2-card-d">Instant, low-cost international remittances powered by blockchain rails across 180+ countries.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Crypto Wallet</div><p class="sol2-card-d">MPC, custodial, and non-custodial wallets with multi-chain support, DeFi integration, and biometric auth.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">POS Crypto Payments</div><p class="sol2-card-d">In-store crypto payment terminals with QR codes, NFC, and real-time fiat settlement for merchants.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Payment Compliance</div><p class="sol2-card-d">AML screening, transaction monitoring, FATF travel rule compliance, and regulatory reporting tools.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Crypto Payment Gateway</div><p class="sol2-card-d">Accept 100+ cryptocurrencies with instant settlement, auto fiat conversion, and zero chargeback risk.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">E-Commerce Integration</div><p class="sol2-card-d">Plug-and-play crypto payments for Shopify, WooCommerce, Magento, and headless storefronts.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Cross-Border Transfers</div><p class="sol2-card-d">Instant, low-cost international remittances powered by blockchain rails across 180+ countries.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Crypto Wallet</div><p class="sol2-card-d">MPC, custodial, and non-custodial wallets with multi-chain support, DeFi integration, and biometric auth.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">POS Crypto Payments</div><p class="sol2-card-d">In-store crypto payment terminals with QR codes, NFC, and real-time fiat settlement for merchants.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Payment Compliance</div><p class="sol2-card-d">AML screening, transaction monitoring, FATF travel rule compliance, and regulatory reporting tools.</p></div></div>
     </div>
     <div class="sol2-panel" id="panel-banking">
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Neobank Platform</div><p class="sol2-card-d">Full-stack digital banking with multi-currency accounts, virtual cards, lending, savings, and investing.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Digital Banking App</div><p class="sol2-card-d">Mobile-first banking with biometric auth, real-time push notifications, and PSD2-compliant open banking APIs.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">KYC/AML Platform</div><p class="sol2-card-d">Automated identity verification, sanctions screening, transaction monitoring, and regulatory reporting.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Lending Platform</div><p class="sol2-card-d">P2P and institutional lending with credit scoring, collateral management, and automated repayment.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Virtual &amp; Physical Cards</div><p class="sol2-card-d">Visa/Mastercard-powered debit and prepaid cards with real-time spend controls and crypto top-up.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Open Banking APIs</div><p class="sol2-card-d">PSD2-compliant APIs for account aggregation, payment initiation, and third-party app integration.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Neobank Platform</div><p class="sol2-card-d">Full-stack digital banking with multi-currency accounts, virtual cards, lending, savings, and investing.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Digital Banking App</div><p class="sol2-card-d">Mobile-first banking with biometric auth, real-time push notifications, and PSD2-compliant open banking APIs.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">KYC/AML Platform</div><p class="sol2-card-d">Automated identity verification, sanctions screening, transaction monitoring, and regulatory reporting.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Lending Platform</div><p class="sol2-card-d">P2P and institutional lending with credit scoring, collateral management, and automated repayment.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Virtual &amp; Physical Cards</div><p class="sol2-card-d">Visa/Mastercard-powered debit and prepaid cards with real-time spend controls and crypto top-up.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Open Banking APIs</div><p class="sol2-card-d">PSD2-compliant APIs for account aggregation, payment initiation, and third-party app integration.</p></div></div>
     </div>
     <div class="sol2-panel" id="panel-forex">
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Forex Broker CRM</div><p class="sol2-card-d">Complete CRM with IB management, lead lifecycle, KYC workflows, and regulatory compliance tools.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Back Office Software</div><p class="sol2-card-d">Automate operations, financial reconciliation, client reporting, and compliance for FX brokerages.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">MT4/MT5 Integration</div><p class="sol2-card-d">Seamless MetaTrader bridge with custom plugins, multi-bank liquidity, and CRM connectors.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Traders Room</div><p class="sol2-card-d">Client portal with account management, deposit/withdrawal, trading history, and document upload.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">IB &amp; Affiliate System</div><p class="sol2-card-d">Multi-tier introducing broker management with automated commission calculation and real-time reporting.</p></div></div>
-      <div class="sol2-card"><div class="sol2-card-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80')"></div><div class="sol2-card-body"><div class="sol2-card-t">Prop Trading Platform</div><p class="sol2-card-d">Funded trader challenges, evaluation dashboards, payout management, and risk parameter controls.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Forex Broker CRM</div><p class="sol2-card-d">Complete CRM with IB management, lead lifecycle, KYC workflows, and regulatory compliance tools.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Back Office Software</div><p class="sol2-card-d">Automate operations, financial reconciliation, client reporting, and compliance for FX brokerages.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">MT4/MT5 Integration</div><p class="sol2-card-d">Seamless MetaTrader bridge with custom plugins, multi-bank liquidity, and CRM connectors.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Traders Room</div><p class="sol2-card-d">Client portal with account management, deposit/withdrawal, trading history, and document upload.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">IB &amp; Affiliate System</div><p class="sol2-card-d">Multi-tier introducing broker management with automated commission calculation and real-time reporting.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Prop Trading Platform</div><p class="sol2-card-d">Funded trader challenges, evaluation dashboards, payout management, and risk parameter controls.</p></div></div>
     </div>
 
   </div>
@@ -1034,7 +1040,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px">
 
-      <!-- Card 1 - Steven Kim Wee - https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203877/pumapulse/user1.jpg -->
+      <!-- Card 1 - Leon sheen - https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203877/pumapulse/user1.jpg -->
       <div class="tc-card">
         <div class="tc-bg" style="background-image:url('https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203877/pumapulse/user1.jpg')"></div>
         <div class="tc-overlay"></div>
@@ -1042,7 +1048,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
           <div class="tc-quote">"</div>
           <p class="tc-text">Big thanks to PumaPulse for handling our token project so well! Everything was fine from start to finish, and they delivered exactly as expected. We truly appreciate their effort and look forward to working with them again.</p>
           <div class="tc-footer">
-            <div class="tc-name">Steven Kim Wee</div>
+            <div class="tc-name">Leon Sheen</div>
             <div class="tc-role">Founder, Cryptinum · Singapore</div>
             <div class="tc-stars">★★★★★</div>
           </div>
