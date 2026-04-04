@@ -13,15 +13,15 @@
 <link rel="stylesheet" href="../../css/mobile.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:clip;line-height:1.6}
 .post-hero{min-height:52vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#060a14}
 .post-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80') center/cover no-repeat;opacity:.3}
 .post-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#060a14 0%,rgba(6,10,20,.4) 60%,transparent 100%)}
 .post-hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 44px 60px;width:100%}
 .post-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;background:rgba(192,32,42,.85);color:#fff;border-radius:3px;margin-bottom:16px}
 .post-hero h1{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:#fff;margin-bottom:16px}
-.post-meta{display:flex;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase}
-.post-body{max-width:860px;margin:0 auto;padding:60px 44px 100px}
+.post-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase;align-items:center}
+.post-body{max-width:none;margin:0;padding:0}
 .post-intro{font-size:18px;line-height:1.8;color:#1a1e2e;font-weight:400;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid #e0e4ef}
 .post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:40px 0 14px;letter-spacing:-.02em}
 .post-body p{font-size:15px;line-height:1.85;color:#4a5470;margin-bottom:20px}
@@ -33,6 +33,37 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
 .post-cta a{display:inline-flex;align-items:center;gap:8px;background:#c0202a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s}
 .post-cta a:hover{background:#e0263a}
 @media(max-width:768px){.post-hero-inner,.post-body{padding-left:20px;padding-right:20px}.post-hero h1{font-size:clamp(24px,6vw,36px)}}
+
+/* ── TOC Sidebar ── */
+.post-layout{display:grid;grid-template-columns:1fr 280px;gap:56px;max-width:1200px;margin:0 auto;padding:60px 44px 100px;align-items:start}
+.post-body{min-width:0}
+.post-sidebar{position:sticky;top:88px;align-self:start;max-height:calc(100vh - 110px);overflow-y:auto}
+.toc-box{background:#fff;border:1px solid #e0e4ef;border-left:3px solid #c0202a;border-radius:0 12px 12px 0;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.toc-box h3{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#c0202a;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.toc-box h3::before{content:'';width:16px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.toc-box ol{list-style:none;counter-reset:toc-counter;display:flex;flex-direction:column;gap:2px}
+.toc-box ol li{counter-increment:toc-counter;display:flex;gap:0;align-items:stretch}
+.toc-box ol li a{font-size:13px;font-weight:500;color:#4a5470;text-decoration:none;line-height:1.5;transition:color .2s,background .2s;padding:8px 12px 8px 36px;border-radius:6px;width:100%;position:relative}
+.toc-box ol li a::before{content:counter(toc-counter);position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:800;color:#c0202a;min-width:16px}
+.toc-box ol li a:hover{color:#c0202a;background:rgba(192,32,42,.05)}
+.toc-read-time{margin-top:20px;padding-top:16px;border-top:1px solid #e0e4ef;font-size:11px;color:#8a94b0;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.post-meta-author{display:flex;align-items:center;gap:8px}
+.post-meta-author img{width:28px;height:28px;border-radius:50%;border:2px solid rgba(192,32,42,.6);object-fit:cover}
+.key-takeaways{background:linear-gradient(135deg,#fff8f8 0%,#fff 100%);border:1.5px solid rgba(192,32,42,.2);border-left:4px solid #c0202a;border-radius:12px;padding:28px 32px;margin-bottom:48px}
+.key-takeaways h3{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.key-takeaways ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.key-takeaways ul li{font-size:14px;font-weight:500;color:#1a1e2e;padding-left:20px;position:relative;line-height:1.6}
+.key-takeaways ul li::before{content:'→';position:absolute;left:0;color:#c0202a;font-weight:700}
+.related-articles{margin-top:60px;padding-top:40px;border-top:1px solid #e0e4ef}
+.related-articles h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1a1e2e;margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-card{background:#fff;border:1px solid #e0e4ef;border-radius:10px;padding:20px;text-decoration:none;transition:border-color .2s,box-shadow .2s;display:block}
+.related-card:hover{border-color:#c0202a;box-shadow:0 4px 16px rgba(192,32,42,.1)}
+.related-card .rc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c0202a;margin-bottom:8px;display:block}
+.related-card .rc-title{font-size:13px;font-weight:700;color:#1a1e2e;line-height:1.4}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;padding:40px 20px 80px}.post-sidebar{display:none}.related-grid{grid-template-columns:1fr}}
+.key-takeaways ul li::before{content:'→';position:absolute;left:0;color:#c0202a;font-weight:700}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;padding:40px 20px 80px}.post-sidebar{display:none}}
 </style>
 </head>
 <body>
@@ -44,33 +75,94 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
   <div class="post-hero-inner">
     <span class="post-tag">Forex</span>
     <h1>Forex CRM in 2025: Features Every Broker Needs</h1>
-    <div class="post-meta"><span>Nov 15, 2024</span><span>6 min read</span></div>
+    <div class="post-meta">
+      <span>Nov 15, 2024</span>
+      <span>6 min read</span>
+      <span class="post-meta-author">
+        <img src="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" alt="PumaPulse Engineering">
+        PumaPulse Engineering Team
+      </span>
+    </div>
   </div>
 </section>
 
-<article class="post-body">
+<div class="post-layout">
+  <article class="post-body">
   <a href="../" class="post-back">&#8592; Back to Blog</a>
-  <p class="post-intro">A modern Forex CRM is the operational backbone of every successful brokerage. In 2025, brokers need far more than basic client management — they need an integrated platform that handles the entire client lifecycle.</p>
+  <p class="post-intro">A modern Forex CRM is the operational backbone of every successful brokerage. In 2025, brokers need far more than basic client management — they need an integrated platform that handles the entire client lifecycle from lead capture to long-term retention, with full MT4/MT5 integration, automated compliance, and AI-powered analytics.</p>
 
-      <h2>Client Lifecycle Management</h2>
-      <p>From lead capture to onboarding, trading, and retention — your CRM must handle every touchpoint. Automated KYC/AML workflows, document verification, and compliance checks should happen in minutes, not days. Integrated communication tools (email, SMS, WhatsApp) keep clients engaged.</p>
+  <div class="key-takeaways">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>A modern Forex CRM must handle the full client lifecycle — from lead capture and KYC onboarding to trading, retention, and compliance reporting — in a single integrated platform.</li>
+      <li>IB (Introducing Broker) management is the highest-leverage growth feature for most brokers — multi-tier commission structures and transparent payout dashboards directly drive affiliate network expansion.</li>
+      <li>MT4/MT5 bridge integration must be real-time and bidirectional — account creation, deposit processing, and trading history sync should all happen automatically without manual intervention.</li>
+      <li>AI-powered churn prediction and lead scoring can increase client lifetime value by 30–40% by identifying at-risk clients before they leave and prioritizing high-value prospects.</li>
+    </ul>
+  </div>
 
-      <h2>IB & Affiliate Management</h2>
-      <p>Introducing Broker management is critical for broker growth. Multi-tier IB structures, automated commission calculation, real-time reporting dashboards, and transparent payout management build trust with your IB network. Support for rebate structures, revenue share, and hybrid models is essential.</p>
+      <h2 id="lifecycle">Client Lifecycle Management</h2>
+      <p>From lead capture to onboarding, trading, and retention — your CRM must handle every touchpoint seamlessly. The modern broker's client journey starts with a lead form or referral link, moves through automated KYC/AML verification, account funding, and active trading, and ideally continues for years through proactive retention campaigns. Each stage requires different tools, and a fragmented stack of disconnected systems creates friction that costs you clients.</p>
+      <p>Automated KYC/AML workflows are the most critical onboarding component. Document verification (passport, utility bill, proof of address) should complete in under 5 minutes using AI-powered OCR and liveness detection. Compliance checks against OFAC, UN, and EU sanctions lists should run automatically. The entire onboarding flow should be configurable by jurisdiction — different countries have different documentation requirements, and your CRM must handle this without manual intervention.</p>
+      <p>Integrated communication tools keep clients engaged throughout their lifecycle. Email sequences for onboarding, SMS alerts for deposit confirmations and trade notifications, and WhatsApp integration for high-touch client relationships are all table stakes in 2025. The best CRMs include a built-in communication hub with templates, scheduling, and engagement analytics — so you know which messages drive deposits and which drive churn.</p>
 
-      <h2>MT4/MT5 Integration</h2>
-      <p>Seamless MetaTrader integration means real-time account sync, automated account creation, deposit/withdrawal processing, and trading history access — all within the CRM. A robust bridge handles high-frequency data without latency.</p>
+      <h2 id="ib">IB & Affiliate Management</h2>
+      <p>Introducing Broker management is the highest-leverage growth feature for most Forex brokers. A well-designed IB portal can grow your affiliate network from 40 to 400 partners in 12 months — as MarginFX experienced after deploying PumaPulse's CRM. The key is making it easy for IBs to track their performance, understand their commissions, and recruit sub-IBs — all without needing to contact your support team.</p>
+      <p>Multi-tier IB structures (up to 5–6 levels deep) with automated commission calculation are essential for brokers targeting emerging markets where referral networks are the primary acquisition channel. Support for multiple commission models — rebate per lot, revenue share percentage, hybrid structures, and CPA (cost per acquisition) — gives you flexibility to attract different types of affiliates. All commission calculations should be transparent and auditable, with IBs able to see exactly how their earnings are calculated.</p>
+      <p>Real-time reporting dashboards for IBs showing their client count, trading volume, and earned commissions build trust and reduce support tickets. Automated payout processing (weekly or monthly, to bank or crypto wallet) removes friction from the relationship. The best IB portals also include marketing materials (banners, landing pages, tracking links) that IBs can use immediately without waiting for your marketing team.</p>
 
-      <h2>Back Office Automation</h2>
-      <p>Manual reconciliation kills efficiency. Automate financial reconciliation, generate regulatory reports, manage client funds segregation, and handle payment gateway integrations. Support for multiple payment methods (cards, crypto, wire, e-wallets) is table stakes in 2025.</p>
+      <h2 id="mt">MT4/MT5 Integration</h2>
+      <p>Seamless MetaTrader integration is non-negotiable for any serious Forex CRM. The bridge between your CRM and MT4/MT5 must be real-time and bidirectional: when a client deposits in the CRM, their MT account should be funded within seconds. When they open a trade, the CRM should log it. When they request a withdrawal, the CRM should process it and update the MT balance automatically. Any manual step in this flow creates errors and delays that damage client trust.</p>
+      <p>Account creation automation is particularly important for high-volume brokers. When a client completes KYC and makes their first deposit, the MT account should be created automatically with the correct account type, leverage, and currency settings based on the client's profile and jurisdiction. This eliminates a common bottleneck where new clients wait hours for their account to be activated.</p>
+      <p>Trading history access within the CRM enables your retention team to have informed conversations with clients. Seeing that a client has been losing consistently for 3 months is a signal to offer educational resources or a call with a trading coach. Seeing that a client's volume has dropped 80% in the last month is a signal to reach out before they close their account. This data-driven retention approach can reduce churn by 20–30%.</p>
 
-      <h2>Analytics & AI</h2>
-      <p>Modern CRMs use AI for churn prediction, lead scoring, and personalized retention campaigns. Real-time dashboards showing key metrics — active traders, deposit volumes, conversion rates — enable data-driven decisions. Predictive analytics identify high-value clients before they leave.</p>
+      <h2 id="back-office">Back Office Automation</h2>
+      <p>Manual reconciliation is the silent killer of broker profitability. A mid-size broker processing 500 deposits and withdrawals per day can spend 20+ hours per week on manual reconciliation if their back office isn't automated. Modern CRMs eliminate this entirely through automated matching of payment gateway transactions to client accounts, automated balance updates, and exception-only workflows where staff only review transactions that don't match automatically.</p>
+      <p>Regulatory reporting automation is increasingly important as regulators in the EU (ESMA), UK (FCA), and APAC (ASIC, MAS) increase their reporting requirements. Your CRM should generate EMIR trade reports, transaction reports, and client money segregation reports automatically on the required schedule. Manual report generation is error-prone and creates compliance risk — a single missed report can result in significant fines.</p>
+      <p>Payment gateway integration breadth is a competitive differentiator. Clients in different regions prefer different payment methods: cards in Europe, bank wire in the Middle East, e-wallets (Skrill, Neteller) globally, and increasingly crypto (USDT, BTC) for clients who want to avoid banking friction. Your CRM should support all of these through a unified payment hub with automatic currency conversion and fee calculation.</p>
+
+      <h2 id="analytics">Analytics & AI</h2>
+      <p>Modern Forex CRMs use machine learning to transform raw trading and behavioral data into actionable insights. Churn prediction models analyze patterns like declining login frequency, reduced deposit amounts, and increased withdrawal requests to identify at-risk clients 2–4 weeks before they actually leave — giving your retention team time to intervene. Lead scoring models rank new leads by their likelihood to deposit and become active traders, so your sales team focuses on the highest-value prospects first.</p>
+      <p>Real-time dashboards showing key metrics — active traders, deposit volumes, withdrawal rates, IB performance, and conversion rates by acquisition channel — enable data-driven management decisions. The best CRMs include customizable dashboards for different roles: the CEO sees P&L and growth metrics, the compliance officer sees KYC completion rates and suspicious activity alerts, and the IB manager sees affiliate network performance.</p>
+      <p>Personalized retention campaigns driven by behavioral triggers are the highest-ROI feature in a modern CRM. Automatically send a "we miss you" email with a deposit bonus when a client hasn't logged in for 14 days. Trigger a call from a relationship manager when a VIP client's monthly volume drops below their historical average. Send educational content about a trading strategy when a client has been losing consistently. These automated, personalized touchpoints can increase client lifetime value by 30–40% compared to generic broadcast campaigns.</p>
+
+  <div class="related-articles">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <a href="../neobank-vs-traditional-bank/" class="related-card">
+        <span class="rc-tag">Fintech</span>
+        <span class="rc-title">Neobank vs Traditional Bank: Why Startups Are Winning</span>
+      </a>
+      <a href="../crypto-payment-gateways-guide/" class="related-card">
+        <span class="rc-tag">Payments</span>
+        <span class="rc-title">Crypto Payment Gateways: The Complete Integration Guide</span>
+      </a>
+      <a href="../how-to-build-crypto-exchange-2025/" class="related-card">
+        <span class="rc-tag">Crypto Exchange</span>
+        <span class="rc-title">How to Build a Crypto Exchange in 2025</span>
+      </a>
+    </div>
+  </div>
 
 </article>
 
+  <aside class="post-sidebar">
+    <div class="toc-box">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#lifecycle">Client Lifecycle Management</a></li>
+        <li><a href="#ib">IB &amp; Affiliate Management</a></li>
+        <li><a href="#mt">MT4/MT5 Integration</a></li>
+        <li><a href="#back-office">Back Office Automation</a></li>
+        <li><a href="#analytics">Analytics &amp; AI</a></li>
+      </ol>
+      <div class="toc-read-time">&#9201; 6 min read</div>
+    </div>
+  </aside>
+</div>
+
 <div class="post-cta">
-  <h2>Ready to Build Your Project?</h2>
+  <h2 id="lifecycle">Ready to Build Your Project?</h2>
   <p>Talk to our engineering team. Free consultation, no commitment.</p>
   <a href="../../contact/">Start a Conversation &#8594;</a>
 </div>

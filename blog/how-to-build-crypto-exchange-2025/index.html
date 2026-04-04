@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to Build a Crypto Exchange in 2025: The Complete Technical Guide — PumaPulse Blog</title>
-<meta name="description" content="Building a crypto exchange in 2025 requires deep expertise in matching engine architecture, security, liquidity management, and regulatory compliance. This guid">
+<meta name="description" content="Building a crypto exchange in 2025 requires deep expertise in matching engine architecture, security, liquidity management, and regulatory compliance. This guide covers everything you need to launch a production-ready exchange.">
 <link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css">
@@ -13,26 +13,88 @@
 <link rel="stylesheet" href="../../css/mobile.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:clip;line-height:1.6}
 .post-hero{min-height:52vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#060a14}
 .post-hero-bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;opacity:.3}
 .post-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#060a14 0%,rgba(6,10,20,.4) 60%,transparent 100%)}
 .post-hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 44px 60px;width:100%}
 .post-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;background:rgba(192,32,42,.85);color:#fff;border-radius:3px;margin-bottom:16px}
 .post-hero h1{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:#fff;margin-bottom:16px}
-.post-meta{display:flex;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase}
-.post-body{max-width:860px;margin:0 auto;padding:60px 44px 100px}
+.post-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase;align-items:center}
+.post-meta-author{display:flex;align-items:center;gap:8px}
+.post-meta-author img{width:28px;height:28px;border-radius:50%;border:2px solid rgba(192,32,42,.6);object-fit:cover}
+
+/* Layout with sidebar */
+.post-layout{display:grid;grid-template-columns:1fr 280px;gap:56px;max-width:1200px;margin:0 auto;padding:60px 44px 100px;align-items:start}
+.post-body{min-width:0}
+.post-sidebar{position:sticky;top:88px;align-self:start;max-height:calc(100vh - 110px);overflow-y:auto}
+
+/* TOC */
+.toc-box{background:#fff;border:1px solid #e0e4ef;border-left:3px solid #c0202a;border-radius:0 12px 12px 0;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.toc-box h3{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#c0202a;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.toc-box h3::before{content:'';width:16px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.toc-box ol{list-style:none;counter-reset:toc-counter;display:flex;flex-direction:column;gap:2px}
+.toc-box ol li{counter-increment:toc-counter;display:flex;gap:0;align-items:stretch}
+.toc-box ol li a{font-size:13px;font-weight:500;color:#4a5470;text-decoration:none;line-height:1.5;transition:color .2s,background .2s,padding .2s;padding:8px 12px 8px 36px;border-radius:6px;width:100%;position:relative}
+.toc-box ol li a::before{content:counter(toc-counter);position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:800;color:#c0202a;min-width:16px}
+.toc-box ol li a:hover{color:#c0202a;background:rgba(192,32,42,.05)}
+.toc-read-time{margin-top:20px;padding-top:16px;border-top:1px solid #e0e4ef;font-size:11px;color:#8a94b0;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+
 .post-intro{font-size:18px;line-height:1.8;color:#1a1e2e;font-weight:400;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid #e0e4ef}
-.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:40px 0 14px;letter-spacing:-.02em}
+.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:48px 0 14px;letter-spacing:-.02em}
 .post-body p{font-size:15px;line-height:1.85;color:#4a5470;margin-bottom:20px}
 .post-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#c0202a;text-decoration:none;margin-bottom:32px;letter-spacing:.04em;text-transform:uppercase}
 .post-back:hover{color:#e0263a}
+
+/* Key Takeaways */
+.key-takeaways{background:linear-gradient(135deg,#fff8f8 0%,#fff 100%);border:1.5px solid rgba(192,32,42,.2);border-left:4px solid #c0202a;border-radius:12px;padding:28px 32px;margin-bottom:48px}
+.key-takeaways h3{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.key-takeaways ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.key-takeaways ul li{font-size:14px;font-weight:500;color:#1a1e2e;padding-left:20px;position:relative;line-height:1.6}
+.key-takeaways ul li::before{content:'→';position:absolute;left:0;color:#c0202a;font-weight:700}
+
+/* Callout boxes */
+.callout-code{background:#0d1117;border-radius:12px;padding:28px 32px;margin:28px 0;overflow-x:auto}
+.callout-code h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#58a6ff;margin-bottom:16px}
+.callout-code pre{font-family:'Courier New',monospace;font-size:13px;line-height:1.7;color:#e6edf3;white-space:pre;overflow-x:auto}
+.callout-code .code-comment{color:#8b949e}
+.callout-code .code-keyword{color:#ff7b72}
+.callout-code .code-string{color:#a5d6ff}
+.callout-code .code-number{color:#79c0ff}
+
+.callout-stats{background:linear-gradient(135deg,#060a14 0%,#0f1628 100%);border-radius:12px;padding:28px 32px;margin:28px 0}
+.callout-stats h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.5);margin-bottom:20px}
+.callout-stats .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.callout-stats .stat-item{text-align:center}
+.callout-stats .stat-num{font-size:28px;font-weight:900;color:#c0202a;letter-spacing:-.03em;display:block}
+.callout-stats .stat-label{font-size:11px;font-weight:600;color:rgba(200,215,235,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block}
+
+/* Related Articles */
+.related-articles{margin-top:60px;padding-top:40px;border-top:1px solid #e0e4ef}
+.related-articles h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1a1e2e;margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-card{background:#fff;border:1px solid #e0e4ef;border-radius:10px;padding:20px;text-decoration:none;transition:border-color .2s,box-shadow .2s;display:block}
+.related-card:hover{border-color:#c0202a;box-shadow:0 4px 16px rgba(192,32,42,.1)}
+.related-card .rc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c0202a;margin-bottom:8px;display:block}
+.related-card .rc-title{font-size:13px;font-weight:700;color:#1a1e2e;line-height:1.4}
+
 .post-cta{background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);padding:80px 44px;text-align:center;margin-top:60px}
 .post-cta h2{font-family:'Inter',sans-serif;font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:14px;letter-spacing:-.02em}
 .post-cta p{font-size:15px;color:rgba(200,215,235,.65);max-width:440px;margin:0 auto 28px}
 .post-cta a{display:inline-flex;align-items:center;gap:8px;background:#c0202a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s}
 .post-cta a:hover{background:#e0263a}
-@media(max-width:768px){.post-hero-inner,.post-body{padding-left:20px;padding-right:20px}.post-hero h1{font-size:clamp(24px,6vw,36px)}}
+
+@media(max-width:900px){
+  .post-layout{grid-template-columns:1fr;padding:40px 20px 80px}
+  .post-sidebar{display:none}
+  .callout-stats .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .related-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .post-hero-inner{padding-left:20px;padding-right:20px}
+  .post-hero h1{font-size:clamp(24px,6vw,36px)}
+  .callout-stats .stats-grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -44,34 +106,141 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
   <div class="post-hero-inner">
     <span class="post-tag">Crypto Exchange</span>
     <h1>How to Build a Crypto Exchange in 2025: The Complete Technical Guide</h1>
-    <div class="post-meta"><span>Dec 15, 2024</span><span>12 min read</span></div>
+    <div class="post-meta">
+      <span>Dec 15, 2024</span>
+      <span>14 min read</span>
+      <span class="post-meta-author">
+        <img src="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" alt="PumaPulse Engineering">
+        PumaPulse Engineering Team
+      </span>
+    </div>
   </div>
 </section>
 
-<article class="post-body">
-  <a href="../" class="post-back">&#8592; Back to Blog</a>
-  <p class="post-intro">Building a crypto exchange in 2025 requires deep expertise in matching engine architecture, security, liquidity management, and regulatory compliance. This guide covers everything you need to launch a production-ready exchange.</p>
+<div class="post-layout">
+  <article class="post-body">
+    <a href="../" class="post-back">&#8592; Back to Blog</a>
+    <p class="post-intro">Building a crypto exchange in 2025 requires deep expertise in matching engine architecture, security, liquidity management, and regulatory compliance. With over $50 billion in daily spot trading volume across centralized exchanges, the market is competitive — but there's still room for well-engineered, niche-focused platforms. This guide covers everything you need to launch a production-ready exchange.</p>
 
-      <h2>Matching Engine Architecture</h2>
-      <p>The heart of any exchange is its matching engine. A high-performance in-memory order book can process 1M+ orders per second with sub-millisecond latency. Key components include price-time priority queuing, partial fill support, stop-loss and take-profit orders, and iceberg order handling. We recommend building the matching engine in Go or Rust for maximum throughput.</p>
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>A high-performance matching engine in Go or Rust is the non-negotiable foundation — target sub-millisecond order processing from day one.</li>
+        <li>Security architecture must include HSM-backed key management, multi-sig wallets, and tiered hot/warm/cold storage before you onboard a single user.</li>
+        <li>Solving the cold-start liquidity problem through market maker partnerships or a liquidity bridge is as important as the technology itself.</li>
+        <li>Regulatory strategy (EMI license vs. full banking license vs. BaaS) should be decided before writing a single line of code — it shapes your entire architecture.</li>
+      </ul>
+    </div>
 
-      <h2>Security & Custody</h2>
-      <p>Security is non-negotiable. Implement HSM-backed key management, multi-signature wallets, hot/warm/cold wallet tiering, and automated sweeping. DDoS protection, real-time anomaly detection, and penetration testing before launch are essential. Smart contract audits for DEX components should be conducted by reputable firms.</p>
+    <h2 id="matching-engine">Matching Engine Architecture</h2>
+    <p>The heart of any exchange is its matching engine — the component responsible for pairing buy and sell orders in real time. A production-grade in-memory order book can process 1 million+ orders per second with sub-millisecond latency when implemented correctly. The core data structure is a price-level sorted map (typically a red-black tree or skip list) with a FIFO queue at each price level to enforce price-time priority.</p>
+    <p>Beyond basic limit orders, your engine must support market orders, stop-loss and take-profit triggers, iceberg (hidden quantity) orders, and post-only orders for maker rebate programs. Partial fills need to be handled atomically — a partially filled order must update the order book state and emit a fill event in a single operation to prevent race conditions. We recommend building the matching engine in Go (for its goroutine concurrency model) or Rust (for zero-cost abstractions and memory safety). A well-tuned Go matching engine can achieve 500k–1M orders/second on a single 32-core server.</p>
+    <p>The matching engine should be completely stateless from a persistence perspective — it operates on an in-memory snapshot and publishes events to a durable message queue (Kafka or NATS JetStream). A separate persistence service consumes these events and writes to PostgreSQL. This separation means you can replay the entire order book history from the event log if needed, which is invaluable for auditing and disaster recovery.</p>
 
-      <h2>Liquidity Strategy</h2>
-      <p>New exchanges face the cold-start liquidity problem. Solutions include partnering with market makers, integrating liquidity aggregators, offering maker rebates, and launching with a white-label liquidity bridge. Deep order books from day one are critical for user retention.</p>
+    <div class="callout-code">
+      <h4>Code Example — Order Book Core (Go)</h4>
+      <pre><span class="code-keyword">type</span> OrderBook <span class="code-keyword">struct</span> {
+    symbol  <span class="code-keyword">string</span>
+    bids    *PriceLevelMap  <span class="code-comment">// sorted descending</span>
+    asks    *PriceLevelMap  <span class="code-comment">// sorted ascending</span>
+    mu      sync.RWMutex
+}
 
-      <h2>KYC/AML & Compliance</h2>
-      <p>Regulatory compliance varies by jurisdiction. At minimum, implement automated KYC/AML, FATF Travel Rule compliance, SAR reporting, and transaction monitoring. Work with legal counsel in your target markets — EU (MiCA), US (FinCEN), UAE (VARA), and Singapore (MAS) all have different requirements.</p>
+<span class="code-keyword">func</span> (ob *OrderBook) Match(order *Order) []Fill {
+    ob.mu.Lock()
+    <span class="code-keyword">defer</span> ob.mu.Unlock()
+    <span class="code-keyword">var</span> fills []Fill
+    opposite := ob.asks  <span class="code-comment">// for a buy order</span>
+    <span class="code-keyword">if</span> order.Side == Sell { opposite = ob.bids }
+    <span class="code-keyword">for</span> !order.IsFilled() &amp;&amp; opposite.BestPrice().Matches(order) {
+        fill := opposite.FillAt(order)
+        fills = <span class="code-keyword">append</span>(fills, fill)
+    }
+    <span class="code-keyword">if</span> !order.IsFilled() { ob.Add(order) }
+    <span class="code-keyword">return</span> fills
+}</pre>
+    </div>
 
-      <h2>Tech Stack Recommendations</h2>
-      <p>Backend: Go or Rust for the matching engine, Node.js or Python for APIs. Database: PostgreSQL for order history, Redis for real-time order book state. Infrastructure: Kubernetes on AWS or GCP, with multi-region failover. Frontend: React with WebSocket connections for live data feeds.</p>
+    <h2 id="security">Security &amp; Custody Architecture</h2>
+    <p>Security is the area where exchanges most commonly fail — and the consequences are catastrophic. The industry has lost over $4 billion to exchange hacks since 2018. A proper custody architecture starts with Hardware Security Modules (HSMs) for all private key operations. HSMs ensure that private keys never exist in plaintext in memory or on disk. For hot wallets, use threshold signature schemes (TSS) or multi-party computation (MPC) so no single server holds a complete key.</p>
+    <p>Implement a tiered wallet system: hot wallets hold 2–5% of funds for immediate withdrawals, warm wallets hold 10–15% with a 30-minute signing delay and human approval, and cold wallets (air-gapped hardware) hold 80–85% of funds. Automated sweeping moves funds from hot to cold when hot wallet balances exceed thresholds. All withdrawal requests above a configurable limit should require multi-signature approval from at least 2 of 3 designated signers.</p>
+    <p>On the infrastructure side, implement DDoS protection at the edge (Cloudflare or AWS Shield Advanced), rate limiting per API key and IP, and real-time anomaly detection on trading patterns. Conduct penetration testing before launch and quarterly thereafter. For DEX components, smart contract audits by firms like Trail of Bits, OpenZeppelin, or Certik are non-negotiable — budget $50k–$200k for a thorough audit.</p>
 
-</article>
+    <div class="callout-stats">
+      <h4>Quick Stats — Exchange Security</h4>
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-num">$4B+</span><span class="stat-label">Lost to exchange hacks since 2018</span></div>
+        <div class="stat-item"><span class="stat-num">85%</span><span class="stat-label">Funds in cold storage (best practice)</span></div>
+        <div class="stat-item"><span class="stat-num">&lt;5ms</span><span class="stat-label">Target withdrawal anomaly detection</span></div>
+      </div>
+    </div>
+
+    <h2 id="liquidity">Liquidity Strategy</h2>
+    <p>The cold-start liquidity problem is the biggest challenge for new exchanges. Without deep order books, users experience high slippage and quickly abandon the platform. The solution requires a multi-pronged approach executed before launch. First, negotiate agreements with 2–3 professional market makers (Wintermute, GSR, or Jump Crypto for major pairs) who will provide continuous two-sided quotes in exchange for reduced fees or a small monthly retainer.</p>
+    <p>Second, integrate a liquidity aggregator or white-label liquidity bridge that routes orders to external venues when your internal order book is thin. This gives users competitive fills from day one while your organic liquidity grows. Third, implement a maker rebate program — negative maker fees (e.g., -0.01%) incentivize high-frequency traders and algorithmic market makers to post limit orders, deepening your book organically.</p>
+    <p>For token listing strategy, start with the top 20 assets by volume (BTC, ETH, major stablecoins, top DeFi tokens) and expand based on user demand. Each new listing requires a liquidity assessment — don't list assets where you can't guarantee at least $100k in daily volume, as thin markets damage your platform's reputation. Consider launching a native token with a portion allocated to a liquidity mining program to bootstrap community-driven market making.</p>
+
+    <h2 id="compliance">KYC/AML &amp; Regulatory Compliance</h2>
+    <p>Regulatory compliance is jurisdiction-specific and evolving rapidly. In the EU, MiCA (Markets in Crypto-Assets Regulation) came into full effect in 2024, requiring CASP (Crypto Asset Service Provider) authorization. In the US, exchanges must register with FinCEN as a Money Services Business and comply with state-level money transmitter licenses (MTLs) — a process that can take 18–24 months and cost $500k+ in legal fees. The UAE (VARA) and Singapore (MAS) offer more streamlined paths for compliant operators.</p>
+    <p>At minimum, implement automated KYC with tiered verification: Tier 1 (email + phone, $1k/day limit), Tier 2 (government ID + selfie, $50k/day), Tier 3 (enhanced due diligence, unlimited). Integrate a KYC provider like Jumio, Onfido, or Sumsub for document verification and liveness checks. For AML, implement transaction monitoring with rules-based and ML-based screening against OFAC, UN, and EU sanctions lists. FATF Travel Rule compliance (sharing sender/receiver information for transfers above $1k) requires integration with a Travel Rule solution like Notabene or Sygna.</p>
+
+    <h2 id="tech-stack">Tech Stack Recommendations</h2>
+    <p>The right tech stack balances performance, developer productivity, and operational simplicity. For the matching engine, Go or Rust are the only serious choices — both offer the performance characteristics needed for sub-millisecond order processing. The REST and WebSocket API layer can be built in Go (Gin or Fiber framework) or Node.js (Fastify) — Node.js is acceptable here since it's not on the critical path for order matching. Python works well for data pipelines, analytics, and ML-based risk systems.</p>
+    <p>For databases, use PostgreSQL as your primary relational store for orders, trades, and user accounts. Redis handles real-time order book state, session management, and rate limiting. TimescaleDB (a PostgreSQL extension) is excellent for OHLCV candlestick data. For the event streaming backbone, Apache Kafka provides the durability and throughput needed for a production exchange — it's the industry standard. On infrastructure, Kubernetes on AWS or GCP with multi-region active-passive failover is the baseline. Target 99.99% uptime SLA, which means your deployment pipeline must support zero-downtime rolling updates.</p>
+
+    <div class="callout-code">
+      <h4>Code Example — WebSocket Order Book Feed (Node.js)</h4>
+      <pre><span class="code-keyword">const</span> wss = <span class="code-keyword">new</span> WebSocket.Server({ port: <span class="code-number">8080</span> });
+<span class="code-keyword">const</span> redis = <span class="code-keyword">new</span> Redis({ host: <span class="code-string">'orderbook-cache'</span> });
+
+wss.on(<span class="code-string">'connection'</span>, (ws, req) =&gt; {
+  <span class="code-keyword">const</span> symbol = parseSymbol(req.url);  <span class="code-comment">// e.g. BTC-USDT</span>
+  <span class="code-keyword">const</span> sub = redis.duplicate();
+  sub.subscribe(<span class="code-string">`orderbook:${symbol}`</span>);
+  sub.on(<span class="code-string">'message'</span>, (_, data) =&gt; {
+    <span class="code-keyword">if</span> (ws.readyState === WebSocket.OPEN) ws.send(data);
+  });
+  ws.on(<span class="code-string">'close'</span>, () =&gt; sub.quit());
+});</pre>
+    </div>
+
+    <div class="related-articles">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="../arbitrage-bot-strategies-2025/" class="related-card">
+          <span class="rc-tag">Trading Bots</span>
+          <span class="rc-title">Arbitrage Bot Strategies That Actually Work in 2025</span>
+        </a>
+        <a href="../building-dex-2025/" class="related-card">
+          <span class="rc-tag">DeFi</span>
+          <span class="rc-title">Building a DEX in 2025: AMMs, Order Books &amp; Hybrid Models</span>
+        </a>
+        <a href="../layer-2-scaling-solutions/" class="related-card">
+          <span class="rc-tag">Blockchain</span>
+          <span class="rc-title">Layer 2 Scaling Solutions: A Developer's Comparison Guide</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <aside class="post-sidebar">
+    <div class="toc-box">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#matching-engine">Matching Engine Architecture</a></li>
+        <li><a href="#security">Security &amp; Custody</a></li>
+        <li><a href="#liquidity">Liquidity Strategy</a></li>
+        <li><a href="#compliance">KYC/AML &amp; Compliance</a></li>
+        <li><a href="#tech-stack">Tech Stack Recommendations</a></li>
+      </ol>
+      <div class="toc-read-time">&#9201; 14 min read</div>
+    </div>
+  </aside>
+</div>
 
 <div class="post-cta">
-  <h2>Ready to Build Your Project?</h2>
-  <p>Talk to our engineering team. Free consultation, no commitment.</p>
+  <h2>Ready to Build Your Exchange?</h2>
+  <p>Our engineering team has shipped production-grade exchange infrastructure for clients across 12 countries. Let's talk.</p>
   <a href="../../contact/">Start a Conversation &#8594;</a>
 </div>
 

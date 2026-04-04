@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arbitrage Bot Strategies That Actually Work in 2025 — PumaPulse Blog</title>
-<meta name="description" content="Arbitrage trading bots exploit price inefficiencies across exchanges and trading pairs. In 2025, with tighter spreads and faster markets, only well-engineered b">
+<meta name="description" content="Arbitrage trading bots exploit price inefficiencies across exchanges and trading pairs. In 2025, with tighter spreads and faster markets, only well-engineered bots with sub-10ms execution can consistently profit.">
 <link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css">
@@ -13,26 +13,82 @@
 <link rel="stylesheet" href="../../css/mobile.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:clip;line-height:1.6}
 .post-hero{min-height:52vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#060a14}
 .post-hero-bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;opacity:.3}
 .post-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#060a14 0%,rgba(6,10,20,.4) 60%,transparent 100%)}
 .post-hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 44px 60px;width:100%}
 .post-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;background:rgba(192,32,42,.85);color:#fff;border-radius:3px;margin-bottom:16px}
 .post-hero h1{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:#fff;margin-bottom:16px}
-.post-meta{display:flex;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase}
-.post-body{max-width:860px;margin:0 auto;padding:60px 44px 100px}
+.post-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase;align-items:center}
+.post-meta-author{display:flex;align-items:center;gap:8px}
+.post-meta-author img{width:28px;height:28px;border-radius:50%;border:2px solid rgba(192,32,42,.6);object-fit:cover}
+
+.post-layout{display:grid;grid-template-columns:1fr 280px;gap:56px;max-width:1200px;margin:0 auto;padding:60px 44px 100px;align-items:start}
+.post-body{min-width:0}
+.post-sidebar{position:sticky;top:88px;align-self:start;max-height:calc(100vh - 110px);overflow-y:auto}
+
+.toc-box{background:#fff;border:1px solid #e0e4ef;border-left:3px solid #c0202a;border-radius:0 12px 12px 0;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.toc-box h3{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#c0202a;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.toc-box h3::before{content:'';width:16px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.toc-box ol{list-style:none;counter-reset:toc-counter;display:flex;flex-direction:column;gap:2px}
+.toc-box ol li{counter-increment:toc-counter;display:flex;gap:0;align-items:stretch}
+.toc-box ol li a{font-size:13px;font-weight:500;color:#4a5470;text-decoration:none;line-height:1.5;transition:color .2s,background .2s,padding .2s;padding:8px 12px 8px 36px;border-radius:6px;width:100%;position:relative}
+.toc-box ol li a::before{content:counter(toc-counter);position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:800;color:#c0202a;min-width:16px}
+.toc-box ol li a:hover{color:#c0202a;background:rgba(192,32,42,.05)}
+.toc-read-time{margin-top:20px;padding-top:16px;border-top:1px solid #e0e4ef;font-size:11px;color:#8a94b0;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+
 .post-intro{font-size:18px;line-height:1.8;color:#1a1e2e;font-weight:400;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid #e0e4ef}
-.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:40px 0 14px;letter-spacing:-.02em}
+.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:48px 0 14px;letter-spacing:-.02em}
 .post-body p{font-size:15px;line-height:1.85;color:#4a5470;margin-bottom:20px}
 .post-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#c0202a;text-decoration:none;margin-bottom:32px;letter-spacing:.04em;text-transform:uppercase}
 .post-back:hover{color:#e0263a}
+
+.key-takeaways{background:linear-gradient(135deg,#fff8f8 0%,#fff 100%);border:1.5px solid rgba(192,32,42,.2);border-left:4px solid #c0202a;border-radius:12px;padding:28px 32px;margin-bottom:48px}
+.key-takeaways h3{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.key-takeaways ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.key-takeaways ul li{font-size:14px;font-weight:500;color:#1a1e2e;padding-left:20px;position:relative;line-height:1.6}
+.key-takeaways ul li::before{content:'→';position:absolute;left:0;color:#c0202a;font-weight:700}
+
+.callout-code{background:#0d1117;border-radius:12px;padding:28px 32px;margin:28px 0;overflow-x:auto}
+.callout-code h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#58a6ff;margin-bottom:16px}
+.callout-code pre{font-family:'Courier New',monospace;font-size:13px;line-height:1.7;color:#e6edf3;white-space:pre;overflow-x:auto}
+.callout-code .code-comment{color:#8b949e}
+.callout-code .code-keyword{color:#ff7b72}
+.callout-code .code-string{color:#a5d6ff}
+.callout-code .code-number{color:#79c0ff}
+
+.callout-stats{background:linear-gradient(135deg,#060a14 0%,#0f1628 100%);border-radius:12px;padding:28px 32px;margin:28px 0}
+.callout-stats h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.5);margin-bottom:20px}
+.callout-stats .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.callout-stats .stat-item{text-align:center}
+.callout-stats .stat-num{font-size:28px;font-weight:900;color:#c0202a;letter-spacing:-.03em;display:block}
+.callout-stats .stat-label{font-size:11px;font-weight:600;color:rgba(200,215,235,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block}
+
+.related-articles{margin-top:60px;padding-top:40px;border-top:1px solid #e0e4ef}
+.related-articles h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1a1e2e;margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-card{background:#fff;border:1px solid #e0e4ef;border-radius:10px;padding:20px;text-decoration:none;transition:border-color .2s,box-shadow .2s;display:block}
+.related-card:hover{border-color:#c0202a;box-shadow:0 4px 16px rgba(192,32,42,.1)}
+.related-card .rc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c0202a;margin-bottom:8px;display:block}
+.related-card .rc-title{font-size:13px;font-weight:700;color:#1a1e2e;line-height:1.4}
+
 .post-cta{background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);padding:80px 44px;text-align:center;margin-top:60px}
 .post-cta h2{font-family:'Inter',sans-serif;font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:14px;letter-spacing:-.02em}
 .post-cta p{font-size:15px;color:rgba(200,215,235,.65);max-width:440px;margin:0 auto 28px}
 .post-cta a{display:inline-flex;align-items:center;gap:8px;background:#c0202a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s}
 .post-cta a:hover{background:#e0263a}
-@media(max-width:768px){.post-hero-inner,.post-body{padding-left:20px;padding-right:20px}.post-hero h1{font-size:clamp(24px,6vw,36px)}}
+
+@media(max-width:900px){
+  .post-layout{grid-template-columns:1fr;padding:40px 20px 80px}
+  .post-sidebar{display:none}
+  .callout-stats .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .related-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .post-hero-inner{padding-left:20px;padding-right:20px}
+  .post-hero h1{font-size:clamp(24px,6vw,36px)}
+}
 </style>
 </head>
 <body>
@@ -44,34 +100,124 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
   <div class="post-hero-inner">
     <span class="post-tag">Trading Bots</span>
     <h1>Arbitrage Bot Strategies That Actually Work in 2025</h1>
-    <div class="post-meta"><span>Dec 10, 2024</span><span>9 min read</span></div>
+    <div class="post-meta">
+      <span>Dec 10, 2024</span>
+      <span>11 min read</span>
+      <span class="post-meta-author">
+        <img src="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" alt="PumaPulse Engineering">
+        PumaPulse Engineering Team
+      </span>
+    </div>
   </div>
 </section>
 
-<article class="post-body">
-  <a href="../" class="post-back">&#8592; Back to Blog</a>
-  <p class="post-intro">Arbitrage trading bots exploit price inefficiencies across exchanges and trading pairs. In 2025, with tighter spreads and faster markets, only well-engineered bots with sub-10ms execution can consistently profit.</p>
+<div class="post-layout">
+  <article class="post-body">
+    <a href="../" class="post-back">&#8592; Back to Blog</a>
+    <p class="post-intro">Arbitrage trading bots exploit price inefficiencies across exchanges and trading pairs. In 2025, with tighter spreads, faster markets, and increasingly sophisticated competition from institutional HFT firms, only well-engineered bots with sub-10ms execution and rigorous fee modeling can consistently profit. This guide breaks down the five strategies that still generate alpha — and the engineering decisions that separate winners from losers.</p>
 
-      <h2>Cross-Exchange Arbitrage</h2>
-      <p>The classic strategy: buy on Exchange A where price is lower, sell on Exchange B where price is higher. Profitability depends on execution speed, transfer fees, and spread. With co-location and direct API access, execution under 5ms is achievable. Key challenge: capital must be pre-positioned on both exchanges.</p>
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Cross-exchange arbitrage requires pre-positioned capital on both venues — transfer delays kill profitability, so capital allocation is as important as execution speed.</li>
+        <li>Triangular arbitrage opportunities on a single exchange last under 100ms; your entire detection-to-execution pipeline must fit within that window.</li>
+        <li>Statistical arbitrage is the most durable strategy in 2025 — it doesn't require the fastest execution, but demands rigorous backtesting on at least 2 years of tick data.</li>
+        <li>DeFi flash loan arbitrage is highly competitive due to MEV bots, but niche DEX pairs with low liquidity still offer exploitable inefficiencies for well-optimized contracts.</li>
+      </ul>
+    </div>
 
-      <h2>Triangular Arbitrage</h2>
-      <p>Exploit price discrepancies between three trading pairs on the same exchange. Example: BTC/USDT → ETH/BTC → ETH/USDT. No transfer delays, but requires fast order execution and careful fee calculation. Opportunities are fleeting — typically under 100ms.</p>
+    <h2 id="cross-exchange">Cross-Exchange Arbitrage</h2>
+    <p>The classic strategy: buy on Exchange A where the price is lower, simultaneously sell on Exchange B where the price is higher, and pocket the spread minus fees. In theory it's simple; in practice, profitability hinges on three variables — execution speed, fee structure, and capital pre-positioning. With co-location services (placing your servers in the same data center as the exchange's matching engine) and direct FIX API access, round-trip latency under 5ms is achievable. Without co-location, you're competing at a structural disadvantage against firms that have invested millions in proximity infrastructure.</p>
+    <p>The capital pre-positioning problem is the most underappreciated challenge. Because on-chain transfers take minutes (even on fast chains), you must maintain funded accounts on every exchange you trade. This ties up capital and creates inventory risk — if prices move against you while you're rebalancing, you lose. The solution is to model your expected rebalancing frequency and cost as part of your profitability calculation. A spread of 0.15% sounds attractive until you factor in 0.1% in fees per leg, 0.02% in slippage, and a 0.05% rebalancing cost amortized over your trade frequency.</p>
+    <p>In 2025, the most profitable cross-exchange arb opportunities exist on smaller altcoin pairs where institutional HFT firms don't bother to compete, and on newly listed tokens in the first 24–48 hours when price discovery is still happening across venues. Build a monitoring system that tracks the same asset across 10–15 exchanges simultaneously and alerts when the spread exceeds your minimum profitability threshold.</p>
 
-      <h2>Statistical Arbitrage</h2>
-      <p>Use mean-reversion models on correlated asset pairs. When the spread between two historically correlated assets diverges beyond a threshold, take opposing positions expecting reversion. Requires backtesting on at least 2 years of tick data and robust risk management.</p>
+    <div class="callout-stats">
+      <h4>Quick Stats — Arbitrage in 2025</h4>
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-num">&lt;5ms</span><span class="stat-label">Target execution with co-location</span></div>
+        <div class="stat-item"><span class="stat-num">0.15%</span><span class="stat-label">Minimum viable spread (after fees)</span></div>
+        <div class="stat-item"><span class="stat-num">100ms</span><span class="stat-label">Max window for triangular arb</span></div>
+      </div>
+    </div>
 
-      <h2>Flash Loan Arbitrage (DeFi)</h2>
-      <p>Borrow large amounts with no collateral within a single transaction, execute arbitrage across DEXs, repay the loan — all atomically. Requires Solidity expertise and gas optimization. Profitable opportunities exist but competition from MEV bots is intense.</p>
+    <h2 id="triangular">Triangular Arbitrage</h2>
+    <p>Triangular arbitrage exploits price discrepancies between three trading pairs on the same exchange. A classic example: BTC/USDT is priced at $43,000, ETH/BTC at 0.0680, and ETH/USDT at $2,850. The implied ETH/USDT price through the BTC leg is $43,000 × 0.0680 = $2,924. If the direct ETH/USDT market is trading at $2,850, you can buy ETH with USDT, sell ETH for BTC, then sell BTC for USDT and capture the $74 difference (minus fees). No transfer delays, no inventory risk across venues — just pure intra-exchange price discovery lag.</p>
+    <p>The engineering challenge is detection speed. Opportunities typically close within 50–100ms as other bots and market makers correct the discrepancy. Your detection loop must continuously compute the implied cross-rate for every triangular combination on the exchange and compare it to the direct market price. On an exchange with 200 trading pairs, there are thousands of potential triangles to monitor. Efficient graph traversal algorithms (Bellman-Ford for negative cycle detection) can identify profitable paths in microseconds.</p>
+    <p>Fee calculation is critical and often where naive implementations fail. Most exchanges charge 0.1% per trade, meaning a three-leg triangle costs 0.3% in fees. Your spread must exceed 0.3% to be profitable — and in practice you want at least 0.1% margin above fees to account for slippage and partial fills. Use limit orders where possible to avoid taker fees, but be aware that limit orders introduce execution risk if the market moves before your order fills.</p>
 
-      <h2>Risk Management</h2>
-      <p>Always implement position limits, maximum drawdown stops, and circuit breakers. Monitor slippage in real-time and pause the bot if market conditions change. Never run arbitrage bots without thorough backtesting and paper trading first.</p>
+    <div class="callout-code">
+      <h4>Code Example — Triangle Detection (Python)</h4>
+      <pre><span class="code-keyword">import</span> itertools
 
-</article>
+<span class="code-keyword">def</span> find_triangles(prices: dict, fee: float = <span class="code-number">0.001</span>) -&gt; list:
+    <span class="code-string">"""Find profitable triangular arb paths."""</span>
+    profitable = []
+    symbols = list(prices.keys())
+    <span class="code-keyword">for</span> a, b, c <span class="code-keyword">in</span> itertools.permutations(symbols, <span class="code-number">3</span>):
+        pair_ab = <span class="code-string">f"{a}/{b}"</span>
+        pair_bc = <span class="code-string">f"{b}/{c}"</span>
+        pair_ca = <span class="code-string">f"{c}/{a}"</span>
+        <span class="code-keyword">if</span> <span class="code-keyword">not</span> all(p <span class="code-keyword">in</span> prices <span class="code-keyword">for</span> p <span class="code-keyword">in</span> [pair_ab, pair_bc, pair_ca]):
+            <span class="code-keyword">continue</span>
+        rate = (prices[pair_ab] * prices[pair_bc] * prices[pair_ca])
+        net = rate * ((<span class="code-number">1</span> - fee) ** <span class="code-number">3</span>)
+        <span class="code-keyword">if</span> net &gt; <span class="code-number">1.001</span>:  <span class="code-comment"># 0.1% profit threshold</span>
+            profitable.append({<span class="code-string">'path'</span>: [a,b,c], <span class="code-string">'net'</span>: net})
+    <span class="code-keyword">return</span> sorted(profitable, key=<span class="code-keyword">lambda</span> x: -x[<span class="code-string">'net'</span>])</pre>
+    </div>
+
+    <h2 id="statistical">Statistical Arbitrage</h2>
+    <p>Statistical arbitrage (stat arb) uses quantitative models to identify when two historically correlated assets have diverged beyond their normal relationship, then takes opposing positions expecting mean reversion. Unlike pure arbitrage, stat arb involves model risk — the correlation may break down permanently. But it's also far more durable than pure arbitrage because it doesn't require the fastest execution in the market; it requires the best model.</p>
+    <p>The most common approach is pairs trading: identify two assets with a cointegrated price relationship (e.g., BTC and ETH, or two similar DeFi tokens), model the spread as a mean-reverting process, and trade when the spread deviates more than 2 standard deviations from its historical mean. The Engle-Granger cointegration test and the Johansen test are standard tools for identifying valid pairs. Backtest on at least 2 years of tick data, and be rigorous about avoiding look-ahead bias — a common mistake that makes backtests look far better than live performance.</p>
+    <p>Risk management is the most important component of a stat arb system. Set maximum position sizes per pair, maximum portfolio-level drawdown limits, and automatic circuit breakers that pause trading if the spread continues to diverge beyond 3–4 standard deviations (a sign the relationship may have broken down). Monitor correlation stability in real time — crypto markets can shift regimes quickly, and a pair that was cointegrated for 18 months can decouple in days during a market stress event.</p>
+
+    <h2 id="flash-loan">Flash Loan Arbitrage (DeFi)</h2>
+    <p>Flash loans are one of DeFi's most innovative primitives: borrow any amount of liquidity with zero collateral, execute arbitrary logic, and repay the loan — all within a single atomic transaction. If the repayment fails, the entire transaction reverts as if it never happened. This enables arbitrage with essentially unlimited capital, limited only by the liquidity available in lending protocols like Aave or dYdX. A typical flash loan arb borrows USDC, buys an underpriced asset on DEX A, sells it at a higher price on DEX B, repays the loan plus a 0.09% fee, and keeps the profit.</p>
+    <p>The technical requirements are significant. You need Solidity expertise to write the arbitrage contract, deep knowledge of DEX AMM pricing mechanics (Uniswap V3 concentrated liquidity, Curve's stableswap invariant, Balancer's weighted pools), and gas optimization skills — a poorly optimized contract can consume 500k+ gas, eating into profits. The contract must handle all edge cases: partial fills, price impact on large trades, and reentrancy attacks.</p>
+    <p>Competition from MEV (Maximal Extractable Value) bots is intense on Ethereum mainnet. Flashbots and private mempools mean that profitable opportunities are often front-run before your transaction confirms. The most viable approach in 2025 is to focus on Layer 2 networks (Arbitrum, Optimism, Base) and newer chains (Solana, Sui) where MEV infrastructure is less mature, and on niche DEX pairs with low liquidity where large bots don't bother to compete.</p>
+
+    <h2 id="risk-management">Risk Management Framework</h2>
+    <p>No arbitrage strategy is risk-free, and treating it as such is the fastest path to blowing up your account. Implement a layered risk management framework: position-level limits (maximum size per trade), strategy-level limits (maximum daily loss per strategy), and portfolio-level circuit breakers (halt all trading if total drawdown exceeds X%). Every limit should be configurable without redeployment — market conditions change, and you need to adjust parameters quickly.</p>
+    <p>Monitor slippage in real time and compare it to your pre-trade estimates. If actual slippage consistently exceeds your model, your position sizing is too large for the available liquidity. Implement a slippage feedback loop that automatically reduces position sizes when slippage exceeds thresholds. Similarly, track your fill rates on limit orders — if you're getting filled less than 80% of the time, your pricing model needs adjustment.</p>
+    <p>Never run a live arbitrage bot without at least 4 weeks of paper trading (simulated execution on live market data) and a thorough review of the paper trading results. Look for edge cases: what happens during exchange maintenance windows? What happens when an API rate limit is hit mid-trade? What happens if one leg fills and the other doesn't? Every failure mode needs a defined handling strategy before you risk real capital.</p>
+
+    <div class="related-articles">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="../how-to-build-crypto-exchange-2025/" class="related-card">
+          <span class="rc-tag">Crypto Exchange</span>
+          <span class="rc-title">How to Build a Crypto Exchange in 2025: The Complete Technical Guide</span>
+        </a>
+        <a href="../grid-trading-bots-sideways-markets/" class="related-card">
+          <span class="rc-tag">Trading Bots</span>
+          <span class="rc-title">Grid Trading Bots for Sideways Markets: Setup &amp; Optimization</span>
+        </a>
+        <a href="../building-dex-2025/" class="related-card">
+          <span class="rc-tag">DeFi</span>
+          <span class="rc-title">Building a DEX in 2025: AMMs, Order Books &amp; Hybrid Models</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <aside class="post-sidebar">
+    <div class="toc-box">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#cross-exchange">Cross-Exchange Arbitrage</a></li>
+        <li><a href="#triangular">Triangular Arbitrage</a></li>
+        <li><a href="#statistical">Statistical Arbitrage</a></li>
+        <li><a href="#flash-loan">Flash Loan Arbitrage</a></li>
+        <li><a href="#risk-management">Risk Management</a></li>
+      </ol>
+      <div class="toc-read-time">&#9201; 11 min read</div>
+    </div>
+  </aside>
+</div>
 
 <div class="post-cta">
-  <h2>Ready to Build Your Project?</h2>
-  <p>Talk to our engineering team. Free consultation, no commitment.</p>
+  <h2>Ready to Build Your Trading Bot?</h2>
+  <p>Our quant engineering team builds production-grade arbitrage and algorithmic trading systems. Let's talk.</p>
   <a href="../../contact/">Start a Conversation &#8594;</a>
 </div>
 

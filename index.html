@@ -337,51 +337,48 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 .svc2-sub{font-size:16px;line-height:1.8;color:var(--mid);font-weight:300;max-width:480px}
 
 /* Grid */
-.svc2-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1px}
+.svc2-grid{display:flex;gap:0;border:1px solid #e0e4ef;margin-bottom:0;height:300px;overflow:hidden}
 
 /* Card */
 .svc2-card{
-  background:#fff;padding:0 0 32px;
-  display:flex;flex-direction:column;gap:0;
   position:relative;overflow:hidden;
-  transition:background .2s,box-shadow .2s;
-  cursor:default;
+  flex:1;min-width:0;height:300px;
+  transition:flex .45s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;
+  border-right:1px solid #e0e4ef;
 }
-.svc2-card:hover{background:#fafafa;z-index:1;box-shadow:0 0 0 2px var(--red) inset}
-.svc2-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--red);transition:height .3s;z-index:2}
-.svc2-card:hover::before{height:100%}
-
-/* Number */
-.svc2-num{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(192,32,42,0.3);padding:20px 28px 0;margin-bottom:0}
-
-/* Image */
-.svc2-img-wrap{overflow:hidden;position:relative;height:200px;margin-bottom:0}
-.svc2-img{width:100%;height:200px;object-fit:cover;display:block;transition:transform .5s ease}
-.svc2-card:hover .svc2-img{transform:scale(1.06)}
-.svc2-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(10,12,18,0.4) 100%)}
-
-/* Body */
-.svc2-body{padding:20px 28px 0;flex:1;display:flex;flex-direction:column}
-
-/* Body */
-.svc2-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
-.svc2-name{font-family:'Inter',sans-serif;font-size:17px;font-weight:800;color:var(--ink);line-height:1.2;margin-bottom:12px;letter-spacing:-.02em}
-.svc2-desc{font-size:13px;line-height:1.75;color:#4a5470;font-weight:400;flex:1}
-.svc2-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;padding-bottom:36px}
-.svc2-tags span{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--border);color:var(--dim);background:var(--bg-light);border-radius:4px;transition:border-color .2s,color .2s}
-.svc2-card:hover .svc2-tags span{border-color:rgba(192,32,42,0.2);color:var(--red)}
-
-/* Arrow */
-.svc2-arrow{position:absolute;bottom:20px;right:24px;font-size:16px;color:rgba(192,32,42,0.2);transition:color .2s,transform .2s;font-weight:700}
-.svc2-card:hover .svc2-arrow{color:var(--red);transform:translateX(4px)}
+.svc2-card:last-child{border-right:none}
+.svc2-card:hover{flex:2.8}
+.svc2-img-wrap{position:absolute;inset:0;overflow:hidden}
+.svc2-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;filter:brightness(0.75)}
+.svc2-card:hover .svc2-img{transform:scale(1.06);filter:brightness(0.5)}
+.svc2-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.96) 0%,rgba(0,0,0,0.7) 45%,rgba(0,0,0,0.15) 100%)}
+.svc2-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#c0202a;transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:3}
+.svc2-card:hover::before{transform:scaleX(1)}
+.svc2-num{position:absolute;top:14px;left:16px;z-index:2;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,0.45);padding:0;margin:0}
+.svc2-body{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:14px 16px 18px}
+.svc2-label{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e0263a;margin-bottom:4px;display:block;opacity:0;transform:translateY(4px);transition:opacity .3s ease .05s,transform .3s ease .05s}
+.svc2-card:hover .svc2-label{opacity:1;transform:translateY(0)}
+.svc2-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:0;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:font-size .3s ease,white-space .1s}
+.svc2-card:hover .svc2-name{white-space:normal;overflow:visible;text-overflow:unset;font-size:15px}
+.svc2-desc{font-size:11.5px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height .4s ease .08s,opacity .35s ease .12s,margin-top .3s ease .05s}
+.svc2-card:hover .svc2-desc{max-height:90px;opacity:1;margin-top:8px}
+.svc2-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:0;padding-bottom:0;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease .12s,opacity .3s ease .18s,margin-top .3s ease .08s}
+.svc2-card:hover .svc2-tags{max-height:36px;opacity:1;margin-top:8px}
+.svc2-tags span{font-size:9px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.08);border-radius:2px}
+.svc2-arrow{display:none}
+@media(max-width:1024px){.svc2-grid{flex-wrap:wrap;height:auto}.svc2-card{flex:0 0 33.33%;height:220px;border-bottom:1px solid #e0e4ef}.svc2-card:hover{flex:0 0 33.33%}.svc2-name{white-space:normal}}
+@media(max-width:640px){.svc2-card{flex:0 0 50%;height:180px}}
 
 /* Trust badges */
-.svc2-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:1px}
-.svc2-badge{background:#fff;padding:22px 24px;display:flex;align-items:center;gap:14px;transition:background .2s}
-.svc2-badge:hover{background:var(--bg-light)}
-.svc2-badge-icon{font-size:24px;flex-shrink:0}
-.svc2-badge strong{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
-.svc2-badge span{font-size:11px;color:var(--dim);line-height:1.4}
+.svc2-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #e0e4ef;border-top:none;margin-top:0}
+.svc2-badge{background:#fff;padding:20px 24px;display:flex;align-items:center;gap:16px;border-right:1px solid #e0e4ef;transition:background .2s}
+.svc2-badge:last-child{border-right:none}
+.svc2-badge:hover{background:#f9f9fb}
+.svc2-badge-icon{width:36px;height:36px;border-radius:8px;background:rgba(192,32,42,0.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.svc2-badge-icon svg{width:16px;height:16px;stroke:#c0202a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc2-badge strong{display:block;font-size:12px;font-weight:700;color:#1a1e2e;margin-bottom:2px;letter-spacing:-.01em}
+.svc2-badge span{font-size:11px;color:#8a93b0;line-height:1.4}
 
 /* Responsive */
 @media(max-width:1024px){.svc2-grid{grid-template-columns:repeat(2,1fr)}.svc2-badges{grid-template-columns:repeat(2,1fr)}}
@@ -734,8 +731,9 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 </section>
 
 <!-- ===================== SERVICES (light) ===================== -->
-<section class="section-light" id="services">
-  <div class="container">
+<section class="section-light" id="services" style="position:relative;overflow:hidden">
+
+  <div class="container" style="position:relative;z-index:1">
 
     <!-- Header -->
     <div class="svc2-header rv">
@@ -752,7 +750,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
       <div class="svc2-card">
         <div class="svc2-num">01</div>
-        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=700&q=80" alt="Crypto Exchange"></div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Crypto Exchange"></div>
         <div class="svc2-body">
           <div class="svc2-label">Exchange</div>
           <div class="svc2-name">Crypto Exchange Development</div>
@@ -764,7 +762,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
       <div class="svc2-card">
         <div class="svc2-num">02</div>
-        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Algo Trading"></div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Algo Trading"></div>
         <div class="svc2-body">
           <div class="svc2-label">Automation</div>
           <div class="svc2-name">Algo Trading &amp; Bots</div>
@@ -776,7 +774,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
       <div class="svc2-card">
         <div class="svc2-num">03</div>
-        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=700&q=80" alt="Blockchain"></div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.pexels.com/photos/8358141/pexels-photo-8358141.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Blockchain"></div>
         <div class="svc2-body">
           <div class="svc2-label">Blockchain</div>
           <div class="svc2-name">Blockchain Infrastructure</div>
@@ -788,7 +786,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
       <div class="svc2-card">
         <div class="svc2-num">04</div>
-        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="Neobank"></div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Neobank"></div>
         <div class="svc2-body">
           <div class="svc2-label">Fintech</div>
           <div class="svc2-name">Neobank &amp; Fintech Apps</div>
@@ -800,7 +798,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
       <div class="svc2-card">
         <div class="svc2-num">05</div>
-        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&q=80" alt="Forex CRM"></div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Forex CRM"></div>
         <div class="svc2-body">
           <div class="svc2-label">Forex</div>
           <div class="svc2-name">Forex CRM &amp; Back Office</div>
@@ -812,7 +810,7 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
       <div class="svc2-card">
         <div class="svc2-num">06</div>
-        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=80" alt="Security"></div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Security"></div>
         <div class="svc2-body">
           <div class="svc2-label">Security</div>
           <div class="svc2-name">Security &amp; Compliance</div>
@@ -826,11 +824,12 @@ h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
 
     <!-- Trust badges -->
     <div class="svc2-badges rv d2">
-      <div class="svc2-badge"><span class="svc2-badge-icon">🛡️</span><div><strong>Smart Contract Audited</strong><span>Every deployment independently verified</span></div></div>
-      <div class="svc2-badge"><span class="svc2-badge-icon">⚖️</span><div><strong>30+ Regulatory Frameworks</strong><span>GDPR, MiCA, FinCEN, FATF compliant</span></div></div>
-      <div class="svc2-badge"><span class="svc2-badge-icon">🔒</span><div><strong>ISO 27001 Aligned</strong><span>Enterprise security standards</span></div></div>
-      <div class="svc2-badge"><span class="svc2-badge-icon">📋</span><div><strong>NDA Before Discovery</strong><span>Full confidentiality guaranteed</span></div></div>
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><strong>Smart Contract Audited</strong><span>Every deployment independently verified</span></div></div>
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><strong>30+ Regulatory Frameworks</strong><span>GDPR, MiCA, FinCEN, FATF compliant</span></div></div>
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div><strong>ISO 27001 Aligned</strong><span>Enterprise security standards</span></div></div>
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><div><strong>NDA Before Discovery</strong><span>Full confidentiality guaranteed</span></div></div>
     </div>
+
 
   </div>
 </section>

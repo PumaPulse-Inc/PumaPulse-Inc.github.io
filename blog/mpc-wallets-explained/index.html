@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MPC Wallets Explained: Why Enterprises Are Ditching Hardware Wallets — PumaPulse Blog</title>
-<meta name="description" content="Multi-Party Computation (MPC) wallets are replacing hardware wallets and multi-sig setups as the institutional standard for crypto custody. Here's why.">
+<meta name="description" content="Multi-Party Computation wallets are replacing hardware wallets and multi-sig setups as the institutional standard for crypto custody. Here's the complete technical breakdown.">
 <link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css">
@@ -13,26 +13,65 @@
 <link rel="stylesheet" href="../../css/mobile.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:clip;line-height:1.6}
 .post-hero{min-height:52vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#060a14}
-.post-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80') center/cover no-repeat;opacity:.3}
+.post-hero-bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;opacity:.3}
 .post-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#060a14 0%,rgba(6,10,20,.4) 60%,transparent 100%)}
 .post-hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 44px 60px;width:100%}
 .post-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;background:rgba(192,32,42,.85);color:#fff;border-radius:3px;margin-bottom:16px}
 .post-hero h1{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:#fff;margin-bottom:16px}
-.post-meta{display:flex;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase}
-.post-body{max-width:860px;margin:0 auto;padding:60px 44px 100px}
+.post-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase;align-items:center}
+.post-meta-author{display:flex;align-items:center;gap:8px}
+.post-meta-author img{width:28px;height:28px;border-radius:50%;border:2px solid rgba(192,32,42,.6);object-fit:cover}
+.post-layout{display:grid;grid-template-columns:1fr 280px;gap:56px;max-width:1200px;margin:0 auto;padding:60px 44px 100px;align-items:start}
+.post-body{min-width:0}
+.post-sidebar{position:sticky;top:88px;align-self:start;max-height:calc(100vh - 110px);overflow-y:auto}
+.toc-box{background:#fff;border:1px solid #e0e4ef;border-left:3px solid #c0202a;border-radius:0 12px 12px 0;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.toc-box h3{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#c0202a;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.toc-box h3::before{content:'';width:16px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.toc-box ol{list-style:none;counter-reset:toc-counter;display:flex;flex-direction:column;gap:2px}
+.toc-box ol li{counter-increment:toc-counter;display:flex;align-items:stretch}
+.toc-box ol li a{font-size:13px;font-weight:500;color:#4a5470;text-decoration:none;line-height:1.5;transition:color .2s,background .2s;padding:8px 12px 8px 36px;border-radius:6px;width:100%;position:relative}
+.toc-box ol li a::before{content:counter(toc-counter);position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:800;color:#c0202a;min-width:16px}
+.toc-box ol li a:hover{color:#c0202a;background:rgba(192,32,42,.05)}
+.toc-read-time{margin-top:20px;padding-top:16px;border-top:1px solid #e0e4ef;font-size:11px;color:#8a94b0;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .post-intro{font-size:18px;line-height:1.8;color:#1a1e2e;font-weight:400;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid #e0e4ef}
-.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:40px 0 14px;letter-spacing:-.02em}
+.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:48px 0 14px;letter-spacing:-.02em}
 .post-body p{font-size:15px;line-height:1.85;color:#4a5470;margin-bottom:20px}
 .post-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#c0202a;text-decoration:none;margin-bottom:32px;letter-spacing:.04em;text-transform:uppercase}
 .post-back:hover{color:#e0263a}
+.key-takeaways{background:linear-gradient(135deg,#fff8f8 0%,#fff 100%);border:1.5px solid rgba(192,32,42,.2);border-left:4px solid #c0202a;border-radius:12px;padding:28px 32px;margin-bottom:48px}
+.key-takeaways h3{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.key-takeaways ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.key-takeaways ul li{font-size:14px;font-weight:500;color:#1a1e2e;padding-left:20px;position:relative;line-height:1.6}
+.key-takeaways ul li::before{content:'→';position:absolute;left:0;color:#c0202a;font-weight:700}
+.callout-code{background:#0d1117;border-radius:12px;padding:28px 32px;margin:28px 0;overflow-x:auto}
+.callout-code h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#58a6ff;margin-bottom:16px}
+.callout-code pre{font-family:'Courier New',monospace;font-size:13px;line-height:1.7;color:#e6edf3;white-space:pre;overflow-x:auto}
+.callout-code .code-comment{color:#8b949e}
+.callout-code .code-keyword{color:#ff7b72}
+.callout-code .code-string{color:#a5d6ff}
+.callout-code .code-number{color:#79c0ff}
+.callout-stats{background:linear-gradient(135deg,#060a14 0%,#0f1628 100%);border-radius:12px;padding:28px 32px;margin:28px 0}
+.callout-stats h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.5);margin-bottom:20px}
+.callout-stats .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.callout-stats .stat-item{text-align:center}
+.callout-stats .stat-num{font-size:28px;font-weight:900;color:#c0202a;letter-spacing:-.03em;display:block}
+.callout-stats .stat-label{font-size:11px;font-weight:600;color:rgba(200,215,235,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block}
+.related-articles{margin-top:60px;padding-top:40px;border-top:1px solid #e0e4ef}
+.related-articles h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1a1e2e;margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-card{background:#fff;border:1px solid #e0e4ef;border-radius:10px;padding:20px;text-decoration:none;transition:border-color .2s,box-shadow .2s;display:block}
+.related-card:hover{border-color:#c0202a;box-shadow:0 4px 16px rgba(192,32,42,.1)}
+.related-card .rc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c0202a;margin-bottom:8px;display:block}
+.related-card .rc-title{font-size:13px;font-weight:700;color:#1a1e2e;line-height:1.4}
 .post-cta{background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);padding:80px 44px;text-align:center;margin-top:60px}
 .post-cta h2{font-family:'Inter',sans-serif;font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:14px;letter-spacing:-.02em}
 .post-cta p{font-size:15px;color:rgba(200,215,235,.65);max-width:440px;margin:0 auto 28px}
 .post-cta a{display:inline-flex;align-items:center;gap:8px;background:#c0202a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s}
 .post-cta a:hover{background:#e0263a}
-@media(max-width:768px){.post-hero-inner,.post-body{padding-left:20px;padding-right:20px}.post-hero h1{font-size:clamp(24px,6vw,36px)}}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;padding:40px 20px 80px}.post-sidebar{display:none}.callout-stats .stats-grid{grid-template-columns:repeat(2,1fr)}.related-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.post-hero-inner{padding-left:20px;padding-right:20px}.post-hero h1{font-size:clamp(24px,6vw,36px)}}
 </style>
 </head>
 <body>
@@ -42,36 +81,128 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
   <div class="post-hero-bg"></div>
   <div class="post-hero-overlay"></div>
   <div class="post-hero-inner">
-    <span class="post-tag">Blockchain</span>
+    <span class="post-tag">Security</span>
     <h1>MPC Wallets Explained: Why Enterprises Are Ditching Hardware Wallets</h1>
-    <div class="post-meta"><span>Nov 20, 2024</span><span>8 min read</span></div>
+    <div class="post-meta">
+      <span>Nov 20, 2024</span>
+      <span>8 min read</span>
+      <span class="post-meta-author">
+        <img src="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" alt="PumaPulse Engineering">
+        PumaPulse Engineering Team
+      </span>
+    </div>
   </div>
 </section>
 
-<article class="post-body">
-  <a href="../" class="post-back">&#8592; Back to Blog</a>
-  <p class="post-intro">Multi-Party Computation (MPC) wallets are replacing hardware wallets and multi-sig setups as the institutional standard for crypto custody. Here's why.</p>
+<div class="post-layout">
+  <article class="post-body">
+    <a href="../" class="post-back">&#8592; Back to Blog</a>
+    <p class="post-intro">Multi-Party Computation (MPC) wallets are replacing hardware wallets and multi-sig setups as the institutional standard for crypto custody. The reason is fundamental: hardware wallets and traditional multi-sig both have single points of failure that MPC eliminates entirely. For exchanges, hedge funds, and custodians managing millions in digital assets, MPC isn't just a better option — it's becoming the baseline expectation.</p>
 
-      <h2>What is MPC?</h2>
-      <p>MPC splits a private key into multiple shares distributed across different parties or devices. No single party ever holds the complete key. Transactions require a threshold of parties to cooperate — typically 2-of-3 or 3-of-5. The key is never reconstructed in a single location.</p>
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>MPC splits a private key into shares distributed across multiple parties — the complete key never exists in a single location, eliminating the single point of failure that hardware wallets and traditional custody create.</li>
+        <li>Unlike multi-sig, MPC produces a single standard signature on-chain — no special smart contract support needed, works on any blockchain, and doesn't reveal the signing structure publicly.</li>
+        <li>Threshold signing (e.g., 2-of-3) means the system remains operational even if one party is unavailable or compromised — critical for 24/7 exchange operations.</li>
+        <li>For exchanges and custodians, MPC enables automated signing policies (withdrawal limits, time delays, whitelist checks) that are enforced cryptographically, not just at the application layer.</li>
+      </ul>
+    </div>
 
-      <h2>MPC vs Multi-Sig</h2>
-      <p>Multi-sig requires multiple on-chain signatures, revealing the signing structure publicly and incurring higher gas costs. MPC produces a single signature indistinguishable from a regular transaction — cheaper, more private, and chain-agnostic. MPC works on any blockchain without smart contract support.</p>
+    <h2 id="what">What is MPC?</h2>
+    <p>Multi-Party Computation is a cryptographic technique that allows multiple parties to jointly compute a function over their private inputs without any party revealing their input to the others. In the context of crypto wallets, the "function" is signing a transaction, and the "private inputs" are key shares. Each party holds a fragment of the private key — a key share — and the signing protocol allows them to collaboratively produce a valid signature without any party ever possessing the complete key.</p>
+    <p>The most common MPC scheme for crypto wallets is threshold ECDSA (Elliptic Curve Digital Signature Algorithm), which is the signature scheme used by Bitcoin, Ethereum, and most other blockchains. In a 2-of-3 threshold scheme, three key shares are generated and distributed to three parties (or devices). Any two of the three can cooperate to sign a transaction. The third share can be lost, stolen, or its holder can be unavailable — and the wallet remains fully operational. The key is never reconstructed in a single location at any point in the process.</p>
+    <p>The cryptographic security of MPC is based on the same mathematical hardness assumptions as standard ECDSA — breaking MPC requires breaking the underlying elliptic curve cryptography, which is computationally infeasible with current technology. The additional security comes from the distribution: an attacker must compromise multiple independent parties simultaneously to steal funds, rather than just one device or one person.</p>
 
-      <h2>MPC vs Hardware Wallets</h2>
-      <p>Hardware wallets store the complete private key on a physical device — a single point of failure. MPC eliminates this by distributing key shares. No physical device to lose, steal, or damage. Signing can happen programmatically without human intervention, enabling automated treasury management.</p>
+    <div class="callout-stats">
+      <h4>MPC vs Traditional Custody</h4>
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-num">0</span><span class="stat-label">Single points of failure</span></div>
+        <div class="stat-item"><span class="stat-num">1</span><span class="stat-label">On-chain signature (same as standard)</span></div>
+        <div class="stat-item"><span class="stat-num">Any</span><span class="stat-label">Blockchain supported (no smart contracts needed)</span></div>
+      </div>
+    </div>
 
-      <h2>Enterprise Use Cases</h2>
-      <p>Exchanges use MPC for hot wallet management with automated signing policies. Hedge funds use it for multi-party approval workflows. Custodians use it to meet regulatory requirements without single points of failure. DeFi protocols use it for treasury management with governance controls.</p>
+    <h2 id="vs-multisig">MPC vs Multi-Sig</h2>
+    <p>Multi-signature (multi-sig) wallets require multiple on-chain signatures to authorize a transaction. Bitcoin's native multi-sig and Ethereum's Gnosis Safe are the most common implementations. Multi-sig is well-understood, battle-tested, and transparent — the signing structure (e.g., 2-of-3) is visible on-chain, which can be useful for governance and auditability. However, multi-sig has significant limitations that MPC addresses.</p>
+    <p>The most important difference is on-chain footprint. A multi-sig transaction on Ethereum requires a smart contract (like Gnosis Safe) and includes multiple signatures in the transaction data — making it significantly more expensive than a standard transaction. On Bitcoin, native multi-sig transactions are larger and cost more in fees. MPC produces a single standard ECDSA signature that is indistinguishable from a regular single-key transaction on-chain. This means lower fees, better privacy (the signing structure isn't revealed), and compatibility with any blockchain without requiring smart contract support.</p>
+    <p>Chain agnosticism is a critical advantage for institutional operators managing assets across dozens of blockchains. A multi-sig setup requires different implementations for each chain — Bitcoin's native multi-sig, Ethereum's Gnosis Safe, Solana's multi-sig programs, and so on. MPC works identically across all ECDSA-based chains (Bitcoin, Ethereum, BNB Chain, Polygon, Avalanche, and hundreds of others) with the same key shares and signing protocol. This dramatically simplifies operations for custodians and exchanges managing multi-chain portfolios.</p>
 
-      <h2>Leading MPC Solutions</h2>
-      <p>Fireblocks, Copper, and Qredo are the leading institutional MPC providers. For custom implementations, libraries like tss-lib (Go) and multi-party-ecdsa (Rust) provide the cryptographic primitives. PumaPulse builds custom MPC wallet infrastructure for exchanges and custodians.</p>
+    <h2 id="vs-hardware">MPC vs Hardware Wallets</h2>
+    <p>Hardware wallets (Ledger, Trezor, Coldcard) store the complete private key on a dedicated secure element chip. They're excellent for individual users because they isolate the key from internet-connected devices, making remote attacks nearly impossible. But for institutional use, hardware wallets have fundamental limitations. The complete key exists in a single physical device — if that device is lost, stolen, or damaged, the funds are gone (unless you have a backup, which creates its own security risks). Physical access to the device, combined with sophisticated side-channel attacks, has been demonstrated to extract keys from some hardware wallet models.</p>
+    <p>More importantly, hardware wallets require human interaction for every signing operation. An exchange processing thousands of withdrawals per day cannot have a human physically approve each one on a hardware wallet. MPC enables automated signing with policy enforcement: the signing protocol can be programmed to automatically approve transactions that meet certain criteria (amount below threshold, destination on whitelist, within daily limit) and require human approval for others. This automation is essential for exchange operations while maintaining security guarantees that are stronger than hardware wallets.</p>
+    <p>Key rotation is another significant advantage of MPC. With a hardware wallet, rotating the key means generating a new key, moving all funds to the new address, and securely destroying the old key — a complex and risky operation. With MPC, key shares can be refreshed (a process called proactive secret sharing) without changing the public key or moving funds. Each party generates a new share that is mathematically related to the old one, and the old shares are destroyed. This means the key material is regularly refreshed, limiting the window of exposure if a share is compromised.</p>
 
-</article>
+    <h2 id="enterprise">Enterprise Use Cases</h2>
+    <p>Cryptocurrency exchanges are the largest adopters of MPC technology. A production exchange needs to process withdrawals automatically (for user experience) while maintaining security guarantees that satisfy regulators and auditors. MPC enables a tiered signing policy: small withdrawals (under $10,000) are signed automatically by the hot wallet MPC system, medium withdrawals require approval from a risk management system, and large withdrawals require human approval from multiple authorized signers. All of this is enforced at the cryptographic level, not just the application layer — meaning a compromised application server cannot bypass the signing policy.</p>
+    <p>Hedge funds and asset managers use MPC for treasury management with governance controls. A fund might require 2-of-3 approval from the CIO, CFO, and a designated compliance officer for any transaction above $1M. The MPC system enforces this policy cryptographically — no single person can move large amounts unilaterally, even if they have full access to the fund's systems. This provides both security and regulatory compliance (many jurisdictions require dual-control for large financial transactions).</p>
+    <p>DeFi protocol treasuries are increasingly using MPC for on-chain governance execution. When a governance vote passes, the treasury multisig (often implemented as MPC rather than Gnosis Safe for the reasons above) executes the approved transaction. The key shares are distributed among core team members and trusted community members, ensuring no single party can act unilaterally while maintaining the ability to execute approved decisions quickly.</p>
+
+    <div class="callout-code">
+      <h4>Code Example — MPC Signing Policy (Pseudocode)</h4>
+      <pre><span class="code-keyword">class</span> MPCSigningPolicy:
+    <span class="code-keyword">def</span> evaluate(self, tx_request):
+        amount = tx_request.amount_usd
+        destination = tx_request.destination
+
+        <span class="code-comment"># Whitelist check — always auto-approve</span>
+        <span class="code-keyword">if</span> destination <span class="code-keyword">in</span> self.whitelist:
+            <span class="code-keyword">return</span> SigningDecision.AUTO_APPROVE
+
+        <span class="code-comment"># Small amounts — auto-approve with rate limiting</span>
+        <span class="code-keyword">if</span> amount < <span class="code-number">10_000</span> <span class="code-keyword">and</span> self.daily_volume + amount < <span class="code-number">100_000</span>:
+            <span class="code-keyword">return</span> SigningDecision.AUTO_APPROVE
+
+        <span class="code-comment"># Medium amounts — require risk system approval</span>
+        <span class="code-keyword">if</span> amount < <span class="code-number">100_000</span>:
+            <span class="code-keyword">return</span> SigningDecision.REQUIRE_RISK_APPROVAL
+
+        <span class="code-comment"># Large amounts — require 2-of-3 human signers</span>
+        <span class="code-keyword">return</span> SigningDecision.REQUIRE_HUMAN_QUORUM(<span class="code-number">2</span>, <span class="code-number">3</span>)</pre>
+    </div>
+
+    <h2 id="solutions">Leading MPC Solutions</h2>
+    <p>Fireblocks is the dominant institutional MPC platform, used by hundreds of exchanges, custodians, and financial institutions. It provides a complete custody infrastructure including MPC key management, policy engine, compliance integrations, and a DeFi gateway for interacting with on-chain protocols. Fireblocks charges based on assets under custody and transaction volume — pricing starts at $10,000/month for smaller institutions. Copper and Qredo are strong alternatives with different pricing models and feature sets.</p>
+    <p>For organizations that need custom MPC implementations — either for cost reasons, specific compliance requirements, or unique operational needs — open-source libraries provide the cryptographic primitives. The tss-lib library (Go, by Binance) implements GG18 and GG20 threshold ECDSA and is used in production by several major exchanges. The multi-party-ecdsa library (Rust, by ZenGo) implements a more recent and efficient protocol. Building on these libraries requires significant cryptographic engineering expertise — the protocols are complex and subtle implementation errors can be catastrophic.</p>
+    <p>PumaPulse builds custom MPC wallet infrastructure for exchanges and custodians that need more control than off-the-shelf solutions provide. Our implementations include custom signing policies, integration with existing risk management systems, and support for non-standard chains and token standards. If you're evaluating whether to build or buy your MPC infrastructure, the decision typically comes down to volume (above $500M AUM, custom solutions often pay for themselves within 12 months) and compliance requirements (some regulated entities need full control over their key management infrastructure).</p>
+
+    <div class="related-articles">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="../how-to-build-crypto-exchange-2025/" class="related-card">
+          <span class="rc-tag">Crypto Exchange</span>
+          <span class="rc-title">How to Build a Crypto Exchange in 2025: The Complete Technical Guide</span>
+        </a>
+        <a href="../building-dex-2025/" class="related-card">
+          <span class="rc-tag">DeFi</span>
+          <span class="rc-title">Building a DEX in 2025: AMMs, Order Books &amp; Hybrid Models</span>
+        </a>
+        <a href="../layer-2-scaling-solutions/" class="related-card">
+          <span class="rc-tag">Blockchain</span>
+          <span class="rc-title">Layer 2 Scaling Solutions: A Developer's Comparison Guide</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <aside class="post-sidebar">
+    <div class="toc-box">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#what">What is MPC?</a></li>
+        <li><a href="#vs-multisig">MPC vs Multi-Sig</a></li>
+        <li><a href="#vs-hardware">MPC vs Hardware Wallets</a></li>
+        <li><a href="#enterprise">Enterprise Use Cases</a></li>
+        <li><a href="#solutions">Leading MPC Solutions</a></li>
+      </ol>
+      <div class="toc-read-time">&#9201; 8 min read</div>
+    </div>
+  </aside>
+</div>
 
 <div class="post-cta">
-  <h2>Ready to Build Your Project?</h2>
-  <p>Talk to our engineering team. Free consultation, no commitment.</p>
+  <h2>Need Custom MPC Wallet Infrastructure?</h2>
+  <p>Our security engineering team builds production-grade MPC custody systems for exchanges, custodians, and institutional asset managers.</p>
   <a href="../../contact/">Start a Conversation &#8594;</a>
 </div>
 

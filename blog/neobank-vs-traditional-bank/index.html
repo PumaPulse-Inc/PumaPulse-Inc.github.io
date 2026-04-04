@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neobank vs Traditional Bank: Why Startups Are Winning — PumaPulse Blog</title>
-<meta name="description" content="Neobanks have captured over 300 million customers globally by offering what traditional banks cannot: instant onboarding, zero fees, and a mobile-first experien">
+<meta name="description" content="Neobanks have captured over 300 million customers globally by offering what traditional banks cannot: instant onboarding, zero fees, and a mobile-first experience. Here's why startups are winning the banking war.">
 <link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css">
@@ -13,26 +13,91 @@
 <link rel="stylesheet" href="../../css/mobile.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:clip;line-height:1.6}
 .post-hero{min-height:52vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#060a14}
 .post-hero-bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;opacity:.3}
 .post-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#060a14 0%,rgba(6,10,20,.4) 60%,transparent 100%)}
 .post-hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 44px 60px;width:100%}
 .post-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;background:rgba(192,32,42,.85);color:#fff;border-radius:3px;margin-bottom:16px}
 .post-hero h1{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:#fff;margin-bottom:16px}
-.post-meta{display:flex;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase}
-.post-body{max-width:860px;margin:0 auto;padding:60px 44px 100px}
+.post-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:12px;font-weight:600;color:rgba(200,215,235,.55);letter-spacing:.06em;text-transform:uppercase;align-items:center}
+.post-meta-author{display:flex;align-items:center;gap:8px}
+.post-meta-author img{width:28px;height:28px;border-radius:50%;border:2px solid rgba(192,32,42,.6);object-fit:cover}
+
+.post-layout{display:grid;grid-template-columns:1fr 280px;gap:56px;max-width:1200px;margin:0 auto;padding:60px 44px 100px;align-items:start}
+.post-body{min-width:0}
+.post-sidebar{position:sticky;top:88px;align-self:start;max-height:calc(100vh - 110px);overflow-y:auto}
+
+.toc-box{background:#fff;border:1px solid #e0e4ef;border-left:3px solid #c0202a;border-radius:0 12px 12px 0;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.toc-box h3{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#c0202a;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.toc-box h3::before{content:'';width:16px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.toc-box ol{list-style:none;counter-reset:toc-counter;display:flex;flex-direction:column;gap:2px}
+.toc-box ol li{counter-increment:toc-counter;display:flex;gap:0;align-items:stretch}
+.toc-box ol li a{font-size:13px;font-weight:500;color:#4a5470;text-decoration:none;line-height:1.5;transition:color .2s,background .2s,padding .2s;padding:8px 12px 8px 36px;border-radius:6px;width:100%;position:relative}
+.toc-box ol li a::before{content:counter(toc-counter);position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:800;color:#c0202a;min-width:16px}
+.toc-box ol li a:hover{color:#c0202a;background:rgba(192,32,42,.05)}
+.toc-read-time{margin-top:20px;padding-top:16px;border-top:1px solid #e0e4ef;font-size:11px;color:#8a94b0;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+
 .post-intro{font-size:18px;line-height:1.8;color:#1a1e2e;font-weight:400;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid #e0e4ef}
-.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:40px 0 14px;letter-spacing:-.02em}
+.post-body h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#1a1e2e;margin:48px 0 14px;letter-spacing:-.02em}
 .post-body p{font-size:15px;line-height:1.85;color:#4a5470;margin-bottom:20px}
 .post-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#c0202a;text-decoration:none;margin-bottom:32px;letter-spacing:.04em;text-transform:uppercase}
 .post-back:hover{color:#e0263a}
+
+.key-takeaways{background:linear-gradient(135deg,#fff8f8 0%,#fff 100%);border:1.5px solid rgba(192,32,42,.2);border-left:4px solid #c0202a;border-radius:12px;padding:28px 32px;margin-bottom:48px}
+.key-takeaways h3{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.key-takeaways ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.key-takeaways ul li{font-size:14px;font-weight:500;color:#1a1e2e;padding-left:20px;position:relative;line-height:1.6}
+.key-takeaways ul li::before{content:'→';position:absolute;left:0;color:#c0202a;font-weight:700}
+
+.callout-code{background:#0d1117;border-radius:12px;padding:28px 32px;margin:28px 0;overflow-x:auto}
+.callout-code h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#58a6ff;margin-bottom:16px}
+.callout-code pre{font-family:'Courier New',monospace;font-size:13px;line-height:1.7;color:#e6edf3;white-space:pre;overflow-x:auto}
+.callout-code .code-comment{color:#8b949e}
+.callout-code .code-keyword{color:#ff7b72}
+.callout-code .code-string{color:#a5d6ff}
+.callout-code .code-number{color:#79c0ff}
+
+.callout-stats{background:linear-gradient(135deg,#060a14 0%,#0f1628 100%);border-radius:12px;padding:28px 32px;margin:28px 0}
+.callout-stats h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.5);margin-bottom:20px}
+.callout-stats .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.callout-stats .stat-item{text-align:center}
+.callout-stats .stat-num{font-size:28px;font-weight:900;color:#c0202a;letter-spacing:-.03em;display:block}
+.callout-stats .stat-label{font-size:11px;font-weight:600;color:rgba(200,215,235,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block}
+
+.compare-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:14px}
+.compare-table th{background:#1a1e2e;color:#fff;padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.compare-table td{padding:12px 16px;border-bottom:1px solid #e0e4ef;color:#4a5470;vertical-align:top}
+.compare-table tr:nth-child(even) td{background:#f9fafc}
+.compare-table .td-good{color:#16a34a;font-weight:600}
+.compare-table .td-bad{color:#c0202a;font-weight:600}
+
+.related-articles{margin-top:60px;padding-top:40px;border-top:1px solid #e0e4ef}
+.related-articles h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1a1e2e;margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-card{background:#fff;border:1px solid #e0e4ef;border-radius:10px;padding:20px;text-decoration:none;transition:border-color .2s,box-shadow .2s;display:block}
+.related-card:hover{border-color:#c0202a;box-shadow:0 4px 16px rgba(192,32,42,.1)}
+.related-card .rc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c0202a;margin-bottom:8px;display:block}
+.related-card .rc-title{font-size:13px;font-weight:700;color:#1a1e2e;line-height:1.4}
+
 .post-cta{background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);padding:80px 44px;text-align:center;margin-top:60px}
 .post-cta h2{font-family:'Inter',sans-serif;font-size:clamp(24px,3.5vw,40px);font-weight:900;color:#fff;margin-bottom:14px;letter-spacing:-.02em}
 .post-cta p{font-size:15px;color:rgba(200,215,235,.65);max-width:440px;margin:0 auto 28px}
 .post-cta a{display:inline-flex;align-items:center;gap:8px;background:#c0202a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s}
 .post-cta a:hover{background:#e0263a}
-@media(max-width:768px){.post-hero-inner,.post-body{padding-left:20px;padding-right:20px}.post-hero h1{font-size:clamp(24px,6vw,36px)}}
+
+@media(max-width:900px){
+  .post-layout{grid-template-columns:1fr;padding:40px 20px 80px}
+  .post-sidebar{display:none}
+  .callout-stats .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .related-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .post-hero-inner{padding-left:20px;padding-right:20px}
+  .post-hero h1{font-size:clamp(24px,6vw,36px)}
+  .compare-table{font-size:12px}
+  .compare-table th,.compare-table td{padding:8px 10px}
+}
 </style>
 </head>
 <body>
@@ -44,34 +109,137 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
   <div class="post-hero-inner">
     <span class="post-tag">Fintech</span>
     <h1>Neobank vs Traditional Bank: Why Startups Are Winning</h1>
-    <div class="post-meta"><span>Dec 5, 2024</span><span>7 min read</span></div>
+    <div class="post-meta">
+      <span>Dec 5, 2024</span>
+      <span>10 min read</span>
+      <span class="post-meta-author">
+        <img src="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" alt="PumaPulse Engineering">
+        PumaPulse Engineering Team
+      </span>
+    </div>
   </div>
 </section>
 
-<article class="post-body">
-  <a href="../" class="post-back">&#8592; Back to Blog</a>
-  <p class="post-intro">Neobanks have captured over 300 million customers globally by offering what traditional banks cannot: instant onboarding, zero fees, and a mobile-first experience. Here's why startups are winning the banking war.</p>
+<div class="post-layout">
+  <article class="post-body">
+    <a href="../" class="post-back">&#8592; Back to Blog</a>
+    <p class="post-intro">Neobanks have captured over 300 million customers globally by offering what traditional banks cannot: instant onboarding, zero fees, and a mobile-first experience. Revolut crossed 45 million users in 2024. Nubank serves 100 million customers across Latin America. Chime is the largest US neobank with 22 million accounts. The incumbents are responding — but they're fighting with one hand tied behind their back by decades of legacy infrastructure. Here's why startups are winning the banking war, and what it takes to build one.</p>
 
-      <h2>Speed of Onboarding</h2>
-      <p>Traditional banks take days to open an account. Neobanks do it in minutes with AI-powered KYC, biometric verification, and instant virtual card issuance. This single advantage drives massive customer acquisition, especially in underbanked markets.</p>
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Neobanks operate at 80% lower cost than traditional banks — no branches, no legacy mainframes, no bloated middle management layers.</li>
+        <li>The BaaS (Banking-as-a-Service) model lets you launch in 3–6 months without a banking license, but limits your product flexibility and margin long-term.</li>
+        <li>Modern core banking platforms (Mambu, Thought Machine) replace COBOL mainframes and enable feature deployment in days instead of months.</li>
+        <li>Regulatory strategy is the most consequential early decision — EMI license, BaaS partnership, or full banking charter each have very different timelines and capital requirements.</li>
+      </ul>
+    </div>
 
-      <h2>Cost Structure Advantage</h2>
-      <p>No physical branches means 80% lower operating costs. Neobanks pass these savings to customers through zero-fee accounts, better FX rates, and higher savings yields. Monzo, Revolut, and N26 built multi-billion dollar businesses on this model.</p>
+    <h2 id="onboarding">Speed of Onboarding</h2>
+    <p>Traditional banks take 3–7 business days to open an account. The process involves paper forms, branch visits, manual document review, and legacy system provisioning. Neobanks do it in under 5 minutes with AI-powered KYC, biometric liveness checks, and instant virtual card issuance. This single advantage drives massive customer acquisition, especially in underbanked markets where the friction of traditional banking has historically excluded large segments of the population.</p>
+    <p>The technology behind instant onboarding is a stack of specialized APIs: document verification (Jumio, Onfido, or Sumsub for ID scanning and OCR), liveness detection (to prevent spoofing with photos), sanctions screening (against OFAC, UN, and EU lists), and PEP (Politically Exposed Person) checks. A well-integrated onboarding flow can complete all of these checks in parallel in under 30 seconds. The user experience is a simple 4-step flow: enter email, upload ID, take a selfie, set a PIN — and the account is live.</p>
+    <p>The business impact is measurable. Neobanks with sub-5-minute onboarding see 3–4x higher conversion rates from app install to funded account compared to traditional banks' digital channels. Every additional minute of friction in the onboarding flow costs approximately 15–20% of applicants. This is why neobanks obsess over onboarding UX — it's the single highest-leverage metric in the entire customer acquisition funnel.</p>
 
-      <h2>Technology Stack</h2>
-      <p>Modern neobanks are built on cloud-native infrastructure with microservices, real-time ledgers, and open banking APIs. Core banking platforms like Mambu, Thought Machine, or custom-built systems replace legacy COBOL mainframes. This enables feature deployment in days, not months.</p>
+    <div class="callout-stats">
+      <h4>Quick Stats — Neobank Growth</h4>
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-num">300M+</span><span class="stat-label">Global neobank customers (2024)</span></div>
+        <div class="stat-item"><span class="stat-num">80%</span><span class="stat-label">Lower operating costs vs. traditional banks</span></div>
+        <div class="stat-item"><span class="stat-num">5 min</span><span class="stat-label">Average neobank account opening time</span></div>
+      </div>
+    </div>
 
-      <h2>Regulatory Landscape</h2>
-      <p>Obtaining a banking license is the hardest part. Most neobanks start with an e-money license (EMI) or partner with a licensed bank (BaaS model). Full banking licenses in the EU, UK, and US take 2-4 years and significant capital. The BaaS route is faster but limits product flexibility.</p>
+    <h2 id="cost-structure">Cost Structure Advantage</h2>
+    <p>The economics of neobanking are fundamentally different from traditional banking. A traditional bank spends $150–$300 per customer per year on branch operations, legacy IT maintenance, and overhead. A neobank spends $15–$30. This 80–90% cost reduction isn't just about not having branches — it's about the entire operating model. Cloud-native infrastructure scales elastically with customer growth. Automated customer service (AI chatbots handle 70–80% of queries) replaces expensive call centers. Straight-through processing eliminates manual back-office work.</p>
+    <p>Neobanks pass these savings to customers in the form of zero-fee accounts, better FX rates (typically interbank rate + 0.5% vs. traditional banks' 3–5% markup), and higher savings yields. This creates a virtuous cycle: lower fees attract more customers, more customers improve unit economics, better unit economics fund product development, better products attract more customers. Monzo, Revolut, and N26 all built multi-billion dollar businesses on this flywheel.</p>
+    <p>The revenue model for neobanks has evolved beyond interchange fees. Modern neobanks monetize through premium subscription tiers (Revolut Metal at $16.99/month), lending products (personal loans, BNPL), investment products (stock trading, crypto), and B2B services (business accounts, expense management). The most successful neobanks generate $50–$100 in annual revenue per customer — comparable to traditional banks — but at a fraction of the cost, resulting in dramatically better margins.</p>
 
-      <h2>Building Your Neobank</h2>
-      <p>Key components: core banking system, KYC/AML engine, card issuing (Marqeta, Galileo), payment rails (SWIFT, SEPA, ACH), mobile app, and compliance infrastructure. PumaPulse has delivered full-stack neobank platforms in 6 months for clients across Southeast Asia and Europe.</p>
+    <table class="compare-table">
+      <thead>
+        <tr><th>Metric</th><th>Traditional Bank</th><th>Neobank</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Account opening time</td><td class="td-bad">3–7 days</td><td class="td-good">&lt;5 minutes</td></tr>
+        <tr><td>Cost per customer/year</td><td class="td-bad">$150–$300</td><td class="td-good">$15–$30</td></tr>
+        <tr><td>FX markup</td><td class="td-bad">3–5%</td><td class="td-good">0.5–1%</td></tr>
+        <tr><td>Feature deployment time</td><td class="td-bad">6–18 months</td><td class="td-good">Days to weeks</td></tr>
+        <tr><td>Customer service cost</td><td class="td-bad">$8–$12 per interaction</td><td class="td-good">$0.50–$2 (AI-first)</td></tr>
+      </tbody>
+    </table>
 
-</article>
+    <h2 id="tech-stack">Technology Stack</h2>
+    <p>The technology stack is where neobanks have their most durable competitive advantage. Traditional banks run on COBOL mainframes that process transactions in batch cycles — some still run nightly batch jobs that mean your balance doesn't update until the next morning. Neobanks are built on cloud-native, event-driven architectures with real-time ledgers. Every transaction posts instantly, every notification fires in milliseconds, every balance update is immediate.</p>
+    <p>Modern core banking platforms have made this accessible without building from scratch. Mambu (used by N26, Lunar, and dozens of others) provides a cloud-native core banking engine with a composable API. Thought Machine's Vault is a more sophisticated option used by Lloyds Banking Group and Atom Bank, offering a smart contract-based ledger that can model any financial product. These platforms replace the COBOL mainframe and provide the foundation for a modern banking stack. Above the core, you layer payment rails (SWIFT, SEPA, ACH, Faster Payments), card issuing (Marqeta or Galileo), and your own product layer.</p>
+    <p>The microservices architecture enables independent scaling and deployment of each component. The KYC service, the payments service, the card management service, and the notifications service all run independently. A bug in the notifications service doesn't take down payments. A traffic spike in card transactions doesn't affect account opening. This resilience is impossible to achieve with a monolithic legacy system, and it's why neobanks can deploy features in days while traditional banks take months.</p>
+
+    <div class="callout-code">
+      <h4>Code Example — Real-Time Ledger Event (Node.js / Kafka)</h4>
+      <pre><span class="code-comment">// Publish a debit transaction event to the ledger topic</span>
+<span class="code-keyword">await</span> kafka.producer().send({
+  topic: <span class="code-string">'ledger.transactions'</span>,
+  messages: [{
+    key: accountId,
+    value: JSON.stringify({
+      type: <span class="code-string">'DEBIT'</span>,
+      accountId,
+      amount: <span class="code-number">2500</span>,          <span class="code-comment">// in minor units (cents)</span>
+      currency: <span class="code-string">'GBP'</span>,
+      reference: <span class="code-string">'CARD-POS-4821'</span>,
+      timestamp: Date.now(),
+      idempotencyKey: uuid()  <span class="code-comment">// prevent duplicate processing</span>
+    })
+  }]
+});
+<span class="code-comment">// Consumer updates balance atomically via Redis DECRBY</span>
+<span class="code-keyword">await</span> redis.decrby(<span class="code-string">`balance:${accountId}`</span>, <span class="code-number">2500</span>);</pre>
+    </div>
+
+    <h2 id="regulatory">Regulatory Landscape</h2>
+    <p>Obtaining a banking license is the hardest part of building a neobank — and the decision you make here shapes your entire business model. There are three main paths. The BaaS (Banking-as-a-Service) model partners with a licensed bank (e.g., Sutton Bank, Evolve Bank in the US; ClearBank in the UK) to provide the regulated infrastructure. You build the product layer on top. This is the fastest path to market (3–6 months) but you're dependent on your BaaS partner's risk appetite, and your margins are compressed by their fees.</p>
+    <p>The EMI (Electronic Money Institution) license is the middle path, available in the EU and UK. It allows you to issue e-money, hold customer funds, and provide payment services — but not to lend or pay interest on deposits. The application process takes 6–12 months and requires €350k in initial capital (EU) or £2M (UK). This is the path Revolut, Wise, and Monzo started with before graduating to full banking licenses. It gives you more product flexibility than BaaS while being significantly faster than a full banking charter.</p>
+    <p>A full banking license (charter) is the most powerful but most demanding option. In the US, the OCC national bank charter or state-level charters require 18–36 months of regulatory review, $20–$50M in initial capital, and a detailed business plan. In the EU, the ECB and national regulators apply similar scrutiny. The payoff is the ability to take deposits, lend, and pay interest — the full banking product suite. Most successful neobanks start with BaaS or EMI and graduate to a full charter once they've proven product-market fit.</p>
+
+    <h2 id="building">Building Your Neobank</h2>
+    <p>The key components of a neobank platform are: core banking system (Mambu, Thought Machine, or custom-built), KYC/AML engine (Sumsub, Jumio, or Onfido), card issuing (Marqeta or Galileo for virtual and physical cards), payment rails (SWIFT for international, SEPA/ACH/Faster Payments for domestic), mobile app (React Native for cross-platform efficiency), and compliance infrastructure (transaction monitoring, SAR reporting, Travel Rule). Each component can be sourced from a specialist vendor or built in-house — the build-vs-buy decision depends on your differentiation strategy.</p>
+    <p>Timeline and cost vary significantly by approach. A BaaS-based MVP with a white-label app can be built in 3–4 months for $500k–$1M. A full-stack neobank with a custom core banking system, proprietary mobile app, and EMI license takes 12–18 months and $3–$8M. PumaPulse has delivered full-stack neobank platforms in 6 months for clients across Southeast Asia and Europe by combining best-in-class vendor integrations with custom product layers — hitting the sweet spot between speed and differentiation.</p>
+
+    <div class="related-articles">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="../forex-crm-features-2025/" class="related-card">
+          <span class="rc-tag">Fintech</span>
+          <span class="rc-title">Forex CRM Features That Drive Broker Growth in 2025</span>
+        </a>
+        <a href="../crypto-payment-gateways-guide/" class="related-card">
+          <span class="rc-tag">Payments</span>
+          <span class="rc-title">Crypto Payment Gateways: The Complete Integration Guide</span>
+        </a>
+        <a href="../how-to-build-crypto-exchange-2025/" class="related-card">
+          <span class="rc-tag">Crypto Exchange</span>
+          <span class="rc-title">How to Build a Crypto Exchange in 2025: The Complete Technical Guide</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <aside class="post-sidebar">
+    <div class="toc-box">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#onboarding">Speed of Onboarding</a></li>
+        <li><a href="#cost-structure">Cost Structure Advantage</a></li>
+        <li><a href="#tech-stack">Technology Stack</a></li>
+        <li><a href="#regulatory">Regulatory Landscape</a></li>
+        <li><a href="#building">Building Your Neobank</a></li>
+      </ol>
+      <div class="toc-read-time">&#9201; 10 min read</div>
+    </div>
+  </aside>
+</div>
 
 <div class="post-cta">
-  <h2>Ready to Build Your Project?</h2>
-  <p>Talk to our engineering team. Free consultation, no commitment.</p>
+  <h2>Ready to Build Your Neobank?</h2>
+  <p>We've delivered full-stack neobank platforms in 6 months. Talk to our team about your vision.</p>
   <a href="../../contact/">Start a Conversation &#8594;</a>
 </div>
 
