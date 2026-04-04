@@ -1,261 +1,510 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fintech App Development Services - PumaPulse</title>
-  <meta name="description" content="PumaPulse builds neobank apps, digital banking platforms, KYC/AML systems, lending platforms, and full-stack fintech solutions for startups and enterprises.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .service-feature-list{display:flex;flex-direction:column;gap:16px}
-    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
-    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
-    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .sfeat-icon svg{width:20px;height:20px}
-    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
-    .sfeat p{font-size:0.86rem}
-    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
-    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .use-case h4{font-size:0.95rem;margin-bottom:8px}
-    .use-case p{font-size:0.84rem}
-    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Fintech Development"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Fintech</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Fintech Solutions</span>
-      <h1>Fintech Apps Built for <span class="grad-text">Scale &amp; Trust</span></h1>
-      <p>From neobank platforms to KYC/AML engines and lending infrastructure, PumaPulse builds production-grade fintech products that comply with regulations, scale to millions of users, and ship fast.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
-        <a href="#services" class="btn btn-ghost btn-lg">Explore Services</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Fintech Apps Launched</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="12" data-suffix="M+">12M+</div><p>End Users Served</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="99" data-suffix=".9%">99.9%</div><p>Uptime SLA</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Regulatory Frameworks</p></div>
-</div>
-
-<section class="section" id="services">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">What We Build</span>
-      <h2>Full-Stack <span class="grad-text">Fintech Development</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">Whether you need a neobank MVP or enterprise-grade payment infrastructure, our fintech engineers deliver compliant, scalable, and beautifully designed products.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Neobank" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Neobank &amp; Digital Banking</h3>
-          <p>Full-featured neobank apps with multi-currency accounts, instant transfers, virtual and physical card issuance, savings vaults, and AI-powered spending insights. Built on modern core banking APIs with PSD2/Open Banking compliance, real-time notifications, and biometric authentication.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">PSD2</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Open Banking</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Card Issuance</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=700" alt="KYC AML" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>KYC / AML Compliance Systems</h3>
-          <p>End-to-end identity verification and anti-money laundering pipelines. Document OCR, liveness detection, sanctions screening, PEP checks, transaction monitoring, and SAR filing automation. Integrates with Jumio, Onfido, Sumsub, and Chainalysis. Supports FATF, FinCEN, and EU AMLD compliance.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">FATF</span><span class="tag-pill tag-blue" style="font-size:0.68rem">FinCEN</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Chainalysis</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lending" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Lending &amp; Credit Platforms</h3>
-          <p>Digital lending platforms with automated credit scoring, loan origination, underwriting workflows, repayment scheduling, and collections management. Supports BNPL, P2P lending, SME loans, and crypto-backed lending. Integrates with credit bureaus and open banking data for thin-file borrowers.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">BNPL</span><span class="tag-pill tag-blue" style="font-size:0.68rem">P2P Lending</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Credit Scoring</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Payments" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Payment Infrastructure</h3>
-          <p>High-throughput payment processing engines supporting SEPA, SWIFT, ACH, FPS, and local payment rails. Includes reconciliation automation, multi-currency settlement, FX conversion at interbank rates, and real-time fraud detection. PCI DSS Level 1 compliant with tokenization and 3DS2 support.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">SEPA</span><span class="tag-pill tag-blue" style="font-size:0.68rem">SWIFT</span><span class="tag-pill tag-purple" style="font-size:0.68rem">PCI DSS</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Wealth" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Wealth &amp; Investment Platforms</h3>
-          <p>Robo-advisory platforms, fractional investing apps, and portfolio management tools. Features automated rebalancing, tax-loss harvesting, goal-based investing, and ESG screening. Supports stocks, ETFs, bonds, crypto, and alternative assets via FIX protocol integrations.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Robo-Advisory</span><span class="tag-pill tag-blue" style="font-size:0.68rem">FIX Protocol</span><span class="tag-pill tag-purple" style="font-size:0.68rem">ESG</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=700" alt="RegTech" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>RegTech &amp; Compliance Automation</h3>
-          <p>Regulatory reporting automation for MiFID II, EMIR, Dodd-Frank, and Basel III. Real-time transaction surveillance, suspicious activity detection, automated regulatory filings, and audit trail management. Reduces compliance costs by up to 70% through intelligent automation.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">MiFID II</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Basel III</span><span class="tag-pill tag-purple" style="font-size:0.68rem">EMIR</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Why Choose Us</span>
-        <h2>Compliance-First <span class="grad-text">Fintech Engineering</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">Fintech is one of the most regulated industries on earth. We build compliance into the architecture from day one, not as an afterthought. Every system we ship is designed to pass regulatory scrutiny and scale to enterprise volumes.</p>
-        <div class="service-feature-list">
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><h4>Regulatory Expertise</h4><p>Deep knowledge of PSD2, EMD2, MiFID II, GDPR, PCI DSS, FinCEN, and FATF across 30+ jurisdictions.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
-            <div><h4>Banking-Grade Security</h4><p>End-to-end encryption, HSM key management, zero-trust architecture, and penetration testing on every release.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <div><h4>High Availability</h4><p>99.99% uptime SLA with multi-region active-active deployments, automated failover, and chaos engineering.</p></div>
-          </div>
-          <div class="sfeat">
-            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <div><h4>Fast Time to Market</h4><p>Pre-built compliance modules, KYC integrations, and banking APIs cut your time to launch by 60%.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fintech Engineering" style="width:100%;height:480px;object-fit:cover;border-radius:20px;margin-bottom:20px">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">50+</div>
-            <p style="font-size:0.82rem;margin-top:6px">Apps Launched</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">12M+</div>
-            <p style="font-size:0.82rem;margin-top:6px">Users Served</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">30+</div>
-            <p style="font-size:0.82rem;margin-top:6px">Jurisdictions</p>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">99.9%</div>
-            <p style="font-size:0.82rem;margin-top:6px">Uptime SLA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Use Cases</span>
-      <h2>Fintech Products We <span class="grad-text3">Ship</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="use-case-grid reveal-stagger">
-      <div class="use-case"><h4>Challenger Banks</h4><p>Full neobank stack with core banking, card programs, FX, and savings products. Launch in 90 days with our pre-built modules.</p></div>
-      <div class="use-case"><h4>BNPL Platforms</h4><p>Buy-now-pay-later infrastructure with real-time credit decisioning, merchant integrations, and automated collections.</p></div>
-      <div class="use-case"><h4>Remittance Apps</h4><p>Cross-border money transfer apps with competitive FX rates, compliance automation, and payout networks in 150+ countries.</p></div>
-      <div class="use-case"><h4>Insurance Tech</h4><p>Embedded insurance platforms, parametric insurance products, and claims automation using AI and IoT data.</p></div>
-      <div class="use-case"><h4>SME Banking</h4><p>Business banking platforms with invoicing, expense management, multi-user access, and integrated accounting tools.</p></div>
-      <div class="use-case"><h4>Open Banking APIs</h4><p>PSD2-compliant AISP/PISP APIs, account aggregation, payment initiation, and developer portals for third-party integrations.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text">Fintech Tech Stack</span></h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Core Banking &amp; Payments</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe">
-          <div><span class="tname">Stripe</span><span class="tdesc">Payment processing, card issuing, and financial infrastructure for internet businesses</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/plaid/000000" alt="Plaid">
-          <div><span class="tname">Plaid</span><span class="tdesc">Open banking connectivity, account verification, and transaction data aggregation</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/visa/1A1F71" alt="Visa"><span class="tname">Visa APIs</span><span class="tdesc">Card program management</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/mastercard/EB001B" alt="Mastercard"><span class="tname">Mastercard</span><span class="tdesc">Payment network integration</span></div>
-      </div>
-      <div class="tech-category-label">Identity &amp; Compliance</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/auth0/EB5424" alt="Auth0">
-          <div><span class="tname">Auth0 / Okta</span><span class="tdesc">Identity management, MFA, biometric authentication, and SSO for financial apps</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS">
-          <div><span class="tname">AWS GovCloud</span><span class="tdesc">Compliant cloud infrastructure with FedRAMP, SOC 2, and PCI DSS certifications</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt="Twilio"><span class="tname">Twilio</span><span class="tdesc">SMS OTP &amp; voice verification</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/datadog/632CA6" alt="Datadog"><span class="tname">Datadog</span><span class="tdesc">Monitoring &amp; fraud alerts</span></div>
-      </div>
-      <div class="tech-category-label">Backend &amp; Infrastructure</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go"><span class="tname">Go</span><span class="tdesc">High-performance services</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"><span class="tname">Python</span><span class="tdesc">ML &amp; data pipelines</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span class="tname">PostgreSQL</span><span class="tdesc">Transactional database</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Real-time caching</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Event streaming</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Container orchestration</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Build Your <span class="grad-text">Fintech Product?</span></h2>
-        <p>Our fintech architects will help you navigate regulations, design the right architecture, and ship a production-ready product on time and on budget.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fintech App Development Services - PumaPulse</title>
+
+  <meta name="description" content="PumaPulse builds neobank apps, digital banking platforms, KYC/AML systems, lending platforms, and full-stack fintech solutions for startups and enterprises.">
+
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="stylesheet" href="../../css/theme.css">
+
+  <link rel="stylesheet" href="../../css/animations.css">
+
+  <style>
+
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+    .sfeat-icon svg{width:20px;height:20px}
+
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+
+    .sfeat p{font-size:0.86rem}
+
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+
+    .use-case p{font-size:0.84rem}
+
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+
+  </style>
+
+</head>
+
+<body>
+
+<div id="nav-placeholder"></div>
+
+
+
+<section class="page-hero">
+
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Fintech Development"></div>
+
+  <div class="container">
+
+    <div class="page-hero-content">
+
+      <div class="breadcrumb"><a href="../../">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>Fintech</span></div>
+
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Fintech Solutions</span>
+
+      <h1>Fintech Apps Built for <span class="grad-text">Scale &amp; Trust</span></h1>
+
+      <p>From neobank platforms to KYC/AML engines and lending infrastructure, PumaPulse builds production-grade fintech products that comply with regulations, scale to millions of users, and ship fast.</p>
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
+
+        <a href="#services" class="btn btn-ghost btn-lg">Explore Services</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<div class="stats-row counter-section">
+
+  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Fintech Apps Launched</p></div>
+
+  <div class="stat-cell"><div class="stat-num" data-target="12" data-suffix="M+">12M+</div><p>End Users Served</p></div>
+
+  <div class="stat-cell"><div class="stat-num" data-target="99" data-suffix=".9%">99.9%</div><p>Uptime SLA</p></div>
+
+  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Regulatory Frameworks</p></div>
+
+</div>
+
+
+
+<section class="section" id="services">
+
+  <div class="container">
+
+    <div class="text-center reveal">
+
+      <span class="eyebrow">What We Build</span>
+
+      <h2>Full-Stack <span class="grad-text">Fintech Development</span></h2>
+
+      <div class="section-divider"></div>
+
+      <p class="section-desc" style="margin-top:16px">Whether you need a neobank MVP or enterprise-grade payment infrastructure, our fintech engineers deliver compliant, scalable, and beautifully designed products.</p>
+
+    </div>
+
+    <div class="svc-grid reveal-stagger">
+
+      <div class="svc-card tilt-card glow-card">
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Neobank" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+        <div class="svc-body">
+
+          <h3>Neobank &amp; Digital Banking</h3>
+
+          <p>Full-featured neobank apps with multi-currency accounts, instant transfers, virtual and physical card issuance, savings vaults, and AI-powered spending insights. Built on modern core banking APIs with PSD2/Open Banking compliance, real-time notifications, and biometric authentication.</p>
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">PSD2</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Open Banking</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Card Issuance</span></div>
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+        </div>
+
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=700" alt="KYC AML" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+        <div class="svc-body">
+
+          <h3>KYC / AML Compliance Systems</h3>
+
+          <p>End-to-end identity verification and anti-money laundering pipelines. Document OCR, liveness detection, sanctions screening, PEP checks, transaction monitoring, and SAR filing automation. Integrates with Jumio, Onfido, Sumsub, and Chainalysis. Supports FATF, FinCEN, and EU AMLD compliance.</p>
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">FATF</span><span class="tag-pill tag-blue" style="font-size:0.68rem">FinCEN</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Chainalysis</span></div>
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+        </div>
+
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lending" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+        <div class="svc-body">
+
+          <h3>Lending &amp; Credit Platforms</h3>
+
+          <p>Digital lending platforms with automated credit scoring, loan origination, underwriting workflows, repayment scheduling, and collections management. Supports BNPL, P2P lending, SME loans, and crypto-backed lending. Integrates with credit bureaus and open banking data for thin-file borrowers.</p>
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">BNPL</span><span class="tag-pill tag-blue" style="font-size:0.68rem">P2P Lending</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Credit Scoring</span></div>
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+        </div>
+
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Payments" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+        <div class="svc-body">
+
+          <h3>Payment Infrastructure</h3>
+
+          <p>High-throughput payment processing engines supporting SEPA, SWIFT, ACH, FPS, and local payment rails. Includes reconciliation automation, multi-currency settlement, FX conversion at interbank rates, and real-time fraud detection. PCI DSS Level 1 compliant with tokenization and 3DS2 support.</p>
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">SEPA</span><span class="tag-pill tag-blue" style="font-size:0.68rem">SWIFT</span><span class="tag-pill tag-purple" style="font-size:0.68rem">PCI DSS</span></div>
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+        </div>
+
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Wealth" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+        <div class="svc-body">
+
+          <h3>Wealth &amp; Investment Platforms</h3>
+
+          <p>Robo-advisory platforms, fractional investing apps, and portfolio management tools. Features automated rebalancing, tax-loss harvesting, goal-based investing, and ESG screening. Supports stocks, ETFs, bonds, crypto, and alternative assets via FIX protocol integrations.</p>
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Robo-Advisory</span><span class="tag-pill tag-blue" style="font-size:0.68rem">FIX Protocol</span><span class="tag-pill tag-purple" style="font-size:0.68rem">ESG</span></div>
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+        </div>
+
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=700" alt="RegTech" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+        <div class="svc-body">
+
+          <h3>RegTech &amp; Compliance Automation</h3>
+
+          <p>Regulatory reporting automation for MiFID II, EMIR, Dodd-Frank, and Basel III. Real-time transaction surveillance, suspicious activity detection, automated regulatory filings, and audit trail management. Reduces compliance costs by up to 70% through intelligent automation.</p>
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">MiFID II</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Basel III</span><span class="tag-pill tag-purple" style="font-size:0.68rem">EMIR</span></div>
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="service-detail-grid">
+
+      <div class="reveal-left">
+
+        <span class="eyebrow">Why Choose Us</span>
+
+        <h2>Compliance-First <span class="grad-text">Fintech Engineering</span></h2>
+
+        <div class="section-divider" style="margin:0 0 24px"></div>
+
+        <p style="margin-bottom:28px">Fintech is one of the most regulated industries on earth. We build compliance into the architecture from day one, not as an afterthought. Every system we ship is designed to pass regulatory scrutiny and scale to enterprise volumes.</p>
+
+        <div class="service-feature-list">
+
+          <div class="sfeat">
+
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+
+            <div><h4>Regulatory Expertise</h4><p>Deep knowledge of PSD2, EMD2, MiFID II, GDPR, PCI DSS, FinCEN, and FATF across 30+ jurisdictions.</p></div>
+
+          </div>
+
+          <div class="sfeat">
+
+            <div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+
+            <div><h4>Banking-Grade Security</h4><p>End-to-end encryption, HSM key management, zero-trust architecture, and penetration testing on every release.</p></div>
+
+          </div>
+
+          <div class="sfeat">
+
+            <div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+
+            <div><h4>High Availability</h4><p>99.99% uptime SLA with multi-region active-active deployments, automated failover, and chaos engineering.</p></div>
+
+          </div>
+
+          <div class="sfeat">
+
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+
+            <div><h4>Fast Time to Market</h4><p>Pre-built compliance modules, KYC integrations, and banking APIs cut your time to launch by 60%.</p></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="reveal-right">
+
+        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fintech Engineering" style="width:100%;height:480px;object-fit:cover;border-radius:20px;margin-bottom:20px">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">50+</div>
+
+            <p style="font-size:0.82rem;margin-top:6px">Apps Launched</p>
+
+          </div>
+
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">12M+</div>
+
+            <p style="font-size:0.82rem;margin-top:6px">Users Served</p>
+
+          </div>
+
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">30+</div>
+
+            <p style="font-size:0.82rem;margin-top:6px">Jurisdictions</p>
+
+          </div>
+
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">99.9%</div>
+
+            <p style="font-size:0.82rem;margin-top:6px">Uptime SLA</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" style="background:var(--bg2)">
+
+  <div class="container">
+
+    <div class="text-center reveal">
+
+      <span class="eyebrow">Use Cases</span>
+
+      <h2>Fintech Products We <span class="grad-text3">Ship</span></h2>
+
+      <div class="section-divider"></div>
+
+    </div>
+
+    <div class="use-case-grid reveal-stagger">
+
+      <div class="use-case"><h4>Challenger Banks</h4><p>Full neobank stack with core banking, card programs, FX, and savings products. Launch in 90 days with our pre-built modules.</p></div>
+
+      <div class="use-case"><h4>BNPL Platforms</h4><p>Buy-now-pay-later infrastructure with real-time credit decisioning, merchant integrations, and automated collections.</p></div>
+
+      <div class="use-case"><h4>Remittance Apps</h4><p>Cross-border money transfer apps with competitive FX rates, compliance automation, and payout networks in 150+ countries.</p></div>
+
+      <div class="use-case"><h4>Insurance Tech</h4><p>Embedded insurance platforms, parametric insurance products, and claims automation using AI and IoT data.</p></div>
+
+      <div class="use-case"><h4>SME Banking</h4><p>Business banking platforms with invoicing, expense management, multi-user access, and integrated accounting tools.</p></div>
+
+      <div class="use-case"><h4>Open Banking APIs</h4><p>PSD2-compliant AISP/PISP APIs, account aggregation, payment initiation, and developer portals for third-party integrations.</p></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" style="background:var(--bg2)">
+
+  <div class="container">
+
+    <div class="text-center reveal">
+
+      <span class="eyebrow">Technology</span>
+
+      <h2>Our <span class="grad-text">Fintech Tech Stack</span></h2>
+
+      <div class="section-divider"></div>
+
+    </div>
+
+    <div class="tech-showcase reveal-stagger">
+
+      <div class="tech-category-label">Core Banking &amp; Payments</div>
+
+      <div class="tech-logo-grid">
+
+        <div class="tech-logo-card featured">
+          <svg viewBox="0 0 24 24" style="width:36px;height:36px;flex-shrink:0" fill="#635BFF"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></svg>
+          <div><span class="tname">Stripe</span><span class="tdesc">Payment processing, card issuing, and financial infrastructure for internet businesses</span></div>
+        </div>
+
+        <div class="tech-logo-card featured">
+          <svg viewBox="0 0 24 24" style="width:36px;height:36px;flex-shrink:0" fill="#000000"><path d="M14.5 0h-5C4.26 0 0 4.26 0 9.5v5C0 19.74 4.26 24 9.5 24h5c5.24 0 9.5-4.26 9.5-9.5v-5C24 4.26 19.74 0 14.5 0zm-2.5 18.5c-4.14 0-7.5-3.36-7.5-7.5S7.86 3.5 12 3.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5z"/></svg>
+          <div><span class="tname">Plaid</span><span class="tdesc">Open banking connectivity, account verification, and transaction data aggregation</span></div>
+        </div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#1A1F71"><path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.268.262-.554.822-.627a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.366 1.01.602 1.006.929-.005.502-.602.724-1.16.732-.975.015-1.54-.263-1.99-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.375-2.561zm5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.154-4.84l-1.603 7.496H8.34l1.604-7.496h1.945z"/></svg><span class="tname">Visa APIs</span><span class="tdesc">Card program management</span></div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px"><path d="M11.343 18.031c.058.049.12.098.181.146-1.177.783-2.59 1.238-4.107 1.238C3.32 19.416 0 16.096 0 12c0-4.095 3.32-7.416 7.416-7.416 1.518 0 2.931.456 4.105 1.238-.06.051-.12.098-.165.15C9.6 7.489 8.595 9.688 8.595 12c0 2.311 1.001 4.51 2.748 6.031zm5.241-13.447c-1.52 0-2.931.456-4.105 1.238.06.051.12.098.165.15C14.4 7.489 15.405 9.688 15.405 12c0 2.31-1.001 4.507-2.748 6.031-.058.049-.12.098-.18.146 1.177.783 2.59 1.238 4.107 1.238C20.68 19.416 24 16.096 24 12c0-4.095-3.32-7.416-7.416-7.416zM12 6.174c-.096.075-.189.15-.28.231C10.156 7.764 9.169 9.765 9.169 12c0 2.236.987 4.236 2.551 5.595.091.081.184.157.28.232.096-.075.189-.151.28-.232C13.844 16.236 14.831 14.236 14.831 12c0-2.235-.987-4.236-2.551-5.595-.091-.08-.184-.156-.28-.231z" fill="#EB001B"/><path d="M16.584 4.584c-1.52 0-2.931.456-4.105 1.238.06.051.12.098.165.15C14.4 7.489 15.405 9.688 15.405 12c0 2.31-1.001 4.507-2.748 6.031-.058.049-.12.098-.18.146 1.177.783 2.59 1.238 4.107 1.238C20.68 19.416 24 16.096 24 12c0-4.095-3.32-7.416-7.416-7.416z" fill="#F79E1B"/></svg><span class="tname">Mastercard</span><span class="tdesc">Payment network integration</span></div>
+
+      </div>
+
+      <div class="tech-category-label">Identity &amp; Compliance</div>
+
+      <div class="tech-logo-grid">
+
+        <div class="tech-logo-card featured">
+          <svg viewBox="0 0 24 24" style="width:36px;height:36px;flex-shrink:0" fill="#EB5424"><path d="M21.98 7.448L19.62 0H4.347L2.02 7.448c-1.352 4.312.03 9.206 3.815 12.015L12.007 24l6.157-4.552c3.755-2.81 5.182-7.688 3.815-12.015l-6.16 4.58 2.343 7.45-6.157-4.597-6.158 4.58 2.358-7.433-6.188-4.55 7.61-.045L12.008 0l2.158 7.403 7.613.045z"/></svg>
+          <div><span class="tname">Auth0 / Okta</span><span class="tdesc">Identity management, MFA, biometric authentication, and SSO for financial apps</span></div>
+        </div>
+
+        <div class="tech-logo-card featured">
+          <svg viewBox="0 0 24 24" style="width:36px;height:36px;flex-shrink:0" fill="#FF9900"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.1.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.369-1.3-.369a3.613 3.613 0 0 0-.879.112 6.494 6.494 0 0 0-.903.295 2.357 2.357 0 0 1-.288.12.5.5 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167 4.552 4.552 0 0 1 .997-.36A5.098 5.098 0 0 1 3.8 5.15c.95 0 1.644.216 2.09.647.439.43.662 1.083.662 1.958v2.281zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.503.048-.184.08-.407.08-.671v-.32a6.699 6.699 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.295.838.295v-.046zm6.41.862c-.144 0-.24-.024-.304-.08-.063-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687a.49.49 0 0 1-.32-.08c-.063-.056-.12-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32a.513.513 0 0 1-.32.08h-.687zm10.257.28c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.743.167-1.158.167z"/></svg>
+          <div><span class="tname">AWS GovCloud</span><span class="tdesc">Compliant cloud infrastructure with FedRAMP, SOC 2, and PCI DSS certifications</span></div>
+        </div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#F22F46"><path d="M12 0C5.381-.008.008 5.352 0 11.971V12c0 6.64 5.359 12 12 12 6.64 0 12-5.36 12-12 0-6.641-5.36-12-12-12zm0 20.801c-4.846.015-8.786-3.904-8.801-8.75V12c-.014-4.846 3.904-8.786 8.75-8.801H12c4.847-.014 8.786 3.904 8.801 8.75V12c.015 4.847-3.904 8.786-8.75 8.801H12zm5.44-11.76c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm-8.4 0c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm4.2 8.4c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm4.2 0c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481z"/></svg><span class="tname">Twilio</span><span class="tdesc">SMS OTP &amp; voice verification</span></div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#632CA6"><path d="M19.57 17.04l-1.997-1.316-1.665 2.782-1.937-.567-1.706 2.604.087.82 9.274-1.71-.538-5.794zm-8.649-2.498l1.488-.204c.241.108.409.15.697.223.45.117.97.23 1.741-.16.18-.088.553-.43.704-.625l6.096-1.106.6 6.45-8.736 1.61-3.59-6.188zm-2.44-4.408l2.18 3.76-1.58.215-2.18-3.76 1.58-.215zm9.44-1.74l.6 6.45-1.58.215-.6-6.45 1.58-.215zM4.43 17.04l.538-5.794 9.274 1.71.087-.82-1.706-2.604-1.937.567-1.665-2.782-1.997 1.316zm3.59-6.188L.284 9.242l.6-6.45 6.096 1.106c.151.195.524.537.704.625.771.39 1.291.277 1.741.16.288-.073.456-.115.697-.223l1.488.204-3.59 6.188z"/></svg><span class="tname">Datadog</span><span class="tdesc">Monitoring &amp; fraud alerts</span></div>
+
+      </div>
+
+      <div class="tech-category-label">Backend &amp; Infrastructure</div>
+
+      <div class="tech-logo-grid">
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#00ADD8"><path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.082.07-.117.07zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.328c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07zm2.828 1.075c-.047 0-.059-.035-.035-.07l.163-.292c.023-.035.07-.07.117-.07h2.337c.047 0 .07.035.07.082l-.023.28c0 .047-.047.082-.082.082zm12.129-2.36c-.736.187-1.239.327-1.963.514-.176.046-.187.058-.34-.117-.174-.199-.303-.327-.548-.444-.737-.362-1.45-.257-2.115.175-.795.514-1.204 1.274-1.192 2.22.011.935.654 1.706 1.577 1.835.795.105 1.46-.175 1.987-.77.105-.13.198-.27.315-.434H10.47c-.245 0-.304-.152-.222-.35.152-.362.432-.97.596-1.274a.315.315 0 0 1 .292-.187h4.253c-.023.316-.023.631-.07.947a4.983 4.983 0 0 1-.958 2.29c-.841 1.11-1.94 1.8-3.33 1.986-1.145.152-2.209-.07-3.143-.77-.865-.655-1.356-1.52-1.484-2.595-.152-1.274.222-2.419.993-3.424.83-1.086 1.928-1.776 3.272-2.02 1.098-.2 2.15-.07 3.096.571.62.41 1.063.97 1.356 1.648.07.105.023.164-.117.2zm3.868 6.461c-1.064-.024-2.034-.328-2.852-1.029a3.665 3.665 0 0 1-1.262-2.255c-.21-1.32.152-2.489.947-3.529.853-1.122 1.881-1.706 3.272-1.95 1.192-.21 2.314-.095 3.33.595.923.63 1.496 1.484 1.648 2.605.198 1.578-.257 2.863-1.344 3.962-.771.783-1.718 1.273-2.805 1.495-.315.06-.631.07-.934.106zm2.78-4.72c-.011-.153-.011-.27-.034-.387-.21-1.157-1.274-1.81-2.384-1.554-1.087.245-1.788 1.052-1.895 2.15-.093.98.49 1.963 1.44 2.292.76.258 1.508.152 2.198-.35.77-.561 1.157-1.322 1.075-2.15z"/></svg><span class="tname">Go</span><span class="tdesc">High-performance services</span></div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#3776AB"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05L0 11.97l.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 11.83H7.01l-.01 1.79.04.34.1.28.17.23.22.18.26.14.3.09.33.05.35.02.36-.01.35-.04.32-.08.28-.13.23-.18.18-.24.12-.29.07-.34.02-.4v-1.79H7.95zm8.1-7.44l-.01 1.79.04.34.1.28.17.23.22.18.26.14.3.09.33.05.35.02.36-.01.35-.04.32-.08.28-.13.23-.18.18-.24.12-.29.07-.34.02-.4v-1.79h-.01l-.01-1.79-.04-.34-.1-.28-.17-.23-.22-.18-.26-.14-.3-.09-.33-.05-.35-.02-.36.01-.35.04-.32.08-.28.13-.23.18-.18.24-.12.29-.07.34-.02.4v1.79z"/></svg><span class="tname">Python</span><span class="tdesc">ML &amp; data pipelines</span></div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#4169E1"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191.9336-1.3894 1.7007-3.0817 2.1264-4.6749.3728-1.3894.4573-2.6504.2321-3.5488-.0985-.3867-.3164-.7129-.6152-.9453-.2954-.2285-.6504-.3516-1.0176-.3516-.5625 0-1.1074.2285-1.5293.6504-.4219.4219-.6504.9668-.6504 1.5293 0 .5625.2285 1.1074.6504 1.5293.4219.4219.9668.6504 1.5293.6504.1758 0 .3516-.0234.5234-.0703-.1758.5625-.4219 1.1074-.7207 1.6289-.2988.5215-.6504 1.0078-1.0547 1.4473-.4043.4395-.8613.8262-1.3652 1.1543-.5039.3281-1.0547.5859-1.6289.7676-.5742.1816-1.1719.2754-1.7695.2754-.5977 0-1.1953-.0938-1.7695-.2754-.5742-.1817-1.1250-.4395-1.6289-.7676-.5039-.3281-.9609-.7148-1.3652-1.1543-.4043-.4395-.7559-.9258-1.0547-1.4473-.2988-.5215-.5449-1.0664-.7207-1.6289.1718.0469.3476.0703.5234.0703.5625 0 1.1074-.2285 1.5293-.6504.4219-.4219.6504-.9668.6504-1.5293 0-.5625-.2285-1.1074-.6504-1.5293-.4219-.4219-.9668-.6504-1.5293-.6504-.3672 0-.7222.1231-1.0176.3516-.2988.2324-.5167.5586-.6152.9453-.2252.8984-.1407 2.1594.2321 3.5488.4257 1.5932 1.1928 3.2855 2.1264 4.6749-.2321.1503-.8723.3602-2.5256.0191-.5306-.1097-.8684-.0311-1.0074.2321a.5269.5269 0 0 0-.0563.1191c-.0938.2813.0469.5625.3281.6563.2813.0938.5625-.0469.6563-.3281.0234-.0703.0469-.1406.0703-.2109.5625.1172 1.1484.1758 1.7344.1758.5859 0 1.1719-.0586 1.7344-.1758.0234.0703.0469.1406.0703.2109.0938.2812.375.4219.6563.3281.2812-.0938.4219-.375.3281-.6563z"/></svg><span class="tname">PostgreSQL</span><span class="tdesc">Transactional database</span></div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#DC382D"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.105 5.59-3.63 5.59-5.59 0-1.96-1.473-5.485-5.59-5.59-2.141-.055-3.513 1.146-4.214 2.63.083-2.295 1.277-5.12 4.48-5.12 3.586 0 5.378 2.391 7.038 4.483.701.883 1.402 1.766 2.103 2.649-.701.883-1.402 1.766-2.103 2.545zm-21.42 0c1.66 2.092 3.452 4.483 7.038 4.483 3.203 0 4.397-2.825 4.48-5.12-.701 1.484-2.073 2.685-4.214 2.63-4.117-.105-5.59-3.63-5.59-5.59 0-1.96 1.473-5.485 5.59-5.59 2.141-.055 3.513 1.146 4.214 2.63-.083-2.295-1.277-5.12-4.48-5.12-3.586 0-5.378 2.391-7.038 4.483C.589 10.463-.112 11.346-.813 12.229c.701.883 1.402 1.766 2.103 2.916z"/></svg><span class="tname">Redis</span><span class="tdesc">Real-time caching</span></div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#231F20"><path d="M9.71 2.136a1.43 1.43 0 0 0-2.047 0h-.007a1.48 1.48 0 0 0-.421 1.042c0 .41.161.777.422 1.039l.007.007c.257.264.616.426 1.023.426.407 0 .766-.162 1.023-.426l.007-.007c.261-.262.422-.629.422-1.039 0-.41-.161-.777-.422-1.039zm4.58 0a1.43 1.43 0 0 0-2.047 0h-.007a1.48 1.48 0 0 0-.421 1.042c0 .41.161.777.422 1.039l.007.007c.257.264.616.426 1.023.426.407 0 .766-.162 1.023-.426l.007-.007c.261-.262.422-.629.422-1.039 0-.41-.161-.777-.422-1.039zM12 5.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 1.5a5 5 0 1 1 0 10A5 5 0 0 1 12 7zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg><span class="tname">Kafka</span><span class="tdesc">Event streaming</span></div>
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#326CE5"><path d="M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 1 .173-.756l.002-.007 2.373-.477a5.15 5.15 0 0 0-3.417-.627l.869 1.867zm5.586 2.129a.44.44 0 0 1 .484-.606l.004-.005 2.578.437a5.171 5.171 0 0 1-2.075 2.597l-.999-2.413.008-.01zm.833-2.129l.869-1.867a5.15 5.15 0 0 0-3.417.627l2.373.477.002.007a.44.44 0 0 1 .173.756zM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0-6.5C5.373 2 0 7.373 0 14s5.373 12 12 12 12-5.373 12-12S18.627 2 12 2zm0 2a10 10 0 1 1 0 20A10 10 0 0 1 12 4z"/></svg><span class="tname">Kubernetes</span><span class="tdesc">Container orchestration</span></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section-sm">
+
+  <div class="container">
+
+    <div class="cta-banner reveal">
+
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+
+      <div class="cta-content">
+
+        <h2>Ready to Build Your <span class="grad-text">Fintech Product?</span></h2>
+
+        <p>Our fintech architects will help you navigate regulations, design the right architecture, and ship a production-ready product on time and on budget.</p>
+
+        <div class="cta-btns">
+
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
+
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<div id="footer-placeholder"></div>
+
+<script src="../../js/nav.js"></script>
+
+<script src="../../js/main.js"></script>
+
+<script src="../../js/animations.js"></script>
+
+</body>
+
+</html>
+

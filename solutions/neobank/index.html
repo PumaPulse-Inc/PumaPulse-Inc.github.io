@@ -1,220 +1,660 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neobank App Development —  PumaPulse</title>
-  <meta name="description" content="Build a full-featured neobank app with accounts, cards, lending, and crypto integration. PumaPulse delivers compliance-ready neobank platforms.">
-  <link rel="icon" href="../../img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/theme.css">
-  <link rel="stylesheet" href="../../css/animations.css">
-  <style>
-    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .service-feature-list{display:flex;flex-direction:column;gap:16px}
-    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
-    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
-    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .sfeat-icon svg{width:20px;height:20px}
-    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
-    .sfeat p{font-size:0.86rem}
-    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
-    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
-    .use-case h4{font-size:0.95rem;margin-bottom:8px}
-    .use-case p{font-size:0.84rem}
-    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<div id="nav-placeholder"></div>
-
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/9577253/pexels-photo-9577253.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Neobank App Development"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>Neobank</span></div>
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Neobank Solutions</span>
-      <h1>Launch a Neobank That <span class="grad-text">Users Love</span></h1>
-      <p>PumaPulse builds full-featured neobank apps with everything modern users expect —  multi-currency accounts, instant transfers, virtual cards, AI-powered insights, and crypto integration —  all in one beautifully designed app.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Neobank</a>
-        <a href="#features" class="btn btn-ghost btn-lg">Explore Features</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stats-row counter-section">
-  <div class="stat-cell"><div class="stat-num" data-target="5" data-suffix="M+">5M+</div><p>Users Served</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Currencies Supported</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="20" data-suffix="+">20+</div><p>Neobanks Launched</p></div>
-  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Jurisdictions</p></div>
-</div>
-
-<section class="section" id="features">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Core Features</span>
-      <h2>Everything a Modern <span class="grad-text">Neobank Needs</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">We build neobank apps with a complete feature set that covers the full financial lifecycle —  from onboarding to daily banking to wealth building.</p>
-    </div>
-    <div class="svc-grid reveal-stagger">
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Multi-Currency Accounts" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Multi-Currency Accounts</h3>
-          <p>Hold, send, and receive in 30+ currencies with real-time FX rates, local IBANs for each currency, and virtual account numbers. Features automatic currency conversion at interbank rates, scheduled FX orders, and currency hedging tools. Supports SEPA, SWIFT, ACH, and local payment rails for instant domestic transfers.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">30+ Currencies</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Local IBANs</span><span class="tag-pill tag-purple" style="font-size:0.68rem">FX Hedging</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Virtual Cards" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Virtual &amp; Physical Cards</h3>
-          <p>Instant virtual Visa/Mastercard issuance with per-merchant spending limits, one-time use cards for online security, and real-time transaction notifications. Physical card programs with custom designs, contactless payments, and Apple Pay/Google Pay integration. Includes card freezing, spending controls, and detailed transaction categorization.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Instant Issue</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Apple/Google Pay</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Spending Controls</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Instant Transfers" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Instant Transfers</h3>
-          <p>Real-time domestic and international transfers via SEPA Instant, Faster Payments, ACH, and SWIFT GPI with transparent fee structures and real-time status tracking. Features scheduled payments, recurring transfers, split bills, and payment requests. Includes fraud detection with ML-based anomaly scoring for every transaction.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">SEPA Instant</span><span class="tag-pill tag-blue" style="font-size:0.68rem">SWIFT GPI</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Fraud Detection</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Savings Investments" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Savings &amp; Investments</h3>
-          <p>Automated savings pots with round-up investing, fixed-term deposits with competitive rates, and fractional stock/ETF investing with robo-advisory recommendations. Features goal-based savings, automatic rebalancing, tax-loss harvesting, and crypto portfolio management. Integrates with Alpaca, Interactive Brokers, and custom brokerage APIs.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Round-Up</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Robo-Advisory</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Crypto Portfolio</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lending Credit" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Lending &amp; Credit</h3>
-          <p>Instant personal loans with AI-powered credit scoring using alternative data, buy-now-pay-later (BNPL) integration, credit lines with dynamic limits, and overdraft protection. Features automated underwriting with decisions in seconds, flexible repayment schedules, and early repayment without penalties. Includes credit score monitoring and improvement tips.</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">AI Scoring</span><span class="tag-pill tag-blue" style="font-size:0.68rem">BNPL</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Instant Decision</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc-card tilt-card glow-card">
-        <div class="svc-img"><img src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Biometric Security" loading="lazy"><div class="svc-img-overlay"></div></div>
-        <div class="svc-body">
-          <h3>Biometric Security</h3>
-          <p>Face ID, fingerprint authentication, behavioral biometrics (typing patterns, device motion), and device binding for multi-factor security without friction. Features real-time fraud detection with ML models, transaction risk scoring, step-up authentication for high-value transactions, and instant card freeze via app. Compliant with PSD2 Strong Customer Authentication (SCA).</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Face ID</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Behavioral</span><span class="tag-pill tag-purple" style="font-size:0.68rem">PSD2 SCA</span></div>
-          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Approach -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="service-detail-grid">
-      <div class="reveal-left">
-        <span class="eyebrow">Our Approach</span>
-        <h2>From MVP to <span class="grad-text2">Full-Scale Bank</span></h2>
-        <div class="section-divider" style="margin:0 0 24px"></div>
-        <p style="margin-bottom:28px">We help neobank founders go from idea to regulated product —  handling the technology, compliance architecture, and banking partner integrations so you can focus on growth.</p>
-        <div class="service-feature-list">
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div><h4>Core Banking Integration</h4><p>Integrations with Mambu, Thought Machine, Temenos, and custom core banking systems for account management and ledger.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div><h4>Banking-as-a-Service</h4><p>Connections to Railsr, Synapse, Marqeta, and regional BaaS providers for rapid market entry without a full banking license.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Regulatory Compliance</h4><p>PSD2, EMI licensing support, AML/KYC automation, and open banking API compliance across EU, UK, US, and APAC markets.</p></div></div>
-          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><h4>Native Mobile Apps</h4><p>React Native or fully native iOS/Android apps with 60fps animations, offline support, and App Store optimization.</p></div></div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="split-img">
-          <img src="https://images.pexels.com/photos/9577253/pexels-photo-9577253.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Neobank App">
-          <div class="split-badge"><div class="num">5M+</div><p>Users served</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:var(--bg2)">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="eyebrow">Technology</span>
-      <h2>Our <span class="grad-text">Neobank Tech Stack</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="margin-top:16px">The same infrastructure stack powering leading neobanks like Revolut, N26, and Chime —  built for compliance, scale, and exceptional UX.</p>
-    </div>
-    <div class="tech-showcase reveal-stagger">
-      <div class="tech-category-label">Mobile Apps</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
-          <div><span class="tname">React Native</span><span class="tdesc">Cross-platform iOS & Android banking apps —  biometric auth, push notifications, offline mode, and 60fps animations</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/swift/F05138" alt="Swift">
-          <div><span class="tname">Swift / Kotlin</span><span class="tdesc">Native iOS and Android for performance-critical features —  Secure Enclave, Face ID, NFC payments</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter"><span class="tname">Flutter</span><span class="tdesc">Rapid cross-platform UI</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js"><span class="tname">Next.js</span><span class="tdesc">Web banking portal</span></div>
-      </div>
-      <div class="tech-category-label">Core Banking & BaaS</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Marqeta">
-          <div><span class="tname">Marqeta / Stripe Issuing</span><span class="tdesc">Virtual and physical card issuance —  instant card creation, spend controls, and real-time transaction webhooks</span></div>
-        </div>
-        <div class="tech-logo-card featured">
-          <img src="https://cdn.simpleicons.org/plaid/000000" alt="Plaid">
-          <div><span class="tname">Plaid / Tink</span><span class="tdesc">Open banking APIs for account aggregation, payment initiation, and identity verification across 12,000+ banks</span></div>
-        </div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span class="tname">PostgreSQL</span><span class="tdesc">Core banking ledger</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Real-time balances</span></div>
-      </div>
-      <div class="tech-category-label">Compliance & Infrastructure</div>
-      <div class="tech-logo-grid">
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span class="tname">AWS / GCP</span><span class="tdesc">PCI-DSS compliant cloud</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Event-driven ledger</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Auto-scaling infra</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt="Twilio"><span class="tname">Twilio</span><span class="tdesc">SMS & 2FA</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/datadog/632CA6" alt="Datadog"><span class="tname">Datadog</span><span class="tdesc">APM & monitoring</span></div>
-        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js + Go</span><span class="tdesc">Microservices backend</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
-      <div class="cta-content">
-        <h2>Ready to Launch Your <span class="grad-text">Neobank?</span></h2>
-        <p>PumaPulse has the technology, compliance expertise, and banking partnerships to take your neobank from concept to launch.</p>
-        <div class="cta-btns">
-          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
-          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-<script src="../../js/nav.js"></script>
-<script src="../../js/main.js"></script>
-<script src="../../js/animations.js"></script>
-</body>
-</html>
-
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+
+
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Neobank App Development —  PumaPulse</title>
+
+
+  <meta name="description" content="Build a full-featured neobank app with accounts, cards, lending, and crypto integration. PumaPulse delivers compliance-ready neobank platforms.">
+
+
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+
+  <link rel="stylesheet" href="../../css/theme.css">
+
+
+  <link rel="stylesheet" href="../../css/animations.css">
+
+
+  <style>
+
+
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+
+
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+
+
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+
+
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+
+
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+    .sfeat-icon svg{width:20px;height:20px}
+
+
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+
+
+    .sfeat p{font-size:0.86rem}
+
+
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+
+
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+
+
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+
+
+    .use-case p{font-size:0.84rem}
+
+
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+
+
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+
+
+  </style>
+
+
+</head>
+
+
+<body>
+
+
+<div id="nav-placeholder"></div>
+
+
+
+
+
+<section class="page-hero">
+
+
+  <div class="page-hero-bg"><img src="https://images.pexels.com/photos/9577253/pexels-photo-9577253.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Neobank App Development"></div>
+
+
+  <div class="container">
+
+
+    <div class="page-hero-content">
+
+
+      <div class="breadcrumb"><a href="../../index/">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span>Neobank</span></div>
+
+
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Neobank Solutions</span>
+
+
+      <h1>Launch a Neobank That <span class="grad-text">Users Love</span></h1>
+
+
+      <p>PumaPulse builds full-featured neobank apps with everything modern users expect —  multi-currency accounts, instant transfers, virtual cards, AI-powered insights, and crypto integration —  all in one beautifully designed app.</p>
+
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+
+
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Build My Neobank</a>
+
+
+        <a href="#features" class="btn btn-ghost btn-lg">Explore Features</a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<div class="stats-row counter-section">
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="5" data-suffix="M+">5M+</div><p>Users Served</p></div>
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Currencies Supported</p></div>
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="20" data-suffix="+">20+</div><p>Neobanks Launched</p></div>
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="30" data-suffix="+">30+</div><p>Jurisdictions</p></div>
+
+
+</div>
+
+
+
+
+
+<section class="section" id="features">
+
+
+  <div class="container">
+
+
+    <div class="text-center reveal">
+
+
+      <span class="eyebrow">Core Features</span>
+
+
+      <h2>Everything a Modern <span class="grad-text">Neobank Needs</span></h2>
+
+
+      <div class="section-divider"></div>
+
+
+      <p class="section-desc" style="margin-top:16px">We build neobank apps with a complete feature set that covers the full financial lifecycle —  from onboarding to daily banking to wealth building.</p>
+
+
+    </div>
+
+
+    <div class="svc-grid reveal-stagger">
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Multi-Currency Accounts" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+        <div class="svc-body">
+
+
+          <h3>Multi-Currency Accounts</h3>
+
+
+          <p>Hold, send, and receive in 30+ currencies with real-time FX rates, local IBANs for each currency, and virtual account numbers. Features automatic currency conversion at interbank rates, scheduled FX orders, and currency hedging tools. Supports SEPA, SWIFT, ACH, and local payment rails for instant domestic transfers.</p>
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">30+ Currencies</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Local IBANs</span><span class="tag-pill tag-purple" style="font-size:0.68rem">FX Hedging</span></div>
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Virtual Cards" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+        <div class="svc-body">
+
+
+          <h3>Virtual &amp; Physical Cards</h3>
+
+
+          <p>Instant virtual Visa/Mastercard issuance with per-merchant spending limits, one-time use cards for online security, and real-time transaction notifications. Physical card programs with custom designs, contactless payments, and Apple Pay/Google Pay integration. Includes card freezing, spending controls, and detailed transaction categorization.</p>
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Instant Issue</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Apple/Google Pay</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Spending Controls</span></div>
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Instant Transfers" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+        <div class="svc-body">
+
+
+          <h3>Instant Transfers</h3>
+
+
+          <p>Real-time domestic and international transfers via SEPA Instant, Faster Payments, ACH, and SWIFT GPI with transparent fee structures and real-time status tracking. Features scheduled payments, recurring transfers, split bills, and payment requests. Includes fraud detection with ML-based anomaly scoring for every transaction.</p>
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">SEPA Instant</span><span class="tag-pill tag-blue" style="font-size:0.68rem">SWIFT GPI</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Fraud Detection</span></div>
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Savings Investments" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+        <div class="svc-body">
+
+
+          <h3>Savings &amp; Investments</h3>
+
+
+          <p>Automated savings pots with round-up investing, fixed-term deposits with competitive rates, and fractional stock/ETF investing with robo-advisory recommendations. Features goal-based savings, automatic rebalancing, tax-loss harvesting, and crypto portfolio management. Integrates with Alpaca, Interactive Brokers, and custom brokerage APIs.</p>
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Round-Up</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Robo-Advisory</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Crypto Portfolio</span></div>
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lending Credit" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+        <div class="svc-body">
+
+
+          <h3>Lending &amp; Credit</h3>
+
+
+          <p>Instant personal loans with AI-powered credit scoring using alternative data, buy-now-pay-later (BNPL) integration, credit lines with dynamic limits, and overdraft protection. Features automated underwriting with decisions in seconds, flexible repayment schedules, and early repayment without penalties. Includes credit score monitoring and improvement tips.</p>
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">AI Scoring</span><span class="tag-pill tag-blue" style="font-size:0.68rem">BNPL</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Instant Decision</span></div>
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+        <div class="svc-img"><img src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Biometric Security" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+        <div class="svc-body">
+
+
+          <h3>Biometric Security</h3>
+
+
+          <p>Face ID, fingerprint authentication, behavioral biometrics (typing patterns, device motion), and device binding for multi-factor security without friction. Features real-time fraud detection with ML models, transaction risk scoring, step-up authentication for high-value transactions, and instant card freeze via app. Compliant with PSD2 Strong Customer Authentication (SCA).</p>
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Face ID</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Behavioral</span><span class="tag-pill tag-purple" style="font-size:0.68rem">PSD2 SCA</span></div>
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- Our Approach -->
+
+
+<section class="section" style="background:var(--bg2)">
+
+
+  <div class="container">
+
+
+    <div class="service-detail-grid">
+
+
+      <div class="reveal-left">
+
+
+        <span class="eyebrow">Our Approach</span>
+
+
+        <h2>From MVP to <span class="grad-text2">Full-Scale Bank</span></h2>
+
+
+        <div class="section-divider" style="margin:0 0 24px"></div>
+
+
+        <p style="margin-bottom:28px">We help neobank founders go from idea to regulated product —  handling the technology, compliance architecture, and banking partner integrations so you can focus on growth.</p>
+
+
+        <div class="service-feature-list">
+
+
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div><h4>Core Banking Integration</h4><p>Integrations with Mambu, Thought Machine, Temenos, and custom core banking systems for account management and ledger.</p></div></div>
+
+
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div><h4>Banking-as-a-Service</h4><p>Connections to Railsr, Synapse, Marqeta, and regional BaaS providers for rapid market entry without a full banking license.</p></div></div>
+
+
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Regulatory Compliance</h4><p>PSD2, EMI licensing support, AML/KYC automation, and open banking API compliance across EU, UK, US, and APAC markets.</p></div></div>
+
+
+          <div class="sfeat"><div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><h4>Native Mobile Apps</h4><p>React Native or fully native iOS/Android apps with 60fps animations, offline support, and App Store optimization.</p></div></div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="reveal-right">
+
+
+        <div class="split-img">
+
+
+          <img src="https://images.pexels.com/photos/9577253/pexels-photo-9577253.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Neobank App">
+
+
+          <div class="split-badge"><div class="num">5M+</div><p>Users served</p></div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- Tech Stack -->
+
+
+<section class="section" style="background:var(--bg2)">
+
+
+  <div class="container">
+
+
+    <div class="text-center reveal">
+
+
+      <span class="eyebrow">Technology</span>
+
+
+      <h2>Our <span class="grad-text">Neobank Tech Stack</span></h2>
+
+
+      <div class="section-divider"></div>
+
+
+      <p class="section-desc" style="margin-top:16px">The same infrastructure stack powering leading neobanks like Revolut, N26, and Chime —  built for compliance, scale, and exceptional UX.</p>
+
+
+    </div>
+
+
+    <div class="tech-showcase reveal-stagger">
+
+
+      <div class="tech-category-label">Mobile Apps</div>
+
+
+      <div class="tech-logo-grid">
+
+
+        <div class="tech-logo-card featured">
+
+
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
+
+
+          <div><span class="tname">React Native</span><span class="tdesc">Cross-platform iOS & Android banking apps —  biometric auth, push notifications, offline mode, and 60fps animations</span></div>
+
+
+        </div>
+
+
+        <div class="tech-logo-card featured">
+
+
+          <img src="https://cdn.simpleicons.org/swift/F05138" alt="Swift">
+
+
+          <div><span class="tname">Swift / Kotlin</span><span class="tdesc">Native iOS and Android for performance-critical features —  Secure Enclave, Face ID, NFC payments</span></div>
+
+
+        </div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter"><span class="tname">Flutter</span><span class="tdesc">Rapid cross-platform UI</span></div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js"><span class="tname">Next.js</span><span class="tdesc">Web banking portal</span></div>
+
+
+      </div>
+
+
+      <div class="tech-category-label">Core Banking & BaaS</div>
+
+
+      <div class="tech-logo-grid">
+
+
+        <div class="tech-logo-card featured">
+
+
+          <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Marqeta">
+
+
+          <div><span class="tname">Marqeta / Stripe Issuing</span><span class="tdesc">Virtual and physical card issuance —  instant card creation, spend controls, and real-time transaction webhooks</span></div>
+
+
+        </div>
+
+
+        <div class="tech-logo-card featured">
+
+
+          <svg viewBox="0 0 24 24" style="width:36px;height:36px;flex-shrink:0" fill="#000000"><path d="M14.5 0h-5C4.26 0 0 4.26 0 9.5v5C0 19.74 4.26 24 9.5 24h5c5.24 0 9.5-4.26 9.5-9.5v-5C24 4.26 19.74 0 14.5 0zm-2.5 18.5c-4.14 0-7.5-3.36-7.5-7.5S7.86 3.5 12 3.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5z"/></svg>
+
+
+          <div><span class="tname">Plaid / Tink</span><span class="tdesc">Open banking APIs for account aggregation, payment initiation, and identity verification across 12,000+ banks</span></div>
+
+
+        </div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span class="tname">PostgreSQL</span><span class="tdesc">Core banking ledger</span></div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Real-time balances</span></div>
+
+
+      </div>
+
+
+      <div class="tech-category-label">Compliance & Infrastructure</div>
+
+
+      <div class="tech-logo-grid">
+
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#FF9900"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.1.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.369-1.3-.369a3.613 3.613 0 0 0-.879.112 6.494 6.494 0 0 0-.903.295 2.357 2.357 0 0 1-.288.12.5.5 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167 4.552 4.552 0 0 1 .997-.36A5.098 5.098 0 0 1 3.8 5.15c.95 0 1.644.216 2.09.647.439.43.662 1.083.662 1.958v2.281zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.503.048-.184.08-.407.08-.671v-.32a6.699 6.699 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.295.838.295v-.046zm6.41.862c-.144 0-.24-.024-.304-.08-.063-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687a.49.49 0 0 1-.32-.08c-.063-.056-.12-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32a.513.513 0 0 1-.32.08h-.687zm10.257.28c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.743.167-1.158.167z"/></svg><span class="tname">AWS / GCP</span><span class="tdesc">PCI-DSS compliant cloud</span></div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Event-driven ledger</span></div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Auto-scaling infra</span></div>
+
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#F22F46"><path d="M12 0C5.381-.008.008 5.352 0 11.971V12c0 6.64 5.359 12 12 12 6.64 0 12-5.36 12-12 0-6.641-5.36-12-12-12zm0 20.801c-4.846.015-8.786-3.904-8.801-8.75V12c-.014-4.846 3.904-8.786 8.75-8.801H12c4.847-.014 8.786 3.904 8.801 8.75V12c.015 4.847-3.904 8.786-8.75 8.801H12zm5.44-11.76c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm-8.4 0c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm4.2 8.4c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm4.2 0c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481z"/></svg><span class="tname">Twilio</span><span class="tdesc">SMS &amp; 2FA</span></div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/datadog/632CA6" alt="Datadog"><span class="tname">Datadog</span><span class="tdesc">APM & monitoring</span></div>
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js + Go</span><span class="tdesc">Microservices backend</span></div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<section class="section-sm">
+
+
+  <div class="container">
+
+
+    <div class="cta-banner reveal">
+
+
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+
+
+      <div class="cta-content">
+
+
+        <h2>Ready to Launch Your <span class="grad-text">Neobank?</span></h2>
+
+
+        <p>PumaPulse has the technology, compliance expertise, and banking partnerships to take your neobank from concept to launch.</p>
+
+
+        <div class="cta-btns">
+
+
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your Project</a>
+
+
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<div id="footer-placeholder"></div>
+
+
+<script src="../../js/nav.js"></script>
+
+
+<script src="../../js/main.js"></script>
+
+
+<script src="../../js/animations.js"></script>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
