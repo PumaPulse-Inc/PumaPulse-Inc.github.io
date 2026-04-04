@@ -68,8 +68,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
 .bl-hero{min-height:60vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#060a14}
-.bl-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1800&q=80') center/cover no-repeat;opacity:.15}
-.bl-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,.18) 0%,transparent 55%),linear-gradient(to top,#060a14 0%,transparent 60%)}
+.bl-hero-bg{position:absolute;inset:0;background:url('https://res.cloudinary.com/dtvnifa3t/image/upload/v1775271488/pumapulse/blog.png') center/cover no-repeat;opacity:.4}
 .bl-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
 .bl-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 44px 80px}
 .bl-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,.9);margin-bottom:22px}
@@ -100,7 +99,7 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
 .bl-card-desc{font-size:13px;line-height:1.75;color:#4a5470;margin-bottom:12px}
 .bl-card-meta{display:flex;gap:16px;font-size:11px;font-weight:600;color:#8a93b0;letter-spacing:.04em;text-transform:uppercase}
 /* GRID */
-.bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e4ef;border:1px solid #e0e4ef;border-top:none}
+.bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;background:transparent;border:none;border-top:none;margin-top:20px}
 .bl-featured-side{display:flex;flex-direction:column;gap:1px;background:#e0e4ef}
 /* CTA */
 .bl-cta{background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
@@ -302,8 +301,8 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
 
     <!-- Featured -->
     <div class="bl-featured reveal">
-      <div class="bl-card">
-        <div class="bl-card-img" style="height:300px"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=900&q=80" alt="Crypto Exchange Guide" loading="lazy"></div>
+      <div class="bl-card" data-cat="crypto-exchange">
+        <div class="bl-card-img" style="height:300px"><img src="https://images.pexels.com/photos/6771985/pexels-photo-6771985.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Crypto Exchange Guide" loading="lazy"></div>
         <div class="bl-card-body">
           <span class="bl-card-tag">Crypto Exchange</span>
           <div class="bl-card-title bl-card-title-lg">How to Build a Crypto Exchange in 2025: The Complete Technical Guide</div>
@@ -312,12 +311,12 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
         </div>
       </div>
       <div class="bl-featured-side">
-        <div class="bl-card">
-          <div class="bl-card-img" style="height:140px"><img src="https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=700&q=80" alt="Arbitrage Bots" loading="lazy"></div>
+        <div class="bl-card" data-cat="trading-bots">
+          <div class="bl-card-img" style="height:140px"><img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Arbitrage Bots" loading="lazy"></div>
           <div class="bl-card-body"><span class="bl-card-tag">Trading Bots</span><div class="bl-card-title">Arbitrage Bot Strategies That Actually Work in 2025</div><div class="bl-card-meta"><span>Dec 10, 2024</span><span>9 min read</span></div></div>
         </div>
-        <div class="bl-card">
-          <div class="bl-card-img" style="height:140px"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="Neobank" loading="lazy"></div>
+        <div class="bl-card" data-cat="fintech">
+          <div class="bl-card-img" style="height:140px"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Neobank" loading="lazy"></div>
           <div class="bl-card-body"><span class="bl-card-tag">Fintech</span><div class="bl-card-title">Neobank vs Traditional Bank: Why Startups Are Winning</div><div class="bl-card-meta"><span>Dec 5, 2024</span><span>7 min read</span></div></div>
         </div>
       </div>
@@ -325,19 +324,19 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
 
     <!-- Grid -->
     <div class="bl-grid reveal-stagger">
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=700&q=80" alt="DEX" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">DeFi</span><div class="bl-card-title">Building a DEX in 2025: AMM vs Order Book</div><p class="bl-card-desc">A technical comparison of automated market makers and order book DEXs, with guidance on which model fits your use case.</p><div class="bl-card-meta"><span>Nov 28, 2024</span><span>11 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=80" alt="MPC Wallets" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">MPC Wallets Explained: Why Enterprises Are Ditching Hardware Wallets</div><p class="bl-card-desc">Multi-party computation wallets offer superior security and flexibility for institutional crypto custody.</p><div class="bl-card-meta"><span>Nov 20, 2024</span><span>8 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Forex CRM" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Forex</span><div class="bl-card-title">Forex CRM in 2025: Features Every Broker Needs</div><p class="bl-card-desc">From IB management to AI-powered lead scoring — the CRM features that separate top-performing forex brokers.</p><div class="bl-card-meta"><span>Nov 15, 2024</span><span>6 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=700&q=80" alt="Crypto Payments" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Fintech</span><div class="bl-card-title">Crypto Payment Gateways: The Complete Integration Guide</div><p class="bl-card-desc">Step-by-step guide to integrating crypto payments into your online store, including tax and compliance.</p><div class="bl-card-meta"><span>Nov 8, 2024</span><span>10 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=700&q=80" alt="Layer 2" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">Layer 2 Scaling Solutions: Which One Should Your DApp Use?</div><p class="bl-card-desc">Comparing Optimism, Arbitrum, zkSync, and Polygon for throughput, cost, and developer experience.</p><div class="bl-card-meta"><span>Nov 1, 2024</span><span>13 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Grid Trading" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Trading Bots</span><div class="bl-card-title">Grid Trading Bots: How to Profit in Sideways Markets</div><p class="bl-card-desc">A practical guide to grid trading strategy, parameter optimization, and risk management for volatile crypto markets.</p><div class="bl-card-meta"><span>Oct 25, 2024</span><span>8 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80" alt="White-Label Exchange" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Crypto Exchange</span><div class="bl-card-title">How to Launch a White-Label Crypto Exchange in 30 Days</div><p class="bl-card-desc">How modern white-label solutions let you go from idea to live exchange in under a month without sacrificing security.</p><div class="bl-card-meta"><span>Oct 18, 2024</span><span>10 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="KYC AML" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Fintech</span><div class="bl-card-title">The Complete Guide to KYC/AML for Fintech Startups</div><p class="bl-card-desc">Everything founders need to know about KYC and AML requirements — from choosing a provider to building compliant onboarding flows.</p><div class="bl-card-meta"><span>Oct 10, 2024</span><span>9 min read</span></div></div></div>
-      <div class="bl-card"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=700&q=80" alt="Smart Contract Security" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">Smart Contract Security: Top 10 Vulnerabilities to Avoid</div><p class="bl-card-desc">From reentrancy attacks to integer overflows — a deep dive into the most common smart contract vulnerabilities.</p><div class="bl-card-meta"><span>Oct 3, 2024</span><span>11 min read</span></div></div></div>
+      <div class="bl-card" data-cat="defi"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=700&q=85" alt="DEX" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">DeFi</span><div class="bl-card-title">Building a DEX in 2025: AMM vs Order Book</div><p class="bl-card-desc">A technical comparison of automated market makers and order book DEXs, with guidance on which model fits your use case.</p><div class="bl-card-meta"><span>Nov 28, 2024</span><span>11 min read</span></div></div></div>
+      <div class="bl-card" data-cat="blockchain"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=85" alt="MPC Wallets" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">MPC Wallets Explained: Why Enterprises Are Ditching Hardware Wallets</div><p class="bl-card-desc">Multi-party computation wallets offer superior security and flexibility for institutional crypto custody.</p><div class="bl-card-meta"><span>Nov 20, 2024</span><span>8 min read</span></div></div></div>
+      <div class="bl-card" data-cat="forex"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=85" alt="Forex CRM" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Forex</span><div class="bl-card-title">Forex CRM in 2025: Features Every Broker Needs</div><p class="bl-card-desc">From IB management to AI-powered lead scoring — the CRM features that separate top-performing forex brokers.</p><div class="bl-card-meta"><span>Nov 15, 2024</span><span>6 min read</span></div></div></div>
+      <div class="bl-card" data-cat="fintech"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=700&q=85" alt="Crypto Payments" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Fintech</span><div class="bl-card-title">Crypto Payment Gateways: The Complete Integration Guide</div><p class="bl-card-desc">Step-by-step guide to integrating crypto payments into your online store, including tax and compliance.</p><div class="bl-card-meta"><span>Nov 8, 2024</span><span>10 min read</span></div></div></div>
+      <div class="bl-card" data-cat="blockchain"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=700&q=85" alt="Layer 2" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">Layer 2 Scaling Solutions: Which One Should Your DApp Use?</div><p class="bl-card-desc">Comparing Optimism, Arbitrum, zkSync, and Polygon for throughput, cost, and developer experience.</p><div class="bl-card-meta"><span>Nov 1, 2024</span><span>13 min read</span></div></div></div>
+      <div class="bl-card" data-cat="trading-bots"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=700&q=85" alt="Grid Trading" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Trading Bots</span><div class="bl-card-title">Grid Trading Bots: How to Profit in Sideways Markets</div><p class="bl-card-desc">A practical guide to grid trading strategy, parameter optimization, and risk management for volatile crypto markets.</p><div class="bl-card-meta"><span>Oct 25, 2024</span><span>8 min read</span></div></div></div>
+      <div class="bl-card" data-cat="crypto-exchange"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=700&q=85" alt="White-Label Exchange" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Crypto Exchange</span><div class="bl-card-title">How to Launch a White-Label Crypto Exchange in 30 Days</div><p class="bl-card-desc">How modern white-label solutions let you go from idea to live exchange in under a month without sacrificing security.</p><div class="bl-card-meta"><span>Oct 18, 2024</span><span>10 min read</span></div></div></div>
+      <div class="bl-card" data-cat="fintech"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=85" alt="KYC AML" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Fintech</span><div class="bl-card-title">The Complete Guide to KYC/AML for Fintech Startups</div><p class="bl-card-desc">Everything founders need to know about KYC and AML requirements — from choosing a provider to building compliant onboarding flows.</p><div class="bl-card-meta"><span>Oct 10, 2024</span><span>9 min read</span></div></div></div>
+      <div class="bl-card" data-cat="blockchain"><div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=85" alt="Smart Contract Security" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">Smart Contract Security: Top 10 Vulnerabilities to Avoid</div><p class="bl-card-desc">From reentrancy attacks to integer overflows — a deep dive into the most common smart contract vulnerabilities.</p><div class="bl-card-meta"><span>Oct 3, 2024</span><span>11 min read</span></div></div></div>
     </div>
 
     <div style="text-align:center;margin-top:48px" class="reveal">
-      <button style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#1a1e2e;border:1.5px solid #e0e4ef;padding:12px 28px;border-radius:50px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.04em;text-transform:uppercase" onmouseover="this.style.borderColor='#c0202a';this.style.color='#c0202a'" onmouseout="this.style.borderColor='#e0e4ef';this.style.color='#1a1e2e'">Load More Articles &#8594;</button>
+      <button id="loadMoreBtn" onclick="loadMore()" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#1a1e2e;border:1.5px solid #e0e4ef;padding:12px 28px;border-radius:50px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.04em;text-transform:uppercase" onmouseover="this.style.borderColor='#c0202a';this.style.color='#c0202a'" onmouseout="this.style.borderColor='#e0e4ef';this.style.color='#1a1e2e'">Load More Articles &#8594;</button>
     </div>
   </div>
 </section>
@@ -359,13 +358,95 @@ body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:
 <script src="../js/main.js"></script>
 <script src="../js/animations.js"></script>
 <script>
-// Filter buttons
-document.querySelectorAll('.bl-filter').forEach(btn => {
+// ── Filter ──
+var filterMap = {
+  'All': 'all',
+  'Crypto Exchange': 'crypto-exchange',
+  'Blockchain': 'blockchain',
+  'Trading Bots': 'trading-bots',
+  'DeFi': 'defi',
+  'Fintech': 'fintech',
+  'Forex': 'forex'
+};
+
+document.querySelectorAll('.bl-filter').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    document.querySelectorAll('.bl-filter').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.bl-filter').forEach(function(b){ b.classList.remove('active'); });
     this.classList.add('active');
+    var cat = filterMap[this.textContent.trim()] || 'all';
+
+    var featured = document.querySelector('.bl-featured');
+    var grid = document.querySelector('.bl-grid');
+    var gridCards = grid ? grid.querySelectorAll('.bl-card') : [];
+
+    if (cat === 'all') {
+      // Restore original layout
+      if (featured) featured.style.display = '';
+      if (grid) { grid.style.gridTemplateColumns = ''; grid.style.maxWidth = ''; }
+      gridCards.forEach(function(c){ c.style.display = ''; });
+    } else {
+      // Hide featured section
+      if (featured) featured.style.display = 'none';
+
+      // Show only matching grid cards, adjust grid columns
+      var visible = 0;
+      gridCards.forEach(function(c){
+        if (c.dataset.cat === cat) { c.style.display = ''; visible++; }
+        else { c.style.display = 'none'; }
+      });
+
+      // Adjust grid to fit visible count cleanly
+      if (grid) {
+        if (visible === 1) grid.style.gridTemplateColumns = 'repeat(1,400px)';
+        else if (visible === 2) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
+        else grid.style.gridTemplateColumns = 'repeat(3,1fr)';
+      }
+    }
   });
 });
+
+// ── Load More ──
+var extraPosts = [
+  { cat:'blockchain', tag:'Blockchain', title:'How to Audit a Smart Contract: Step-by-Step Guide', desc:'A practical walkthrough of smart contract security auditing — tools, techniques, and what to look for before deployment.', date:'Sep 20, 2024', read:'9 min read', img:'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=700&q=80' },
+  { cat:'fintech', tag:'Fintech', title:'Open Banking APIs: Building the Future of Finance', desc:'How PSD2 and open banking APIs are enabling a new generation of fintech products and embedded finance experiences.', date:'Sep 12, 2024', read:'7 min read', img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80' },
+  { cat:'crypto-exchange', tag:'Crypto Exchange', title:'Liquidity Management for Crypto Exchanges', desc:'Strategies for bootstrapping and maintaining deep liquidity on a new exchange — from market makers to aggregation.', date:'Sep 5, 2024', read:'8 min read', img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80' },
+];
+var loaded = false;
+
+function loadMore() {
+  if (loaded) return;
+  loaded = true;
+  var grid = document.querySelector('.bl-grid');
+  extraPosts.forEach(function(p) {
+    var card = document.createElement('div');
+    card.className = 'bl-card';
+    card.dataset.cat = p.cat;
+    card.innerHTML = '<div class="bl-card-img" style="height:180px"><img src="' + p.img + '" alt="' + p.title + '" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">' + p.tag + '</span><div class="bl-card-title">' + p.title + '</div><p class="bl-card-desc">' + p.desc + '</p><div class="bl-card-meta"><span>' + p.date + '</span><span>' + p.read + '</span></div></div>';
+    grid.appendChild(card);
+  });
+  var btn = document.getElementById('loadMoreBtn');
+  if (btn) { btn.textContent = 'All Articles Loaded'; btn.disabled = true; btn.style.opacity = '0.5'; btn.style.cursor = 'default'; }
+}
+
+// ── Newsletter ──
+var nlForm = document.querySelector('.bl-nl-form');
+if (nlForm) {
+  nlForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var input = nlForm.querySelector('input');
+    var btn = nlForm.querySelector('button');
+    if (!input.value.trim()) return;
+    btn.textContent = 'Subscribed!';
+    btn.disabled = true;
+    input.disabled = true;
+    setTimeout(function() {
+      btn.textContent = 'Subscribe';
+      btn.disabled = false;
+      input.disabled = false;
+      input.value = '';
+    }, 3000);
+  });
+}
 </script>
 </body>
 </html>
